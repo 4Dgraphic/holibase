@@ -44,7 +44,10 @@ def main() -> int:
                         """insert into public.education_authorities (id, country_code, subdivision_code, kind, name, external_ids, source_id)
                            values (%s, %s, %s, %s, %s, %s, %s)
                            on conflict (id) do update set name = excluded.name,
-                                 external_ids = public.education_authorities.external_ids || excluded.external_ids
+                                 -- once the NCES import set the real id, the research claim is no longer merged back in
+                                 external_ids = public.education_authorities.external_ids
+                                   || case when public.education_authorities.external_ids ? 'nces_leaid'
+                                           then excluded.external_ids - 'nces_leaid_claimed' else excluded.external_ids end
                            returning (xmax = 0)""",
                         (auth_id, c["country_code"], c["subdivision_code"], c["authority_kind"] or "other",
                          c["authority"], Jsonb(c.get("authority_ext") or {}), SOURCE_ID),

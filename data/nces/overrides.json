@@ -1,0 +1,5 @@
+{
+  "_comment": "Pin an existing authority (uuid) to an NCES LEAID when the name match is wrong or missing. null = never match. Changing this file runs the NCES import.",
+  "f65ab23d-b796-5c2f-ba36-25fb90f37056": "0804800",
+  "3d900b40-3ecf-549d-843e-d33f8d80319a": "4703180"
+}

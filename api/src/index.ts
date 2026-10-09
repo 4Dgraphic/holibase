@@ -222,7 +222,7 @@ function matchRoute(url: URL): Route {
           kind: "data",
           cacheKey: `${url.origin}/v1/authorities/${id}`,
           handle: async (env) => {
-            const res = await supabase(env, `/rest/v1/education_authorities?id=eq.${id}&select=id,country_code,subdivision_code,kind,name,external_ids,website_url,city`);
+            const res = await supabase(env, `/rest/v1/education_authorities?id=eq.${id}&select=id,country_code,subdivision_code,kind,name,city,student_count,website_url,external_ids`);
             const rows = (await res.json()) as unknown[];
             if (!rows.length) throw new ApiError(404, "not_found", "Authority not found.");
             const cals = await supabase(env, `/rest/v1/school_calendars?authority_id=eq.${id}&status=in.(confirmed,pending)&select=id,school_year,status,origin,first_day,last_day,source_url&order=school_year`);
