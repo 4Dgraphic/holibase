@@ -86,3 +86,18 @@ Subdivision codes follow ISO 3166-2. Named areas without an ISO code become slug
 - Code: MIT (see `LICENSE`).
 - Data from python-holidays: MIT, attribution "© python-holidays contributors".
 - Own and community data: not decided yet (ODbL vs. CC BY 4.0).
+
+## Editorial school calendars
+
+Reviewed calendars live in `data/editorial/*.json` (one file per research batch) and are imported by
+`.github/workflows/import-editorial.yml` whenever such a file changes on `main`.
+
+- `status: confirmed` only when the dates were cross-checked against a second source (KMK, Länder
+  Ferienordnungen, oesterreich.gv.at, OpenHolidays for cross-checking only, district PDFs) or come from
+  the authority's own official calendar. Everything else is `pending` and only returned by the API with
+  `p_include_pending`.
+- First and last day of instruction are stored on the calendar (`first_day`, `last_day`), not as periods.
+- When an editorial calendar and a library calendar cover the same scope and school year, the API returns
+  the editorial one.
+- US districts carry the NCES id reported by the research as `external_ids.nces_leaid_claimed`; the real
+  `nces_leaid` is set by the NCES CCD import.

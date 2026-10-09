@@ -1,0 +1,44 @@
+name: Import editorial calendars
+
+# Imports the reviewed school calendars in data/editorial/*.json into the database.
+# Runs automatically when those files change on main, or by hand (with dry-run option).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/editorial/**"
+      - "scripts/import_editorial.py"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (import and report, then roll back)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: database-write
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - name: Import
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          args=()
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+          python scripts/import_editorial.py "${args[@]}"

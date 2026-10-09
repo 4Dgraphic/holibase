@@ -23,7 +23,7 @@ on:
         default: ""
 
 concurrency:
-  group: sync-holidays
+  group: database-write
   cancel-in-progress: false
 
 permissions:
