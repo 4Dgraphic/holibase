@@ -30,6 +30,7 @@ const RE_SUBDIVISION = /^[A-Z]{2}-[A-Z0-9]{1,3}$/;
 const RE_LANG = /^[a-z]{2,3}(-[a-z]{2,4})?$/i;
 const RE_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const RE_YEAR = /^\d{4}$/;
+const RE_UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 class ApiError extends Error {
   constructor(public status: number, public code: string, message: string) {
@@ -145,27 +146,71 @@ function matchRoute(url: URL): Route {
       if (rawYear) throw new ApiError(404, "not_found", "Use ?from=&to= for school holidays.");
       const country = parseCountry(rawCountry);
       const subdivision = parseSubdivision(url.searchParams.get("subdivision"), country);
+      const authority = parseAuthority(url.searchParams.get("authority"));
+      const includePending = parseInclude(url.searchParams.get("include"));
       const today = new Date().toISOString().slice(0, 10);
       const inAYear = new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10);
       const [from, to] = parseRange(url, today, inAYear);
       const lang = parseLang(url.searchParams.get("lang"));
-      const key = canonical(url.origin, `/v1/school-holidays/${country}`, { from, to, subdivision, lang });
+      const key = canonical(url.origin, `/v1/school-holidays/${country}`, {
+        from, to, subdivision, authority, lang, include: includePending ? "pending" : null,
+      });
       return {
         kind: "data",
         cacheKey: key,
         handle: async (env) => {
-          const rows = await rpc(env, "get_school_holidays", {
-            p_country: country,
-            p_subdivision: subdivision,
-            p_from: from,
-            p_to: to,
-            p_lang: lang,
-          });
+          const scope = { p_country: country, p_subdivision: subdivision, p_authority: authority, p_from: from, p_to: to };
+          const [rows, calendars] = await Promise.all([
+            rpc(env, "get_school_holidays", { ...scope, p_lang: lang, p_include_pending: includePending || null }),
+            rpc(env, "get_school_calendars", { ...scope, p_include_pending: includePending || null }),
+          ]);
           return json(
-            { country, subdivision, from, to, lang, count: rows.length, periods: rows, attribution: ATTRIBUTION },
+            {
+              country, subdivision, authority, from, to, lang,
+              include_pending: includePending,
+              count: rows.length,
+              calendars,
+              periods: rows,
+              attribution: ATTRIBUTION,
+            },
             200,
             ttl(env.TTL_SCHOOL_HOLIDAYS, 21600),
           );
+        },
+      };
+    }
+
+    case "authorities": {
+      // /v1/authorities?country=US&q=gwinnett&subdivision=US-GA&limit=25   or   /v1/authorities/{id}
+      if (rawYear) throw new ApiError(404, "not_found", "Unknown path.");
+      if (rawCountry) {
+        const id = parseAuthority(rawCountry);
+        return {
+          kind: "data",
+          cacheKey: `${url.origin}/v1/authorities/${id}`,
+          handle: async (env) => {
+            const res = await supabase(env, `/rest/v1/education_authorities?id=eq.${id}&select=id,country_code,subdivision_code,kind,name,external_ids,website_url,city`);
+            const rows = (await res.json()) as unknown[];
+            if (!rows.length) throw new ApiError(404, "not_found", "Authority not found.");
+            const cals = await supabase(env, `/rest/v1/school_calendars?authority_id=eq.${id}&status=in.(confirmed,pending)&select=id,school_year,status,origin,first_day,last_day,source_url&order=school_year`);
+            return json({ authority: rows[0], calendars: await cals.json() }, 200, ttl(env.TTL_REFERENCE, 86400));
+          },
+        };
+      }
+      const qCountry = url.searchParams.get("country");
+      const country = qCountry ? parseCountry(qCountry) : null;
+      const subdivision = country ? parseSubdivision(url.searchParams.get("subdivision"), country) : null;
+      const q = (url.searchParams.get("q") ?? "").trim() || null;
+      if (q && q.length > 80) throw new ApiError(400, "invalid_query", "q is too long.");
+      if (!country && !q) throw new ApiError(400, "missing_filter", "Give at least ?country= or ?q=.");
+      const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 25) || 25, 1), 100);
+      const key = canonical(url.origin, "/v1/authorities", { country, subdivision, q: q?.toLowerCase() ?? null, limit: String(limit) });
+      return {
+        kind: "data",
+        cacheKey: key,
+        handle: async (env) => {
+          const rows = await rpc(env, "search_authorities", { p_country: country, p_q: q, p_subdivision: subdivision, p_limit: limit });
+          return json({ country, subdivision, q, count: rows.length, authorities: rows }, 200, ttl(env.TTL_REFERENCE, 86400));
         },
       };
     }
@@ -254,6 +299,18 @@ function parseSubdivision(raw: string | null, country: string): string | null {
     throw new ApiError(400, "invalid_subdivision", `Subdivision must be an ISO 3166-2 code within ${country}, e.g. ${country}-XX.`);
   }
   return s;
+}
+
+function parseAuthority(raw: string | null): string | null {
+  if (!raw) return null;
+  if (!RE_UUID.test(raw)) throw new ApiError(400, "invalid_authority", "authority must be an id from /v1/authorities.");
+  return raw.toLowerCase();
+}
+
+function parseInclude(raw: string | null): boolean {
+  if (!raw) return false;
+  if (raw === "pending") return true;
+  throw new ApiError(400, "invalid_include", "include accepts only 'pending'.");
 }
 
 function parseLang(raw: string | null): string | null {
@@ -357,6 +414,10 @@ function indexDoc(url: URL) {
       public_holidays_year: `${o}/v1/public-holidays/DE/2026?subdivision=DE-BY&lang=de&categories=public,catholic`,
       public_holidays_range: `${o}/v1/public-holidays/US?from=2026-01-01&to=2026-12-31&subdivision=US-CA`,
       school_holidays: `${o}/v1/school-holidays/DE?subdivision=DE-NI&from=2026-08-01&to=2027-07-31`,
+      authorities_search: `${o}/v1/authorities?country=US&q=gwinnett`,
+      authority: `${o}/v1/authorities/{id}`,
+      school_holidays_authority: `${o}/v1/school-holidays/US?authority={id}&from=2026-08-01&to=2027-07-31`,
+      school_holidays_including_unverified: `${o}/v1/school-holidays/US?authority={id}&include=pending`,
       static_file: `${o}/data/public-holidays/DE/2026.json`,
     },
     attribution: ATTRIBUTION,

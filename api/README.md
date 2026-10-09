@@ -11,6 +11,10 @@ Reachable at `https://api.holibase.org`.
 | GET | `/v1/public-holidays/{CC}/{YYYY}?subdivision=&lang=` | one calendar year |
 | GET | `/v1/public-holidays/{CC}?from=&to=&subdivision=&lang=` | free range, max 3 years |
 | GET | `/v1/school-holidays/{CC}?subdivision=&from=&to=` | default: today + 12 months |
+| GET | `/v1/authorities?country=&q=&subdivision=&limit=` | search school authorities (US districts, English councils, NL regions, FR zones, BE communities, Swiss variants) |
+| GET | `/v1/authorities/{id}` | one authority with its calendars |
+| GET | `/v1/school-holidays/{CC}?authority={id}&from=&to=&lang=` | school holidays of an authority, plus `calendars` (first/last day, status, source) |
+| GET | `/v1/school-holidays/{CC}?…&include=pending` | also return calendars that are not yet verified |
 | GET | `/data/<path>.json` | static files from R2 (layout of the repo's `data/`) |
 | GET | `/v1/health` | liveness |
 

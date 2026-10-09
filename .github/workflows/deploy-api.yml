@@ -1,0 +1,38 @@
+name: Deploy API worker
+
+# Deploys api/ to Cloudflare (api.holibase.org) whenever it changes on main.
+# Needs two repository secrets: CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers")
+# and CLOUDFLARE_ACCOUNT_ID. Without them the job is skipped, so nothing breaks.
+
+on:
+  push:
+    branches: [main]
+    paths: ["api/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v5
+      - name: Skip without Cloudflare secrets
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: echo "::notice::CLOUDFLARE_API_TOKEN not set, skipping deploy. Deploy by hand with 'npx wrangler deploy' in api/."
+      - uses: actions/setup-node@v5
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+      - if: env.CLOUDFLARE_API_TOKEN != ''
+        run: npm ci && npx tsc --noEmit && npx wrangler deploy
