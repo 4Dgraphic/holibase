@@ -1,0 +1,500 @@
+batch,rank,holibase_id,nces_leaid,name,nces_name,city,state,students
+1,1,7bad9510-d7f3-52d6-b72f-21c0791d16b2,1200390,Dade County School District,Dade County School District,Miami,FL,333233
+1,2,712ed341-c36c-5794-8571-8d0fce39d06a,1709930,Chicago Public School District 299,Chicago Public School District 299,Chicago,IL,324130
+1,3,ce7ff8b3-4fff-5814-8488-09782a97d683,3200060,Clark County School District,Clark County School District,Las Vegas,NV,301697
+1,4,e8b134c5-3564-5358-9e38-523dfdc46b34,7200030,Puerto Rico Department of Education,Puerto Rico Department of Education,Hato Rey,PR,235819
+1,5,2af08fd9-eda9-5934-9047-e85edc200413,1200870,Hillsborough County Public Schools,Hillsborough County School District,Tampa,FL,220360
+1,6,07adcfdd-7341-5e52-810c-5efb9d152510,1201440,Orange County School District,Orange County School District,Orlando,FL,205853
+1,7,06407719-4007-5010-b4ba-b66716b666b8,1201500,Palm Beach County School District,Palm Beach County School District,West Palm Beach,FL,189634
+1,8,86261e17-ec27-5fe7-9cc1-0ec08842760c,5101260,Fairfax County Public Schools,Fairfax County Public Schools,Falls Church,VA,179323
+1,9,0e2fe30e-9b50-5d73-bad2-bdb45e183010,4823640,Houston Independent School District,Houston Independent School District,Houston,TX,176727
+1,10,e3df7361-4f43-55ed-8212-05abacd5cd0a,1500030,Hawaii Department of Education,Hawaii Department of Education,Honolulu,HI,167071
+1,11,a0f9bc55-fda0-52b7-a674-f1b6234d0a70,3704720,Wake County Schools,Wake County Schools,Cary,NC,163325
+1,12,69576ec3-e5dd-539f-8ed3-51b85ed50fa9,2400480,Montgomery County Public Schools,Montgomery County Public Schools,Rockville,MD,159181
+1,13,305397d6-117e-5c16-ba2a-a78418b255ce,3702970,Charlotte-Mecklenburg Schools,Charlotte-Mecklenburg Schools,Charlotte,NC,147299
+1,14,318548c7-81d2-5757-91ae-79e985b1347b,4816230,Dallas Independent School District,Dallas Independent School District,Dallas,TX,139802
+1,15,ccb5ae14-60dc-59ba-a70f-7a2a1cc9d892,4218990,Philadelphia City School District,Philadelphia City School District,Philadelphia,PA,120057
+1,16,78bffb8a-0c61-5bef-8e23-6c6d2bcc38c1,1201590,Polk County Public Schools,Polk County School District,Bartow,FL,111372
+1,17,8f379e27-2ab2-5efe-9946-c88682fceb30,4700148,Memphis-Shelby County Schools,Shelby County School District,Memphis,TN,111124
+1,18,c6eeab38-5080-5366-bf06-b0ad37282ad5,2400120,Baltimore County Public Schools,Baltimore County Public Schools,Towson,MD,110024
+1,19,e621fc35-d291-55e3-801f-819b99048c07,2102990,Jefferson County School District,Jefferson County School District,Louisville,KY,95180
+1,20,8cf7628e-d4ec-57fc-bf25-55c5dba4d210,1301740,DeKalb County School District,DeKalb County School District,Stone Mountain,GA,91752
+1,21,be13bd72-893b-5f78-8811-0097ad1ea622,0803360,Denver County School District 1,Denver County School District 1,Denver,CO,90471
+1,22,7a6c1cd4-603e-54e7-81fc-d5780c5f1b01,4900030,Alpine School District,Alpine School District,American Fork,UT,86645
+1,23,3f58a01c-ed0f-5b23-be65-31c4d3a9608f,1201530,Pasco County School District,Pasco County School District,Land O Lakes,FL,86627
+1,24,b5b88843-32fe-5e6f-97ee-8d52539d5197,2400060,Anne Arundel County Public Schools,Anne Arundel County Public Schools,Annapolis,MD,85029
+1,25,9af96120-9435-54d7-b712-d1557534fba3,2400090,Baltimore City Public Schools,Baltimore City Public Schools,Baltimore,MD,76807
+1,26,c3dc0cdf-922f-5cf1-94c5-fb2836674657,1201470,Osceola County School District,Osceola County School District,Kissimmee,FL,75314
+1,27,652c06a8-487f-5cca-ac5e-26d5e1862118,4815000,Conroe Independent School District,Conroe Independent School District,Conroe,TX,72914
+1,28,2b0811f8-367e-5ae2-9158-e3e032f616d6,4900210,Davis School District,Davis School District,Farmington,UT,71428
+1,29,dee33f52-1183-5cc5-8ba4-dec8e8a57a8e,1200150,Brevard County School District,Brevard County School District,Viera,FL,71198
+1,30,e40876cc-3a06-5af1-a341-7634161d1950,4819700,Fort Worth Independent School District,Fort Worth Independent School District,Fort Worth,TX,70405
+1,31,aaf6caf6-fb73-5a5b-97cc-a5c4a3d11b29,0614550,Fresno Unified School District,Fresno Unified School District,Fresno,CA,68131
+1,32,ccc047f4-1edd-5d1f-8f7d-a936925e1748,3701920,Guilford County Schools,Guilford County Schools,Greensboro,NC,67620
+1,33,e64e359f-8d48-5fa5-b822-145a185ef7c3,5509600,Milwaukee School District,Milwaukee School District,Milwaukee,WI,65599
+1,34,ad572082-df97-5195-b1e0-6d1d5a9de8fc,4820010,Frisco Independent School District,Frisco Independent School District,Frisco,TX,65289
+1,35,15ad8632-2da9-52c2-b48e-97a6f8634d6e,5103840,Virginia Beach City Public Schools,Virginia Beach City Public Schools,Virginia Beach,VA,64731
+1,36,94ab337e-5e79-52e6-9b8d-e2e3c34f6eff,5100840,Chesterfield County Public Schools,Chesterfield County Public Schools,Chesterfield,VA,64194
+1,37,a31843d6-385a-5c59-b038-94b5eba2ad01,1201710,Seminole County School District,Seminole County School District,Sanford,FL,63934
+1,38,51e7d42d-a630-5cf9-a973-6490b80f14ae,3200480,Washoe County School District,Washoe County School District,Reno,NV,63559
+1,39,6d0c6484-b90b-57e2-9b5b-14dcafb51475,0612330,Elk Grove Unified School District,Elk Grove Unified School District,Elk Grove,CA,63421
+1,40,7bab61e9-f22e-55f3-856d-3b9f4e9a6b71,0622500,Long Beach Unified School District,Long Beach Unified School District,Long Beach,CA,62644
+1,41,c201ccc1-7a62-51bc-8af1-9c2f6b59444a,1201920,Volusia County School District,Volusia County School District,Deland,FL,61724
+1,42,5326f400-12ae-5ff2-916d-cd4cb752c853,0803450,Douglas County School District RE-1,Douglas County School District RE-1,Castle Rock,CO,61243
+1,43,48d7c015-1923-5d00-98e2-2f651f934b29,4702220,Knox County School District,Knox County School District,Knoxville,TN,60185
+1,44,520bae51-38e7-5c43-a256-0535b83a9a92,4900360,Granite School District,Granite School District,Salt Lake City,UT,59106
+1,45,acdf8b8d-e11a-5d25-970f-f59759452b71,4900420,Jordan School District,Jordan School District,West Jordan,UT,58788
+1,46,646b78fa-bad6-507c-aee4-9e2486c451ba,2400420,Howard County Public Schools,Howard County Public Schools,Ellicott City,MD,57565
+1,47,760ccc7e-4578-5079-af25-d12c4966ecb1,4832940,North East Independent School District,North East Independent School District,San Antonio,TX,56420
+1,48,22b04a52-4565-5f7f-80a6-d0cb71113365,4807710,Aldine Independent School District,Aldine Independent School District,Houston,TX,56419
+1,49,c940803b-74ae-53c1-a2e3-22e7cd974252,0404970,Mesa Unified District,Mesa Unified District,Mesa,AZ,55821
+1,50,6338b146-4837-5b52-9c49-7224ac4e4569,1302220,Forsyth County School District,Forsyth County School District,Cumming,GA,54864
+2,51,fbfd9ea9-4e3a-57cc-b98a-cb4c2609bbf7,1201230,Manatee County School District,Manatee County School District,Bradenton,FL,54215
+2,52,559964bc-a59e-565c-acb2-6cf97b72b630,4808700,Arlington Independent School District,Arlington Independent School District,Arlington,TX,53339
+2,53,1b8d6bb3-9fed-5c5f-aa61-16a1499022c3,3174820,Omaha Public Schools,Omaha Public Schools,Omaha,NE,52524
+2,54,4672af50-ae6c-5d19-b8e1-63ad5c448e2c,4825740,Klein Independent School District,Klein Independent School District,Klein,TX,52437
+2,55,31314edc-e0e3-5e1d-80dd-356ec22fa455,3701500,Forsyth County Schools,Forsyth County Schools,Winston Salem,NC,52430
+2,56,83f1ae9d-ee22-5fb1-9724-0c404baa4d49,1201740,St. Johns County School District,St. Johns County School District,St Augustine,FL,52324
+2,57,85957715-785c-5a6b-8ef2-47e63bd27937,4703690,Rutherford County School District,Rutherford County School District,Murfreesboro,TN,52127
+2,58,7a10db43-e60c-58d3-b542-ce67fd200cfe,0802910,Cherry Creek School District 5,Cherry Creek School District 5,Greenwood Village,CO,51980
+2,59,e0511a8f-31c4-537b-9cdd-adaf5820a515,1100030,District of Columbia Public Schools,District of Columbia Public Schools,Washington,DC,51904
+2,60,53506dc2-b1bc-5384-b3a7-22d36a4fc59f,1301230,Clayton County School District,Clayton County School District,Jonesboro,GA,51055
+2,61,85e31f28-d3f5-5d91-8dcb-d45893542036,4820340,Garland Independent School District,Garland Independent School District,Garland,TX,51021
+2,62,742a6c5b-2c48-55e9-b0d3-2b3cc76ac41c,5101890,Henrico County Public Schools,Henrico County Public Schools,Henrico,VA,50915
+2,63,c25a63e8-9ec3-5aef-8f17-6a030390a94f,4501440,Charleston County School District,Charleston County School District,Charleston,SC,50856
+2,64,29ca582e-5bc0-58a5-b5c0-bd032123c4f4,5307710,Seattle Public Schools,Seattle Public Schools,Seattle,WA,50773
+2,65,8baad00d-1e75-5419-b340-67242e8dd07a,0102370,Mobile County School District,Mobile County School District,Mobile,AL,49946
+2,66,23c132ae-fb46-5c2b-a795-3c4241f48617,1300120,Atlanta City School District,Atlanta City School District,Atlanta,GA,49945
+2,67,25760634-23ce-51c3-8872-2d9bbaa9445d,0609850,Corona-Norco Unified School District,Corona-Norco Unified School District,Norco,CA,49487
+2,68,fb63d415-b86a-5535-9795-388dd7e44cd7,1201770,St. Lucie County School District,St. Lucie County School District,Port St Lucie,FL,49308
+2,69,afba96a1-ccbd-58b4-a207-509a1470eaf6,3700011,Cumberland County Schools,Cumberland County Schools,Fayetteville,NC,49002
+2,70,0daa6c7a-c3e0-52c4-9c7b-27c1d1284015,0634410,San Francisco Unified School District,San Francisco Unified School District,San Francisco,CA,48902
+2,71,fb150eb9-5d7f-5346-9ee1-d358ac80bc19,2601103,Detroit Public Schools Community District,Detroit Public Schools Community District,Detroit,MI,48828
+2,72,45fcc527-fc17-5425-ae61-d41ba257c7df,4502490,Horry County School District,Horry County School District,Conway,SC,48662
+2,73,d769d325-e197-5ba6-a559-c6a7b668d3c7,4823910,Humble Independent School District,Humble Independent School District,Humble,TX,48502
+2,74,3c0b28d4-0852-5132-8bbe-b93d0d81ae45,1200330,Collier County School District,Collier County School District,Naples,FL,48252
+2,75,91f59bc3-b6c4-5025-b07d-a1ad9b87c570,4818300,El Paso Independent School District,El Paso Independent School District,El Paso,TX,48118
+2,76,c9c1af55-1886-5fae-be81-80b0564066a6,2400330,Frederick County Public Schools,Frederick County Public Schools,Frederick,MD,48054
+2,77,16f34169-7751-5d4c-9157-b97cb3e1af8b,1201050,Lake County School District,Lake County School District,Tavares,FL,47982
+2,78,04270ae4-2acc-5821-a3af-a6bb540fd70d,4827300,Lewisville Independent School District,Lewisville Independent School District,Lewisville,TX,47876
+2,79,22409c69-55c1-5b05-9f16-e2af106f100e,4838080,Round Rock Independent School District,Round Rock Independent School District,Round Rock,TX,46954
+2,80,710baf1c-4165-5e9a-bc2c-f465cded4973,2200840,Jefferson Parish School District,Jefferson Parish School District,Harvey,LA,46790
+2,81,f5d6da63-60f8-5bcb-80cc-96c3d19830c3,4826580,Lamar Consolidated Independent School District,Lamar Consolidated Independent School District,Rosenberg,TX,46786
+2,82,35dec133-d7da-5490-ae72-47a155b9dfeb,4840710,Socorro Independent School District,Socorro Independent School District,El Paso,TX,46668
+2,83,f0df283f-b2a1-5157-9836-80bb88bff842,4835100,Plano Independent School District,Plano Independent School District,Plano,TX,46612
+2,84,9661e139-24af-5fef-84d8-e988428d25c2,3904380,Columbus City School District,Columbus City School District,Columbus,OH,46515
+2,85,e133a600-7941-5402-8cde-d821599323c0,4834320,Pasadena Independent School District,Pasadena Independent School District,Pasadena,TX,46491
+2,86,5c21202a-f455-5f02-a26b-dce1626bda61,1201260,Marion County School District,Marion County School District,Ocala,FL,46352
+2,87,775a3106-bca9-571d-ae1e-7ce1eef4fb72,2502790,Boston School District,Boston School District,Roxbury,MA,46094
+2,88,62146f88-a2c0-5ff1-bfc3-fd04bc2ac95a,2012990,Wichita Unified School District 259,Wichita Unified School District 259,Wichita,KS,46073
+2,89,3b5d9c33-d898-5b3f-8969-8de28aeb721c,4701590,Hamilton County School District,Hamilton County School District,Chattanooga,TN,45981
+2,90,a9ba83b5-bdee-5592-af6c-7f4262cbbe4b,1201680,Sarasota County School District,Sarasota County School District,Sarasota,FL,45246
+2,91,b8349f0d-6e80-54b8-bd85-0e0459f693fe,3411340,Newark City School District,Newark City School District,Newark,NJ,44199
+2,92,d85f9723-a934-56b8-8307-0aace0f8fcf3,0634170,San Bernardino City Unified School District,San Bernardino City Unified School District,San Bernardino,CA,44192
+2,93,6dc96112-d1ab-508a-93c7-be843b774240,4838730,San Antonio Independent School District,San Antonio Independent School District,San Antonio,TX,44047
+2,94,a1ee30bf-880d-5ac2-9853-bdacfa82c79d,4900630,Nebo School District,Nebo School District,Spanish Fork,UT,43696
+2,95,e341b8a2-e165-5b67-a3a4-c37aec82a64c,0609030,Clovis Unified School District,Clovis Unified School District,Clovis,CA,43669
+2,96,f29cd4f6-560a-52c8-8d14-bfb97bd80935,4110040,Portland School District 1J,Portland School District 1J,Portland,OR,43357
+2,97,e8a73ae9-6593-5636-9a97-00db60ddc777,0619540,Kern High School District,Kern High School District,Bakersfield,CA,43237
+2,98,eeaf7817-2f1f-504d-abb3-9314a0ad347f,1302820,Henry County School District,Henry County School District,McDonough,GA,43012
+2,99,aa0c5298-9db4-5d01-90fb-32b5ffc8ab6a,4825660,Killeen Independent School District,Killeen Independent School District,Killeen,TX,42883
+2,100,07c35d52-0750-5c84-896f-cb9d3e13e968,4827030,Leander Independent School District,Leander Independent School District,Leander,TX,42608
+3,101,f125a7fc-da70-55bc-893d-a3af07882491,0200180,Anchorage School District,Anchorage School District,Anchorage,AK,42573
+3,102,a1f5906f-23a9-52ba-8373-c43ea4af85b8,3172840,Lincoln Public Schools,Lincoln Public Schools,Lincoln,NE,42301
+3,103,b8b1b85e-da10-52e2-bca5-51870d071c54,2101860,Fayette County School District,Fayette County School District,Lexington,KY,42138
+3,104,781a5779-9260-574b-80ac-76448fdf294b,1301110,Cherokee County School District,Cherokee County School District,Canton,GA,42031
+3,105,de8d8056-a397-5659-8552-837ba987ed37,4704530,Williamson County School District,Williamson County School District,Franklin,TN,41593
+3,106,a872e700-0e46-54e9-bbaa-cbe6505d367b,0401870,Chandler Unified District,Chandler Unified District,Chandler,AZ,41421
+3,107,1094d0d8-b27a-5530-8079-81964d2f5474,3704620,Union County Public Schools,Union County Public Schools,Monroe,NC,41404
+3,108,09cd3b1a-3f19-5d04-b9e9-49b386d85b53,4843650,United Independent School District,United Independent School District,Laredo,TX,40742
+3,109,ebb17b6c-3f09-5e43-92a8-0b8eb60b8376,5100810,Chesapeake City Public Schools,Chesapeake City Public Schools,Chesapeake,VA,40607
+3,110,f117fee7-d1c6-50fc-8f84-bb99ad587e37,0607440,Capistrano Unified School District,Capistrano Unified School District,San Juan Capistrano,CA,40358
+3,111,8c91ce43-3839-5a0f-bc0e-24e8d9e9098e,0408800,Tucson Unified District,Tucson Unified District,Tucson,AZ,40316
+3,112,ee8567e0-567e-5732-af57-6c90dc541d30,4814280,Clear Creek Independent School District,Clear Creek Independent School District,League City,TX,39684
+3,113,49fb0a07-aef6-543a-92b7-02e402af1604,0634620,San Juan Unified School District,San Juan Unified School District,Carmichael,CA,39446
+3,114,cde78f88-8aa2-554a-bc23-f2a4da407830,4501170,Berkeley County School District,Berkeley County School District,Moncks Corner,SC,39423
+3,115,417942a7-1efb-5ced-8cb6-37a1b29ae327,4703030,Clarksville-Montgomery County School System,Clarksville-Montgomery County School System,Clarksville,TN,39385
+3,116,dfb8f155-88be-55c9-b775-badda3663b19,2200540,East Baton Rouge Parish School District,East Baton Rouge Parish School District,Baton Rouge,LA,39320
+3,117,c1c23f25-262f-5d75-b7b9-db201e5a228f,1200300,Clay County School District,Clay County School District,Green Cove Springs,FL,39122
+3,118,f3e6dc0e-2caa-585d-b6ed-87e5e6c7b2e0,1602100,Meridian Joint School District 2,Meridian Joint School District 2,Meridian,ID,38740
+3,119,3ba541bf-ab4b-534b-bb7f-c3dba8210f8c,0802340,Adams-Arapahoe School District 28J,Adams-Arapahoe School District 28J,Aurora,CO,38702
+3,120,84887411-893c-5325-a49d-2722e5599c40,4807830,Alief Independent School District,Alief Independent School District,Houston,TX,38610
+3,121,fb5dee28-7cdb-59dd-9253-50df71b1df7e,2703180,Anoka-Hennepin Public School District,Anoka-Hennepin Public School District,Anoka,MN,38354
+3,122,6b2a69f6-b559-59dc-b467-3cf7114acdbe,0633150,Riverside Unified School District,Riverside Unified School District,Riverside,CA,38033
+3,123,dacb9b94-012a-5199-89fc-e1caae6879b5,0684500,Irvine Unified School District,Irvine Unified School District,Irvine,CA,38028
+3,124,987a593a-b8d5-53f2-9d60-6644a2e6e8ca,4110820,Salem-Keizer School District 24J,Salem-Keizer School District 24J,Salem,OR,37982
+3,125,e80919c6-dc59-5cf2-ac1e-509cbb3b3aa8,4830390,Mesquite Independent School District,Mesquite Independent School District,Mesquite,TX,37930
+3,126,d006d2bc-f065-5ec0-be7f-f6d3dc120c7e,0633840,Sacramento City Unified School District,Sacramento City Unified School District,Sacramento,CA,37913
+3,127,37f4052a-c43d-5faa-88a4-556c221dfc4d,4101920,Beaverton School District 48J,Beaverton School District 48J,Beaverton,OR,37891
+3,128,312f6c03-6209-50db-9fcc-d2cc53a2c294,2400390,Harford County Public Schools,Harford County Public Schools,Bel Air,MD,37771
+3,129,a9fd6694-3d39-51e5-af69-1b72053e8d10,3702370,Johnston County Schools,Johnston County Schools,Smithfield,NC,37320
+3,130,3781b083-da9e-5a0e-b493-f8b555deb6f9,0614880,Garden Grove Unified School District,Garden Grove Unified School District,Garden Grove,CA,37009
+3,131,2daf211b-b8a1-5fea-8d4d-0f863e701fa3,4837020,Richardson Independent School District,Richardson Independent School District,Richardson,TX,36971
+3,132,6c052d9d-6f50-5937-b2c4-99d4a60f0e74,4901140,Washington School District,Washington School District,St. George,UT,36961
+3,133,233b85bd-dad0-56c1-ba34-4952b27a0fc2,1200510,Escambia County School District,Escambia County School District,Pensacola,FL,36768
+3,134,59ce480d-c773-51b2-899c-960f44bddb17,4811680,Brownsville Independent School District,Brownsville Independent School District,Brownsville,TX,36140
+3,135,955f8e62-801a-5171-baba-5d76e6394bba,0635310,Santa Ana Unified School District,Santa Ana Unified School District,Santa Ana,CA,36036
+3,136,d9b836a5-758d-5799-9fb3-78b4b0988cb4,2201650,St. Tammany Parish School District,St. Tammany Parish School District,Covington,LA,35956
+3,137,18b314ea-9f06-5cbd-894c-98b971870bf9,3700530,Cabarrus County Schools,Cabarrus County Schools,Concord,NC,35772
+3,138,fb5d2e78-7ef0-5e7a-ad50-f65389b40b95,1301020,Chatham County School District,Chatham County School District,Savannah,GA,35744
+3,139,89edf734-97e4-5730-b4b9-cfcbe8dd6264,0101920,Jefferson County School District,Jefferson County School District,Birmingham,AL,35444
+3,140,50d7146f-b08f-5418-8294-0bfc62c19170,4828920,Mansfield Independent School District,Mansfield Independent School District,Mansfield,TX,35354
+3,141,3775c978-9987-56e3-bcca-84dcbd63e3a7,2801320,DeSoto County School District,DeSoto County School District,Hernando,MS,34934
+3,142,7343eb97-a05f-5b41-a37b-f5813213536f,3904375,Cincinnati City School District,Cincinnati City School District,Cincinnati,OH,34531
+3,143,1c9e5ae3-76df-5ee0-a00e-8ef4648f4a58,0806900,Adams 12 Five Star Schools,Adams 12 Five Star Schools,Thornton,CO,34466
+3,144,f94f4064-7a5f-5f73-9743-c26a93110822,0406250,Peoria Unified School District,Peoria Unified School District,Glendale,AZ,34436
+3,145,bd7e52c9-dd23-5a48-a8f8-8ae75d94bbfe,0631530,Poway Unified School District,Poway Unified School District,San Diego,CA,34405
+3,146,90b77652-5616-5498-acd0-478f7082ce4d,0638640,Sweetwater Union High School District,Sweetwater Union High School District,Chula Vista,CA,34282
+3,147,14f55c76-ba33-51bf-9806-aa000ac8d408,4846680,Ysleta Independent School District,Ysleta Independent School District,El Paso,TX,34062
+3,148,0d3b993d-e5f8-536f-af36-24f0a31e3c5a,1713710,School District U-46,School District U-46,Elgin,IL,34036
+3,149,e2d9510c-7595-5369-8398-f05ccf67a882,0628050,Oakland Unified School District,Oakland Unified School District,Oakland,CA,33838
+3,150,e838ae91-c090-5f71-8814-0e810b2a755a,4818000,Ector County Independent School District,Ector County Independent School District,Odessa,TX,33663
+4,151,15d7728d-5916-5983-b209-d38421c782aa,0638010,Stockton Unified School District,Stockton Unified School District,Stockton,CA,33648
+4,152,f310ec52-51c4-5f49-afed-8a77efeb971e,4030240,Tulsa Public Schools,Tulsa Public Schools,Tulsa,OK,33617
+4,153,203b2def-dbd0-5eb2-a779-2d1d5f93b945,4841220,Spring Independent School District,Spring Independent School District,Houston,TX,33590
+4,154,c4af4de5-8177-5134-8dfe-d930b8c9ac96,4818180,Edinburg Consolidated Independent School District,Edinburg Consolidated Independent School District,Edinburg,TX,33343
+4,155,883c0aec-d7c9-5489-8339-b5f77f4fcfa2,4816740,Denton Independent School District,Denton Independent School District,Denton,TX,33329
+4,156,4afdddb6-feae-5487-8ad3-79861fdb0116,3904378,Cleveland Municipal School District,Cleveland Municipal School District,Cleveland,OH,33143
+4,157,c535ec83-7594-5fdc-8958-8b5cdd8df89d,0614400,Fremont Unified School District,Fremont Unified School District,Fremont,CA,33134
+4,158,f7e43d32-dd50-5753-b6b1-2549cf5a03b9,4815270,Corpus Christi Independent School District,Corpus Christi Independent School District,Corpus Christi,TX,33103
+4,159,f87b2e79-f6c8-59c8-b36b-ee4a1989296f,2733840,St. Paul Public School District,St. Paul Public School District,Saint Paul,MN,33041
+4,160,2a19d93a-0ce5-564a-bd37-b41a3454273f,0613920,Fontana Unified School District,Fontana Unified School District,Fontana,CA,32794
+4,161,df2545a6-fb2b-52df-ad0c-91eeed7f1d61,4022770,Oklahoma City Public Schools,Oklahoma City Public Schools,Oklahoma City,OK,32750
+4,162,a97d2845-1f61-5d4a-8707-cc61784ad2fb,4900142,Canyons School District,Canyons School District,Sandy,UT,32688
+4,163,eeeecef0-9ddd-59d9-9c92-a9ab8084e6bc,4841100,Spring Branch Independent School District,Spring Branch Independent School District,Houston,TX,32668
+4,164,b313150e-1f79-5755-8757-2e8a98be5f12,0407750,Deer Valley Unified District,Deer Valley Unified District,Phoenix,AZ,32265
+4,165,ff421fc7-81ed-52bc-87d3-2f50edc7beb8,2200300,Caddo Parish School District,Caddo Parish School District,Shreveport,LA,32165
+4,166,7170fb50-7ce2-53f0-a109-cfb0ffd43e57,4833180,Northwest Independent School District,Northwest Independent School District,Justin,TX,32098
+4,167,dbfbbd46-636e-59cb-8980-297f3d57bdc7,4901200,Weber School District,Weber School District,Ogden,UT,32054
+4,168,5443ff64-1b5a-53d8-9aa3-89113245bb67,1201380,Okaloosa County School District,Okaloosa County School District,Fort Walton Beach,FL,32047
+4,169,7ad86bda-bc7a-5567-9287-ff54f6dbd1df,4825260,Keller Independent School District,Keller Independent School District,Keller,TX,32042
+4,170,0b9dfe8d-4075-5cc2-b065-11ebfd0bf44b,0100270,Baldwin County School District,Baldwin County School District,Bay Minette,AL,31965
+4,171,03dcd274-fcfe-5a49-9c98-703a9e4cbf31,3701260,Durham Public Schools,Durham Public Schools,Durham,NC,31865
+4,172,c40416c0-eabb-5f77-b19b-9ed2a834166e,5103660,Stafford County Public Schools,Stafford County Public Schools,Stafford,VA,31812
+4,173,6c6e827b-d82a-52b4-9efb-6edfc3231d30,4836000,Prosper Independent School District,Prosper Independent School District,Prosper,TX,31651
+4,174,07aaf686-28bb-5bc9-b38a-0a925005f0b2,1201110,Leon County School District,Leon County School District,Tallahassee,FL,31645
+4,175,5d69a082-3008-5508-b137-4ba2f52f775b,0805370,St. Vrain Valley School District RE 1J,St. Vrain Valley School District RE 1J,Longmont,CO,31607
+4,176,d2316116-73f5-5b88-9faf-25074d626ec9,0403400,Gilbert Unified District,Gilbert Unified District,Gilbert,AZ,31560
+4,177,0ae30857-5dc9-5f4f-b16e-03cf4ee6af65,1304020,Paulding County School District,Paulding County School District,Dallas,GA,31426
+4,178,f1b46b41-35a0-5911-b99b-6bf4987c04db,3701620,Gaston County Schools,Gaston County Schools,Gastonia,NC,30995
+4,179,98a3bce0-adba-5322-b851-c6d2b185897e,5304230,Lake Washington School District,Lake Washington School District,Redmond,WA,30986
+4,180,fe640ad3-ff45-5031-a3b2-07b66d29494a,1302880,Houston County School District,Houston County School District,Perry,GA,30939
+4,181,55ddc69b-4655-51ca-8722-fae53c8957fd,0625800,Moreno Valley Unified School District,Moreno Valley Unified School District,Moreno Valley,CA,30926
+4,182,33259c15-b414-583a-b637-ed2cac02f6b2,4824420,Irving Independent School District,Irving Independent School District,Irving,TX,30767
+4,183,b8ddbac5-478b-5fc4-9613-3a10474158ba,4704020,Sumner County School District,Sumner County School District,Gallatin,TN,30719
+4,184,19f40a97-ce3d-5023-895a-733a7520e0b2,3605850,Buffalo City School District,Buffalo City School District,Buffalo,NY,30077
+4,185,bc1de4fe-f0b2-590c-b3b1-70c8019ebfb5,1908970,Des Moines Independent Community School District,Des Moines Independent Community School District,Des Moines,IA,30048
+4,186,c0223513-b42e-5aee-80bd-79903dcb0048,4808090,Alvin Independent School District,Alvin Independent School District,Alvin,TX,30038
+4,187,659d394c-c9c5-5511-b834-207c965cf075,2721240,Minneapolis Public School District,Minneapolis Public School District,Minneapolis,MN,29928
+4,188,44306bf9-61ae-58d4-96d9-9e7bb4083788,4814730,Comal Independent School District,Comal Independent School District,New Braunfels,TX,29839
+4,189,4ca9f392-8f8c-5d75-adb5-75a3a5541364,4830570,Midland Independent School District,Midland Independent School District,Midland,TX,29651
+4,190,8f0055d9-5043-5ab4-a741-80301062279f,1201650,Santa Rosa County School District,Santa Rosa County School District,Milton,FL,29624
+4,191,8ab96905-6284-5ea8-ad17-34edda955d84,4834860,Pharr-San Juan-Alamo Independent School District,Pharr-San Juan-Alamo Independent School District,Pharr,TX,29613
+4,192,dd7ed366-9de5-571a-abdb-04b4e463a8f3,0626370,Mount Diablo Unified School District,Mount Diablo Unified School District,Concord,CA,29494
+4,193,e3e6a97c-e101-56ba-8ed1-d729613e2c8c,2200870,Lafayette Parish School District,Lafayette Parish School District,Lafayette,LA,29396
+4,194,3c1b90d8-36f9-5dcb-95cd-571e81062caa,0803990,Poudre School District R-1,Poudre School District R-1,Fort Collins,CO,29381
+4,195,e231fa0f-b8c1-5c33-892f-309e0ccc3262,1303870,Muscogee County School District,Muscogee County School District,Columbus,GA,29362
+4,196,3c738753-6d44-5342-a05a-b84e0de5913e,4808130,Amarillo Independent School District,Amarillo Independent School District,Amarillo,TX,29321
+4,197,c47d9087-fcdc-5f5d-8e59-2134c3b49d6e,2732390,Rosemount-Apple Valley-Eagan,Rosemount-Apple Valley-Eagan,Rosemount,MN,29224
+4,198,0e8b360b-70a2-5e8b-8ffc-76e21d25bea4,1304380,Richmond County School District,Richmond County School District,Augusta,GA,28923
+4,199,a2e5a1b2-24a2-5722-93f1-603af75f8b26,5308250,Spokane Public Schools,Spokane Public Schools,Spokane,WA,28853
+4,200,c4586a4a-b7bb-541c-b008-4fce4f2369b4,5308700,Tacoma Public Schools,Tacoma Public Schools,Tacoma,WA,28847
+5,201,b0319ea2-39a7-5e73-95f8-907362bea14a,4503390,Richland School District 2,Richland School District 2,Columbia,SC,28841
+5,202,4f2452be-a417-5b4c-b0b2-992cc9d5bde6,0641160,Visalia Unified School District,Visalia Unified School District,Visalia,CA,28809
+5,203,0bc85a60-ede7-5e87-a807-1b2c7542aa53,0635130,San Ramon Valley Unified School District,San Ramon Valley Unified School District,Danville,CA,28615
+5,204,12b89ddc-2d24-5074-a483-201713271619,1301410,Columbia County School District,Columbia County School District,Evans,GA,28566
+5,205,26517755-321c-56d2-843c-935c4f5460b3,1803630,Fort Wayne Community Schools,Fort Wayne Community Schools,Fort Wayne,IN,28549
+5,206,393bd47a-aaef-5855-ad20-5b74975ae30a,1734510,Rockford School District 205,Rockford School District 205,Rockford,IL,28467
+5,207,2b6fba28-2a31-556f-8233-45a86b3ec6cf,3404590,Elizabeth City School District,Elizabeth City School District,Elizabeth,NJ,28454
+5,208,ebe1c667-15db-5a5d-8c7f-8bd88a59e228,0603630,Bakersfield City School District,Bakersfield City School District,Bakersfield,CA,28365
+5,209,d39674e4-421b-5204-bbeb-00c7037a5827,1200030,Alachua County School District,Alachua County School District,Gainesville,FL,28204
+5,210,62f040f5-b8a5-518f-adf2-480ea5fee5e4,2010140,Olathe Unified School District 233,Olathe Unified School District 233,Olathe,KS,28195
+5,211,da1757a0-6db2-5e00-add2-ebefc663a422,2400270,Charles County Public Schools,Charles County Public Schools,La Plata,MD,28162
+5,212,72570d7e-9711-58b9-9884-45ead76bfe80,0802490,Boulder Valley School District RE-2,Boulder Valley School District RE-2,Boulder,CO,27988
+5,213,f4c95ebc-9de0-5eaf-b76c-39825ed129f3,5100270,Arlington County Public Schools,Arlington County Public Schools,Arlington,VA,27950
+5,214,1879d49d-fcdc-58ba-83ec-258e0237e87c,2200330,Calcasieu Parish School District,Calcasieu Parish School District,Lake Charles,LA,27851
+5,215,8ed7f313-d902-5f02-a935-1a7bab618e03,1200090,Bay County School District,Bay County School District,Panama City,FL,27558
+5,216,9001c196-394a-55a4-b269-dd33f2bb3356,3703450,Onslow County Schools,Onslow County Schools,Jacksonville,NC,27551
+5,217,50f54e27-d263-5e36-8f83-ec19c77554b2,1302610,Hall County School District,Hall County School District,Gainesville,GA,27257
+5,218,2c697303-7109-52a8-be02-32d058315cd9,0622230,Lodi Unified School District,Lodi Unified School District,Lodi,CA,27109
+5,219,537fd870-b6ce-5657-b1fe-a71ffe557a44,4502700,Lexington School District 1,Lexington School District 1,Lexington,SC,27074
+5,220,8c5a9ea4-33b9-5f78-8b7d-ff3624bd26a2,5102670,Norfolk City Public Schools,Norfolk City Public Schools,Norfolk,VA,26807
+5,221,60242893-bcee-5ad0-bb5f-57ea4c1b1c69,2011640,Shawnee Mission Public Schools Unified School District,Shawnee Mission Public Schools Unified School District,Shawnee Mission,KS,26513
+5,222,95837431-16b5-5fb9-852d-2289b1d033a3,2201020,Livingston Parish School District,Livingston Parish School District,Livingston,LA,26499
+5,223,e4dfa192-d86f-53a9-a1e3-56fd688a5994,0102430,Montgomery County School District,Montgomery County School District,Montgomery,AL,26395
+5,224,9a8b5730-8b3e-5130-8486-fa566349477d,0600028,Temecula Valley Unified School District,Temecula Valley Unified School District,Temecula,CA,26298
+5,225,40721643-a162-5d64-9a8e-49fa1e55e27c,0405930,Paradise Valley Unified District,Paradise Valley Unified District,Phoenix,AZ,26183
+5,226,e0ddb16a-938f-599d-b49c-69f2a215eb7f,2400210,Carroll County Public Schools,Carroll County Public Schools,Westminster,MD,26141
+5,227,c9fbbdd9-27c7-5365-ab60-cfd44790debf,4821420,Grand Prairie Independent School District,Grand Prairie Independent School District,Grand Prairie,TX,26129
+5,228,ae2e0545-b27e-540e-9982-5ea66dddfd65,0602630,Anaheim Union High School District,Anaheim Union High School District,Anaheim,CA,26120
+5,229,f283ae6f-7ebe-5cff-9ca6-422e8072ce94,1741690,Indian Prairie Community Unit School District 204,Indian Prairie Community Unit School District 204,Aurora,IL,26108
+5,230,9d0baa22-f477-5351-872b-2c31e8b0d802,3407830,Jersey City School District,Jersey City School District,Jersey City,NJ,25951
+5,231,0917ab69-c23e-55a3-9e3d-cd8fddbaf4a8,4502010,Dorchester School District 2,Dorchester School District 2,Summerville,SC,25928
+5,232,5e790570-5bce-5c5e-932e-6de6ec05c326,5102640,Newport News City Public Schools,Newport News City Public Schools,Newport News,VA,25882
+5,233,101c7bb7-047a-595e-9f35-c27528d39f07,0406330,Phoenix Union High School District,Phoenix Union High School District,Phoenix,AZ,25800
+5,234,5d090454-21f7-5f89-8c27-30d8fbe58c69,4010590,Edmond Public Schools,Edmond Public Schools,Edmond,OK,25746
+5,235,d1798090-98e0-558b-abbc-7ce9664297d0,0803870,School District 49,School District 49,Peyton,CO,25689
+5,236,01f5d599-914a-5e08-acc9-d0b1e5a980ee,0611110,Desert Sands Unified School District,Desert Sands Unified School District,La Quinta,CA,25615
+5,237,af54e182-8c10-5904-a387-ce2dd1075036,0801920,Academy School District 20,Academy School District 20,Colorado Springs,CO,25607
+5,238,da2ec5d1-9830-589f-b4df-7b5eb6fe878c,0608460,Chino Valley Unified School District,Chino Valley Unified School District,Chino,CA,25579
+5,239,975e0e8f-aff0-54b1-961c-18d9e0a90a73,1301860,Douglas County School District,Douglas County School District,Douglasville,GA,25521
+5,240,c58f83ac-c30d-5a3e-98a6-92706d8a378e,4834830,Pflugerville Independent School District,Pflugerville Independent School District,Pflugerville,TX,25477
+5,241,997be469-3088-550a-bf85-e0ed0b3fca43,5303960,Kent School District,Kent School District,Kent,WA,25358
+5,242,994da333-028c-5ba6-9649-fb5acca68a4f,0615240,Glendale Unified School District,Glendale Unified School District,Glendale,CA,25329
+5,243,71b2b469-b6ef-545b-b975-a4bee50def5e,2634470,Utica Community Schools,Utica Community Schools,Sterling Heights,MI,25297
+5,244,85f0ebfe-f7d9-5b6a-b8a1-9c7df141a17d,0623610,Manteca Unified School District,Manteca Unified School District,Manteca,CA,25248
+5,245,bcd814d5-748d-51aa-b04d-142cde338bae,0632550,West Contra Costa Unified School District,West Contra Costa Unified School District,Richmond,CA,25244
+5,246,65652674-c028-59ad-8a5d-e022bacba3fc,5508520,Madison Metropolitan School District,Madison Metropolitan School District,Madison,WI,25155
+5,247,4c642e8f-edaf-50bf-9407-9ad598131ac1,3703330,New Hanover County Schools,New Hanover County Schools,Wilmington,NC,25155
+5,248,f3645c1c-a264-5ad5-8eba-242e037d96eb,4666270,Sioux Falls School District 49-5,Sioux Falls School District 49-5,Sioux Falls,SD,25051
+5,249,82777ada-f38a-5f8f-9d6c-1cde5a36e9fd,0601332,Twin Rivers Unified School District,Twin Rivers Unified School District,McClellan,CA,24849
+5,250,e76a7904-7278-5246-beac-76d4639ee32c,2513230,Worcester School District,Worcester School District,Worcester,MA,24778
+6,251,0a46f0ab-3ac8-562b-b835-89d5d23e6406,4822170,Hallsville Independent School District,Hallsville Independent School District,Hallsville,TX,24602
+6,252,b9ed7f79-2b78-5d51-a1f1-9ffafd903817,1731740,Plainfield School District 202,Plainfield School District 202,Plainfield,IL,24556
+6,253,5d7b5981-6e82-559b-a6b3-eac261353f32,3700012,Pitt County Schools,Pitt County Schools,Greenville,NC,24470
+6,254,68eae3f4-e1e1-5591-a79c-77f7462d57de,0634590,San Jose Unified School District,San Jose Unified School District,San Jose,CA,24453
+6,255,0865dc62-79cd-5da9-a903-a4b4301b0f71,4800010,Hays Consolidated Independent School District,Hays Consolidated Independent School District,Kyle,TX,24330
+6,256,a266be57-0f8a-546b-9eec-cdec2b57ff62,3631920,Yonkers City School District,Yonkers City School District,Yonkers,NY,24304
+6,257,b020bfa1-2543-5852-8c27-0d9192f65026,3412690,Paterson City School District,Paterson City School District,Paterson,NJ,24291
+6,258,74accc1b-a97c-5302-8be1-21a24ad67714,2928860,Springfield R-XII School District,Springfield R-XII School District,Springfield,MO,24285
+6,259,c782e91e-d578-54cc-9aff-ed665bda343b,0101800,Huntsville City School District,Huntsville City School District,Huntsville,AL,24222
+6,260,59777466-d479-57bf-9ea7-78d0b8cd3958,4813050,Carrollton-Farmers Branch Independent School District,Carrollton-Farmers Branch Independent School District,Carrollton,TX,24165
+6,261,279f2820-6ba4-5943-9808-7f5222d6bbea,3904676,Olentangy Local School District,Olentangy Local School District,Lewis Center,OH,24133
+6,262,5b3a8d80-3fee-5cf1-9c35-1cab1b82c480,4828500,Lubbock Independent School District,Lubbock Independent School District,Lubbock,TX,24133
+6,263,70fd4b31-8976-54a9-95bb-df23e0064338,0802580,School District 27J,School District 27J,Brighton,CO,24046
+6,264,f619bf34-0b82-5589-8857-5a269ef0024d,5103640,Spotsylvania County Public Schools,Spotsylvania County Public Schools,Fredericksburg,VA,24036
+6,265,5ad51f81-7de8-5908-a586-a5527e40338c,4821150,Goose Creek Consolidated Independent School District,Goose Creek Consolidated Independent School District,Baytown,TX,24032
+6,266,a08cdac0-8321-5f3c-af30-2437192d5b09,4817700,Eagle Mountain-Saginaw Independent School District,Eagle Mountain-Saginaw Independent School District,Fort Worth,TX,23982
+6,267,ca4bd9a0-83e3-5fce-a48f-48d16561f61e,0628650,Orange Unified School District,Orange Unified School District,Orange,CA,23823
+6,268,811ec806-cd9f-582e-b6b2-ee11e1f8933c,2200090,Ascension Parish School District,Ascension Parish School District,Donaldsonville,LA,23743
+6,269,025d7c15-4577-51a1-8d57-d10ee159b203,1200810,Hernando County School District,Hernando County School District,Brooksville,FL,23734
+6,270,c0890b85-f4a8-50bd-93f9-dc6fc0517c37,2511130,Springfield School District,Springfield School District,Springfield,MA,23670
+6,271,8fd36608-2956-574e-bcc2-7e9b940afdc2,4020250,Moore Public Schools,Moore Public Schools,Moore,OK,23567
+6,272,6f0d0204-36a4-5c4b-baee-fa6f3bafaf21,4824990,Judson Independent School District,Judson Independent School District,San Antonio,TX,23539
+6,273,151753ba-16f5-500a-be02-565a1b6b817d,4829850,McKinney Independent School District,McKinney Independent School District,McKinney,TX,23296
+6,274,c8c467a6-cd07-5bfa-bb70-feb6254fd151,4824060,Hurst-Euless-Bedford Independent School District,Hurst-Euless-Bedford Independent School District,Bedford,TX,23262
+6,275,141acd1b-f254-5973-8c61-4de928d20e84,3173740,Millard Public Schools,Millard Public Schools,Omaha,NE,23253
+6,276,f9f6c474-b093-585e-9478-f254f21cf19a,0600014,Hesperia Unified School District,Hesperia Unified School District,Hesperia,CA,23209
+6,277,a00fdd2d-7fcd-5aa6-9535-b160caa717a0,5400600,Kanawha County School District,Kanawha County School District,Charleston,WV,23085
+6,278,2dd07e69-10c0-52c7-91ac-949a73420e6a,0402690,Dysart Unified District,Dysart Unified District,Surprise,AZ,23078
+6,279,ef9c8073-66b5-5e14-a173-efd727e8c8c5,0632370,Rialto Unified School District,Rialto Unified School District,Rialto,CA,23073
+6,280,f438eccc-cc9c-5c43-a77b-ad1da2aefc20,1301500,Coweta County School District,Coweta County School District,Newnan,GA,23064
+6,281,4cf74d53-753b-59b9-b044-2e747591302e,5306960,Puyallup School District,Puyallup School District,Puyallup,WA,23026
+6,282,57f98718-a158-5f1d-b7c7-4b2c83a5b7f9,4826130,La Joya Independent School District,La Joya Independent School District,La Joya,TX,22942
+6,283,22f3ed24-313b-5dcd-b447-29f05361acbc,0804410,Greeley School District 6,Greeley School District 6,Greeley,CO,22917
+6,284,d56284a6-77cb-5cdd-af57-c60133f9473a,4500720,Aiken County School District,Aiken County School District,Aiken,SC,22916
+6,285,83f5ceb7-969a-56c4-9778-4bdd7d8f7805,4842960,Tomball Independent School District,Tomball Independent School District,Tomball,TX,22913
+6,286,48b676c9-f8ae-59e5-ae85-79ed76b815d1,0616920,Hemet Unified School District,Hemet Unified School District,Hemet,CA,22891
+6,287,43cf9152-3c1c-5fb4-ac7b-81d24f45efa5,3501500,Las Cruces Public Schools,Las Cruces Public Schools,Las Cruces,NM,22782
+6,288,e5430df0-3c49-55b9-b299-252319da2303,2400660,Washington County Public Schools,Washington County Public Schools,Hagerstown,MD,22772
+6,289,1d20fb52-3a59-57e8-a6dc-3d6ad60aa438,5305910,Northshore School District,Northshore School District,Bothell,WA,22735
+6,290,e6e42ed8-1f28-5cd5-aa0e-7a8c2c77f8d0,0630660,Placentia-Yorba Linda Unified School District,Placentia-Yorba Linda Unified School District,Placentia,CA,22698
+6,291,0e392b40-d091-52c9-a372-45cad8f3b103,0633860,Saddleback Valley Unified School District,Saddleback Valley Unified School District,Mission Viejo,CA,22691
+6,292,b3258caa-4a31-5063-aab8-95d26f188844,0512660,Springdale School District,Springdale School District,Springdale,AR,22685
+6,293,bd83ce7d-f769-53bb-8f7f-2f68647b9b0b,3700030,Alamance-Burlington Schools,Alamance-Burlington Schools,Burlington,NC,22661
+6,294,0e4d9358-7dba-5c3c-81fb-aa23d2cccd33,0611460,Downey Unified School District,Downey Unified School District,Downey,CA,22462
+6,295,4374edf2-3471-5d50-9b03-86182dd054d9,3700450,Buncombe County Schools,Buncombe County Schools,Asheville,NC,22452
+6,296,253b9ed0-488d-5def-b7ba-871bef1b298f,4810230,Birdville Independent School District,Birdville Independent School District,Haltom City,TX,22267
+6,297,3c6b7746-9983-513d-99cc-71743b636e43,2012000,Blue Valley Unified School District 229,Blue Valley Unified School District 229,Overland Park,KS,22252
+6,298,f333cc12-6a5b-5ec3-ab57-54b57c692328,5302820,Federal Way School District,Federal Way School District,Federal Way,WA,22250
+6,299,a2126e51-c6cd-5113-b62f-78d7119385a0,0608610,Chula Vista Elementary School District,Chula Vista Elementary School District,Chula Vista,CA,22245
+6,300,a11522ca-b7f7-588e-9831-3ed111c4ab81,0803060,Colorado Springs School District 11,Colorado Springs School District 11,Colorado Springs,CO,22227
+7,301,9b230af2-4736-5ba2-a22f-4f7b946b26c4,2200270,Bossier Parish School District,Bossier Parish School District,Benton,LA,22224
+7,302,b7a3e6ff-dc2b-5acf-b38e-ee908c50a9e8,1600360,Boise City Independent School District 1,Boise City Independent School District 1,Boise,ID,22134
+7,303,00345993-1743-5bb8-8682-3a1c06c8961d,0608160,Chaffey Joint Union High School District,Chaffey Joint Union High School District,Ontario,CA,22116
+7,304,d1efcc3a-15cc-556c-80cb-fab08a21901a,0639420,Torrance Unified School District,Torrance Unified School District,Torrance,CA,22023
+7,305,b4fbcc41-ec16-5ab3-8d9d-1f4753a6bff8,3624750,Rochester City School District,Rochester City School District,Rochester,NY,21990
+7,306,30a8658e-897c-53af-a824-dca0f5b18deb,3904480,South-Western City School District,South-Western City School District,Grove City,OH,21924
+7,307,bb4c44c6-2882-5d37-8041-6a9ed3472c88,4503360,Richland School District 1,Richland School District 1,Columbia,SC,21814
+7,308,67de5452-39ca-504e-9bb9-dd1730d080ed,5309270,Vancouver Public Schools,Vancouver Public Schools,Vancouver,WA,21783
+7,309,1573e717-d819-54de-a661-36cf623bdb75,0613890,Folsom-Cordova Unified School District,Folsom-Cordova Unified School District,Rancho Cordova,CA,21780
+7,310,70d70407-9633-5e4b-80c2-5d7d7fc56adf,0600029,Murrieta Valley Unified School District,Murrieta Valley Unified School District,Murrieta,CA,21712
+7,311,c6914660-08e0-5225-a65f-f408970a34c5,5302700,Evergreen School District (Clark),Evergreen School District (Clark),Vancouver,WA,21603
+7,312,5ff853c3-6943-5b13-bfee-e9b53eeaa454,1803450,Evansville-Vanderburgh School Corporation,Evansville-Vanderburgh School Corporation,Evansville,IN,21589
+7,313,d814b69b-cdaf-562d-8117-d0895139ee61,2007950,Kansas City Unified School District 500,Kansas City Unified School District 500,Kansas City,KS,21538
+7,314,9d1b2d5f-7464-53b1-9ffa-dc1b84fa1d43,5300480,Bethel School District,Bethel School District,Spanaway,WA,21450
+7,315,cbc5ab1b-ef72-5d8a-be98-a73917442c8f,0640150,Tustin Unified School District,Tustin Unified School District,Tustin,CA,21342
+7,316,0eaba12f-000a-5861-bd9d-9755af6f72f7,2201290,Rapides Parish School District,Rapides Parish School District,Alexandria,LA,21340
+7,317,069c6cf5-0614-5cb7-af4c-cc112a86f43a,1300420,Bibb County School District,Bibb County School District,Macon,GA,21334
+7,318,9d6c12ac-3abb-59d7-8c23-7be2cd6ed6b8,3703930,Robeson County Schools,Robeson County Schools,Lumberton,NC,21301
+7,319,0f6199be-c5e7-5602-bb8c-2bd70496da58,3904490,Toledo City School District,Toledo City School District,Toledo,OH,21290
+7,320,dec09711-93ae-50e3-a097-7e36a9f28094,2922800,North Kansas City 74 School District,North Kansas City 74 School District,Kansas City,MO,21252
+7,321,0307aee5-1f26-57c2-b5e5-93e036b482d1,0602820,Antelope Valley Union Joint High School District,Antelope Valley Union Joint High School District,Lancaster,CA,21231
+7,322,771e73ff-9b63-5953-abe3-51c456796914,2725200,Osseo Public School District,Osseo Public School District,Maple Grove,MN,21138
+7,323,3490db1e-3844-5ea9-b71a-b1c9f396fb48,0509000,Little Rock School District,Little Rock School District,Little Rock,AR,21086
+7,324,2a4eb895-e470-506b-9900-c8f5f56fb251,1810650,Hamilton Southeastern Schools,Hamilton Southeastern Schools,Fishers,IN,21062
+7,325,b6ea1c24-0a3c-5cca-85b4-5edba170c3f5,1804770,Indianapolis Public Schools,Indianapolis Public Schools,Indianapolis,IN,21055
+7,326,870588f0-6cd1-504e-b913-fbef1f304b37,4501110,Beaufort County School District,Beaufort County School District,Beaufort,SC,21050
+7,327,866f8114-d81b-53f2-a005-3ff35b31d212,3702310,Iredell-Statesville Schools,Iredell-Statesville Schools,Statesville,NC,21017
+7,328,2d6aa18b-f199-5a67-bead-7f91b8b442fd,5103240,Richmond City Public Schools,Richmond City Public Schools,Richmond,VA,20962
+7,329,4c921d8f-729f-5257-b0b1-8cfcb2014f95,5302400,Edmonds School District,Edmonds School District,Lynnwood,WA,20955
+7,330,39bafb25-9179-5bb5-a090-403949ef0baa,0100390,Birmingham City School District,Birmingham City School District,Birmingham,AL,20954
+7,331,ba786a42-929d-5fe1-abfb-feb9b6391417,4820250,Galena Park Independent School District,Galena Park Independent School District,Houston,TX,20862
+7,332,03bcaf14-4f29-5ea0-9ad7-8e2e4c3791fc,4834440,Pearland Independent School District,Pearland Independent School District,Pearland,TX,20862
+7,333,314c6309-f9ce-57cc-90a6-cd26b747928f,4807890,Allen Independent School District,Allen Independent School District,Allen,TX,20838
+7,334,059ea060-6aae-5da4-89c1-e2ed870e6922,1708550,Community Unit School District 300,Community Unit School District 300,Algonquin,IL,20705
+7,335,0a9a4b6e-1c59-591d-be42-8e3f1315bb02,4704550,Wilson County School District,Wilson County School District,Lebanon,TN,20703
+7,336,d91e93b2-eba6-5012-899a-2cbac6da45e9,0102220,Madison County School District,Madison County School District,Huntsville,AL,20691
+7,337,6526966a-f137-513b-acca-9c7c2e570e03,0407570,Scottsdale Unified District,Scottsdale Unified District,Scottsdale,AZ,20682
+7,338,7918c23a-074a-5ac7-82e9-c33633731f3d,0103030,Shelby County School District,Shelby County School District,Columbiana,AL,20638
+7,339,4e0c003e-7b6a-5ca2-854e-f1893dbb5089,0600027,Lake Elsinore Unified School District,Lake Elsinore Unified School District,Lake Elsinore,CA,20559
+7,340,767f9d17-6f8a-5371-bbc9-d3cbad7d9fa4,2100510,Boone County School District,Boone County School District,Florence,KY,20514
+7,341,df2fa9de-7c6c-580f-a95a-e50f9dc3b241,0642510,William S. Hart Union High School District,William S. Hart Union High School District,Santa Clarita,CA,20493
+7,342,61cd05ec-2c8e-53e6-a610-8150bfc7398d,5302670,Everett School District,Everett School District,Everett,WA,20489
+7,343,ec444018-15f1-53b7-9c40-c82a71e68a1c,0631320,Pomona Unified School District,Pomona Unified School District,Pomona,CA,20475
+7,344,23ff5887-a06d-5a05-aa85-bd36ed51767a,0613360,Fairfield-Suisun Unified School District,Fairfield-Suisun Unified School District,Fairfield,CA,20359
+7,345,0fbee8c3-cebc-57da-af0b-196b9af34cd5,5300390,Bellevue School District,Bellevue School District,Bellevue,WA,20339
+7,346,96e215eb-87c3-5882-acdd-acbb783c5a83,4900120,Cache School District,Cache School District,Logan,UT,20286
+7,347,8f7813fa-815a-5fe3-8820-f10ca6fd0ce5,4826790,Laredo Independent School District,Laredo Independent School District,Laredo,TX,20271
+7,348,c458d3b9-7eb7-52cf-b8cf-dca08a9f6137,4400900,Providence School District,Providence School District,Providence,RI,20250
+7,349,8b06165c-0740-54f6-b042-3e6aa6a8e672,3702010,Harnett County Schools,Harnett County Schools,Lillington,NC,20095
+7,350,667a246b-09a5-5585-a6f7-12e56bae69cb,0900450,Bridgeport School District,Bridgeport School District,Bridgeport,CT,20022
+8,351,c51849ed-b95b-5b60-8c2e-28a67732c61c,0629550,Palm Springs Unified School District,Palm Springs Unified School District,Palm Springs,CA,20008
+8,352,937c13e0-bd59-55e5-b9db-fbeca8acfa73,5400060,Berkeley County School District,Berkeley County School District,Martinsburg,WV,20006
+8,353,03ce1dfc-f8f6-546c-a713-79a7d332eb44,0611820,East Side Union High School District,East Side Union High School District,San Jose,CA,20001
+8,354,bb81f45d-9344-5eeb-87ab-77ed1d30ea04,3904348,Akron City School District,Akron City School District,Akron,OH,19986
+8,355,7f740fd8-1a07-5878-8b07-9f81c91941f5,0623340,Madera Unified School District,Madera Unified School District,Madera,CA,19935
+8,356,31942205-1bb1-5200-ab91-69096c727118,4829670,McAllen Independent School District,McAllen Independent School District,McAllen,TX,19890
+8,357,c1fcdbc0-2d46-5cd5-a57c-da5c291130ef,4005490,Broken Arrow Public Schools,Broken Arrow Public Schools,Broken Arrow,OK,19882
+8,358,7ef4239a-cde6-5c85-8ce7-884fb87ce3fc,1302130,Fayette County School District,Fayette County School District,Fayetteville,GA,19800
+8,359,cd1f37f5-ab3d-5f86-a986-364370cf41d7,0804350,Mesa County Valley School District 51,Mesa County Valley School District 51,Grand Junction,CO,19753
+8,360,fda90e15-f137-5e18-a9b9-21951239e981,2926850,Rockwood R-VI School District,Rockwood R-VI School District,Eureka,MO,19597
+8,361,07b6c6bd-f8fd-5440-8ae6-2e30553a3037,2733810,South Washington County School District,South Washington County School District,Cottage Grove,MN,19578
+8,362,d55ffbbd-4e98-55b6-97bf-909831dc4aad,0503060,Bentonville Public Schools,Bentonville Public Schools,Bentonville,AR,19575
+8,363,44e5830d-b59a-5f23-9e54-92aae00964e3,4219170,Pittsburgh School District,Pittsburgh School District,Pittsburgh,PA,19571
+8,364,2cf28337-c766-53d1-be2b-a00259ec0818,0200510,Matanuska-Susitna Borough School District,Matanuska-Susitna Borough School District,Palmer,AK,19495
+8,365,325a22f8-0b6e-5447-9c22-415759c0e5d3,5101800,Hampton City Public Schools,Hampton City Public Schools,Hampton,VA,19472
+8,366,ebbf3ac0-4cb6-5e79-b79e-8da1913ae790,4832400,New Caney Independent School District,New Caney Independent School District,New Caney,TX,19420
+8,367,40b0c1d5-9c11-5ede-8feb-efec49f2b1a8,4846530,Wylie Independent School District,Wylie Independent School District,Wylie,TX,19401
+8,368,eb0d1885-825b-54f2-a73e-729c07edc773,0606390,Panama-Buena Vista School District,Panama-Buena Vista School District,Bakersfield,CA,19366
+8,369,2a85567b-6f16-5815-8f6b-ee96e80e40de,0632070,Redlands Unified School District,Redlands Unified School District,Redlands,CA,19310
+8,370,1db4feed-1d1c-5a69-9dfd-4f03bcef005b,0103390,Tuscaloosa County School District,Tuscaloosa County School District,Tuscaloosa,AL,19278
+8,371,23b661e9-310d-5152-b005-02a2dedeab2a,2611600,Dearborn City School District,Dearborn City School District,Dearborn,MI,19262
+8,372,efc412ae-c722-535d-a811-701552ee1a13,4837650,Rockwall Independent School District,Rockwall Independent School District,Rockwall,TX,19235
+8,373,ae22a2bd-a510-5365-9edc-43317a222147,0625470,Montebello Unified School District,Montebello Unified School District,Montebello,CA,19195
+8,374,7532834b-7343-5843-ba20-2297bbeaf898,5303750,Issaquah School District,Issaquah School District,Issaquah,WA,19098
+8,375,fcc312be-2692-5e15-8ea3-4a0b900b9186,0691135,Val Verde Unified School District,Val Verde Unified School District,Perris,CA,19080
+8,376,001e2638-17d6-5c4d-afc3-ffb24785d742,2201680,Tangipahoa Parish School District,Tangipahoa Parish School District,Amite,LA,19077
+8,377,ed4802cc-8086-56b8-be9f-3baacbaf2122,4900870,Salt Lake City School District,Salt Lake City School District,Salt Lake City,UT,19049
+8,378,dbe1eb7f-bb24-544f-9516-87670d19ba81,5306570,Pasco School District,Pasco School District,Pasco,WA,18913
+8,379,f4fefd73-44c4-5468-92f7-73400ba122dc,0634880,San Marcos Unified School District,San Marcos Unified School District,San Marcos,CA,18860
+8,380,ce3ae1f1-7b2b-5ee7-9b73-4353c0bc5b6f,4025290,Putnam City Public Schools,Putnam City Public Schools,Warr Acres,OK,18836
+8,381,c3bc72d0-8e98-5436-bab5-6eecca76b069,5303930,Kennewick School District,Kennewick School District,Kennewick,WA,18826
+8,382,d841b748-ad99-593c-a381-7a42317c02bb,0902790,New Haven School District,New Haven School District,New Haven,CT,18817
+8,383,683f7617-cb60-53e2-bdb7-e41f630512d0,0409060,Washington Elementary District,Washington Elementary District,Glendale,AZ,18816
+8,384,a057f6b5-2fc8-5c3f-a072-8e259f180b00,4100023,Hillsboro School District 1J,Hillsboro School District 1J,Hillsboro,OR,18781
+8,385,4dcaccf1-8c3c-50ea-83e0-9e27a25a27f1,0904830,Waterbury School District,Waterbury School District,Waterbury,CT,18776
+8,386,eca59c53-af7e-5af4-97ee-91afe92f2e49,4843470,Tyler Independent School District,Tyler Independent School District,Tyler,TX,18708
+8,387,e300a1f2-272c-5138-9f08-96117c2a9bd3,1303930,Newton County School District,Newton County School District,Covington,GA,18672
+8,388,b3aa8a54-e6b6-59ae-9573-16709016d1c4,3628590,Syracuse City School District,Syracuse City School District,Syracuse,NY,18662
+8,389,965e483c-bdb9-55a5-be2c-11b0dc3e615e,2901000,Columbia 93 School District,Columbia 93 School District,Columbia,MO,18640
+8,390,4aba6b04-d4cb-5398-89b9-17e2c5af0126,4819560,Forney Independent School District,Forney Independent School District,Forney,TX,18565
+8,391,8ef1903b-a6e3-5bd4-940e-31be3d3c59d6,2105730,Warren County School District,Warren County School District,Bowling Green,KY,18559
+8,392,40ea909a-a3cc-573d-ba66-39078633bfad,3605280,Brentwood Union Free School District,Brentwood Union Free School District,Brentwood,NY,18462
+8,393,ba0ecbeb-0125-502e-aa3f-8b6cf5cebd83,4503900,York School District 4,York School District 4,Fort Mill,SC,18445
+8,394,de7d9663-a410-519c-9874-c2604f207a30,0609390,Colton Joint Unified School District,Colton Joint Unified School District,Colton,CA,18414
+8,395,262c09fc-0e48-5175-b65e-dbcfb001452b,5505820,Green Bay Area School District,Green Bay Area School District,Green Bay,WI,18379
+8,396,eb8cf327-1639-5bd0-ab0f-d5acd2c3aa0d,1201290,Martin County School District,Martin County School District,Stuart,FL,18323
+8,397,6e4ac283-cff3-5d0c-97f1-c50d1a5e842d,5507320,Kenosha School District,Kenosha School District,Kenosha,WI,18315
+8,398,4a9e429b-b3b2-5456-a144-0e9530870ae9,2803830,Rankin County School District,Rankin County School District,Brandon,MS,18196
+8,399,a2ed5129-a031-5897-82e6-909fb41d736f,5300300,Auburn School District,Auburn School District,Auburn,WA,18174
+8,400,e3d7ab03-fb7b-594d-b7c2-325181b14077,0641190,Vista Unified School District,Vista Unified School District,Vista,CA,18112
+9,401,1d06fe5c-bba2-5f65-ac22-7f15e13d90b8,5303540,Highline School District,Highline School District,Burien,WA,18072
+9,402,c6c68955-329e-5f5b-b640-b16b4b6b489f,3701140,Davidson County Schools,Davidson County Schools,Lexington,NC,17985
+9,403,ff307690-4e56-58de-b409-79fd8bb7c172,2931650,Wentzville R-IV School District,Wentzville R-IV School District,Wentzville,MO,17973
+9,404,62cba7e3-008a-539e-8513-b3799eb716d7,0629580,Palmdale Elementary School District,Palmdale Elementary School District,Palmdale,CA,17941
+9,405,5ba49426-9a08-52e7-b344-77a4ee8523e3,2929280,St. Louis City School District,St. Louis City School District,St Louis,MO,17933
+9,406,0db8ac3b-79a2-5204-a66d-5849c12166a8,3904611,Lakota Local School District,Lakota Local School District,Liberty Township,OH,17885
+9,407,63e2c260-82e9-5f57-bb96-f8defffbcc54,2918300,Lee's Summit R-VII School District,Lee's Summit R-VII School District,Lee's Summit,MO,17870
+9,408,3cc223b1-d0f1-5403-b265-8e84a6647c51,0619260,Jurupa Unified School District,Jurupa Unified School District,Jurupa Valley,CA,17815
+9,409,1d90bb82-584e-5600-9515-a3c20725b67d,0628470,Ontario-Montclair School District,Ontario-Montclair School District,Ontario,CA,17695
+9,410,47d69c06-83ee-5e9a-8f6b-d9969cbd66e1,3704050,Rowan-Salisbury Schools,Rowan-Salisbury Schools,Salisbury,NC,17683
+9,411,11d98fde-b9f9-5c05-868d-66d8a8daf405,0627240,Newport-Mesa Unified School District,Newport-Mesa Unified School District,Costa Mesa,CA,17635
+9,412,5349349a-6dff-54b5-a972-67bcb93fec99,0601620,ABC Unified School District,ABC Unified School District,Cerritos,CA,17612
+9,413,2cf8587c-5703-5065-9b1b-e1af8257b383,2201200,Ouachita Parish School District,Ouachita Parish School District,West Monroe,LA,17435
+9,414,5d59e087-c82e-5c5f-ad9a-dc74745d403c,2802190,Jackson Public School District,Jackson Public School District,Jackson,MS,17429
+9,415,762b8110-f96e-55e4-af19-283cc32af1cb,0605580,Santa Maria-Bonita Elementary School District,Santa Maria-Bonita Elementary School District,Santa Maria,CA,17408
+9,416,9db14e16-c49a-5243-8910-0c4692b0d6be,0616740,Hayward Unified School District,Hayward Unified School District,Hayward,CA,17377
+9,417,fc4ae2d8-e111-591a-a2d0-41889e9b3093,2731800,Rochester Public School District,Rochester Public School District,Rochester,MN,17171
+9,418,b7b62c90-846d-51da-8459-fdeacbb0992c,3704880,Wayne County Public Schools,Wayne County Public Schools,Goldsboro,NC,17150
+9,419,b75533ae-8804-5b2d-b8cb-7879c4f8dffc,4502820,Lexington School District 5,Lexington School District 5,Irmo,SC,17053
+9,420,92c6ce18-d7d4-5618-a0b0-54a4bd058c13,2928950,Francis Howell R-III School District,Francis Howell R-III School District,O'fallon,MO,17047
+9,421,e84bbf8f-1ef1-532b-a943-e5fcc0062828,3404500,Edison Township School District,Edison Township School District,Edison,NJ,17032
+9,422,e3c7f108-c4cc-5a1a-a1ab-1dffa66381db,4815910,Crowley Independent School District,Crowley Independent School District,Fort Worth,TX,17011
+9,423,089c3c04-dc8b-565a-8f54-e95f7c4f17e0,1200240,Charlotte County School District,Charlotte County School District,Port Charlotte,FL,16997
+9,424,936fe32b-6956-5717-98e5-c804f749388e,4108830,North Clackamas School District 12,North Clackamas School District 12,Milwaukie,OR,16982
+9,425,99c84c89-a2b0-5c6b-882c-df140fe096c1,3904702,Dublin City School District,Dublin City School District,Dublin,OH,16967
+9,426,d5a96c35-73eb-584b-bba0-ca0d3c749d17,4205310,Central Bucks School District,Central Bucks School District,Doylestown,PA,16941
+9,427,57f94d86-5e17-5945-9b98-b1d0764ea37d,2400600,St. Marys County Public Schools,St. Marys County Public Schools,Leonardtown,MD,16905
+9,428,e107498f-aebb-5594-85f9-89386488ec89,4101980,Bend-La Pine Administrative School District 1,Bend-La Pine Administrative School District 1,Bend,OR,16878
+9,429,f05ede82-360e-5ee1-8249-0fb9ac3ce503,2602820,Ann Arbor Public Schools,Ann Arbor Public Schools,Ann Arbor,MI,16871
+9,430,2c621c29-8077-5d5f-91fc-d629a6fb3013,4202280,Allentown City School District,Allentown City School District,Allentown,PA,16769
+9,431,bac08123-deb4-558b-b13b-06714669ae3f,5101830,Hanover County Public Schools,Hanover County Public Schools,Ashland,VA,16768
+9,432,81e29801-6096-5d02-b1d3-65cd86249a01,1730270,Oswego Community Unit School District 308,Oswego Community Unit School District 308,Oswego,IL,16766
+9,433,316809cf-cc1c-545c-862c-1e3d534c1006,2923580,Parkway C-2 School District,Parkway C-2 School District,Chesterfield,MO,16759
+9,434,913cdc2a-ab60-528f-ba48-43fcb3f30675,1805670,Lawrence Township Metropolitan School District,Lawrence Township Metropolitan School District,Indianapolis,IN,16747
+9,435,6086c577-9289-590c-b7da-5d0e2d73cabb,2908370,Fort Zumwalt R-II School District,Fort Zumwalt R-II School District,O'fallon,MO,16698
+9,436,31c3da03-499b-57e6-941d-a25f1329b8c7,4220040,Reading School District,Reading School District,Reading,PA,16664
+9,437,a4ddec77-c8e4-535e-8b3e-8b2f155be865,1200930,Indian River County School District,Indian River County School District,Vero Beach,FL,16621
+9,438,6ac7afb5-f2da-5e3b-b7c4-ac4ffa156537,0629490,Pajaro Valley Joint Unified School District,Pajaro Valley Joint Unified School District,Watsonville,CA,16588
+9,439,7b86b565-686c-55d8-80b1-5d4fca274313,5100120,Alexandria City Public Schools,Alexandria City Public Schools,Alexandria,VA,16575
+9,440,d5de343f-ea0c-5f3c-afd8-089a84fff0fc,3500010,Rio Rancho Public Schools,Rio Rancho Public Schools,Rio Rancho,NM,16519
+9,441,df813624-737e-5048-8d74-62d00a4cd68a,0102100,Limestone County School District,Limestone County School District,Athens,AL,16497
+9,442,92f29f43-febc-5b32-9732-a7e9ec9b6ce8,0616230,Grossmont Union High School District,Grossmont Union High School District,El Cajon,CA,16476
+9,443,dd5a3f5c-4503-5058-a938-fe415a93a0b9,4822530,Harlingen Consolidated Independent School District,Harlingen Consolidated Independent School District,Harlingen,TX,16471
+9,444,3be6412b-e551-51da-888a-d5e8f4741eeb,0602430,Alvord Unified School District,Alvord Unified School District,Corona,CA,16466
+9,445,ff8c75bd-4e43-5f76-8517-fe888fc49c09,0609620,Compton Unified School District,Compton Unified School District,Compton,CA,16436
+9,446,6eacde78-9d1a-58fa-a948-1fc2420839dd,0901920,Hartford School District,Hartford School District,Hartford,CT,16434
+9,447,dadeb338-7999-5901-af79-d26130cde719,1300840,Carroll County School District,Carroll County School District,Carrollton,GA,16400
+9,448,96f277b4-a5af-518a-b1b9-b94a971cad33,2507110,Lynn School District,Lynn School District,Lynn,MA,16364
+9,449,26ba3414-f1c2-5974-9e91-841140026c87,4809670,Beaumont Independent School District,Beaumont Independent School District,Beaumont,TX,16336
+9,450,37b94926-22f9-5843-8ad9-3618ec0f343b,2913830,Hazelwood School District,Hazelwood School District,Florissant,MO,16321
+10,451,7ec5142f-345c-5d32-8361-7aeedeb9119a,4503330,Pickens County School District,Pickens County School District,Easley,SC,16313
+10,452,c00a627c-042d-579e-a92a-cb2eba458940,4844960,Weslaco Independent School District,Weslaco Independent School District,Weslaco,TX,16300
+10,453,efa98205-4705-5652-b5df-fd5ab4246529,3904701,Hilliard City School District,Hilliard City School District,Columbus,OH,16298
+10,454,1f6a4664-2986-5523-a5ee-0f0aba1b3fcd,1808820,Perry Township Metropolitan School District,Perry Township Metropolitan School District,Indianapolis,IN,16243
+10,455,721070fa-1c42-5048-8244-0b966da4c4a1,0904320,Stamford School District,Stamford School District,Stamford,CT,16185
+10,456,76453550-ea22-545c-a0ab-85a26318a6be,1812810,Wayne Township Metropolitan School District,Wayne Township Metropolitan School District,Indianapolis,IN,16146
+10,457,0436cd6c-0b56-5e79-aa43-03917bba4801,1801200,Carmel Clay Schools,Carmel Clay Schools,Carmel,IN,16145
+10,458,8043646c-39c5-5a74-9a5b-c0f091e51b39,0626640,Napa Valley Unified School District,Napa Valley Unified School District,Napa,CA,16103
+10,459,a58779ac-f6e9-55a9-ad7e-57c1b3139ea1,0403450,Glendale Union High School District,Glendale Union High School District,Glendale,AZ,16092
+10,460,c552f97b-33b4-5398-9d39-b0a0d68cfdcf,4901050,Tooele School District,Tooele School District,Tooele,UT,16088
+10,461,34253a86-1bf9-5906-a1e2-da6ee1cb2e7f,2628560,Plymouth-Canton Community Schools,Plymouth-Canton Community Schools,Plymouth,MI,16083
+10,462,7d956c5f-cc11-5f0e-8fbf-99d1281f895e,4021720,Norman Public Schools,Norman Public Schools,Norman,OK,16048
+10,463,87800105-319b-58a1-b91c-78a926121489,1727710,Naperville Community Unit District 203,Naperville Community Unit District 203,Naperville,IL,16047
+10,464,2d552e5a-8b55-54e7-ad38-0f6e8df05238,4811790,Bryan Independent School District,Bryan Independent School District,Bryan,TX,16044
+10,465,98288d18-b6b6-5b5b-bda0-5887c7c5947e,0629270,Oxnard Union High School District,Oxnard Union High School District,Oxnard,CA,16039
+10,466,a34f2878-4f17-5282-8c4a-069e239afd28,4503870,York School District 3,York School District 3,Rock Hill,SC,16034
+10,467,6f7b8d4a-880f-5fb3-b479-740c0db46ead,3700690,Catawba County Schools,Catawba County Schools,Newton,NC,16003
+10,468,9590fc59-d51c-576f-8170-3a4d00bc390c,0606810,Cajon Valley Union Elementary School District,Cajon Valley Union Elementary School District,El Cajon,CA,15992
+10,469,ce461224-7c72-590e-ad4b-bcd3c220990f,3416290,Trenton City School District,Trenton City School District,Trenton,NJ,15964
+10,470,7f70c985-1029-5fd4-95a2-3d4010a07688,0607970,Central Unified School District,Central Unified School District,Fresno,CA,15962
+10,471,3a045467-2dd2-5208-90b2-ce469508e5a8,4104740,Eugene School District 4J,Eugene School District 4J,Eugene,OR,15943
+10,472,9a36c305-5e53-54f3-b7fb-c5278a907aea,4502130,Florence School District 1,Florence School District 1,Florence,SC,15861
+10,473,63cb33b0-38aa-509c-9ba0-ecd18310ec3a,0609070,Coachella Valley Unified School District,Coachella Valley Unified School District,Thermal,CA,15817
+10,474,d8cd8ba5-fa0c-56b0-964b-faf95e62aa8b,0633980,Salinas Union High School District,Salinas Union High School District,Salinas,CA,15813
+10,475,209e8126-a9d5-56ff-856c-32a642074944,5512360,Racine School District,Racine School District,Racine,WI,15781
+10,476,3ccae5d1-3da8-56a5-914a-8aa265176732,0609640,Conejo Valley Unified School District,Conejo Valley Unified School District,Thousand Oaks,CA,15724
+10,477,7331cd5c-9ff2-59c0-817d-d4b1a11e4c04,0511970,Rogers Public Schools,Rogers Public Schools,Rogers,AR,15604
+10,478,c3d1260f-2646-572f-b3d0-fdf5dfe77e01,2400690,Wicomico County Public Schools,Wicomico County Public Schools,Salisbury,MD,15582
+10,479,fdb97257-8589-54da-8670-19199b84c8a7,1200270,Citrus County School District,Citrus County School District,Inverness,FL,15531
+10,480,4b1357ad-43c0-5220-add6-8c5e498382dd,5310110,Yakima School District,Yakima School District,Yakima,WA,15488
+10,481,0133c39a-1779-56ed-ab80-e19395f10171,0616325,Hacienda La Puente Unified School District,Hacienda La Puente Unified School District,City Of Industry,CA,15480
+10,482,8e5dcfac-4050-5190-b3c7-ec950ffc6998,0636840,Simi Valley Unified School District,Simi Valley Unified School District,Simi Valley,CA,15444
+10,483,0c9c2fe3-01d8-5a3e-81a5-703d60d5e502,0625150,Modesto City High School District,Modesto City High School District,Modesto,CA,15443
+10,484,4a03f736-4bd6-5e3a-841b-3652a50bc316,4502580,Lancaster County School District,Lancaster County School District,Lancaster,SC,15417
+10,485,a29fad68-870a-5864-b1d7-711f56c735bf,1304410,Rockdale County School District,Rockdale County School District,Conyers,GA,15342
+10,486,7c07c5d0-86ca-5efd-b548-982a8cf3e76a,1300290,Barrow County School District,Barrow County School District,Winder,GA,15313
+10,487,8692aa54-9801-5a98-8afc-212319f26a5b,1734740,Schaumburg Community Consolidated School District 54,Schaumburg Community Consolidated School District 54,Schaumburg,IL,15298
+10,488,93ad2449-1c78-55be-b3c9-61bfebe07a18,2503090,Brockton School District,Brockton School District,Brockton,MA,15280
+10,489,3b4166f6-47e7-597d-b3d7-c3663faad4f4,0602850,Antioch Unified School District,Antioch Unified School District,Antioch,CA,15253
+10,490,6bc1e4d7-66bc-5dd8-8066-55fff64ea328,1906540,Cedar Rapids Community School District,Cedar Rapids Community School District,Cedar Rapids,IA,15224
+10,491,c8a1898b-843a-58f9-b82b-1f8b29314629,5305430,Mukilteo School District,Mukilteo School District,Everett,WA,15175
+10,492,f30604ef-85db-51c3-89e5-6671d6a379b9,5305850,North Thurston Public Schools,North Thurston Public Schools,Lacey,WA,15167
+10,493,437cb666-2eaf-5564-a0c5-f4e3d9e74118,2916400,Kansas City 33 School District,Kansas City 33 School District,Kansas City,MO,15079
+10,494,f131ba4e-c2e1-56af-b88d-db3db5cac3f9,0406810,Queen Creek Unified District,Queen Creek Unified District,Queen Creek,AZ,15065
+10,495,4926b2ef-8c14-5ca6-821c-58912af58105,5301110,Central Valley School District,Central Valley School District,Liberty Lake,WA,15025
+10,496,fff490a5-b9fd-5d73-a3ae-05bfac9d6576,1914700,Iowa City Community School District,Iowa City Community School District,Iowa City,IA,15013
+10,497,638b21dd-5dea-5a59-a7f5-b11b30dfdf32,0408850,Vail Unified District,Vail Unified District,Vail,AZ,15011
+10,498,be2ab0ab-8c30-50c6-baf0-89ecb69e234b,3703780,Randolph County Schools,Randolph County Schools,Asheboro,NC,14994
+10,499,b76b3072-1a9f-5f31-847e-5eb84378ca78,5500390,Appleton Area School District,Appleton Area School District,Appleton,WI,14994

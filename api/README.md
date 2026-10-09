@@ -23,6 +23,23 @@ Reachable at `https://api.holibase.org`.
 Codes are case-insensitive (`de`, `de-by`, `EN`); the cache key is normalised.
 Errors: `{"error":{"code","message"}}` with status 400/404/405/429/502/503.
 
+## Coverage
+
+Every school-holiday response has a `coverage` block, so "no data yet" is never mistaken for "no holidays":
+
+```json
+"coverage": {
+  "status": "none",
+  "message": "No school calendar for Aransas Pass Independent School District in this range yet.",
+  "pending_available": false,
+  "public_holidays": "https://api.holibase.org/v1/public-holidays/US?from=…&to=…&subdivision=US-TX"
+}
+```
+
+`status` is `available` (with `school_years` and `unverified`) or `none`. With `none`, `pending_available`
+says whether unverified calendars exist (`include=pending`) and `public_holidays` links the holidays of the same
+state. A feed subscribed while there is no data fills itself once a calendar is added.
+
 ## Calendar feeds
 
 Every holiday endpoint also answers as iCalendar (RFC 5545): append `.ics` to the country

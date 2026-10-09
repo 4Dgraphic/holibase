@@ -8,7 +8,9 @@ on:
     branches: [main]
     paths:
       - "data/editorial/**"
+      - "data/research/**"
       - "scripts/import_editorial.py"
+      - "scripts/research_to_editorial.py"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -35,6 +37,14 @@ jobs:
           cache: pip
           cache-dependency-path: scripts/requirements.txt
       - run: pip install -r scripts/requirements.txt
+      - name: Convert research results
+        run: |
+          for d in data/research/*/; do
+            if ls "$d"results/*.csv >/dev/null 2>&1; then
+              python scripts/research_to_editorial.py "${d%/}"
+              cat "${d}REPORT.md" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
       - name: Import
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}

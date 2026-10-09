@@ -196,10 +196,14 @@ function matchRoute(url: URL): Route {
               ttl(env.TTL_SCHOOL_HOLIDAYS, 21600),
             );
           }
+          const coverage = await schoolCoverage(env, url.origin, {
+            country, subdivision, authority, from, to, lang, includePending, calendars: calendars as SchoolCalendarRow[],
+          });
           return json(
             {
               country, subdivision, authority, from, to, lang,
               include_pending: includePending,
+              coverage,
               count: rows.length,
               calendars,
               periods: rows,
@@ -460,6 +464,52 @@ function indexDoc(url: URL) {
     },
     attribution: ATTRIBUTION,
     license: LICENSE,
+  };
+}
+
+// ---------------------------------------------------------------- coverage
+
+/**
+ * Tells clients whether school holidays exist for the requested scope, so "no data yet" is never
+ * mistaken for "no holidays". Without data it points to the public holidays of the same region.
+ */
+async function schoolCoverage(
+  env: Env,
+  origin: string,
+  o: { country: string; subdivision: string | null; authority: string | null; from: string; to: string; lang: string | null;
+       includePending: boolean; calendars: SchoolCalendarRow[] },
+) {
+  const years = [...new Set(o.calendars.map((c) => c.school_year))].sort();
+  if (o.calendars.length) {
+    return { status: "available", school_years: years, unverified: o.calendars.some((c) => c.status === "pending") };
+  }
+  let region = o.subdivision;
+  let authorityName: string | null = null;
+  if (o.authority) {
+    const res = await supabase(env, `/rest/v1/education_authorities?id=eq.${o.authority}&select=name,subdivision_code`);
+    const rows = (await res.json()) as { name: string; subdivision_code: string | null }[];
+    if (!rows.length) throw new ApiError(404, "not_found", "Authority not found.");
+    authorityName = rows[0].name;
+    region = rows[0].subdivision_code;
+  }
+  let pendingAvailable = false;
+  if (!o.includePending) {
+    const pending = await rpc(env, "get_school_calendars", {
+      p_country: o.country, p_subdivision: o.subdivision, p_authority: o.authority, p_from: o.from, p_to: o.to, p_include_pending: true,
+    });
+    pendingAvailable = pending.length > 0;
+  }
+  const q = new URLSearchParams({ from: o.from, to: o.to });
+  if (region) q.set("subdivision", region);
+  if (o.lang) q.set("lang", o.lang);
+  return {
+    status: "none",
+    school_years: [],
+    message: pendingAvailable
+      ? "Only unverified calendars exist for this scope and range. Add include=pending to get them."
+      : `No school calendar for ${authorityName ?? o.subdivision ?? o.country} in this range yet.`,
+    pending_available: pendingAvailable,
+    public_holidays: `${origin}/v1/public-holidays/${o.country}?${q}`,
   };
 }
 

@@ -26,6 +26,8 @@ scripts/sync.py                       syncs the build into the database (insert 
 scripts/fingerprint.py                per-country fingerprints, to compare a build with the database
 scripts/import_editorial.py           imports reviewed school calendars from data/editorial/
 scripts/import_nces.py                imports the US school district directory from NCES
+scripts/import_official.py            imports school holidays from official open data (NL, FR)
+scripts/research_to_editorial.py      validates deep-research results and turns them into editorial calendars
 supabase/migrations/                  database schema
 supabase/seed.sql                     data sources (run once after the schema)
 ```
@@ -111,6 +113,29 @@ Reviewed calendars live in `data/editorial/*.json` (one file per research batch)
   the editorial one.
 - US districts carry the NCES id reported by the research as `external_ids.nces_leaid_claimed` until the NCES
   import sets the real `nces_leaid` (see below).
+
+## Official school holiday sources
+
+`scripts/import_official.py` pulls school holidays from official government open data, weekly via
+`.github/workflows/import-official.yml` (a push of the importer runs a dry run with a comparison report).
+
+| Source | Scope | Licence |
+|---|---|---|
+| Rijksoverheid open data | Netherlands, regions noord / midden / zuid | CC0-1.0 |
+| Éducation nationale, calendrier scolaire | France, zones A / B / C, Corse, overseas departments and territories | Licence Ouverte 2.0 |
+
+- Calendars are `origin = 'official'`. Research calendars for the same scope and school year are compared break by
+  break and then marked `outdated` ("Superseded by official data"); the editorial import leaves them that way.
+- If more than 20 % of the compared breaks disagree, the source is skipped and the last good data stays
+  (the format probably changed). A failed download changes nothing.
+- French dates mean "after classes" and "classes resume"; the free days stored are start + 1 to end − 1.
+- More candidate sources (with licence status) are listed in `data/research/` and the source registry.
+
+## US district research
+
+`data/research/us-2026-10/` holds the next research round: the 499 largest districts without a verified
+calendar, as 10 ready-to-paste prompts. Results dropped into `results/` are validated and imported on push
+(see the README there).
 
 ## US school districts (NCES)
 

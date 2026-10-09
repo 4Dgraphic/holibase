@@ -62,9 +62,14 @@ def main() -> int:
                                'editorial', %(status)s, %(src)s, %(dataset)s, %(source_url)s, %(retrieved)s,
                                %(first_day)s, %(last_day)s, %(notes)s)
                        on conflict (id) do update set
-                         status = excluded.status, source_url = excluded.source_url, source_version = excluded.source_version,
+                         -- calendars superseded by an official source stay superseded
+                         status = case when public.school_calendars.status = 'outdated'
+                                            and public.school_calendars.notes like '%%Superseded by official data%%'
+                                       then 'outdated' else excluded.status end, source_url = excluded.source_url, source_version = excluded.source_version,
                          source_retrieved_at = excluded.source_retrieved_at, first_day = excluded.first_day,
-                         last_day = excluded.last_day, notes = excluded.notes, title = excluded.title
+                         last_day = excluded.last_day, title = excluded.title,
+                         notes = case when public.school_calendars.notes like '%%Superseded by official data%%'
+                                      then public.school_calendars.notes else excluded.notes end
                        returning (xmax = 0)""",
                     dict(c, title=c.get("authority"), src=SOURCE_ID, dataset=data["dataset"], retrieved=data["retrieved"]),
                 )

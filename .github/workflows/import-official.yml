@@ -1,0 +1,59 @@
+name: Import official school holidays (NL, FR)
+
+# Pulls school holidays from official government open data (Netherlands: Rijksoverheid, CC0;
+# France: Éducation nationale, Licence Ouverte 2.0), compares them with the research data
+# and replaces it. Weekly; a push of the importer runs a dry run with the comparison report.
+
+on:
+  schedule:
+    - cron: "37 4 * * 2"        # Tuesdays 04:37 UTC
+  push:
+    branches: [main]
+    paths:
+      - "scripts/import_official.py"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (import and report, then roll back)"
+        type: boolean
+        default: true
+      only:
+        description: "Only these sources, comma separated (nl,fr). Empty = all"
+        type: string
+        default: ""
+      force:
+        description: "Write even if the official data disagrees with the research data by more than 20 %"
+        type: boolean
+        default: false
+
+concurrency:
+  group: database-write
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - name: Import
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          args=()
+          if [ "${{ github.event_name }}" = "push" ]; then args+=(--dry-run); fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+            if [ "${{ inputs.force }}" = "true" ]; then args+=(--force); fi
+            if [ -n "${{ inputs.only }}" ]; then args+=(--only "${{ inputs.only }}"); fi
+          fi
+          python scripts/import_official.py "${args[@]}"
