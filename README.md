@@ -13,6 +13,7 @@ ingest for school calendars where no central source exists (above all US school 
 | Public holidays | 250 countries, all python-holidays subdivisions, window 2020 – current year + 10, names in every language the source offers | python-holidays (MIT), synced weekly |
 | School holidays | Germany (16 states + Augsburg), Australia (8 states/territories), school days for BG, EG, IL, LA, TH, YE | python-holidays (MIT), synced weekly |
 | School districts | schema ready, import pending (NCES CCD LEA directory) | – |
+| Calendar feeds | iCalendar (`.ics`) for every holiday query, subscribable via webcal | API |
 | Editorial / community calendars | in progress (US districts, DACH, Benelux, FR, UK) | own research, submissions |
 
 ## Repository layout
@@ -83,9 +84,16 @@ Subdivision codes follow ISO 3166-2. Named areas without an ISO code become slug
 
 ## Licences
 
-- Code: MIT (see `LICENSE`).
-- Data from python-holidays: MIT, attribution "© python-holidays contributors".
-- Own and community data: not decided yet (ODbL vs. CC BY 4.0).
+Everything is free to use, also commercially. The only condition is credit.
+
+| What | Licence | Credit |
+|---|---|---|
+| Code (this repository) | MIT (`LICENSE`) | – |
+| Holibase's own data: editorial and community school calendars, authority directory, the compiled database | CC BY 4.0 (`LICENSE-DATA`) | "Holibase (holibase.org), CC BY 4.0" |
+| Public and school holidays from python-holidays | MIT | "© python-holidays contributors" |
+| US school district directory (NCES CCD / EDGE) | public domain (U.S. federal government) | "Source: U.S. Department of Education, NCES" (courtesy) |
+
+The API returns the credit line in every response (`attribution`, `license`) and in every iCalendar feed.
 
 ## Editorial school calendars
 

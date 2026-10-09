@@ -5,6 +5,8 @@
  *   GET /v1/public-holidays/{CC}/{YYYY}?subdivision=US-CA&lang=de
  *   GET /v1/public-holidays/{CC}?from=2026-01-01&to=2026-12-31&subdivision=&lang=
  *   GET /v1/school-holidays/{CC}?subdivision=DE-NI&from=2026-08-01&to=2027-07-31
+ *   GET /v1/public-holidays/{CC}.ics?subdivision=DE-BY        iCalendar feed (also ?format=ics)
+ *   GET /v1/school-holidays/{CC}.ics?subdivision=DE-NI         iCalendar feed (also ?format=ics)
  *   GET /data/...json            static files from R2 (same layout as the repo's data/)
  *   GET /v1/health
  *
@@ -85,6 +87,15 @@ type Route =
 
 function matchRoute(url: URL): Route {
   const parts = url.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  // iCalendar: "/v1/school-holidays/DE.ics" or "?format=ics". Calendar apps like a .ics ending.
+  let ics = false;
+  if (parts.length && parts[parts.length - 1].toLowerCase().endsWith(".ics")) {
+    parts[parts.length - 1] = parts[parts.length - 1].slice(0, -4);
+    ics = true;
+  }
+  const format = url.searchParams.get("format");
+  if (format && format !== "json" && format !== "ics") throw new ApiError(400, "invalid_format", "format accepts json or ics.");
+  if (format === "ics") ics = true;
 
   if (parts.length === 0) return { kind: "index" };
   if (parts[0] === "data") return staticFile(url, parts);
@@ -92,6 +103,9 @@ function matchRoute(url: URL): Route {
 
   const [, resource, rawCountry, rawYear, ...rest] = parts;
   if (rest.length) throw new ApiError(404, "not_found", "Unknown path.");
+  if (ics && resource !== "public-holidays" && resource !== "school-holidays") {
+    throw new ApiError(400, "invalid_format", "iCalendar is available for public-holidays and school-holidays.");
+  }
 
   switch (resource) {
     case "health":
@@ -118,9 +132,12 @@ function matchRoute(url: URL): Route {
         to = `${rawYear}-12-31`;
       } else {
         const y = new Date().getUTCFullYear();
-        [from, to] = parseRange(url, `${y}-01-01`, `${y}-12-31`);
+        // Feeds default to last year .. next year, so a subscription keeps rolling forward by itself.
+        [from, to] = ics ? parseRange(url, `${y - 1}-01-01`, `${y + 1}-12-31`) : parseRange(url, `${y}-01-01`, `${y}-12-31`);
       }
-      const key = canonical(url.origin, `/v1/public-holidays/${country}`, { from, to, subdivision, lang, categories: categories?.join(",") ?? null });
+      const key = canonical(url.origin, `/v1/public-holidays/${country}`, {
+        from, to, subdivision, lang, categories: categories?.join(",") ?? null, format: ics ? "ics" : null,
+      });
       return {
         kind: "data",
         cacheKey: key,
@@ -133,8 +150,15 @@ function matchRoute(url: URL): Route {
             p_lang: lang,
             p_categories: categories,
           });
+          if (ics) {
+            return calendar(
+              publicHolidayFeed(rows as PublicHolidayRow[], { country, subdivision, lang, categories }),
+              `holibase-public-${subdivision ?? country}`,
+              ttl(env.TTL_PUBLIC_HOLIDAYS, 86400),
+            );
+          }
           return json(
-            { country, subdivision, from, to, lang, categories: categories ?? ["public"], count: rows.length, holidays: rows, attribution: ATTRIBUTION },
+            { country, subdivision, from, to, lang, categories: categories ?? ["public"], count: rows.length, holidays: rows, attribution: ATTRIBUTION, license: LICENSE },
             200,
             ttl(env.TTL_PUBLIC_HOLIDAYS, 86400),
           );
@@ -150,10 +174,11 @@ function matchRoute(url: URL): Route {
       const includePending = parseInclude(url.searchParams.get("include"));
       const today = new Date().toISOString().slice(0, 10);
       const inAYear = new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10);
-      const [from, to] = parseRange(url, today, inAYear);
+      const y = new Date().getUTCFullYear();
+      const [from, to] = ics ? parseRange(url, `${y - 1}-01-01`, `${y + 1}-12-31`) : parseRange(url, today, inAYear);
       const lang = parseLang(url.searchParams.get("lang"));
       const key = canonical(url.origin, `/v1/school-holidays/${country}`, {
-        from, to, subdivision, authority, lang, include: includePending ? "pending" : null,
+        from, to, subdivision, authority, lang, include: includePending ? "pending" : null, format: ics ? "ics" : null,
       });
       return {
         kind: "data",
@@ -164,6 +189,13 @@ function matchRoute(url: URL): Route {
             rpc(env, "get_school_holidays", { ...scope, p_lang: lang, p_include_pending: includePending || null }),
             rpc(env, "get_school_calendars", { ...scope, p_include_pending: includePending || null }),
           ]);
+          if (ics) {
+            return calendar(
+              schoolHolidayFeed(rows as SchoolPeriodRow[], calendars as SchoolCalendarRow[], { country, subdivision, authority, lang, from, to }),
+              `holibase-school-${authority ?? subdivision ?? country}`,
+              ttl(env.TTL_SCHOOL_HOLIDAYS, 21600),
+            );
+          }
           return json(
             {
               country, subdivision, authority, from, to, lang,
@@ -172,6 +204,7 @@ function matchRoute(url: URL): Route {
               calendars,
               periods: rows,
               attribution: ATTRIBUTION,
+              license: LICENSE,
             },
             200,
             ttl(env.TTL_SCHOOL_HOLIDAYS, 21600),
@@ -245,7 +278,9 @@ function staticFile(url: URL, parts: string[]): Route {
 
 // ---------------------------------------------------------------- upstream
 
-const ATTRIBUTION = "Public holiday data © python-holidays contributors (MIT). https://holibase.org";
+const ATTRIBUTION =
+  "Public holidays © python-holidays contributors (MIT). School calendars © Holibase contributors (CC BY 4.0). https://holibase.org";
+const LICENSE = { data: "CC-BY-4.0", url: "https://creativecommons.org/licenses/by/4.0/", attribution_required: true };
 
 async function rpc(env: Env, fn: string, params: Record<string, unknown>): Promise<unknown[]> {
   // Omit null params so the SQL defaults apply (e.g. p_categories = {public}).
@@ -418,8 +453,197 @@ function indexDoc(url: URL) {
       authority: `${o}/v1/authorities/{id}`,
       school_holidays_authority: `${o}/v1/school-holidays/US?authority={id}&from=2026-08-01&to=2027-07-31`,
       school_holidays_including_unverified: `${o}/v1/school-holidays/US?authority={id}&include=pending`,
+      public_holidays_ical: `${o}/v1/public-holidays/DE.ics?subdivision=DE-BY&lang=de`,
+      school_holidays_ical: `${o}/v1/school-holidays/DE.ics?subdivision=DE-NI&lang=de`,
+      school_holidays_authority_ical: `${o}/v1/school-holidays/US.ics?authority={id}`,
       static_file: `${o}/data/public-holidays/DE/2026.json`,
     },
     attribution: ATTRIBUTION,
+    license: LICENSE,
   };
+}
+
+// ---------------------------------------------------------------- iCalendar (RFC 5545)
+
+type PublicHolidayRow = {
+  date: string; name: string; local_name: string; category: string; scope: string;
+  is_observed: boolean; is_estimated: boolean; subdivision_code: string | null; source_id: string;
+};
+type SchoolPeriodRow = {
+  start_date: string; end_date: string; name: string; kind: string; school_year: string;
+  calendar_id: string; origin: string; status: string; source_url: string | null;
+};
+type SchoolCalendarRow = {
+  calendar_id: string; school_year: string; title: string | null; status: string; source_url: string | null;
+  first_day: string | null; last_day: string | null;
+};
+
+type FeedLabels = { public: string; school: string; observed: string; estimated: string; unverified: string; first: string; last: string };
+const FEED_LABELS: Record<string, FeedLabels> = {
+  en: { public: "Public holidays", school: "School holidays", observed: "observed", estimated: "date estimated", unverified: "unverified", first: "First day of school", last: "Last day of school" },
+  de: { public: "Feiertage", school: "Schulferien", observed: "Ersatztag", estimated: "Datum geschätzt", unverified: "unbestätigt", first: "Erster Schultag", last: "Letzter Schultag" },
+  fr: { public: "Jours fériés", school: "Vacances scolaires", observed: "jour de remplacement", estimated: "date estimée", unverified: "non vérifié", first: "Rentrée scolaire", last: "Dernier jour d'école" },
+  es: { public: "Días festivos", school: "Vacaciones escolares", observed: "trasladado", estimated: "fecha estimada", unverified: "sin verificar", first: "Primer día de clases", last: "Último día de clases" },
+  it: { public: "Festività", school: "Vacanze scolastiche", observed: "recupero", estimated: "data stimata", unverified: "non verificato", first: "Primo giorno di scuola", last: "Ultimo giorno di scuola" },
+  nl: { public: "Feestdagen", school: "Schoolvakanties", observed: "vervangende dag", estimated: "datum geschat", unverified: "niet bevestigd", first: "Eerste schooldag", last: "Laatste schooldag" },
+  pt: { public: "Feriados", school: "Férias escolares", observed: "transferido", estimated: "data estimada", unverified: "não verificado", first: "Primeiro dia de aulas", last: "Último dia de aulas" },
+};
+
+function labels(lang: string | null) {
+  return FEED_LABELS[(lang ?? "en").split("-")[0]] ?? FEED_LABELS.en;
+}
+
+function publicHolidayFeed(
+  rows: PublicHolidayRow[],
+  o: { country: string; subdivision: string | null; lang: string | null; categories: string[] | null },
+): string {
+  const l = labels(o.lang);
+  const scope = o.subdivision ?? o.country;
+  const extra = o.categories && o.categories.join(",") !== "public" ? ` (${o.categories.join(", ")})` : "";
+  const events = rows.map((r) => {
+    const notes = [r.is_observed ? l.observed : null, r.is_estimated ? l.estimated : null].filter(Boolean);
+    return vevent({
+      uid: `ph-${scope}-${r.date}-${hash(r.category + "|" + r.local_name)}`,
+      start: r.date,
+      end: r.date,
+      summary: r.name + (notes.length ? ` (${notes.join(", ")})` : ""),
+      description: r.name !== r.local_name ? r.local_name : null,
+      categories: r.category,
+      url: null,
+    });
+  });
+  return vcalendar(`${l.public} ${scope}${extra}`, events);
+}
+
+function schoolHolidayFeed(
+  rows: SchoolPeriodRow[],
+  calendars: SchoolCalendarRow[],
+  o: { country: string; subdivision: string | null; authority: string | null; lang: string | null; from: string; to: string },
+): string {
+  const l = labels(o.lang);
+  const title = (o.authority && calendars.find((c) => c.title)?.title) || o.subdivision || o.country;
+  const events = rows.map((r) =>
+    vevent({
+      uid: `sh-${r.calendar_id}-${r.start_date}-${hash(r.kind + "|" + r.name)}`,
+      start: r.start_date,
+      end: r.end_date,
+      summary: r.name + (r.status === "pending" ? ` (${l.unverified})` : ""),
+      description: r.source_url,
+      categories: r.kind,
+      url: r.source_url,
+    }),
+  );
+  // First and last day of instruction, from the calendar metadata.
+  for (const c of calendars) {
+    for (const [day, label] of [[c.first_day, l.first], [c.last_day, l.last]] as const) {
+      if (!day || day < o.from || day > o.to) continue;
+      events.push(
+        vevent({
+          uid: `sh-${c.calendar_id}-${label === l.first ? "first" : "last"}-day`,
+          start: day,
+          end: day,
+          summary: label + (c.status === "pending" ? ` (${l.unverified})` : ""),
+          description: c.source_url,
+          categories: "school_day",
+          url: c.source_url,
+        }),
+      );
+    }
+  }
+  return vcalendar(`${l.school} ${title}`, events);
+}
+
+function vcalendar(name: string, events: string[][]): string {
+  const lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Holibase//holibase.org//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    `NAME:${esc(name)}`,
+    `X-WR-CALNAME:${esc(name)}`,
+    `X-WR-CALDESC:${esc(ATTRIBUTION)}`,
+    "REFRESH-INTERVAL;VALUE=DURATION:P1D",
+    "X-PUBLISHED-TTL:P1D",
+    ...events.flat(),
+    "END:VCALENDAR",
+  ];
+  return lines.map(fold).join("\r\n") + "\r\n";
+}
+
+function vevent(e: { uid: string; start: string; end: string; summary: string; description: string | null; categories: string; url: string | null }): string[] {
+  const out = [
+    "BEGIN:VEVENT",
+    `UID:${e.uid}@holibase.org`,
+    `DTSTAMP:${dtstamp()}`,
+    `DTSTART;VALUE=DATE:${icsDate(e.start)}`,
+    `DTEND;VALUE=DATE:${icsDate(addDay(e.end))}`, // DTEND is exclusive for all-day events
+    `SUMMARY:${esc(e.summary)}`,
+    `CATEGORIES:${esc(e.categories)}`,
+    "TRANSP:TRANSPARENT",
+  ];
+  if (e.description) out.push(`DESCRIPTION:${esc(e.description)}`);
+  if (e.url && /^https?:\/\//.test(e.url)) out.push(`URL:${e.url}`);
+  out.push("END:VEVENT");
+  return out;
+}
+
+function calendar(body: string, filename: string, maxAge: number): Response {
+  return new Response(body, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/calendar; charset=utf-8",
+      "Content-Disposition": `inline; filename="${filename.replace(/[^A-Za-z0-9_.-]/g, "-")}.ics"`,
+      "Cache-Control": `public, max-age=${maxAge}`,
+      ...corsHeaders(),
+    },
+  });
+}
+
+/** Same value for a whole UTC day, so the body (and its ETag) only changes when the data does or once a day. */
+function dtstamp(): string {
+  return new Date().toISOString().slice(0, 10).replace(/-/g, "") + "T000000Z";
+}
+
+function icsDate(d: string): string {
+  return d.replace(/-/g, "");
+}
+
+function addDay(d: string): string {
+  return new Date(Date.parse(d + "T00:00:00Z") + 864e5).toISOString().slice(0, 10);
+}
+
+function esc(s: string): string {
+  return s.replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+}
+
+/** Folds lines longer than 75 octets (RFC 5545 3.1) without splitting UTF-8 characters. */
+function fold(line: string): string {
+  const enc = new TextEncoder();
+  if (enc.encode(line).length <= 75) return line;
+  const parts: string[] = [];
+  let cur = "";
+  let size = 0;
+  for (const ch of line) {
+    const n = enc.encode(ch).length;
+    if (size + n > (parts.length ? 74 : 75)) {
+      parts.push(cur);
+      cur = "";
+      size = 0;
+    }
+    cur += ch;
+    size += n;
+  }
+  parts.push(cur);
+  return parts.join("\r\n ");
+}
+
+/** FNV-1a, 32 bit, hex. Stable event UIDs across rebuilds. */
+function hash(s: string): string {
+  let h = 0x811c9dc5;
+  for (const b of new TextEncoder().encode(s)) {
+    h ^= b;
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8, "0");
 }

@@ -1,0 +1,27 @@
+Holibase data licence
+=====================
+
+Holibase's own data is licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0):
+
+  https://creativecommons.org/licenses/by/4.0/
+  Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+This covers:
+  - the editorial and community school calendars (data/editorial/, source_id
+    'editorial' and 'community' in the database),
+  - the education authority directory as compiled by Holibase,
+  - the Holibase database and API responses as a compilation.
+
+You may copy, redistribute, adapt and build on the data for any purpose,
+including commercially. Give appropriate credit, for example:
+
+  Holibase (holibase.org), CC BY 4.0
+
+Data from third parties keeps its own licence:
+  - python-holidays (public and school holidays, source_id 'python-holidays'):
+    MIT, © python-holidays contributors, https://github.com/vacanza/holidays
+  - NCES Common Core of Data / EDGE (US school district directory):
+    U.S. federal government work, public domain.
+
+The code in this repository is licensed separately under MIT (see LICENSE).
