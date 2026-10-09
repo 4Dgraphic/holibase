@@ -1,0 +1,36 @@
+name = "holibase-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+# api.holibase.org: Wrangler creates the DNS record and certificate on deploy.
+# Requirement: the zone holibase.org is in the same Cloudflare account.
+# Do NOT create a DNS record for "api" by hand beforehand.
+routes = [
+  { pattern = "api.holibase.org", custom_domain = true }
+]
+
+[vars]
+# Supabase project "Holibase" (eu-west-1)
+SUPABASE_URL = "https://oyjlotwbntvkjzsahczz.supabase.co"
+# Cache lifetimes in seconds (edge cache and Cache-Control for clients)
+TTL_PUBLIC_HOLIDAYS = "86400"
+TTL_SCHOOL_HOLIDAYS = "21600"
+TTL_REFERENCE = "86400"
+
+# Secret, never put it in this file:
+#   npx wrangler secret put SUPABASE_KEY      (publishable / anon key; RLS keeps data read-only)
+
+# Static JSON files (data/public-holidays/..., data/school-holidays/...)
+[[r2_buckets]]
+binding = "DATA"
+bucket_name = "holibase-data"
+
+# Simple rate limit per client IP: 120 requests per 60 s.
+# Cache hits are answered before the limiter and do not count.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 120, period = 60 }
+
+[observability]
+enabled = true

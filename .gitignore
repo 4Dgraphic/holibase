@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+dist/
+
+# Worker
+api/node_modules/
+api/.wrangler/
+api/.dev.vars
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,2 @@
+holidays>=0.106
+psycopg[binary]>=3.2
