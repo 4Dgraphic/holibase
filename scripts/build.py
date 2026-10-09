@@ -199,11 +199,18 @@ def public_holiday_rows(cc: str, years: list[int], info: dict | None = None) -> 
 
 # ------------------------------------------------------------------ school holidays
 
-def school_year(cc: str, d: dt.date) -> str:
+def school_year(cc: str, d: dt.date, is_summer: bool = False) -> str:
+    """School year a period belongs to. Northern hemisphere: August starts a new year, except the
+    summer break, which always closes the year that ends (Bavaria's Sommerferien start in August)."""
     if cc in CALENDAR_YEAR_SCHOOL:
         return str(d.year)
-    y = d.year if d.month >= 8 else d.year - 1
+    y = d.year if d.month >= 8 and not is_summer else d.year - 1
     return f"{y}-{(y + 1) % 100:02d}"
+
+
+def _is_summer(period: dict) -> bool:
+    en = next((v for k, v in period["names"].items() if k.split("-")[0] == "en"), "")
+    return "summer" in en.lower() or "sommer" in period["label"].lower()
 
 
 def _periods(entries: list[Entry]) -> list[dict]:
@@ -245,7 +252,9 @@ def school_calendar_rows(cc: str, years: list[int], info: dict | None = None) ->
     for sub, ents in scopes:
         by_year: dict[str, list[dict]] = {}
         for p in _periods(ents):
-            by_year.setdefault(school_year(cc, dt.date.fromisoformat(p["start_date"])), []).append(p)
+            start = dt.date.fromisoformat(p["start_date"])
+            summer = start.month in (8, 9) and _is_summer(p)
+            by_year.setdefault(school_year(cc, start, summer), []).append(p)
         for year, periods in sorted(by_year.items()):
             yield {
                 "id": calendar_id(cc, sub, year),
