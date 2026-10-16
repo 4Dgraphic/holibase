@@ -355,8 +355,10 @@ def main() -> int:
                            values (%s, %s, %s, %s, %s, %s, 'official', 'confirmed', %s, %s, %s, %s, %s, %s, %s)
                            on conflict (id) do update set
                              status = 'confirmed', source_version = excluded.source_version, source_url = excluded.source_url,
-                             source_retrieved_at = excluded.source_retrieved_at, first_day = excluded.first_day,
-                             last_day = excluded.last_day, notes = excluded.notes, title = excluded.title
+                             source_retrieved_at = excluded.source_retrieved_at,
+                             -- keep a first/last day taken over from research when the source has none
+                             first_day = coalesce(excluded.first_day, public.school_calendars.first_day),
+                             last_day = coalesce(excluded.last_day, public.school_calendars.last_day), notes = excluded.notes, title = excluded.title
                            returning (xmax = 0)""",
                         (cid, c["country_code"], c["subdivision_code"], auth, c["school_year"],
                          c["authority"] or c["subdivision_code"], source_id, f"sha256:{digest}", c["source_url"],
@@ -393,6 +395,17 @@ def main() -> int:
                                           notes = trim(both ' ' from coalesce(notes, '') || ' Superseded by official data (' || %s || ').')
                                     where id = any(%s::uuid[]) and status <> 'outdated'""", (source_id, superseded))
                     stats["research_superseded"] = cur.rowcount
+                # The official data rarely has the first school day; take it over from the research it replaces.
+                cur.execute("""update public.school_calendars o
+                                  set first_day = coalesce(o.first_day, e.first_day), last_day = coalesce(o.last_day, e.last_day)
+                                 from public.school_calendars e
+                                where o.origin = 'official' and o.source_id = %s and e.origin in ('editorial', 'community')
+                                  and e.country_code = o.country_code and e.school_year = o.school_year
+                                  and e.subdivision_code is not distinct from o.subdivision_code
+                                  and e.authority_id is not distinct from o.authority_id
+                                  and ((o.first_day is null and e.first_day is not null) or (o.last_day is null and e.last_day is not null))""",
+                            (source_id,))
+                stats["school_days_from_research"] = cur.rowcount
 
                 years = sorted(k[6:] for k in stats if k.startswith("years_"))
                 lines += [f"### {key} ({source_id})", "",
