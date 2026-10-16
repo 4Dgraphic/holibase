@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import gzip
 import json
 import os
 import re
@@ -53,13 +54,20 @@ def http_get(url: str, tries: int = 4) -> bytes:
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
             with urllib.request.urlopen(req, timeout=120) as r:
-                return r.read()
+                return maybe_gunzip(r.read())
         except Exception as e:
             if attempt == tries - 1:
                 raise
             print(f"  retry {attempt + 1} after {e}", flush=True)
             time.sleep(4 * (attempt + 1))
     raise AssertionError
+
+
+def maybe_gunzip(data: bytes) -> bytes:
+    """Some servers (data.education.gouv.fr) send gzip even when the client did not ask for it."""
+    if data[:2] == b"\x1f\x8b":
+        return gzip.decompress(data)
+    return data
 
 
 def school_year(raw: str) -> str:
@@ -308,19 +316,20 @@ def main() -> int:
             source_id, urls, adapter, fixture_name = ADAPTERS[key]
             stats = Counter()
             # 1. download + parse; on any error keep the last good data
-            raw, calendars = None, []
+            raw, calendars, errors = None, [], []
             candidates = [os.path.join(args.fixture, fixture_name)] if args.fixture else urls
             for u in candidates:
                 try:
-                    raw = open(u, "rb").read() if args.fixture else http_get(u)
+                    raw = maybe_gunzip(open(u, "rb").read()) if args.fixture else http_get(u)
                     calendars = adapter(raw)
                     if calendars:
                         break
                 except Exception as e:
                     print(f"{key}: {u} failed: {type(e).__name__}: {e}")
+                    errors.append(f"{u}: {type(e).__name__}: {e}")
                     calendars = []
             if not calendars:
-                lines += [f"### {key}: no data, nothing changed", ""]
+                lines += [f"### {key}: no data, nothing changed", "", *[f"- {e}" for e in errors], ""]
                 exit_code = 1
                 continue
             digest = __import__("hashlib").sha256(raw).hexdigest()[:16]
