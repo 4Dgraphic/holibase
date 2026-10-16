@@ -1,0 +1,167 @@
+<!--
+path: /docs/
+title: API docs
+description: Get started with the Holibase API: public holidays, school holidays, school districts and calendar feeds. No key, no sign-up.
+theme: light
+nav: docs
+-->
+<section style="padding-bottom: 32px">
+  <div class="wrap">
+    <p class="overline">API docs</p>
+    <h1 class="h1">Get started in one request.</h1>
+    <p class="body-l muted measure" style="margin: 16px 0 24px">The Holibase API is free, read-only and needs no key. Every response is JSON, unless you ask for an iCalendar feed. The full list of fields is in the <a href="/docs/reference/">API reference</a>.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/docs/reference/">API reference <span aria-hidden="true">→</span></a>
+      <a class="btn btn-secondary" href="https://api.holibase.org/openapi.json">OpenAPI 3.1 spec</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 32px">
+  <div class="wrap doc">
+    <nav class="toc" aria-label="On this page">
+      <a href="#quick-start">Quick start</a>
+      <a href="#conventions">Conventions</a>
+      <a href="#public-holidays">Public holidays</a>
+      <a href="#school-holidays">School holidays</a>
+      <a href="#authorities">School districts</a>
+      <a href="#feeds">Calendar feeds</a>
+      <a href="#reference-data">Countries and coverage</a>
+      <a href="#limits">Caching and limits</a>
+      <a href="#errors">Errors</a>
+      <a href="#licence">Licence and credit</a>
+    </nav>
+    <article>
+      <h2 id="quick-start">Quick start</h2>
+      <p>Ask for the public holidays of a country and year. Add a region to get its complete set, nationwide days included.</p>
+      <div class="code">
+        <div class="head"><span>Request</span><span class="lang">SHELL</span><button class="copy-btn" type="button" data-copy="qs1">Copy</button></div>
+        <pre id="qs1">curl <span class="s">"https://api.holibase.org/v1/public-holidays/DE/2026?subdivision=DE-BY&amp;lang=en"</span></pre>
+      </div>
+      <div class="code">
+        <div class="head"><span>Response, shortened</span><span class="lang">JSON</span></div>
+        <pre>{
+  <span class="k">"country"</span>: <span class="s">"DE"</span>,
+  <span class="k">"subdivision"</span>: <span class="s">"DE-BY"</span>,
+  <span class="k">"from"</span>: <span class="s">"2026-01-01"</span>,
+  <span class="k">"to"</span>: <span class="s">"2026-12-31"</span>,
+  <span class="k">"count"</span>: <span class="n">12</span>,
+  <span class="k">"holidays"</span>: [
+    {
+      <span class="k">"date"</span>: <span class="s">"2026-01-06"</span>,
+      <span class="k">"name"</span>: <span class="s">"Epiphany"</span>,
+      <span class="k">"local_name"</span>: <span class="s">"Heilige Drei Könige"</span>,
+      <span class="k">"category"</span>: <span class="s">"public"</span>,
+      <span class="k">"scope"</span>: <span class="s">"regional"</span>,
+      <span class="k">"is_observed"</span>: <span class="n">false</span>,
+      <span class="k">"is_estimated"</span>: <span class="n">false</span>
+    }
+  ],
+  <span class="k">"attribution"</span>: <span class="s">"Public holidays © python-holidays contributors (MIT). …"</span>
+}</pre>
+      </div>
+      <p>From JavaScript, the API works directly in the browser. CORS is open for every origin.</p>
+      <div class="code">
+        <div class="head"><span>JavaScript</span><span class="lang">JS</span></div>
+        <pre><span class="k">const</span> res = <span class="k">await</span> fetch(<span class="s">"https://api.holibase.org/v1/school-holidays/DE?subdivision=DE-BY"</span>);
+<span class="k">const</span> { periods } = <span class="k">await</span> res.json();</pre>
+      </div>
+
+      <h2 id="conventions">Conventions</h2>
+      <ul>
+        <li><b>Base URL</b> is <code>https://api.holibase.org/v1</code>. The version only changes when a field changes meaning.</li>
+        <li><b>Countries</b> use ISO 3166-1 alpha-2 codes (<code>US</code>, <code>DE</code>), <b>regions</b> ISO 3166-2 codes (<code>US-CA</code>, <code>DE-BY</code>). Codes are case-insensitive.</li>
+        <li><b>Dates</b> are ISO 8601 calendar dates without a time zone. A holiday is the local day, wherever you are.</li>
+        <li><b>Ranges</b> are inclusive: <code>end_date</code> is the last day off.</li>
+        <li><b>Names</b> come in the language you ask for with <code>lang</code>, falling back to the base language, then English, then the local name. <code>local_name</code> is always in the country’s own language.</li>
+      </ul>
+
+      <h2 id="public-holidays">Public holidays</h2>
+      <p><code>GET /v1/public-holidays/{country}/{year}</code> returns one calendar year. Without the year, use <code>from</code> and <code>to</code> for any range up to three years.</p>
+      <div class="code">
+        <div class="head"><span>Examples</span><span class="lang">SHELL</span></div>
+        <pre><span class="c"># Next twelve months in California</span>
+curl <span class="s">"https://api.holibase.org/v1/public-holidays/US?subdivision=US-CA&amp;from=2026-10-16&amp;to=2027-10-15"</span>
+
+<span class="c"># Public and Catholic holidays in Austria</span>
+curl <span class="s">"https://api.holibase.org/v1/public-holidays/AT/2027?categories=public,catholic"</span></pre>
+      </div>
+      <ul>
+        <li><b>scope</b> is <code>national</code> or <code>regional</code>. Ask for a region or for the nation, never both in one call.</li>
+        <li><b>is_observed</b> marks a moved day off, such as a Sunday holiday observed on Monday.</li>
+        <li><b>is_estimated</b> marks dates that depend on moon sighting and can still move by a day or two.</li>
+        <li><b>categories</b> defaults to <code>public</code>. Depending on the country there are also <code>bank</code>, <code>government</code>, <code>optional</code> and religious categories.</li>
+      </ul>
+
+      <h2 id="school-holidays">School holidays</h2>
+      <p><code>GET /v1/school-holidays/{country}</code> returns school holiday periods for a region or a school authority. Without <code>from</code> and <code>to</code> you get the next twelve months.</p>
+      <div class="code">
+        <div class="head"><span>Examples</span><span class="lang">SHELL</span></div>
+        <pre><span class="c"># Lower Saxony</span>
+curl <span class="s">"https://api.holibase.org/v1/school-holidays/DE?subdivision=DE-NI"</span>
+
+<span class="c"># A US school district, by its Holibase id</span>
+curl <span class="s">"https://api.holibase.org/v1/school-holidays/US?authority={id}"</span></pre>
+      </div>
+      <p>Each period has a <code>kind</code>:</p>
+      <ul>
+        <li><b>break</b>: several days off, such as winter or summer holidays.</li>
+        <li><b>holiday</b>: a single day off school.</li>
+        <li><b>teacher_day</b>: no school for students, teachers work.</li>
+        <li><b>early_release</b>: school ends early. Not a day off.</li>
+      </ul>
+      <p>The response also lists the <b>calendars</b> the periods come from, one per school year, with the first and last day of school, the source document and its <code>origin</code>: <code>official</code> (government open data), <code>library</code> (python-holidays), <code>editorial</code> (researched by Holibase) or <code>community</code>.</p>
+      <h3>Coverage and unverified calendars</h3>
+      <p>Every school holiday response has a <code>coverage</code> block. When there is no calendar for the scope, <code>coverage.status</code> is <code>none</code> and <code>coverage.public_holidays</code> links to the public holidays of the same region, so you can show those instead.</p>
+      <p>Researched calendars that have not been checked against a second source are <b>pending</b> and left out by default. Add <code>include=pending</code> to get them; they are marked <code>status: "pending"</code>.</p>
+
+      <h2 id="authorities">School districts and authorities</h2>
+      <p>Where the school calendar is set below the state level, as for US school districts, Dutch regions or French zones, look up the authority first and pass its id.</p>
+      <div class="code">
+        <div class="head"><span>Search</span><span class="lang">SHELL</span></div>
+        <pre>curl <span class="s">"https://api.holibase.org/v1/authorities?country=US&amp;q=gwinnett"</span>
+curl <span class="s">"https://api.holibase.org/v1/authorities/{id}"</span></pre>
+      </div>
+      <p><code>q</code> matches the name, the city or an official id such as the NCES district id. Results with a verified calendar rank first. Each result says which school years it has (<code>school_years</code>) and how many calendars are verified or pending.</p>
+
+      <h2 id="feeds">Calendar feeds</h2>
+      <p>Append <code>.ics</code> to a public or school holiday path, or add <code>format=ics</code>, and you get an iCalendar feed that Apple Calendar, Google Calendar and Outlook can subscribe to. Feeds cover last year to next year and roll forward by themselves.</p>
+      <div class="code">
+        <div class="head"><span>Feeds</span><span class="lang">URL</span></div>
+        <pre><span class="s">https://api.holibase.org/v1/school-holidays/DE.ics?subdivision=DE-NI&amp;lang=de</span>
+<span class="s">https://api.holibase.org/v1/public-holidays/US.ics?subdivision=US-NY</span></pre>
+      </div>
+      <p>To subscribe in Apple Calendar, replace <code>https://</code> with <code>webcal://</code>. The <a href="/calendar/">calendar page</a> builds these links for any region or district.</p>
+
+      <h2 id="reference-data">Countries and coverage</h2>
+      <ul>
+        <li><code>GET /v1/countries</code> lists every country and region with its codes and names.</li>
+        <li><code>GET /v1/coverage</code> returns live coverage figures: public holiday countries and date range, school holiday coverage per country, and the US district directory. The <a href="/coverage/">coverage page</a> shows the same figures.</li>
+        <li><code>GET /v1/health</code> tells you the API is up.</li>
+      </ul>
+
+      <h2 id="limits">Caching and limits</h2>
+      <ul>
+        <li>Responses are cached at the edge and carry an <b>ETag</b>. Send <code>If-None-Match</code> and you get <code>304 Not Modified</code> when nothing changed.</li>
+        <li>Public holidays are cached for a day, school holidays for six hours. Data is synced weekly, so there is no need to poll more often.</li>
+        <li>Requests that miss the cache are limited to <b>120 per minute per IP address</b>. Above that you get <code>429</code> with a <code>Retry-After</code> header. Cached responses do not count.</li>
+        <li>For bulk use, cache on your side and fetch whole years rather than single days.</li>
+      </ul>
+
+      <h2 id="errors">Errors</h2>
+      <p>Errors use the HTTP status and a JSON body with a stable code and a message for people.</p>
+      <div class="code">
+        <div class="head"><span>400 Bad Request</span><span class="lang">JSON</span></div>
+        <pre>{ <span class="k">"error"</span>: { <span class="k">"code"</span>: <span class="s">"invalid_year"</span>, <span class="k">"message"</span>: <span class="s">"Year must have four digits, e.g. 2026."</span> } }</pre>
+      </div>
+      <ul>
+        <li><b>400</b>: a parameter is invalid. <b>404</b>: unknown path, country or id.</li>
+        <li><b>429</b>: rate limit, see above. <b>502</b> or <b>503</b>: the database could not be reached, retry later.</li>
+      </ul>
+
+      <h2 id="licence">Licence and credit</h2>
+      <p>Holibase data is free to use, also commercially, under <b>CC BY 4.0</b>. Show the credit line from the <code>attribution</code> field where you display the data, for example in your footer or about page.</p>
+      <p>Public holidays are computed with python-holidays (MIT). Some school calendars come from government open data under their own open licences. The <a href="/licence/">sources and licences</a> page lists them all.</p>
+    </article>
+  </div>
+</section>

@@ -63,6 +63,7 @@ def check_ics(path: str) -> None:
 
 # every operation in the spec must be exercised below
 check("/v1/countries", "CountriesResponse")
+check("/v1/coverage", "CoverageResponse")
 check("/v1/public-holidays/DE/2026?subdivision=DE-BY&lang=de", "PublicHolidaysResponse")
 check("/v1/public-holidays/US?from=2026-01-01&to=2026-12-31&subdivision=US-CA", "PublicHolidaysResponse")
 check("/v1/school-holidays/DE?subdivision=DE-NI&from=2026-08-01&to=2027-07-31&lang=de", "SchoolHolidaysResponse")

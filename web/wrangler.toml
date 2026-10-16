@@ -1,0 +1,16 @@
+name = "holibase-web"
+compatibility_date = "2026-09-01"
+
+# holibase.org and www.holibase.org: static files from web/public, served by Cloudflare.
+# Wrangler creates the DNS records and certificates on deploy. Requirement: the zone
+# holibase.org is in the same Cloudflare account and has no existing A/AAAA/CNAME
+# record for "holibase.org" or "www" (delete those first, e.g. a parking page).
+routes = [
+  { pattern = "holibase.org", custom_domain = true },
+  { pattern = "www.holibase.org", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"

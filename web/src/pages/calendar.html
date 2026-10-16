@@ -1,0 +1,86 @@
+<!--
+path: /calendar/
+title: School calendars
+description: Find the school holidays of your region or US school district and subscribe to them in Apple Calendar, Google Calendar or Outlook.
+theme: dark
+nav: calendar
+script: calendar.js
+-->
+<section>
+  <div class="wrap">
+    <div id="finder">
+      <p class="overline">School calendars</p>
+      <h1 class="h1" id="finder-title">Find your school’s holidays.</h1>
+      <p class="body-l muted measure" style="margin: 16px 0 32px">Search a country, a state or region, or a US school district. You get the school holidays and public holidays in one view, and a calendar feed to subscribe to.</p>
+      <form role="search" id="search-form" style="max-width: 720px" onsubmit="return false">
+        <div class="field">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label class="visually-hidden" for="q">Region or school district</label>
+          <input class="input" id="q" type="search" placeholder="e.g. Bavaria, New South Wales, Zone C, Gwinnett" autocomplete="off"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results">
+          <ul class="results" id="results" role="listbox" hidden></ul>
+        </div>
+      </form>
+      <div class="chips" id="examples" aria-label="Examples">
+        <button class="chip" type="button" data-q="Bavaria">Bavaria</button>
+        <button class="chip" type="button" data-q="Lower Saxony">Lower Saxony</button>
+        <button class="chip" type="button" data-q="New South Wales">New South Wales</button>
+        <button class="chip" type="button" data-q="Zone C">France, Zone C</button>
+        <button class="chip" type="button" data-q="Regio Noord">Netherlands, north</button>
+        <button class="chip" type="button" data-q="Gwinnett">Gwinnett County</button>
+        <button class="chip" type="button" data-q="Los Angeles Unified">Los Angeles Unified</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="view" hidden>
+  <section style="padding-top: 48px">
+    <div class="wrap">
+      <p class="overline" id="v-kicker">School calendar</p>
+      <h2 class="h1" id="v-title"></h2>
+      <div class="actions" style="margin-top: 16px" id="v-pills"></div>
+      <div id="v-notice" style="margin-top: 24px"></div>
+    </div>
+  </section>
+
+  <section style="padding-top: 32px">
+    <div class="wrap bento">
+      <article class="card date-card school" id="v-next"></article>
+      <article class="card card-lg span-2" id="v-subscribe">
+        <h3 class="h2">Add to your calendar</h3>
+        <p class="body-s muted" style="margin: 8px 0 24px">Subscribe once. Your calendar app checks for updates by itself, so changes and new school years appear without doing anything.</p>
+        <div class="subscribe" id="v-feeds"></div>
+      </article>
+      <article class="card" id="v-facts"></article>
+    </div>
+  </section>
+
+  <section style="padding-top: 16px">
+    <div class="wrap bento">
+      <article class="card card-lg span-2">
+        <h3 class="h2" style="margin-bottom: 8px">Coming up</h3>
+        <p class="body-s muted" style="margin-bottom: 24px" id="v-range"></p>
+        <ol class="agenda" id="v-agenda"></ol>
+        <button class="btn btn-secondary btn-sm" type="button" id="v-more" hidden style="margin-top: 16px">Show all</button>
+      </article>
+      <article class="card card-lg span-2">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px">
+          <h3 class="h2">Next six months</h3>
+          <div class="legend"><span class="pill pill-school">School holiday</span><span class="pill pill-public">Public holiday</span></div>
+        </div>
+        <div class="months" id="v-months"></div>
+      </article>
+    </div>
+  </section>
+
+  <section style="padding-top: 16px">
+    <div class="wrap">
+      <article class="card card-lg">
+        <h3 class="h2" style="margin-bottom: 16px">Sources</h3>
+        <div class="table-scroll"><table class="data" id="v-sources"></table></div>
+        <p class="body-s subtle" style="margin: 16px 0 0" id="v-attribution"></p>
+      </article>
+    </div>
+  </section>
+</div>

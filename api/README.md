@@ -8,6 +8,7 @@ Reachable at `https://api.holibase.org`.
 | Method | Path | Notes |
 |---|---|---|
 | GET | `/v1/countries` | countries + subdivisions |
+| GET | `/v1/coverage` | live coverage figures (public holidays, school holidays per country, US districts) |
 | GET | `/v1/public-holidays/{CC}/{YYYY}?subdivision=&lang=` | one calendar year |
 | GET | `/v1/public-holidays/{CC}?from=&to=&subdivision=&lang=` | free range, max 3 years |
 | GET | `/v1/school-holidays/{CC}?subdivision=&from=&to=` | default: today + 12 months |

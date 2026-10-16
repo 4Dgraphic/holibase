@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://holibase.org/sitemap.xml

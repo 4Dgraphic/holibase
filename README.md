@@ -30,6 +30,7 @@ scripts/import_official.py            imports school holidays from official open
 scripts/research_to_editorial.py      validates deep-research results and turns them into editorial calendars
 supabase/migrations/                  database schema
 supabase/seed.sql                     data sources (run once after the schema)
+web/                                  website holibase.org (static, Cloudflare Worker assets)
 ```
 
 ## Library sync
@@ -154,3 +155,17 @@ calendar, as 10 ready-to-paste prompts. Results dropped into `results/` are vali
   hand (`"<authority uuid>": "<LEAID>"`, `null` = never match).
 - **Nothing is deleted.** Agencies that leave the NCES directory become `is_active = false`.
 - **Safety:** aborts when NCES returns fewer than 15,000 agencies or more than 5 % would be deactivated.
+
+## Website
+
+`web/` is the static site at holibase.org: no framework, no build dependencies, no cookies.
+Pages live in `web/src/pages/` (front matter on top), shared header and footer in `web/src/partials/`,
+CSS, JavaScript and fonts in `web/public/assets/`. Colours, type and spacing follow the Holibase design system.
+
+```
+python web/build.py                                    # writes the HTML into web/public/
+python -m http.server -d web/public 8080               # then open http://localhost:8080/
+http://localhost:8080/calendar/?api=http://localhost:8787   # use a local API (wrangler dev in api/)
+```
+
+`.github/workflows/deploy-web.yml` builds and deploys on every push to `web/` (same Cloudflare secrets as the API).

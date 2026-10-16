@@ -1,0 +1,103 @@
+<!--
+path: /coverage/
+title: Coverage
+description: Which countries, regions and school districts Holibase covers, where the data comes from and how far ahead it reaches.
+theme: dark
+nav: coverage
+script: coverage.js
+-->
+<section>
+  <div class="wrap">
+    <p class="overline">Coverage</p>
+    <h1 class="h1">What Holibase knows, and where from.</h1>
+    <p class="body-l muted measure" style="margin: 16px 0 0">All figures on this page are read live from the database. Public holidays are computed for every country python-holidays supports. School holidays come from official open data where it exists and from researched calendars elsewhere.</p>
+  </div>
+</section>
+
+<section style="padding-top: 16px">
+  <div class="wrap bento">
+    <div class="card tile-mint stat">
+      <p class="label">Public holidays</p>
+      <div class="numeral-xl" data-stat="ph-countries">247</div>
+      <p class="body-s muted" style="margin: 0">countries, <span data-stat="ph-subdivisions">624</span> states and regions</p>
+    </div>
+    <div class="card stat">
+      <p class="label">Date range</p>
+      <div class="numeral" style="color: var(--mint-ink)"><span data-stat="ph-first-year">2020</span>–<span data-stat="ph-last-year">2036</span></div>
+      <p class="body-s muted" style="margin: 0">recomputed every week</p>
+    </div>
+    <div class="card tile-coral stat">
+      <p class="label">School holidays</p>
+      <div class="numeral-xl" data-stat="sh-countries">15</div>
+      <p class="body-s muted" style="margin: 0">countries, <span data-stat="sh-calendars">799</span> verified school-year calendars</p>
+    </div>
+    <div class="card stat">
+      <p class="label">US students covered</p>
+      <div class="numeral" data-stat="us-students-pct">20.5%</div>
+      <p class="body-s muted" style="margin: 0"><span data-stat="us-verified">172</span> of <span data-stat="us-directory">19,636</span> districts verified</p>
+    </div>
+  </div>
+</section>
+
+<section id="school">
+  <div class="wrap">
+    <p class="overline">01. School holidays by country</p>
+    <h2 class="h2" style="margin-bottom: 8px">Regions, zones and districts with a calendar</h2>
+    <p class="body-s muted measure" style="margin: 0 0 24px">Verified means the calendar comes from official open data, a maintained library or a researched calendar checked against the authority’s own document. Unverified calendars are only returned with <code>include=pending</code>.</p>
+    <div class="card card-lg">
+      <div class="table-scroll">
+        <table class="data" id="school-table">
+          <thead><tr><th scope="col">Country</th><th scope="col">Level</th><th scope="col">Verified</th><th scope="col">Unverified</th><th scope="col">School years</th><th scope="col">Source</th></tr></thead>
+          <tbody><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="us">
+  <div class="wrap">
+    <div class="card card-lg" style="padding: 48px">
+      <div class="hero" style="align-items: start">
+        <div>
+          <p class="overline">02. US school districts</p>
+          <h2 class="h2">Every district searchable, the largest ones researched first.</h2>
+          <p class="body-s muted" style="margin: 16px 0 0">The district directory comes from the NCES Common Core of Data and is refreshed every month. Calendars were researched for the largest districts by enrolment, from each district’s published calendar. A new round follows when districts publish their next school year.</p>
+        </div>
+        <div class="status-list">
+          <div class="status-row"><div><div class="name">Districts in the directory</div><div class="meta">NCES, public domain</div></div><span class="numeral" style="font-size: 32px" data-stat="us-directory">19,636</span></div>
+          <div class="status-row"><div><div class="name">Districts with a verified calendar</div><div class="meta">Researched by Holibase</div></div><span class="numeral" style="font-size: 32px; color: var(--mint-ink)" data-stat="us-verified">172</span></div>
+          <div class="status-row"><div><div class="name">Students in those districts</div><div class="meta">of <span data-stat="us-students-all">45.4M</span> public school students</div></div><span class="numeral" style="font-size: 32px" data-stat="us-students">9.3M</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="public">
+  <div class="wrap">
+    <p class="overline">03. Public holidays</p>
+    <h2 class="h2" style="margin-bottom: 8px">All countries</h2>
+    <p class="body-s muted measure" style="margin: 0 0 24px">Pick a country to see its public holidays for the next twelve months and subscribe to them.</p>
+    <label class="visually-hidden" for="country-filter">Filter countries</label>
+    <div class="field" style="max-width: 420px; margin-bottom: 24px">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="input" id="country-filter" type="search" placeholder="Filter countries" autocomplete="off">
+    </div>
+    <div class="chips" id="country-list" aria-live="polite"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2 class="h1">Missing your calendar?</h2>
+        <p class="body-l">Send the link to the official school calendar and it gets researched in the next round.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-dark" href="https://github.com/4Dgraphic/holibase/issues/new?title=School%20calendar%20for%20">Suggest a calendar <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>

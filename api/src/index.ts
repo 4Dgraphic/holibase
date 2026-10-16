@@ -119,6 +119,18 @@ function matchRoute(url: URL): Route {
     case "health":
       return { kind: "health" };
 
+    case "coverage": {
+      if (rawCountry) throw new ApiError(404, "not_found", "Use /v1/coverage without further segments.");
+      return {
+        kind: "data",
+        cacheKey: `${url.origin}/v1/coverage`,
+        handle: async (env) => {
+          const res = await supabase(env, "/rest/v1/rpc/get_coverage", { method: "POST", body: "{}" });
+          return json(await res.json(), 200, ttl(env.TTL_REFERENCE, 86400));
+        },
+      };
+    }
+
     case "countries": {
       if (rawCountry) throw new ApiError(404, "not_found", "Use /v1/countries without further segments.");
       return {
@@ -483,6 +495,7 @@ function indexDoc(url: URL) {
     website: "https://holibase.org",
     endpoints: {
       countries: `${o}/v1/countries`,
+      coverage: `${o}/v1/coverage`,
       public_holidays_year: `${o}/v1/public-holidays/DE/2026?subdivision=DE-BY&lang=de&categories=public,catholic`,
       public_holidays_range: `${o}/v1/public-holidays/US?from=2026-01-01&to=2026-12-31&subdivision=US-CA`,
       school_holidays: `${o}/v1/school-holidays/DE?subdivision=DE-NI&from=2026-08-01&to=2027-07-31`,

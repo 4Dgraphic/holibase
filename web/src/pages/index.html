@@ -1,0 +1,186 @@
+<!--
+path: /
+title: Holibase · Public and school holidays, one open API
+description: Public holidays for 247 countries and school holidays by region and school district, as open data, a free API and calendar feeds.
+theme: dark
+nav: home
+script: home.js
+-->
+<section>
+  <div class="wrap hero">
+    <div>
+      <p class="overline">Open data · free API · calendar feeds</p>
+      <h1 class="display">Every day off, one API.</h1>
+      <p class="body-l">Public holidays for <span data-stat="ph-countries">247</span> countries and school holidays by region and school district, as open data, a free API and calendar feeds you can subscribe to.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/calendar/">Find your school calendar <span aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="/docs/">Read the docs</a>
+      </div>
+      <p class="source body-s subtle">Public holidays: © python-holidays contributors, MIT · synced every week</p>
+    </div>
+    <div class="hero-cards">
+      <div class="dot-deco" aria-hidden="true"></div>
+      <p class="caption body-s muted" id="next-caption">Next public holiday</p>
+      <article class="card date-card" id="next-card" aria-live="polite">
+        <div class="top overline" style="margin: 0"><span id="next-month">&nbsp;</span><span id="next-weekday"></span></div>
+        <div class="numeral-xl" id="next-day">&nbsp;</div>
+        <h2 class="h3" id="next-name">&nbsp;</h2>
+        <p class="body-s muted" id="next-local" style="margin: 0">&nbsp;</p>
+        <div class="pills"><span class="pill pill-public">Public holiday</span><span class="pill pill-code" id="next-code"></span><span class="pill pill-neutral" id="next-in"></span></div>
+      </article>
+      <form class="card" style="margin-top: 12px; padding: 20px" action="/calendar/" method="get" role="search">
+        <label class="h3" for="hero-q" style="display: block; margin-bottom: 12px">School holidays near you</label>
+        <div class="field">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input class="input" id="hero-q" name="q" type="search" placeholder="Region or school district, e.g. Bavaria, Gwinnett" autocomplete="off">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="coverage">
+  <div class="wrap">
+    <p class="overline">01. Coverage</p>
+    <h2 class="h1"><span data-stat="ph-countries">247</span> countries, through <span data-stat="ph-last-year">2036</span>.</h2>
+    <p class="body-l muted measure" style="margin: 24px 0 32px">Public holidays for every country and region python-holidays covers, from <span data-stat="ph-first-year">2020</span> to <span data-stat="ph-last-year">2036</span>. School holidays from official open data where a government publishes it, researched calendars where none does.</p>
+    <div class="bento">
+      <div class="card tile-mint stat">
+        <p class="label">Countries</p>
+        <div class="numeral-xl" data-stat="ph-countries">247</div>
+        <p class="body-s muted" style="margin: 0"><span data-stat="ph-subdivisions">624</span> states, provinces and regions included</p>
+      </div>
+      <div class="card stat">
+        <p class="label">Window</p>
+        <div class="numeral-xl" style="color: var(--mint-ink)" data-stat="ph-last-year">2036</div>
+        <p class="body-s muted" style="margin: 0">Recomputed weekly, history back to <span data-stat="ph-first-year">2020</span> kept</p>
+      </div>
+      <div class="card span-2 month-card" id="demo-month">
+        <div class="demo-split">
+          <div>
+            <h3 class="h2" id="demo-title">December</h3>
+            <p class="body-s muted" style="margin: 8px 0 24px">Lower Saxony, public and school holidays in one calendar.</p>
+            <div class="legend"><span class="pill pill-public">Public holiday</span><span class="pill pill-school">School holiday</span><span class="pill pill-code">DE-NI</span></div>
+          </div>
+          <div id="demo-grid"></div>
+        </div>
+      </div>
+      <div class="card tile-coral stat">
+        <p class="label">School holidays</p>
+        <div class="numeral-xl" data-stat="sh-countries">15</div>
+        <p class="body-s muted" style="margin: 0">countries, <span data-stat="sh-scopes">&nbsp;</span> regions and school districts</p>
+      </div>
+      <div class="card span-2">
+        <p class="label">Names in every language the source offers</p>
+        <div class="status-list" style="margin: 20px 0" id="names-demo">
+          <div class="status-row" style="background: none; padding: 12px 0; border-bottom: 1px solid var(--border); border-radius: 0"><span class="pill-code pill">de</span><span class="h3" style="flex: 1" data-name="de">Erster Weihnachtstag</span></div>
+          <div class="status-row" style="background: none; padding: 12px 0; border-bottom: 1px solid var(--border); border-radius: 0"><span class="pill-code pill">en</span><span class="h3" style="flex: 1" data-name="en">Christmas Day</span></div>
+        </div>
+        <p class="body-s muted" style="margin: 0">Missing a language? The API falls back to the base language, then English, then the local name.</p>
+      </div>
+      <div class="card tile-inverse stat">
+        <p class="label">Sync</p>
+        <div class="numeral" style="font-size: 72px; font-weight: 600; line-height: 1">Weekly</div>
+        <p class="body-s muted" style="margin: 0">From python-holidays and official open data, with a guard against broken releases</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schools">
+  <div class="wrap">
+    <div class="card card-lg" style="padding: 56px">
+      <div class="hero" style="align-items: start">
+        <div>
+          <p class="overline">02. School calendars</p>
+          <h2 class="h1">Find your school’s holidays, subscribe once.</h2>
+          <p class="body-l muted" style="margin: 24px 0 32px">Search a region or a US school district, then add its holidays to Apple Calendar, Google Calendar or Outlook. The feed updates itself when the calendar changes.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/calendar/">Search calendars <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="/coverage/">What’s covered <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="bento" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
+          <div class="card" style="background: var(--surface-raised)">
+            <p class="label">US school districts searchable</p>
+            <div class="numeral" style="margin-top: 16px" data-stat="us-directory">19,636</div>
+          </div>
+          <div class="card" style="background: var(--surface-raised)">
+            <p class="label">With a verified calendar</p>
+            <div class="numeral" style="margin-top: 16px; color: var(--mint-ink)" data-stat="us-verified">172</div>
+          </div>
+          <div class="card span-2" style="background: var(--surface-raised)">
+            <p class="label">US public school students covered</p>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 16px"><span class="numeral" data-stat="us-students-pct">20.5%</span><span class="muted body-s"><span data-stat="us-students">9.3M</span> students in districts with a verified calendar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="api">
+  <div class="wrap hero" style="align-items: start; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr)">
+    <div>
+      <p class="overline">03. API</p>
+      <h2 class="h1">One request, clean JSON.</h2>
+      <p class="body-l muted" style="margin: 24px 0 0">Query by country, region and date range. No key, no sign-up. Every holiday comes with its local name, translations, category and source.</p>
+      <ul class="points">
+        <li><b>Region or nation, never both.</b> A region returns its complete set, nationwide days included.</li>
+        <li><b>is_observed</b> marks a shifted date that is still a day off.</li>
+        <li class="amber"><b>is_estimated</b> marks dates that depend on moon sighting and can still move.</li>
+        <li><b>Every row knows its source</b> and licence.</li>
+      </ul>
+      <a class="link-arrow" href="/docs/">Read the docs <span aria-hidden="true">→</span></a>
+    </div>
+    <div>
+      <div class="code">
+        <div class="head"><span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Request</span><span class="lang">SHELL</span></div>
+        <pre id="req"><span class="c"># Public holidays in Lower Saxony, 2026</span>
+curl <span class="s">https://api.holibase.org/v1/public-holidays/DE/2026?subdivision=DE-NI</span></pre>
+      </div>
+      <div class="code">
+        <div class="head"><span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Response, first holiday</span><span class="lang">JSON</span></div>
+        <pre id="res">{
+  <span class="k">"date"</span>: <span class="s">"2026-01-01"</span>,
+  <span class="k">"name"</span>: <span class="s">"New Year's Day"</span>,
+  <span class="k">"local_name"</span>: <span class="s">"Neujahr"</span>,
+  <span class="k">"category"</span>: <span class="s">"public"</span>,
+  <span class="k">"scope"</span>: <span class="s">"national"</span>,
+  <span class="k">"is_observed"</span>: <span class="n">false</span>,
+  <span class="k">"is_estimated"</span>: <span class="n">false</span>,
+  <span class="k">"subdivision_code"</span>: <span class="s">"DE-NI"</span>,
+  <span class="k">"source_id"</span>: <span class="s">"python-holidays"</span>
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <div class="hero" style="align-items: start">
+      <div>
+        <p class="overline">04. Sources</p>
+        <h2 class="h1">Where the school holidays come from.</h2>
+        <p class="body-l muted" style="margin: 24px 0 0">Official open data first. Where a government publishes nothing machine-readable, Holibase researches the calendar from the authority’s own documents and marks it until it is verified.</p>
+      </div>
+      <div class="status-list" id="source-list" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2 class="h1">Start with one request.</h2>
+        <p class="body-l">Open source code, open data, a public read API.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-dark" href="/docs/">Read the docs <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost-dark" href="https://github.com/4Dgraphic/holibase">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

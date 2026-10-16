@@ -61,6 +61,19 @@ export const openapi = {
         },
       },
     },
+    "/v1/coverage": {
+      get: {
+        tags: ["Reference"],
+        operationId: "getCoverage",
+        summary: "What Holibase covers",
+        description: "Live coverage figures: public holiday countries and date range, school holiday coverage per country, US district directory.",
+        responses: {
+          "200": { description: "Coverage figures.", content: { "application/json": { schema: ref("CoverageResponse") } } },
+          "429": ref_response("RateLimited"),
+          "502": ref_response("Upstream"),
+        },
+      },
+    },
     "/v1/public-holidays/{country}/{year}": {
       get: {
         tags: ["Public holidays"],
@@ -426,6 +439,53 @@ export const openapi = {
           updated_at: { type: "string", format: "date-time" },
         },
         required: ["code", "country_code"],
+      },
+      CoverageResponse: {
+        type: "object",
+        properties: {
+          public_holidays: {
+            type: "object",
+            properties: { countries: { type: "integer" }, subdivisions: { type: "integer" }, first_date: date, last_date: date },
+            required: ["countries", "subdivisions", "first_date", "last_date"],
+          },
+          school_holidays: {
+            type: "object",
+            properties: {
+              countries: { type: "integer" },
+              calendars: { type: "integer", description: "Verified school calendars (one per scope and school year)." },
+              by_country: {
+                type: "array",
+                items: {
+                  type: "object",
+                  properties: {
+                    country_code: { type: "string" },
+                    name: nullable({ type: "string" }),
+                    scopes: { type: "integer", description: "Regions and authorities with a calendar." },
+                    scopes_verified: { type: "integer" },
+                    authorities: { type: "integer" },
+                    first_school_year: nullable({ type: "string" }),
+                    last_school_year: nullable({ type: "string" }),
+                    origins: { type: "array", items: { type: "string", enum: ["official", "editorial", "community", "library"] } },
+                  },
+                  required: ["country_code", "name", "scopes", "scopes_verified", "authorities", "first_school_year", "last_school_year", "origins"],
+                },
+              },
+            },
+            required: ["countries", "calendars", "by_country"],
+          },
+          us_districts: {
+            type: "object",
+            properties: {
+              directory: { type: "integer", description: "Active US school districts and agencies (NCES)." },
+              verified: { type: "integer", description: "Districts with a verified calendar." },
+              students: nullable({ type: "integer" }),
+              students_verified: nullable({ type: "integer" }),
+            },
+            required: ["directory", "verified", "students", "students_verified"],
+          },
+          generated_at: { type: "string", format: "date-time" },
+        },
+        required: ["public_holidays", "school_holidays", "us_districts", "generated_at"],
       },
       CountriesResponse: {
         type: "object",

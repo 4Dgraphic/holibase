@@ -1,0 +1,88 @@
+<!--
+path: /licence/
+title: Sources and licences
+description: Where Holibase data comes from, under which licence, and how to credit it.
+theme: dark
+nav: licence
+-->
+<section>
+  <div class="wrap">
+    <p class="overline">Sources and licences</p>
+    <h1 class="h1">Free to use, with credit.</h1>
+    <p class="body-l muted measure" style="margin: 16px 0 0">Holibase is a non-profit open data project. You can use the data and the API in any project, also commercially, as long as you credit the sources.</p>
+  </div>
+</section>
+
+<section style="padding-top: 16px">
+  <div class="wrap bento">
+    <div class="card tile-mint stat">
+      <p class="label">Holibase data</p>
+      <div class="numeral">CC BY 4.0</div>
+      <p class="body-s muted" style="margin: 0">School calendars, district data and corrections</p>
+    </div>
+    <div class="card stat">
+      <p class="label">Code</p>
+      <div class="numeral" style="color: var(--mint-ink)">MIT</div>
+      <p class="body-s muted" style="margin: 0">API, importers and this website</p>
+    </div>
+    <div class="card card-lg span-2">
+      <h2 class="h3" style="margin-bottom: 12px">How to credit</h2>
+      <p class="body-s muted" style="margin: 0 0 16px">Show this line where the data appears, for example in your footer, an about page or the calendar view. Every API response carries it in the <code>attribution</code> field.</p>
+      <div class="code" style="margin: 0">
+        <div class="head"><span>Credit line</span><button class="copy-btn" type="button" data-copy="credit">Copy</button></div>
+        <pre id="credit" style="white-space: pre-wrap">Public holidays © python-holidays contributors (MIT). School calendars © Holibase contributors (CC BY 4.0). https://holibase.org</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <p class="overline">01. Sources</p>
+    <h2 class="h2" style="margin-bottom: 24px">Where the data comes from</h2>
+    <div class="card card-lg">
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th scope="col">Source</th><th scope="col">Used for</th><th scope="col">Licence</th><th scope="col">Updated</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://github.com/vacanza/holidays">python-holidays</a></td><td>Public holidays for all countries; school holidays for some countries</td><td>MIT</td><td>Weekly</td></tr>
+            <tr><td><a href="https://nces.ed.gov/ccd/">NCES Common Core of Data</a></td><td>Directory of US school districts, enrolment, location</td><td>Public domain</td><td>Monthly</td></tr>
+            <tr><td><a href="https://www.rijksoverheid.nl/onderwerpen/schoolvakanties">Rijksoverheid</a></td><td>School holidays in the Netherlands</td><td>CC0</td><td>Weekly</td></tr>
+            <tr><td><a href="https://data.education.gouv.fr/explore/dataset/fr-en-calendrier-scolaire/">Ministère de l’Éducation nationale</a></td><td>School holidays in France, including overseas regions</td><td>Licence Ouverte 2.0</td><td>Weekly</td></tr>
+            <tr><td>Holibase research</td><td>School calendars researched from each authority’s published calendar, for example US school districts</td><td>CC BY 4.0</td><td>Each school year</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="body-s subtle" style="margin: 16px 0 0">Every calendar in the API names its source document and the date it was retrieved, so you can check it against the original.</p>
+    </div>
+  </div>
+</section>
+
+<section id="accuracy">
+  <div class="wrap hero" style="align-items: start">
+    <div>
+      <p class="overline">02. Accuracy</p>
+      <h2 class="h2">Check the dates that matter.</h2>
+    </div>
+    <div>
+      <ul class="points" style="margin-top: 0">
+        <li><b>Verified calendars</b> come from official open data, a maintained library or a researched calendar checked against the authority’s document.</li>
+        <li class="amber"><b>Unverified calendars</b> are returned only on request and are marked as such on the website.</li>
+        <li><b>Schools can still change their calendar</b>, for example after snow days. For important decisions, confirm with the school or district.</li>
+        <li><b>Found a mistake?</b> <a href="https://github.com/4Dgraphic/holibase/issues/new">Open an issue on GitHub</a> with a link to the official calendar.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap hero" style="align-items: start">
+    <div>
+      <p class="overline">03. Privacy</p>
+      <h2 class="h2">No cookies, no tracking.</h2>
+    </div>
+    <div>
+      <p class="body-l muted" style="margin: 0">This website sets no cookies and loads no analytics. The API stores no personal data. Cloudflare, which hosts the site and the API, processes IP addresses to deliver requests and enforce the rate limit, and keeps short-lived request logs. Fonts are served from holibase.org itself. The API reference page loads its viewer from the jsDelivr CDN.</p>
+    </div>
+  </div>
+</section>
