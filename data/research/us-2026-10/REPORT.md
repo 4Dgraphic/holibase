@@ -1,0 +1,395 @@
+# Research import us-2026-10
+
+- calendars_confirmed: 207
+- calendars_pending: 154
+- dropped_makeup_or_contingency: 2
+- with_feed_url: 15
+- not_found: 224
+- rejected_rows: 0
+
+## Pending (served only with include=pending)
+
+- Shelby County School District (AL) 2026-27: board status tentative; first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Tuscaloosa County School District (AL) 2026-27: no winter break around Christmas
+- Matanuska-Susitna Borough School District (AK) 2026-27: board status tentative
+- Gilbert Unified District (AZ) 2026-27: board status tentative; only 4 periods
+- Paradise Valley Unified District (AZ) 2026-27: board status tentative
+- Paradise Valley Unified District (AZ) 2027-28: board status tentative
+- Queen Creek Unified District (AZ) 2026-27: board status tentative
+- Deer Valley Unified District (AZ) 2026-27: board status tentative
+- Deer Valley Unified District (AZ) 2027-28: board status tentative
+- Washington Elementary District (AZ) 2026-27: board status tentative
+- Rogers Public Schools (AR) 2026-27: board status tentative
+- Lake Elsinore Unified School District (CA) 2026-27: first or last day missing; no winter break around Christmas
+- Murrieta Valley Unified School District (CA) 2026-27: board status tentative
+- Antelope Valley Union Joint High School District (CA) 2026-27: board status tentative; first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Antioch Unified School District (CA) 2026-27: no winter break around Christmas
+- Chaffey Joint Union High School District (CA) 2026-27: board status tentative
+- Chaffey Joint Union High School District (CA) 2027-28: board status tentative
+- Chula Vista Elementary School District (CA) 2026-27: board status tentative
+- Coachella Valley Unified School District (CA) 2026-27: board status tentative
+- Garden Grove Unified School District (CA) 2026-27: board status tentative
+- Lodi Unified School District (CA) 2026-27: board status tentative
+- Redlands Unified School District (CA) 2026-27: board status tentative; first or last day missing
+- West Contra Costa Unified School District (CA) 2026-27: board status draft
+- Sacramento City Unified School District (CA) 2026-27: board status tentative
+- Irvine Unified School District (CA) 2026-27: board status tentative
+- Academy School District 20 (CO) 2026-27: first or last day missing
+- School District 49 (CO) 2026-27: board status tentative
+- School District 49 (CO) 2027-28: board status draft
+- Greeley School District 6 (CO) 2026-27: first or last day missing
+- Hartford School District (CT) 2026-27: first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- New Haven School District (CT) 2026-27: board status tentative
+- Waterbury School District (CT) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Clay County School District (FL) 2026-27: board status draft
+- Escambia County School District (FL) 2026-27: board status tentative; only 5 periods
+- Lake County School District (FL) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Leon County School District (FL) 2026-27: board status tentative
+- Leon County School District (FL) 2027-28: board status tentative
+- Martin County School District (FL) 2026-27: only 3 periods
+- Osceola County School District (FL) 2026-27: first or last day missing; only 4 periods; Thanksgiving not off; no winter break around Christmas
+- Chatham County School District (GA) 2026-27: board status tentative
+- Clayton County School District (GA) 2026-27: no winter break around Christmas
+- Houston County School District (GA) 2026-27: board status tentative
+- Newton County School District (GA) 2026-27: only 5 periods
+- Paulding County School District (GA) 2026-27: first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Community Unit School District 300 (IL) 2026-27: board status tentative
+- Carmel Clay Schools (IN) 2026-27: board status tentative; first or last day missing
+- Evansville-Vanderburgh School Corporation (IN) 2026-27: board status tentative; first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Fort Wayne Community Schools (IN) 2026-27: board status tentative
+- Fort Wayne Community Schools (IN) 2027-28: board status tentative
+- Cedar Rapids Community School District (IA) 2026-27: board status tentative; only 3 periods; Thanksgiving not off
+- Des Moines Independent Community School District (IA) 2026-27: board status tentative
+- Kansas City Unified School District 500 (KS) 2026-27: board status tentative
+- Blue Valley Unified School District 229 (KS) 2027-28: only 3 periods
+- Boone County School District (KY) 2026-27: board status tentative
+- Calcasieu Parish School District (LA) 2026-27: board status tentative
+- Lafayette Parish School District (LA) 2026-27: board status tentative; first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Rapides Parish School District (LA) 2026-27: board status tentative; first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- St. Tammany Parish School District (LA) 2026-27: board status tentative
+- St. Tammany Parish School District (LA) 2027-28: board status tentative
+- Anne Arundel County Public Schools (MD) 2026-27: only 3 periods
+- Baltimore City Public Schools (MD) 2026-27: only 3 periods; Thanksgiving not off
+- Frederick County Public Schools (MD) 2026-27: only 5 periods; no winter break around Christmas
+- Frederick County Public Schools (MD) 2027-28: only 5 periods; no winter break around Christmas
+- Montgomery County Public Schools (MD) 2026-27: only 2 periods; Thanksgiving not off
+- Brockton School District (MA) 2026-27: board status tentative; only 4 periods; Thanksgiving not off; no winter break around Christmas
+- Dearborn City School District (MI) 2026-27: board status tentative; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Utica Community Schools (MI) 2026-27: board status tentative
+- Utica Community Schools (MI) 2027-28: board status tentative
+- Rosemount-Apple Valley-Eagan (MN) 2026-27: board status tentative
+- Rosemount-Apple Valley-Eagan (MN) 2027-28: board status tentative
+- St. Paul Public School District (MN) 2026-27: board status tentative
+- St. Paul Public School District (MN) 2027-28: board status tentative
+- DeSoto County School District (MS) 2026-27: board status tentative
+- Jackson Public School District (MS) 2026-27: board status tentative; first or last day missing; only 4 periods; Thanksgiving not off; no winter break around Christmas
+- Rankin County School District (MS) 2026-27: board status tentative
+- Lee's Summit R-VII School District (MO) 2026-27: board status tentative
+- Francis Howell R-III School District (MO) 2026-27: board status tentative
+- Francis Howell R-III School District (MO) 2027-28: board status tentative
+- Lincoln Public Schools (NE) 2027-28: only 3 periods; Thanksgiving not off
+- Edison Township School District (NJ) 2026-27: board status tentative; first or last day missing; only 3 periods; Thanksgiving not off; no winter break around Christmas
+- Rochester City School District (NY) 2026-27: board status tentative
+- Syracuse City School District (NY) 2026-27: board status tentative
+- Alamance-Burlington Schools (NC) 2026-27: first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Gaston County Schools (NC) 2026-27: first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Harnett County Schools (NC) 2026-27: board status tentative; first or last day missing
+- Union County Public Schools (NC) 2027-28: board status tentative
+- Akron City School District (OH) 2026-27: board status tentative
+- Cincinnati City School District (OH) 2026-27: board status tentative
+- Cincinnati City School District (OH) 2027-28: board status tentative
+- Olentangy Local School District (OH) 2026-27: board status tentative
+- Olentangy Local School District (OH) 2027-28: board status draft
+- Dublin City School District (OH) 2026-27: board status tentative
+- Bend-La Pine Administrative School District 1 (OR) 2026-27: board status tentative
+- Eugene School District 4J (OR) 2026-27: board status tentative; only 4 periods
+- North Clackamas School District 12 (OR) 2026-27: board status tentative
+- Portland School District 1J (OR) 2026-27: first or last day missing
+- Salem-Keizer School District 24J (OR) 2026-27: board status tentative; first or last day missing
+- Providence School District (RI) 2026-27: board status tentative; first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Aiken County School District (SC) 2026-27: board status tentative; first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Berkeley County School District (SC) 2027-28: board status tentative
+- Florence School District 1 (SC) 2026-27: board status tentative
+- Lexington School District 1 (SC) 2026-27: board status tentative
+- Richland School District 2 (SC) 2027-28: board status tentative
+- York School District 4 (SC) 2026-27: only 5 periods
+- Sioux Falls School District 49-5 (SD) 2026-27: board status tentative; first or last day missing
+- Shelby County School District (TN) 2026-27: board status tentative
+- Rutherford County School District (TN) 2026-27: first or last day missing; only 4 periods; Thanksgiving not off; no winter break around Christmas
+- Allen Independent School District (TX) 2026-27: only 4 periods
+- Alvin Independent School District (TX) 2026-27: only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Amarillo Independent School District (TX) 2026-27: only 3 periods
+- Comal Independent School District (TX) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Comal Independent School District (TX) 2027-28: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Denton Independent School District (TX) 2026-27: only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Edinburg Consolidated Independent School District (TX) 2026-27: board status tentative
+- Galena Park Independent School District (TX) 2026-27: board status tentative
+- Garland Independent School District (TX) 2027-28: board status tentative
+- Killeen Independent School District (TX) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Leander Independent School District (TX) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Mansfield Independent School District (TX) 2026-27: board status tentative
+- McAllen Independent School District (TX) 2026-27: board status tentative; first or last day missing; only 4 periods; no winter break around Christmas
+- New Caney Independent School District (TX) 2026-27: board status tentative
+- Northwest Independent School District (TX) 2026-27: only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Pasadena Independent School District (TX) 2026-27: first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Pflugerville Independent School District (TX) 2026-27: only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Prosper Independent School District (TX) 2026-27: first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Richardson Independent School District (TX) 2027-28: only 2 periods; Thanksgiving not off; no winter break around Christmas
+- Round Rock Independent School District (TX) 2026-27: first or last day missing; only 2 periods; Thanksgiving not off; no winter break around Christmas
+- San Antonio Independent School District (TX) 2026-27: board status tentative; first or last day missing; only 1 periods; Thanksgiving not off; no winter break around Christmas
+- Spring Independent School District (TX) 2026-27: only 3 periods; Thanksgiving not off; no winter break around Christmas
+- Salt Lake City School District (UT) 2026-27: board status tentative
+- Hampton City Public Schools (VA) 2026-27: board status draft
+- Richmond City Public Schools (VA) 2026-27: board status tentative
+- Bellevue School District (WA) 2026-27: board status tentative
+- Bethel School District (WA) 2026-27: board status tentative
+- Bethel School District (WA) 2027-28: board status tentative; only 3 periods
+- Edmonds School District (WA) 2026-27: board status tentative
+- Edmonds School District (WA) 2027-28: board status tentative; first or last day missing
+- Evergreen School District (Clark) (WA) 2026-27: board status tentative
+- Federal Way School District (WA) 2026-27: board status tentative
+- Highline School District (WA) 2026-27: board status tentative
+- Lake Washington School District (WA) 2026-27: board status tentative
+- Mukilteo School District (WA) 2026-27: board status tentative
+- North Thurston Public Schools (WA) 2026-27: board status tentative
+- Northshore School District (WA) 2026-27: board status tentative
+- Pasco School District (WA) 2026-27: board status tentative
+- Puyallup School District (WA) 2026-27: board status tentative
+- Spokane Public Schools (WA) 2026-27: board status tentative; first or last day missing; only 4 periods; Thanksgiving not off
+- Tacoma Public Schools (WA) 2026-27: board status tentative; only 4 periods; Thanksgiving not off
+- Appleton Area School District (WI) 2026-27: board status tentative
+- Kenosha School District (WI) 2026-27: board status tentative
+- Kenosha School District (WI) 2027-28: board status tentative
+- Madison Metropolitan School District (WI) 2026-27: board status tentative
+- Racine School District (WI) 2026-27: board status tentative
+- Puerto Rico Department of Education (PR) 2026-27: no winter break around Christmas
+
+## Not found
+
+- Baldwin County School District (AL) 2027-28: Official district school-year calendar not independently verified.
+- Jefferson County School District (AL) 2026-27: Official district student calendar for this school year not verified during this research pass.
+- Jefferson County School District (AL) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Limestone County School District (AL) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Mobile County School District (AL) 2027-28: Official student calendar not verified.
+- Montgomery County School District (AL) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Phoenix Union High School District (AZ) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Phoenix Union High School District (AZ) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Tucson Unified District (AZ) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Vail Unified District (AZ) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Temecula Valley Unified School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Twin Rivers Unified School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Alvord Unified School District (CA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Anaheim Union High School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Bakersfield City School District (CA) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Bakersfield City School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Cajon Valley Union Elementary School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Central Unified School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Clovis Unified School District (CA) 2026-27: Official student calendar not verified.
+- Clovis Unified School District (CA) 2027-28: Official student calendar not verified.
+- Compton Unified School District (CA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Conejo Valley Unified School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Corona-Norco Unified School District (CA) 2026-27: Official student calendar not verified.
+- Corona-Norco Unified School District (CA) 2027-28: Official student calendar not verified.
+- Elk Grove Unified School District (CA) 2027-28: No official school-year student dates verified in this research pass.
+- Fremont Unified School District (CA) 2027-28: Official district school-year calendar not independently verified.
+- Garden Grove Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Glendale Unified School District (CA) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Glendale Unified School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Grossmont Union High School District (CA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Hacienda La Puente Unified School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Hayward Unified School District (CA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Kern High School District (CA) 2027-28: Official student calendar not verified.
+- Lodi Unified School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Modesto City High School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Moreno Valley Unified School District (CA) 2027-28: Official district school-year calendar not independently verified.
+- Mount Diablo Unified School District (CA) 2027-28: Official district school-year calendar not independently verified.
+- Napa Valley Unified School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Oxnard Union High School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Poway Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- West Contra Costa Unified School District (CA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Sacramento City Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Salinas Union High School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- San Juan Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Santa Ana Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Simi Valley Unified School District (CA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Irvine Unified School District (CA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Douglas County School District RE-1 (CO) 2027-28: No official school-year student dates verified in this research pass.
+- Poudre School District R-1 (CO) 2027-28: Official district school-year calendar not independently verified.
+- Alachua County School District (FL) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Alachua County School District (FL) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Bay County School District (FL) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Bay County School District (FL) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Brevard County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Clay County School District (FL) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Dade County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Indian River County School District (FL) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Lake County School District (FL) 2027-28: Official student calendar not verified.
+- Manatee County School District (FL) 2027-28: Official student calendar not verified.
+- Okaloosa County School District (FL) 2027-28: Official district school-year calendar not independently verified.
+- Orange County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Palm Beach County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Pasco County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Polk County School District (FL) 2026-27: No official school-year student dates verified in this research pass.
+- Polk County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Sarasota County School District (FL) 2026-27: Official student calendar not verified.
+- Sarasota County School District (FL) 2027-28: Official student calendar not verified.
+- Seminole County School District (FL) 2026-27: No official school-year student dates verified in this research pass.
+- Seminole County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Volusia County School District (FL) 2027-28: No official school-year student dates verified in this research pass.
+- Carroll County School District (GA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Clayton County School District (GA) 2027-28: Official student calendar not verified.
+- DeKalb County School District (GA) 2026-27: No official school-year student dates verified in this research pass.
+- DeKalb County School District (GA) 2027-28: No official school-year student dates verified in this research pass.
+- Douglas County School District (GA) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Douglas County School District (GA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Forsyth County School District (GA) 2027-28: No official school-year student dates verified in this research pass.
+- Hawaii Department of Education (HI) 2027-28: No official school-year student dates verified in this research pass.
+- Meridian Joint School District 2 (ID) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- School District U-46 (IL) 2026-27: Official district student calendar for this school year not verified during this research pass.
+- School District U-46 (IL) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Plainfield School District 202 (IL) 2026-27: District-wide events iCalendar explicitly linked on official Plainfield district Events page. Academic calendar PDF and student closure dates could not be verified; school_year board_status not_found denotes missing academic calendar, not absence of event feed. Feed request returned text/calendar.
+- Rockford School District 205 (IL) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Schaumburg Community Consolidated School District 54 (IL) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Indian Prairie Community Unit School District 204 (IL) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Lawrence Township Metropolitan School District (IN) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Des Moines Independent Community School District (IA) 2027-28: Official district school-year calendar not independently verified.
+- Iowa City Community School District (IA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Jefferson County School District (KY) 2026-27: No official school-year student dates verified in this research pass.
+- Jefferson County School District (KY) 2027-28: No official school-year student dates verified in this research pass.
+- Calcasieu Parish School District (LA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- East Baton Rouge Parish School District (LA) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Jefferson Parish School District (LA) 2026-27: Official student calendar not verified.
+- Jefferson Parish School District (LA) 2027-28: Official student calendar not verified.
+- Lafayette Parish School District (LA) 2027-28: Official district school-year calendar not independently verified.
+- Livingston Parish School District (LA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Anne Arundel County Public Schools (MD) 2027-28: No official school-year student dates verified in this research pass.
+- Baltimore City Public Schools (MD) 2027-28: No official school-year student dates verified in this research pass.
+- Baltimore County Public Schools (MD) 2027-28: No official school-year student dates verified in this research pass.
+- Carroll County Public Schools (MD) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Carroll County Public Schools (MD) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Charles County Public Schools (MD) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Harford County Public Schools (MD) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Howard County Public Schools (MD) 2027-28: No official school-year student dates verified in this research pass.
+- Montgomery County Public Schools (MD) 2027-28: No official school-year student dates verified in this research pass.
+- Wicomico County Public Schools (MD) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Boston School District (MA) 2027-28: Official student calendar not verified.
+- Lynn School District (MA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Worcester School District (MA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Detroit Public Schools Community District (MI) 2027-28: Official student calendar not verified.
+- Plymouth-Canton Community Schools (MI) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Rochester Public School District (MN) 2026-27: Official student calendar not yet verified; no dates inferred.
+- DeSoto County School District (MS) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Fort Zumwalt R-II School District (MO) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Hazelwood School District (MO) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Kansas City 33 School District (MO) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- St. Louis City School District (MO) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Wentzville R-IV School District (MO) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Omaha Public Schools (NE) 2026-27: Official student calendar not verified.
+- Omaha Public Schools (NE) 2027-28: Official student calendar not verified.
+- Elizabeth City School District (NJ) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Elizabeth City School District (NJ) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Jersey City School District (NJ) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Jersey City School District (NJ) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Newark City School District (NJ) 2027-28: Official student calendar not verified.
+- Trenton City School District (NJ) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Rio Rancho Public Schools (NM) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Buffalo City School District (NY) 2027-28: Official district school-year calendar not independently verified.
+- Cumberland County Schools (NC) 2027-28: Official student calendar not verified.
+- Cabarrus County Schools (NC) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Catawba County Schools (NC) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Forsyth County Schools (NC) 2027-28: Official student calendar not verified.
+- Gaston County Schools (NC) 2027-28: Official district school-year calendar not independently verified.
+- Johnston County Schools (NC) 2026-27: District calendar proposals found but no uniquely identifiable adopted or selected 2026-27 student calendar dates could be verified; alternate proposals were not merged.
+- Johnston County Schools (NC) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Charlotte-Mecklenburg Schools (NC) 2026-27: No official school-year student dates verified in this research pass.
+- Charlotte-Mecklenburg Schools (NC) 2027-28: No official school-year student dates verified in this research pass.
+- New Hanover County Schools (NC) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Onslow County Schools (NC) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Randolph County Schools (NC) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Cleveland Municipal School District (OH) 2027-28: Official district school-year calendar not independently verified.
+- Edmond Public Schools (OK) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Tulsa Public Schools (OK) 2027-28: Official district school-year calendar not independently verified.
+- Beaverton School District 48J (OR) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Portland School District 1J (OR) 2027-28: Official student calendar not verified.
+- Salem-Keizer School District 24J (OR) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Central Bucks School District (PA) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Philadelphia City School District (PA) 2027-28: No official school-year student dates verified in this research pass.
+- Lancaster County School District (SC) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Pickens County School District (SC) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- York School District 3 (SC) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Sioux Falls School District 49-5 (SD) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Shelby County School District (TN) 2027-28: No official school-year student dates verified in this research pass.
+- Rutherford County School District (TN) 2027-28: Official student calendar not verified.
+- Sumner County School District (TN) 2027-28: Official district school-year calendar not independently verified.
+- Aldine Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Alvin Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Amarillo Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Arlington Independent School District (TX) 2027-28: Official student calendar not verified.
+- Beaumont Independent School District (TX) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Brownsville Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Bryan Independent School District (TX) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Clear Creek Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Conroe Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Corpus Christi Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Dallas Independent School District (TX) 2026-27: No official school-year student dates verified in this research pass.
+- Dallas Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Denton Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Ector County Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Edinburg Consolidated Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Forney Independent School District (TX) 2026-27: Official student calendar dates not verified; no dates inferred.
+- Fort Worth Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Frisco Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Goose Creek Consolidated Independent School District (TX) 2026-27: Official instructional calendar source could not be directly verified; excluded aggregator-only transcription.
+- Grand Prairie Independent School District (TX) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Grand Prairie Independent School District (TX) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Harlingen Consolidated Independent School District (TX) 2026-27: Official student calendar not yet verified; no dates inferred.
+- Houston Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Humble Independent School District (TX) 2027-28: Official student calendar not verified.
+- Keller Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Killeen Independent School District (TX) 2027-28: Official student calendar not verified.
+- Lamar Consolidated Independent School District (TX) 2027-28: Official student calendar not verified.
+- Lewisville Independent School District (TX) 2026-27: Official student calendar not verified.
+- Lewisville Independent School District (TX) 2027-28: Official student calendar not verified.
+- Mansfield Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Mesquite Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Midland Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- North East Independent School District (TX) 2027-28: No official school-year student dates verified in this research pass.
+- Pasadena Independent School District (TX) 2027-28: Official student calendar not verified.
+- Pflugerville Independent School District (TX) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Pharr-San Juan-Alamo Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Prosper Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- San Antonio Independent School District (TX) 2027-28: Official student calendar not verified.
+- Socorro Independent School District (TX) 2026-27: Official student calendar not verified.
+- Socorro Independent School District (TX) 2027-28: Official student calendar not verified.
+- Spring Branch Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- Spring Independent School District (TX) 2027-28: Official district school-year calendar not independently verified.
+- United Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Weslaco Independent School District (TX) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Ysleta Independent School District (TX) 2027-28: Official district student calendar for this school year not verified during this research pass.
+- Alpine School District (UT) 2027-28: No official school-year student dates verified in this research pass.
+- Canyons School District (UT) 2027-28: Official district school-year calendar not independently verified.
+- Davis School District (UT) 2027-28: No official school-year student dates verified in this research pass.
+- Granite School District (UT) 2027-28: No official school-year student dates verified in this research pass.
+- Jordan School District (UT) 2027-28: No official school-year student dates verified in this research pass.
+- Weber School District (UT) 2027-28: Official district school-year calendar not independently verified.
+- Chesterfield County Public Schools (VA) 2026-27: No official school-year student dates verified in this research pass.
+- Chesterfield County Public Schools (VA) 2027-28: No official school-year student dates verified in this research pass.
+- Henrico County Public Schools (VA) 2027-28: Official student calendar not verified.
+- Newport News City Public Schools (VA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Norfolk City Public Schools (VA) 2026-27: No district-published student calendar with verifiable dates identified during this research pass.
+- Norfolk City Public Schools (VA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Stafford County Public Schools (VA) 2027-28: Official district school-year calendar not independently verified.
+- Virginia Beach City Public Schools (VA) 2027-28: No official school-year student dates verified in this research pass.
+- Auburn School District (WA) 2026-27: Official student calendar dates not verified; no dates inferred.
+- Central Valley School District (WA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Kent School District (WA) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Lake Washington School District (WA) 2027-28: Official district school-year calendar not independently verified.
+- Seattle Public Schools (WA) 2027-28: Official student calendar not verified.
+- Spokane Public Schools (WA) 2027-28: Official district school-year calendar not independently verified.
+- Tacoma Public Schools (WA) 2027-28: Official district school-year calendar not independently verified.
+- Yakima School District (WA) 2026-27: Official 2026-27 student calendar dates not verified during this research pass; no dates interpolated or taken from aggregators.
+- Madison Metropolitan School District (WI) 2027-28: No district-published student calendar with verifiable dates identified during this research pass.
+- Puerto Rico Department of Education (PR) 2027-28: No official school-year student dates verified in this research pass.
+
+## Rejected rows
+

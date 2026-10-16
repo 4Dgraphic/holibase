@@ -1,0 +1,524 @@
+nces_leaid,district_name,school_year,row_type,kind,label,start_date,end_date,board_status,source_url,feed_url,feed_format,website,notes
+0638010,Stockton Unified School District,2026-27,calendar,,,2026-07-30,2027-05-26,approved,https://files.smartsites.parentsquare.com/8508/26-27_instrcal_updated_41026.pdf,,,https://www.stocktonusd.net,"Official Stockton Unified instructional calendar; Board Approved: 12/16/2025; updated 4/10/2026. A few purple/blue single days have no specific printed holiday label, preserved only as generic Holiday or left out when unclear."
+0638010,Stockton Unified School District,2026-27,period,break,Fall Break,2026-10-05,2026-10-09,,,,,,
+0638010,Stockton Unified School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+0638010,Stockton Unified School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+0638010,Stockton Unified School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2026-09-07,2026-09-07,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2026-11-11,2026-11-11,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2027-01-18,2027-01-18,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2027-02-08,2027-02-08,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2027-02-15,2027-02-15,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,holiday,Holiday,2027-05-24,2027-05-24,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2026-27,period,teacher_day,Teacher PD / Other Non-Contact,2026-09-23,2026-09-23,,,,,,
+0638010,Stockton Unified School District,2026-27,period,teacher_day,Teacher PD / Other Non-Contact,2026-10-23,2026-10-23,,,,,,
+0638010,Stockton Unified School District,2026-27,period,teacher_day,Teacher PD / Other Non-Contact,2027-01-27,2027-01-27,,,,,,
+0638010,Stockton Unified School District,2026-27,period,break,School Break or Vacation,2027-03-26,2027-03-29,,,,,,Two purple non-instruction days surrounding weekend; not otherwise named
+0638010,Stockton Unified School District,2027-28,calendar,,,2027-07-29,2028-05-26,approved,https://files.smartsites.parentsquare.com/8508/2027-28_instrcal_updated_4726.pdf,,,https://www.stocktonusd.net,Official instructional calendar board approved 12/16/2025; updated 4/7/2026. A few blue single days are not individually named; generic Holiday label reflects key.
+0638010,Stockton Unified School District,2027-28,period,break,Fall Break,2027-10-04,2027-10-08,,,,,,
+0638010,Stockton Unified School District,2027-28,period,break,Thanksgiving Break,2027-11-22,2027-11-26,,,,,,
+0638010,Stockton Unified School District,2027-28,period,break,Winter Break,2027-12-20,2027-12-31,,,,,,
+0638010,Stockton Unified School District,2027-28,period,break,Spring Break,2028-03-13,2028-03-17,,,,,,
+0638010,Stockton Unified School District,2027-28,period,holiday,Holiday,2027-09-06,2027-09-06,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2027-28,period,holiday,Holiday,2027-11-11,2027-11-11,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2027-28,period,holiday,Holiday,2028-01-17,2028-01-17,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2027-28,period,holiday,Holiday,2028-02-14,2028-02-14,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2027-28,period,holiday,Holiday,2028-02-21,2028-02-21,,,,,,Calendar blue holiday; specific name not printed
+0638010,Stockton Unified School District,2027-28,period,teacher_day,Teacher PD / Other Non-Contact,2027-09-22,2027-09-22,,,,,,
+0638010,Stockton Unified School District,2027-28,period,teacher_day,Teacher PD / Other Non-Contact,2027-10-22,2027-10-22,,,,,,
+0638010,Stockton Unified School District,2027-28,period,teacher_day,Teacher PD / Other Non-Contact,2028-01-26,2028-01-26,,,,,,
+4030240,Tulsa Public Schools,2026-27,calendar,,,2026-08-19,2027-05-28,approved,https://www.tulsaschools.org/fs/resource-manager/view/eb07b44f-58a3-484d-baa2-51232b126f1b,,,https://www.tulsaschools.org,"Exact district student calendar, board approved 2025-03-24. Last scheduled day May 28 includes three built-in weather days; last date may adjust. No contingent weather days separately entered. Conference details may vary by school."
+4030240,Tulsa Public Schools,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,holiday,Indigenous Peoples’ Day,2026-10-12,2026-10-12,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,other,Fall Parent/Teacher Conferences,2026-10-13,2026-10-13,,,,,,District lists no classes; check with individual schools for exact conference arrangements
+4030240,Tulsa Public Schools,2026-27,period,break,Fall Break,2026-10-14,2026-10-16,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,other,Civic Engagement,2026-11-02,2026-11-03,,,,,,Official calendar: no classes for students
+4030240,Tulsa Public Schools,2026-27,period,break,Thanksgiving,2026-11-23,2026-11-27,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,teacher_day,Teacher PD day,2027-01-04,2027-01-04,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,holiday,Martin L. King Jr.,2027-01-18,2027-01-18,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,other,Spring Parent/Teacher Conferences,2027-01-19,2027-01-19,,,,,,District lists no classes; check with individual schools for exact conference arrangements
+4030240,Tulsa Public Schools,2026-27,period,holiday,President’s Day,2027-02-15,2027-02-15,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,teacher_day,Teacher PD day,2027-02-16,2027-02-16,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4030240,Tulsa Public Schools,2026-27,period,holiday,April Holiday,2027-04-23,2027-04-23,,,,,,
+4030240,Tulsa Public Schools,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4841220,Spring Independent School District,2026-27,calendar,,,2026-08-12,2027-05-28,approved,https://news.springisd.org/2025/12/spring-isd-board-of-trustees-approves-2026-27-instructional-calendar/,,,https://www.springisd.org,"Approved Option A. Feb 15 contingent make-up day excluded. Feb 16-17 intervention days for select students, regular sessions not held; no extra entries due to overlap with break."
+4841220,Spring Independent School District,2026-27,period,break,Fall Break,2026-10-12,2026-10-16,,,,,,
+4841220,Spring Independent School District,2026-27,period,other,Parent-teacher conference day,2026-11-03,2026-11-03,,,,,,District news explicitly says no school for students despite describing half-day conferences
+4841220,Spring Independent School District,2026-27,period,break,Mid-Winter Break,2027-02-16,2027-02-19,,,,,,Feb 15 excluded: possible make-up day; Feb 16-17 selective intervention only
+4841220,Spring Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4818180,Edinburg Consolidated Independent School District,2026-27,calendar,,,2026-08-24,2027-05-28,tentative,https://www.ecisd.us/apps/pages/district_calendar,,,https://www.ecisd.us,Official detailed district calendar; Board approval not directly documented. October 12 and February 15 are identified as intersession/weather make-up days; excludes such contingent days even though listed under holidays. November 23 similarly a make-up date.
+4818180,Edinburg Consolidated Independent School District,2026-27,period,break,Thanksgiving,2026-11-24,2026-11-27,,,,,,Nov 23 is separately marked possible weather make-up day
+4818180,Edinburg Consolidated Independent School District,2026-27,period,break,Christmas,2026-12-21,2027-01-01,,,,,,
+4818180,Edinburg Consolidated Independent School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4818180,Edinburg Consolidated Independent School District,2026-27,period,break,Easter Break,2027-03-26,2027-03-29,,,,,,
+4818180,Edinburg Consolidated Independent School District,2026-27,period,early_release,Early Release Day,2026-12-18,2026-12-18,,,,,,
+4818180,Edinburg Consolidated Independent School District,2026-27,period,early_release,Early Release Day,2027-05-28,2027-05-28,,,,,,
+4818180,Edinburg Consolidated Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4816740,Denton Independent School District,2026-27,calendar,,,2026-08-13,2027-05-27,approved,https://www.dentonisd.org/post-details/~board/district-headlines/post/denton-isd-board-of-trustees-approves-202627-instructional-calendar,,,https://www.dentonisd.org,"School board approved December 15 2025; district confirms Thanksgiving, winter and spring break but article omits exact endpoints; excluded unspecified dates."
+4816740,Denton Independent School District,2026-27,period,holiday,District Holiday - No Classes,2026-10-12,2026-10-12,,,,,,
+4816740,Denton Independent School District,2026-27,period,teacher_day,"PLC Day, No School for Students",2026-10-13,2026-10-13,,,,,,
+4816740,Denton Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+3904378,Cleveland Municipal School District,2026-27,calendar,,,,,approved,https://www.clevelandmetroschools.org/about-us/district-calendar,,,https://www.clevelandmetroschools.org,2026-27 Academic Calendar and approved calendar on district website; precise first/last instructional dates not established.
+3904378,Cleveland Municipal School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+0614400,Fremont Unified School District,2026-27,calendar,,,,,tentative,https://fremontunified.org/washington/schedule-news/calendar/,,,https://www.fremontunified.org,District publishes 2026-27 Instructional Calendar linked on Fremont Unified schools. Districtwide first/last and closure dates were not independently readable; dates omitted.
+0614400,Fremont Unified School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4815270,Corpus Christi Independent School District,2026-27,calendar,,,2026-08-11,2027-05-28,approved,https://www.ccisd.us/live_feeds/11992417,,,https://www.ccisd.us,Board approved calendar per district live feed; revised April 14 2026: February 12 2027 IS a school day. First/last dates per district high school and official district live feed. Detailed PDF not successfully extracted; no unverified period rows.
+4815270,Corpus Christi Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+2733840,St. Paul Public School District,2026-27,calendar,,,2026-09-08,2027-06-11,tentative,https://resources.finalsite.net/images/v1781716163/sppsorg/pcrtan3aohrhtpugkc4q/2026-27SPPSCalendar.pdf,,,https://www.spps.org,Official district calendar; board-adoption confirmation not established. Grades 1-12 start Sep 8; Pre-K/K start Sep 10. Grade-specific closure days follow PreK-5.
+2733840,St. Paul Public School District,2026-27,period,teacher_day,Staff Development,2026-09-21,2026-09-21,,,,,,
+2733840,St. Paul Public School District,2026-27,period,break,State Teacher Meeting MEA,2026-10-15,2026-10-16,,,,,,
+2733840,St. Paul Public School District,2026-27,period,other,Conference Preparation,2026-10-30,2026-10-30,,,,,,PreK-5 only; secondary in session
+2733840,St. Paul Public School District,2026-27,period,other,Parent-teacher conferences for PreK-5/Secondary professional development,2026-11-13,2026-11-13,,,,,,
+2733840,St. Paul Public School District,2026-27,period,break,Thanksgiving Break,2026-11-26,2026-11-27,,,,,,
+2733840,St. Paul Public School District,2026-27,period,break,Winter Break,2026-12-23,2027-01-01,,,,,,
+2733840,St. Paul Public School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+2733840,St. Paul Public School District,2026-27,period,teacher_day,Elementary professional development/Secondary grading day,2027-01-29,2027-01-29,,,,,,
+2733840,St. Paul Public School District,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+2733840,St. Paul Public School District,2026-27,period,teacher_day,Elementary conference preparation/Secondary professional development,2027-03-10,2027-03-10,,,,,,
+2733840,St. Paul Public School District,2026-27,period,other,PreK-5 Conference Day,2027-03-26,2027-03-26,,,,,,PreK-5 only; secondary in session
+2733840,St. Paul Public School District,2026-27,period,break,Spring Break,2027-04-05,2027-04-09,,,,,,
+2733840,St. Paul Public School District,2026-27,period,teacher_day,Staff Development Day,2027-05-17,2027-05-17,,,,,,
+2733840,St. Paul Public School District,2026-27,period,holiday,Memorial Day,2027-05-31,2027-05-31,,,,,,
+2733840,St. Paul Public School District,2027-28,calendar,,,2027-09-07,2028-06-09,tentative,https://resources.finalsite.net/images/v1745420633/sppsorg/cohou5bupcu3p2x12lcq/2027-28SPPSCalendar.pdf,,,https://www.spps.org,Official district calendar; board-adoption confirmation not established. Grades 1-12 start Sep 7; Pre-K/K Sep 9.
+2733840,St. Paul Public School District,2027-28,period,holiday,No School,2027-10-11,2027-10-11,,,,,,Unspecified no-school day
+2733840,St. Paul Public School District,2027-28,period,break,State Teacher Meeting MEA,2027-10-21,2027-10-22,,,,,,
+2733840,St. Paul Public School District,2027-28,period,other,Conference Preparation,2027-10-29,2027-10-29,,,,,,PreK-5 only; secondary in session
+2733840,St. Paul Public School District,2027-28,period,other,Parent-teacher conferences for PreK-5/Secondary professional development,2027-11-12,2027-11-12,,,,,,
+2733840,St. Paul Public School District,2027-28,period,break,Thanksgiving Break,2027-11-25,2027-11-26,,,,,,
+2733840,St. Paul Public School District,2027-28,period,break,Winter Break,2027-12-23,2027-12-31,,,,,,
+2733840,St. Paul Public School District,2027-28,period,holiday,Martin Luther King Jr. Day,2028-01-17,2028-01-17,,,,,,
+2733840,St. Paul Public School District,2027-28,period,teacher_day,Staff Development,2028-01-28,2028-01-28,,,,,,
+2733840,St. Paul Public School District,2027-28,period,holiday,Presidents Day,2028-02-21,2028-02-21,,,,,,
+2733840,St. Paul Public School District,2027-28,period,teacher_day,Elementary conference preparation/Secondary grading day,2028-03-03,2028-03-03,,,,,,
+2733840,St. Paul Public School District,2027-28,period,other,PreK-5 Conference Day,2028-03-31,2028-03-31,,,,,,PreK-5 only; secondary in session
+2733840,St. Paul Public School District,2027-28,period,break,Spring Break,2028-04-03,2028-04-07,,,,,,
+2733840,St. Paul Public School District,2027-28,period,teacher_day,Staff Development Day,2028-04-14,2028-04-14,,,,,,
+2733840,St. Paul Public School District,2027-28,period,teacher_day,Staff Development Day,2028-05-05,2028-05-05,,,,,,
+2733840,St. Paul Public School District,2027-28,period,holiday,Memorial Day,2028-05-29,2028-05-29,,,,,,
+0613920,Fontana Unified School District,2026-27,calendar,,,,,approved,https://www.fusd.net/quicklinks/school-year-calendars,,,https://www.fusd.net,Official 2026-27 school calendar. Board approved 9/25/2024 on calendar filename; numeric dates not verified.
+0613920,Fontana Unified School District,2027-28,calendar,,,,,tentative,https://www.fusd.net/quicklinks/school-year-calendars,,,https://www.fusd.net,Official 2027-28 calendar linked; adoption status and detailed dates not verified.
+4022770,Oklahoma City Public Schools,2026-27,calendar,,,,,tentative,https://www.okcps.org/student-and-families/student-tools/student-calendar,,,https://www.okcps.org,Official 2026-27 academic student calendar linked; dates not extracted.
+4022770,Oklahoma City Public Schools,2027-28,calendar,,,,,tentative,https://www.okcps.org/student-and-families/student-tools/student-calendar,,,https://www.okcps.org,Official page states 2027-28 academic year calendar pending HB3151 adjustment; provisional details not extracted.
+4900142,Canyons School District,2026-27,calendar,,,,,tentative,https://www.canyonsdistrict.org/wpfd_file/186-day-calendar-k-12-2026-27/,,,https://www.canyonsdistrict.org,Official 186-day K-12 employee calendar located; not a student calendar. No student closures asserted.
+4900142,Canyons School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4841100,Spring Branch Independent School District,2026-27,calendar,,,,,tentative,https://www.springbranchisd.com/events,,,https://www.springbranchisd.com,District header links to 2026-27 academic calendar English/Spanish; PDF details not retrieved.
+4841100,Spring Branch Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+0407750,Deer Valley Unified District,2026-27,calendar,,,2026-08-03,2027-05-25,tentative,https://www.dvusd.org/fs/resource-manager/view/f26a29f1-9871-43c5-b55e-b57259fcaf09,,,https://www.dvusd.org,"District 2026-2027 PreK-12 Instructional Calendar updated 4/16/2026. Published final-looking calendar, but explicit board adoption not independently confirmed; status tentative. Friday 90-minute early release applies K-12; Dec 17 half day is grades 9-12 only and excluded."
+0407750,Deer Valley Unified District,2026-27,period,holiday,Labor Day No School,2026-09-07,2026-09-07,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,holiday,Fall Break Day,2026-09-21,2026-09-21,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,K-12 P/T Conferences - Half Day,2026-10-08,2026-10-09,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,break,Fall Break,2026-10-12,2026-10-16,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,holiday,Veterans Day Observed,2026-11-11,2026-11-11,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,break,Thanksgiving Day recess,2026-11-23,2026-11-27,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Half Day - K-12,2026-12-18,2026-12-18,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,teacher_day,"Staff Development, No School",2027-01-04,2027-01-04,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,holiday,Martin Luther King Day - No School,2027-01-18,2027-01-18,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,K-8 P/T Conferences - Half Day,2027-02-11,2027-02-12,,,,,,Early dismissal applies elementary/K-8; not all secondary grades
+0407750,Deer Valley Unified District,2026-27,period,holiday,Presidents Day - No School,2027-02-15,2027-02-15,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,break,Spring Break,2027-03-22,2027-03-26,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,holiday,Spring Break Day,2027-04-23,2027-04-23,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Last Day for students 1/2 day,2027-05-25,2027-05-25,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-08-07,2026-08-07,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-08-14,2026-08-14,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-08-21,2026-08-21,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-08-28,2026-08-28,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-09-04,2026-09-04,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-09-18,2026-09-18,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-09-25,2026-09-25,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-10-02,2026-10-02,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-10-23,2026-10-23,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-10-30,2026-10-30,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-11-06,2026-11-06,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-11-13,2026-11-13,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-11-20,2026-11-20,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-12-04,2026-12-04,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2026-12-11,2026-12-11,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-01-15,2027-01-15,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-01-22,2027-01-22,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-01-29,2027-01-29,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-02-05,2027-02-05,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-02-19,2027-02-19,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-02-26,2027-02-26,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-03-05,2027-03-05,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-03-12,2027-03-12,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-03-19,2027-03-19,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-04-30,2027-04-30,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-05-07,2027-05-07,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-05-14,2027-05-14,,,,,,
+0407750,Deer Valley Unified District,2026-27,period,early_release,Early Release - 90 min,2027-05-21,2027-05-21,,,,,,
+0407750,Deer Valley Unified District,2027-28,calendar,,,2027-08-02,2028-05-23,tentative,https://www.dvusd.org/fs/resource-manager/view/d0cbc082-ee16-4dbd-afa7-bc3c6a7c31df,,,https://www.dvusd.org,District 2027-2028 PreK-12 Instructional Calendar updated 8/5/2025; no explicit board vote found. 2027 Dec 16 half day grades 9-12 only omitted; districtwide 90-minute release Fridays captured.
+0407750,Deer Valley Unified District,2027-28,period,holiday,Labor Day No School,2027-09-06,2027-09-06,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,K-12 P/T Conferences - Half Day,2027-10-07,2027-10-08,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,break,Fall Break,2027-10-11,2027-10-15,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,break,Veterans Day Recess,2027-11-11,2027-11-12,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,break,Thanksgiving Day recess,2027-11-22,2027-11-26,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Half Day - K-12,2027-12-17,2027-12-17,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,break,Winter Break,2027-12-20,2027-12-31,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,teacher_day,"Staff Development, No School",2028-01-03,2028-01-03,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,holiday,Martin Luther King Day - No School,2028-01-17,2028-01-17,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,K-8 P/T Conferences - Half Day,2028-02-10,2028-02-11,,,,,,Early dismissal applies elementary/K-8; not all secondary grades
+0407750,Deer Valley Unified District,2027-28,period,holiday,Presidents Day - No School,2028-02-21,2028-02-21,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,break,Spring Break,2028-03-13,2028-03-17,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,holiday,Spring Break Day,2028-04-14,2028-04-14,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Last Day for students 1/2 day,2028-05-23,2028-05-23,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-08-06,2027-08-06,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-08-13,2027-08-13,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-08-20,2027-08-20,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-08-27,2027-08-27,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-09-03,2027-09-03,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-09-17,2027-09-17,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-09-24,2027-09-24,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-10-01,2027-10-01,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-10-22,2027-10-22,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-10-29,2027-10-29,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-11-05,2027-11-05,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-11-19,2027-11-19,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-12-03,2027-12-03,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2027-12-10,2027-12-10,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-01-14,2028-01-14,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-01-21,2028-01-21,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-01-28,2028-01-28,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-02-04,2028-02-04,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-02-18,2028-02-18,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-02-25,2028-02-25,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-03-03,2028-03-03,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-03-10,2028-03-10,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-03-24,2028-03-24,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-03-31,2028-03-31,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-04-28,2028-04-28,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-05-05,2028-05-05,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-05-12,2028-05-12,,,,,,
+0407750,Deer Valley Unified District,2027-28,period,early_release,Early Release - 90 min,2028-05-19,2028-05-19,,,,,,
+2200300,Caddo Parish School District,2026-27,calendar,,,,,approved,https://www.caddoschools.org/documents/calendar/24126412,,,https://www.caddoschools.org,"District School Calendars source exists. Board approval cited in official board communication, but board-approved PDF inaccessible via Apptegy viewer; dates not transcribed."
+2200300,Caddo Parish School District,2027-28,calendar,,,,,approved,https://www.caddoschools.org/documents/calendar/24126412,,,https://www.caddoschools.org,District School Calendars source exists. Board-approved year document inaccessible via Apptegy viewer; dates not transcribed.
+4833180,Northwest Independent School District,2026-27,calendar,,,2026-08-12,2027-05-21,approved,https://worthington.nisdtx.org/news-events/news-content/~board/news-all-campuses/post/calendars-approved-for-20262027-and-20272028-1768410361932,,,https://www.nisdtx.org,Board approved January 2026; year-round? Regular district calendar. Individual closures not yet extracted.
+4833180,Northwest Independent School District,2026-27,period,teacher_day,Student Holiday/ Staff Flex Day,2026-10-09,2026-10-09,,,,,,
+4833180,Northwest Independent School District,2026-27,period,teacher_day,Student Holiday/ Teacher Planning,2026-10-12,2026-10-12,,,,,,
+4833180,Northwest Independent School District,2027-28,calendar,,,,,approved,https://www.nisdtx.org/news-events/calendars,,,https://www.nisdtx.org,Board adopted 2027-28 calendar January 2026; first and last student dates not verified.
+4901200,Weber School District,2026-27,calendar,,,2026-08-24,,tentative,https://www.wsd.net/documents/calendar/16300655,,,https://www.wsd.net,Official Weber School District 2026-27 school calendar available in district document collection; start confirmed by multiple district-run elementary and junior high schools. District last day / specific districtwide breaks not independently verified.
+4901200,Weber School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1201380,Okaloosa County School District,2026-27,calendar,,,,,tentative,https://www.okaloosaschools.com/page/calendars/,,,https://www.okaloosaschools.com,District provides 2026-27 official student calendar and Vacation Planning Student Holiday & Break Guide; district document viewer inaccessible for precise extraction; school start/end and closure dates left blank.
+1201380,Okaloosa County School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4825260,Keller Independent School District,2026-27,calendar,,,2026-08-12,2027-05-26,approved,https://kms.kellerisd.net/default-news-page-clone/~board/newsroom-keller-isd-news/post/board-approves-2026-27-instructional-calendar-1766075950492,,,https://www.kellerisd.net,Board-approved Dec 18 2025. Winter break staff prep Jan 5; students return Jan 7. Excludes contingencies.
+4825260,Keller Independent School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4825260,Keller Independent School District,2026-27,period,other,Student Holiday/Conference Day,2026-10-09,2026-10-09,,,,,,
+4825260,Keller Independent School District,2026-27,period,break,Fall Break,2026-10-12,2026-10-16,,,,,,
+4825260,Keller Independent School District,2026-27,period,other,Election Day Student Holiday,2026-11-03,2026-11-03,,,,,,
+4825260,Keller Independent School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+4825260,Keller Independent School District,2026-27,period,early_release,Early Release Day,2026-12-18,2026-12-18,,,,,,All campuses grades PreK-12
+4825260,Keller Independent School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-06,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Student Holiday,2027-02-12,2027-02-12,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Student Holiday,2027-03-12,2027-03-12,,,,,,
+4825260,Keller Independent School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Student Holiday,2027-03-26,2027-03-26,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Student Holiday,2027-03-29,2027-03-29,,,,,,
+4825260,Keller Independent School District,2026-27,period,holiday,Student Holiday,2027-04-23,2027-04-23,,,,,,
+4825260,Keller Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+0100270,Baldwin County School District,2026-27,calendar,,,,,tentative,https://www.bcbe.org/districtcalendars,,,https://www.bcbe.org,Official 2026-27 BCBE school calendar linked. Student and teacher holiday dates not extracted; adoption status unclear.
+0100270,Baldwin County School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+3701260,Durham Public Schools,2026-27,calendar,,,,,tentative,https://www.dpsnc.net/o/dps/page/district-calendars,,,https://www.dpsnc.net,Official calendars published for multiple school types; traditional calendar PDF and typed page not extracted; no school type mixing.
+3701260,Durham Public Schools,2027-28,calendar,,,,,tentative,https://www.dpsnc.net/o/dps/page/district-calendars,,,https://www.dpsnc.net,Official 2027-28 calendars linked; traditional first/last dates not extracted.
+5103660,Stafford County Public Schools,2026-27,calendar,,,,,approved,https://www.staffordschools.net/current-school-year,,,https://www.staffordschools.net,District labels official approved school-year calendar; PDF date details not extracted.
+5103660,Stafford County Public Schools,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4836000,Prosper Independent School District,2026-27,calendar,,,,,approved,https://www.prosper-isd.net/events,,,https://www.prosper-isd.net,District calendar linked as 26-27 Approved Academic Calendar; full PDF date information not extracted.
+4836000,Prosper Independent School District,2026-27,period,teacher_day,Professional Learning / Student Holiday,2026-10-09,2026-10-09,,,,,,
+4836000,Prosper Independent School District,2026-27,period,holiday,School Holiday,2026-10-12,2026-10-13,,,,,,
+4836000,Prosper Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1201110,Leon County School District,2026-27,calendar,,,2026-08-12,2027-05-27,tentative,https://files.smartsites.parentsquare.com/10627/2026-2027_calendar_list_v111825.pdf,,,https://www.leonschools.net,"Official Nov 18 2025 dated district calendar. Calendar includes Sept 21 and Mar 26 as weather make-up contingent holidays; excluded. May 25-27 district-wide early release for elementary/middle/high, though middle/high exam days (elementary included). Board approval not independently documented."
+1201110,Leon County School District,2026-27,period,holiday,Labor Day Holiday (Districtwide),2026-09-07,2026-09-07,,,,,,
+1201110,Leon County School District,2026-27,period,teacher_day,Teacher Planning/Inservice Day,2026-10-12,2026-10-12,,,,,,
+1201110,Leon County School District,2026-27,period,holiday,Veterans Day Holiday (Districtwide),2026-11-11,2026-11-11,,,,,,
+1201110,Leon County School District,2026-27,period,break,Thanksgiving Holidays (Students and Teachers),2026-11-23,2026-11-27,,,,,,
+1201110,Leon County School District,2026-27,period,break,Winter Holidays (Districtwide),2026-12-21,2027-01-01,,,,,,
+1201110,Leon County School District,2026-27,period,teacher_day,Teacher Planning/Inservice Day,2027-01-04,2027-01-04,,,,,,
+1201110,Leon County School District,2026-27,period,holiday,"Martin Luther King, Jr. Day Holiday (Districtwide)",2027-01-18,2027-01-18,,,,,,
+1201110,Leon County School District,2026-27,period,holiday,Presidents’ Day Holiday (Districtwide),2027-02-15,2027-02-15,,,,,,
+1201110,Leon County School District,2026-27,period,break,Spring Break (Students and Teachers Out),2027-03-15,2027-03-19,,,,,,
+1201110,Leon County School District,2026-27,period,teacher_day,Teacher Planning/Inservice Day,2027-03-22,2027-03-22,,,,,,
+1201110,Leon County School District,2026-27,period,early_release,"Elementary, Middle and High Early Release",2027-05-25,2027-05-27,,,,,,"District-wide early release; secondary schools also have exam days, which are not closures."
+1201110,Leon County School District,2027-28,calendar,,,2027-08-10,2028-05-25,tentative,https://files.smartsites.parentsquare.com/10627/2027-2028_calendar_list_v111825.pdf,,,https://www.leonschools.net,Official district dated calendar. October 11 and April 14 are conditional hazardous-weather make-up days and excluded. May 23-25 district-wide early release. Board approval not independently documented.
+1201110,Leon County School District,2027-28,period,holiday,Labor Day Holiday (Districtwide),2027-09-06,2027-09-06,,,,,,
+1201110,Leon County School District,2027-28,period,teacher_day,Teacher Planning/Inservice Day,2027-10-18,2027-10-18,,,,,,
+1201110,Leon County School District,2027-28,period,holiday,Veterans Day Holiday (Districtwide),2027-11-11,2027-11-11,,,,,,
+1201110,Leon County School District,2027-28,period,break,Thanksgiving Holidays (Students and Teachers),2027-11-22,2027-11-26,,,,,,
+1201110,Leon County School District,2027-28,period,break,Winter Holidays (Districtwide),2027-12-20,2028-01-03,,,,,,
+1201110,Leon County School District,2027-28,period,teacher_day,Teacher Planning/Inservice Day,2028-01-04,2028-01-04,,,,,,
+1201110,Leon County School District,2027-28,period,holiday,"Martin Luther King, Jr. Day Holiday (Districtwide)",2028-01-17,2028-01-17,,,,,,
+1201110,Leon County School District,2027-28,period,holiday,Presidents’ Day Holiday (Districtwide),2028-02-21,2028-02-21,,,,,,
+1201110,Leon County School District,2027-28,period,break,Spring Break (Students and Teachers Out),2028-03-13,2028-03-17,,,,,,
+1201110,Leon County School District,2027-28,period,teacher_day,Teacher Planning/Inservice Day,2028-03-20,2028-03-20,,,,,,
+1201110,Leon County School District,2027-28,period,early_release,"Elementary, Middle and High Early Release",2028-05-23,2028-05-25,,,,,,
+0805370,St. Vrain Valley School District RE 1J,2026-27,calendar,,,2026-08-18,,approved,https://www.svvsd.org/wp-content/uploads/2025/10/Academic-Calendar-26-27-.pdf,,,https://www.svvsd.org,Elementary grades 1-5 begin Aug 18; grades 7-8 and 10-12 on Aug 19. Last day and closure dates not yet verified. The district states board approves each year.
+0805370,St. Vrain Valley School District RE 1J,2027-28,calendar,,,,,approved,https://www.svvsd.org/schools/school-calendar/,,,https://www.svvsd.org,District page lists 2027-28 calendar and states board approves yearly; dates not extracted.
+0403400,Gilbert Unified District,2026-27,calendar,,,2026-07-28,2027-05-27,tentative,https://www.gilbertschools.net/calendar,,,https://www.gilbertschools.net,Official district Important Dates summary; board resolution not independently verified.
+0403400,Gilbert Unified District,2026-27,period,break,Fall Break,2026-10-05,2026-10-16,,,,,,
+0403400,Gilbert Unified District,2026-27,period,break,Thanksgiving Break,2026-11-25,2026-11-27,,,,,,
+0403400,Gilbert Unified District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+0403400,Gilbert Unified District,2026-27,period,break,Spring Break,2027-03-15,2027-03-26,,,,,,
+0403400,Gilbert Unified District,2027-28,calendar,,,,,tentative,https://www.gilbertschools.net/calendar,,,https://www.gilbertschools.net,2027-28 printable district school calendar is published but its dates and final adoption not yet established. Separate proposals on survey page should not be substituted.
+1304020,Paulding County School District,2026-27,calendar,,,,,approved,https://www.paulding.k12.ga.us/home-page/calendar-e4,,,https://www.paulding.k12.ga.us,Approved October 22 2024. Precise first/last dates not extracted.
+1304020,Paulding County School District,2026-27,period,break,Fall Break/Schools Closed,2026-09-28,2026-10-02,,,,,,
+1304020,Paulding County School District,2027-28,calendar,,,,,approved,https://www.paulding.k12.ga.us/home-page/calendar-e4,,,https://www.paulding.k12.ga.us,Calendar approved October 21 2025; dates not extracted.
+3701620,Gaston County Schools,2026-27,calendar,,,2026-08-12,,approved,https://www.gaston.k12.nc.us/calendar-page,,,https://www.gaston.k12.nc.us,"Adopted Dec 15 2025, revised March 16 2026. Gaston Early College begins Aug 11, regular elementary schools Aug 12. Last student day not independently extracted."
+3701620,Gaston County Schools,2026-27,period,teacher_day,Mandated Teacher Workday for Professional Development,2026-10-28,2026-10-28,,,,,,
+3701620,Gaston County Schools,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+5304230,Lake Washington School District,2026-27,calendar,,,2026-08-31,2027-06-16,tentative,https://resources.finalsite.net/images/v1787679561/lwsdorg/eok5lsfktcue6muzply9/2026-27LWSD-one-page-calendar-English.pdf,,,https://www.lwsd.org,District calendar marked FINAL (updated Aug 2026) but also states subject to change; independent board approval not confirmed. Grades 1-12 start Aug 31; kindergarten staggered first Sep 3; preschool Sep 8. First-week elementary conferences Aug 31-Sep 2. Weekly Wednesday early release is district-wide. Closure make-up days excluded.
+5304230,Lake Washington School District,2026-27,period,early_release,Half-Day Elementary Conferences,2026-08-31,2026-09-02,,,,,,Elementary only. Kindergarten Family Connections on these days.
+5304230,Lake Washington School District,2026-27,period,holiday,No school - Labor Day,2026-09-07,2026-09-07,,,,,,
+5304230,Lake Washington School District,2026-27,period,teacher_day,No school – LEAP Day,2026-10-16,2026-10-16,,,,,,
+5304230,Lake Washington School District,2026-27,period,holiday,No school – Veterans Day,2026-11-11,2026-11-11,,,,,,
+5304230,Lake Washington School District,2026-27,period,early_release,Half Day,2026-11-25,2026-11-25,,,,,,
+5304230,Lake Washington School District,2026-27,period,break,No school – Thanksgiving Vacation,2026-11-26,2026-11-27,,,,,,
+5304230,Lake Washington School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+5304230,Lake Washington School District,2026-27,period,holiday,No school – MLK Jr. Day,2027-01-18,2027-01-18,,,,,,
+5304230,Lake Washington School District,2026-27,period,early_release,Half-Day Elementary Conferences,2027-01-26,2027-01-29,,,,,,Elementary only; preschool no classes Jan 26-29
+5304230,Lake Washington School District,2026-27,period,break,No school – Mid-Winter Break,2027-02-11,2027-02-12,,,,,,
+5304230,Lake Washington School District,2026-27,period,holiday,No school – Presidents Day,2027-02-15,2027-02-15,,,,,,
+5304230,Lake Washington School District,2026-27,period,teacher_day,No school – LEAP Day,2027-03-12,2027-03-12,,,,,,
+5304230,Lake Washington School District,2026-27,period,break,No school – Spring Break,2027-04-12,2027-04-16,,,,,,
+5304230,Lake Washington School District,2026-27,period,teacher_day,No school – LEAP Day,2027-05-28,2027-05-28,,,,,,
+5304230,Lake Washington School District,2026-27,period,holiday,No school – Memorial Day,2027-05-31,2027-05-31,,,,,,
+5304230,Lake Washington School District,2026-27,period,early_release,Half-Day – Last Day of School (K-12),2027-06-16,2027-06-16,,,,,,
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-09-09,2026-09-09,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-09-16,2026-09-16,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-09-23,2026-09-23,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-09-30,2026-09-30,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-10-07,2026-10-07,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-10-14,2026-10-14,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-10-21,2026-10-21,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-10-28,2026-10-28,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-11-04,2026-11-04,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-11-18,2026-11-18,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-12-02,2026-12-02,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-12-09,2026-12-09,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2026-12-16,2026-12-16,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-01-06,2027-01-06,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-01-13,2027-01-13,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-01-20,2027-01-20,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-02-03,2027-02-03,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-02-10,2027-02-10,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-02-17,2027-02-17,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-02-24,2027-02-24,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-03-03,2027-03-03,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-03-10,2027-03-10,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-03-17,2027-03-17,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-03-24,2027-03-24,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-03-31,2027-03-31,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-04-07,2027-04-07,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-04-21,2027-04-21,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-04-28,2027-04-28,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-05-05,2027-05-05,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-05-12,2027-05-12,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-05-19,2027-05-19,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-05-26,2027-05-26,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-06-02,2027-06-02,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2026-27,period,early_release,Wednesday early release schedule,2027-06-09,2027-06-09,,,,,,"District-wide recurring 90 minutes early for elementary, 105 minutes for secondary."
+5304230,Lake Washington School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1302880,Houston County School District,2026-27,calendar,,,2026-08-04,2027-05-26,tentative,https://www.hcbe.net/calendar,,,https://www.hcbe.net,"Official district calendar with detailed dates; board approval not stated. Sept 8 and Feb 16 are distance-learning days, not traditional student closures: deliberately excluded."
+1302880,Houston County School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+1302880,Houston County School District,2026-27,period,teacher_day,Student Holiday/Site Collaboration,2026-10-09,2026-10-09,,,,,,
+1302880,Houston County School District,2026-27,period,break,"Fall Holiday, Students & Teachers",2026-10-12,2026-10-16,,,,,,
+1302880,Houston County School District,2026-27,period,holiday,Veterans Day Holiday,2026-11-11,2026-11-11,,,,,,
+1302880,Houston County School District,2026-27,period,break,Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+1302880,Houston County School District,2026-27,period,early_release,Last Day of Semester – ½ Day for Students,2026-12-18,2026-12-18,,,,,,
+1302880,Houston County School District,2026-27,period,break,Christmas & New Year’s Holiday,2026-12-21,2027-01-01,,,,,,
+1302880,Houston County School District,2026-27,period,teacher_day,Student Holiday/Site Collaboration,2027-01-04,2027-01-04,,,,,,
+1302880,Houston County School District,2026-27,period,holiday,"Martin Luther King, Jr. Holiday",2027-01-18,2027-01-18,,,,,,
+1302880,Houston County School District,2026-27,period,holiday,Presidents’ Day Holiday,2027-02-15,2027-02-15,,,,,,
+1302880,Houston County School District,2026-27,period,teacher_day,Student Holiday/Site Collaboration,2027-03-26,2027-03-26,,,,,,
+1302880,Houston County School District,2026-27,period,break,Spring Break,2027-03-29,2027-04-02,,,,,,
+1302880,Houston County School District,2026-27,period,early_release,Last Day of Semester – ½ Day for Students,2027-05-26,2027-05-26,,,,,,
+1302880,Houston County School District,2027-28,calendar,,,,,tentative,https://www.hcbe.net/calendar,,,https://www.hcbe.net,District lists 2027-28 calendar; details not extracted and board approval not independently established.
+0625800,Moreno Valley Unified School District,2026-27,calendar,,,,,tentative,https://www.mvusd.net/engage/calendars/schoolcalendars,,,https://www.mvusd.net,"K-6, middle, high and preschool calendars differ. Official calendar page contains grade-specific tables; K-6 exact dates not reliably separated from preschool and archived years; no dates asserted."
+0625800,Moreno Valley Unified School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4824420,Irving Independent School District,2026-27,calendar,,,,,tentative,https://www.irvingisd.net/about-us/calendar,,,https://www.irvingisd.net,Official 2026-27 Student Calendar published; detailed dates not extracted. Board approval not independently established.
+4824420,Irving Independent School District,2027-28,calendar,,,,,tentative,https://www.irvingisd.net/about-us/calendar,,,https://www.irvingisd.net,Official 2027-28 Student Calendar published; detailed dates not extracted. Board approval not independently established.
+4704020,Sumner County School District,2026-27,calendar,,,2026-08-10,2027-05-25,approved,https://www.sumnerschools.org/about-us/calendar/student-calendar,,,https://www.sumnerschools.org,Student calendar says board approved Jul 21 2026; source footer also says earlier Oct 2025 approval pending TN DOE; latest revised version used. April 23 kindergarten registration may have different class effect: omitted pending confirmation.
+4704020,Sumner County School District,2026-27,period,other,No School,2026-09-04,2026-09-04,,,,,,
+4704020,Sumner County School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4704020,Sumner County School District,2026-27,period,other,Parent Teacher Conferences,2026-09-21,2026-09-21,,,,,,District student calendar lists conference day; no student attendance
+4704020,Sumner County School District,2026-27,period,break,Fall Break,2026-10-05,2026-10-09,,,,,,
+4704020,Sumner County School District,2026-27,period,other,No School,2026-10-12,2026-10-12,,,,,,
+4704020,Sumner County School District,2026-27,period,other,Election Day,2026-11-03,2026-11-03,,,,,,
+4704020,Sumner County School District,2026-27,period,break,Thanksgiving,2026-11-23,2026-11-27,,,,,,
+4704020,Sumner County School District,2026-27,period,early_release,Half day of School,2026-12-18,2026-12-18,,,,,,
+4704020,Sumner County School District,2026-27,period,break,Christmas Break,2026-12-21,2027-01-01,,,,,,
+4704020,Sumner County School District,2026-27,period,teacher_day,No School,2027-01-04,2027-01-04,,,,,,Administrative day on staff calendar
+4704020,Sumner County School District,2026-27,period,holiday,"Martin Luther King, Jr. Day",2027-01-18,2027-01-18,,,,,,
+4704020,Sumner County School District,2026-27,period,teacher_day,Presidents’ Day,2027-02-15,2027-02-15,,,,,,District staff calendar denotes professional learning day; student calendar says no school
+4704020,Sumner County School District,2026-27,period,break,Spring Break,2027-03-22,2027-03-25,,,,,,
+4704020,Sumner County School District,2026-27,period,holiday,Good Friday,2027-03-26,2027-03-26,,,,,,
+4704020,Sumner County School District,2026-27,period,teacher_day,Easter Monday,2027-03-29,2027-03-29,,,,,,District staff calendar denotes Instructional Focus Day
+4704020,Sumner County School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+3605850,Buffalo City School District,2026-27,calendar,,,,,tentative,https://www.buffaloschools.org/o/bps/article/2883519,,,https://www.buffaloschools.org,"Official calendar at a glance published May 14 2026, but date graphic not accessible as text; not copied from third-party sites."
+3605850,Buffalo City School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1908970,Des Moines Independent Community School District,2026-27,calendar,,,2026-08-24,2027-06-03,tentative,https://www.dmschools.org/wp-content/uploads/2026/02/2026-2027-DMPS-Calendar.pdf,,,https://www.dmschools.org,"Official K-12 school calendar. Board adoption not independently documented. Preschool has different start/end (Sep 2, Jun 2). Jun 7-9 weather make-up dates excluded."
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,Labor Day (No Classes),2026-09-07,2026-09-07,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Day (No Classes),2026-09-18,2026-09-18,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,Yom Kippur (No Classes),2026-09-21,2026-09-21,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Days (No Classes),2026-10-22,2026-10-23,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Day (No Classes),2026-11-02,2026-11-02,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,other,Election Day (No Classes),2026-11-03,2026-11-03,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,Conference Compensation Day (No Classes),2026-11-25,2026-11-25,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,break,Thanksgiving Break,2026-11-26,2026-11-27,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Days (No Classes),2027-01-14,2027-01-15,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,MLK Jr. Day (No Classes),2027-01-18,2027-01-18,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Day (No Classes),2027-02-15,2027-02-15,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,Eid al-Fitr (No Classes),2027-03-10,2027-03-10,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Days (No Classes),2027-03-11,2027-03-12,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,Good Friday (No Classes),2027-03-26,2027-03-26,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,Conference Compensation Day (No Classes),2027-04-23,2027-04-23,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,teacher_day,PD Day (No Classes),2027-04-26,2027-04-26,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,holiday,Memorial Day (No Classes),2027-05-31,2027-05-31,,,,,,
+1908970,Des Moines Independent Community School District,2026-27,period,early_release,"Last Day of School for K-12 Students, Early Dismissal",2027-06-03,2027-06-03,,,,,,
+1908970,Des Moines Independent Community School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+4808090,Alvin Independent School District,2026-27,calendar,,,2026-08-12,2027-05-27,approved,https://www.alvinisd.net/article/2635417,,,https://www.alvinisd.net,Board approved Jan 13 2026. Start Aug 12 is for transition grades including pre-K and kindergarten; other grades start Aug 13. School breaks stated exactly.
+4808090,Alvin Independent School District,2026-27,period,break,Fall Break,2026-10-12,2026-10-16,,,,,,
+4808090,Alvin Independent School District,2026-27,period,break,Spring Break,2027-03-08,2027-03-12,,,,,,
+4808090,Alvin Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+2721240,Minneapolis Public School District,2026-27,calendar,,,2026-09-08,2027-06-11,approved,https://www.mpschools.org/fs/resource-manager/view/93dd3e3b-8eb0-41d7-a85e-774b3fe43668,,,https://www.mpschools.org,"Districtwide student calendar issued Sep 3 2025, board-set per district. Grades 1-12 start Sep 8; preK-K start Sep 10. Spring/exam/after-last make-up dates excluded."
+2721240,Minneapolis Public School District,2026-27,period,holiday,Yom Kippur,2026-09-21,2026-09-21,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,other,Family-Teacher Conference,2026-10-14,2026-10-14,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,break,MEA Break,2026-10-15,2026-10-16,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,teacher_day,Professional development/Election Day,2026-11-03,2026-11-03,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,teacher_day,Record keeping,2026-11-13,2026-11-13,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,break,Thanksgiving,2026-11-25,2026-11-27,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,holiday,"Martin Luther King, Jr. Day",2027-01-18,2027-01-18,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,teacher_day,Record keeping,2027-01-29,2027-01-29,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,other,Family-Teacher Conference,2027-02-12,2027-02-12,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,holiday,Presidents’ Day,2027-02-15,2027-02-15,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,holiday,Eid al-Fitr,2027-03-10,2027-03-10,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,teacher_day,Record keeping,2027-04-02,2027-04-02,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,break,Spring Break,2027-04-05,2027-04-09,,,,,,
+2721240,Minneapolis Public School District,2026-27,period,holiday,Memorial Day,2027-05-31,2027-05-31,,,,,,
+2721240,Minneapolis Public School District,2027-28,calendar,,,2027-09-07,2028-06-09,approved,https://www.mpschools.org/fs/resource-manager/view/a2611633-9329-42f8-b341-bd6edf8d6b2d,,,https://www.mpschools.org,Districtwide board-set official student calendar issued Jan 21 2025. Grades 1-12 start Sep 7; pre-K/K start Sep 9. November 24-26 includes Thanksgiving; winter break through Monday Jan 3 2028.
+2721240,Minneapolis Public School District,2027-28,period,holiday,Yom Kippur,2027-10-11,2027-10-11,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,other,Family-Teacher Conference,2027-10-20,2027-10-20,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,break,MEA Break,2027-10-21,2027-10-22,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,teacher_day,Record keeping,2027-11-12,2027-11-12,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,break,Thanksgiving,2027-11-24,2027-11-26,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,break,Winter Break,2027-12-22,2028-01-03,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,holiday,"Martin Luther King, Jr. Day",2028-01-17,2028-01-17,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,teacher_day,Record keeping,2028-01-28,2028-01-28,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,other,Family-Teacher Conference,2028-02-18,2028-02-18,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,holiday,Presidents’ Day,2028-02-21,2028-02-21,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,teacher_day,Professional development,2028-02-22,2028-02-22,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,teacher_day,Record keeping,2028-03-31,2028-03-31,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,break,Spring Break,2028-04-03,2028-04-07,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,holiday,Eid al-Adha,2028-05-05,2028-05-05,,,,,,
+2721240,Minneapolis Public School District,2027-28,period,holiday,Memorial Day,2028-05-29,2028-05-29,,,,,,
+4814730,Comal Independent School District,2026-27,calendar,,,2026-08-25,2027-05-27,approved,https://www.comalisd.org/apps/news/article/2157164?categoryId=11304,,,https://www.comalisd.org,Board approved Jan 22 2026; holiday dates beyond published spring break not extracted.
+4814730,Comal Independent School District,2026-27,period,break,Spring Break,2027-03-08,2027-03-12,,,,,,
+4814730,Comal Independent School District,2027-28,calendar,,,2027-08-24,2028-05-25,approved,https://www.comalisd.org/apps/news/article/2157164?categoryId=11304,,,https://www.comalisd.org,Board approved Jan 22 2026; holiday dates beyond published spring break not extracted.
+4814730,Comal Independent School District,2027-28,period,break,Spring Break,2028-03-06,2028-03-10,,,,,,
+4830570,Midland Independent School District,2026-27,calendar,,,,,tentative,https://www.midlandisd.net/calendars,,,https://www.midlandisd.net,District publishes 2026-27 Midland ISD calendar and separate alternative campuses; student details not extracted.
+4830570,Midland Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1201650,Santa Rosa County School District,2026-27,calendar,,,,,approved,https://www.santarosaschools.org/documents/calendars/16246221,,,https://www.santarosaschools.org,Official Santa Rosa district documents catalog lists Board Approved 2026-27 SY Calendar. Direct PDF unavailable via district Apptegy document viewer; individual dates not independently verified.
+1201650,Santa Rosa County School District,2027-28,calendar,,,,,approved,https://www.santarosaschools.org/documents/calendars/16246221,,,https://www.santarosaschools.org,Official Santa Rosa district documents catalog lists Board Approved 2027-28 SY Calendar. Direct PDF unavailable via district Apptegy document viewer; dates omitted.
+4834860,Pharr-San Juan-Alamo Independent School District,2026-27,calendar,,,,,tentative,https://www.psjaisd.us/district-calendar,,,https://www.psjaisd.us,Official 2026-27 academic calendar linked; dates not extracted.
+4834860,Pharr-San Juan-Alamo Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+0626370,Mount Diablo Unified School District,2026-27,calendar,,,,,approved,https://www.mdusd.org/calendar,,,https://www.mdusd.org,Official approved 2026-27 academic calendar linked; numerical first and last dates not extracted.
+0626370,Mount Diablo Unified School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+2200870,Lafayette Parish School District,2026-27,calendar,,,,,tentative,https://www.lpssonline.com/calendar/monthly/2027/04,,,https://www.lpssonline.com,Official school district calendar page includes 2026-27 district calendar and staggered start; first/last dates not extracted.
+2200870,Lafayette Parish School District,2026-27,period,break,Easter/Spring Break,2027-03-26,2027-04-02,,,,,,
+2200870,Lafayette Parish School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+0803990,Poudre School District R-1,2026-27,calendar,,,2026-08-19,2027-05-28,approved,https://www.psdschools.org/fs/resource-manager/view/1253626b-8595-47a1-9aea-5ef9ed3ea8f6,,,https://www.psdschools.org,"Adopted Student Calendar, updated Jan 21 2026; Dec 9 2025 board approved. Elementary-only closures are captured with explanatory notes; pre-K and integrated services may use different calendars."
+0803990,Poudre School District R-1,2026-27,period,holiday,No School - All Grades,2026-09-07,2026-09-07,,,,,,Labor Day; official color key calls all-grades no school
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - Elementary,2026-09-28,2026-09-28,,,,,,Elementary-only building workday; secondary students attend
+0803990,Poudre School District R-1,2026-27,period,other,No School - Elementary,2026-10-15,2026-10-15,,,,,,Elementary conferences; secondary students attend
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - All Grades,2026-10-16,2026-10-16,,,,,,Exchange / classified PD day
+0803990,Poudre School District R-1,2026-27,period,break,No School - All Grades,2026-11-23,2026-11-27,,,,,,Thanksgiving break
+0803990,Poudre School District R-1,2026-27,period,break,No School - All Grades,2026-12-21,2027-01-01,,,,,,Winter Break
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - All Grades,2027-01-04,2027-01-04,,,,,,Workday after Winter Break
+0803990,Poudre School District R-1,2026-27,period,holiday,No School - All Grades,2027-01-18,2027-01-18,,,,,,MLK Day
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - All Grades,2027-02-12,2027-02-12,,,,,,District PL day for elementary; building workday for secondary
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - All Grades,2027-02-15,2027-02-15,,,,,,Elementary building/work day; secondary district PL
+0803990,Poudre School District R-1,2026-27,period,break,No School - All Grades,2027-03-15,2027-03-19,,,,,,Spring Break
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - All Grades,2027-04-16,2027-04-16,,,,,,Staff exchange/classified PD day
+0803990,Poudre School District R-1,2026-27,period,teacher_day,No School - Elementary,2027-05-17,2027-05-17,,,,,,Elementary workday only; secondary students attend
+0803990,Poudre School District R-1,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+1303870,Muscogee County School District,2026-27,calendar,,,,,tentative,https://www.muscogee.k12.ga.us/calendar,,,https://www.muscogee.k12.ga.us,District publishes 2026-27 calendar PDF; full PDF not transcribed. Third-party dates deliberately not used.
+1303870,Muscogee County School District,2027-28,calendar,,,,,tentative,https://www.muscogee.k12.ga.us/calendar,,,https://www.muscogee.k12.ga.us,District publishes 2027-28 calendar PDF; full PDF not transcribed.
+4808130,Amarillo Independent School District,2026-27,calendar,,,2026-08-18,2027-05-28,approved,https://www.amaisd.org/board-briefs,,,https://www.amaisd.org,Board approved 2026-27 calendar Dec 15 2025; board later approved additional summer learning days. No exact dates for other breaks in this official summary.
+4808130,Amarillo Independent School District,2026-27,period,break,Thanksgiving,2026-11-23,2026-11-27,,,,,,
+4808130,Amarillo Independent School District,2026-27,period,break,Christmas break,2026-12-21,2027-01-01,,,,,,
+4808130,Amarillo Independent School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4808130,Amarillo Independent School District,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+2732390,Rosemount-Apple Valley-Eagan,2026-27,calendar,,,2026-08-31,2027-06-09,tentative,https://www.district196.org/about/calendar,,,https://www.district196.org,Official district schedule marked subject to change. Elementary K-8 closure days included; high-school-only conferences omitted.
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,other,No School K-12+,2026-09-04,2026-09-04,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Staff Data Analysis,2026-09-25,2026-09-25,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,break,MEA Break,2026-10-15,2026-10-16,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,other,Elementary and Middle School Conferences,2026-11-05,2026-11-05,,,,,,K-8 only; 9-12 may attend
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,High School Staff Planning and Learning,2026-11-06,2026-11-06,,,,,,All K-12 students off school per calendar
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Teacher Planning/Grading,2026-11-25,2026-11-25,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,break,Fall Break,2026-11-26,2026-11-27,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,break,Winter Break,2026-12-23,2027-01-01,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Staff Data Analysis,2027-01-08,2027-01-08,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Staff Planning and Learning/High School Conferences,2027-01-22,2027-01-22,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,other,Elementary and Middle School Conferences,2027-02-04,2027-02-04,,,,,,K-8 only
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,High School Staff Planning and Learning,2027-02-05,2027-02-05,,,,,,All K-12 students off school per calendar
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Teacher Planning and Grading,2027-03-05,2027-03-05,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,teacher_day,Staff Data Analysis,2027-03-10,2027-03-10,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,break,Spring Break,2027-03-29,2027-04-02,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,other,No School K-12+,2027-04-23,2027-04-23,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2026-27,period,holiday,Memorial Day,2027-05-31,2027-05-31,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,calendar,,,2027-08-30,2028-06-07,tentative,https://www.district196.org/about/calendar,,,https://www.district196.org,"District dates marked subject to change. District text mistakenly says Monday June 7 but 2028-06-07 is Wednesday; numerical date followed. K-8 closures kept, high-school-only excluded."
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,other,No School K-12+,2027-09-03,2027-09-03,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,holiday,Labor Day,2027-09-06,2027-09-06,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Staff Data Analysis,2027-09-24,2027-09-24,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,break,MEA Break,2027-10-21,2027-10-22,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,other,Elementary and Middle School Conferences,2027-11-04,2027-11-04,,,,,,K-8 only
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,High School Staff Planning and Learning,2027-11-05,2027-11-05,,,,,,All K-12 students off school
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Teacher Planning and Grading,2027-11-24,2027-11-24,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,break,Fall Break,2027-11-25,2027-11-26,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,break,Winter Break,2027-12-22,2027-12-31,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Staff Data Analysis,2028-01-07,2028-01-07,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,holiday,Martin Luther King Jr. Day,2028-01-17,2028-01-17,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Staff Planning and Learning/High School Conferences,2028-01-21,2028-01-21,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,other,Elementary and Middle School Conferences,2028-02-03,2028-02-03,,,,,,K-8 only
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,High School Staff Planning and Learning,2028-02-04,2028-02-04,,,,,,All K-12 students off school
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,holiday,Presidents Day,2028-02-21,2028-02-21,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Teacher Planning and Grading,2028-03-03,2028-03-03,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,teacher_day,Staff Data Analysis,2028-03-17,2028-03-17,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,break,Spring Break,2028-03-27,2028-03-31,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,other,No School K-12+,2028-04-21,2028-04-21,,,,,,
+2732390,Rosemount-Apple Valley-Eagan,2027-28,period,holiday,Memorial Day,2028-05-29,2028-05-29,,,,,,
+1304380,Richmond County School District,2026-27,calendar,,,2026-08-05,2027-05-26,approved,https://www.rcboe.org/fs/resource-manager/view/c4f2c014-be79-46de-b0d5-b22366755d40,,,https://www.rcboe.org,Board approved March 18 2025. Elementary students start Aug 5; grades 6-12 and K-8/magnet schools Aug 6. Virtual PowerUp learning days excluded because students have instruction. May 26 final early release all grades.
+1304380,Richmond County School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+1304380,Richmond County School District,2026-27,period,teacher_day,Student Holiday/Professional Learning Day,2026-10-09,2026-10-09,,,,,,
+1304380,Richmond County School District,2026-27,period,break,Student/Teacher Fall Break,2026-10-12,2026-10-13,,,,,,
+1304380,Richmond County School District,2026-27,period,holiday,Veterans Day Holiday,2026-11-11,2026-11-11,,,,,,
+1304380,Richmond County School District,2026-27,period,break,Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+1304380,Richmond County School District,2026-27,period,early_release,End of 1st Semester/Early Release (all grades),2026-12-22,2026-12-22,,,,,,
+1304380,Richmond County School District,2026-27,period,break,Christmas/Winter Break,2026-12-23,2027-01-05,,,,,,
+1304380,Richmond County School District,2026-27,period,teacher_day,Student Holiday/Professional Learning Day,2027-01-06,2027-01-06,,,,,,
+1304380,Richmond County School District,2026-27,period,holiday,"Martin Luther King, Jr. Holiday",2027-01-18,2027-01-18,,,,,,
+1304380,Richmond County School District,2026-27,period,teacher_day,Student Holiday/Professional Learning Day,2027-02-12,2027-02-12,,,,,,
+1304380,Richmond County School District,2026-27,period,holiday,Student/Teacher Holiday,2027-02-15,2027-02-15,,,,,,
+1304380,Richmond County School District,2026-27,period,holiday,Student/Teacher Holiday,2027-03-26,2027-03-26,,,,,,
+1304380,Richmond County School District,2026-27,period,break,Spring Break,2027-04-05,2027-04-12,,,,,,
+1304380,Richmond County School District,2026-27,period,early_release,Last Day of School/Early Release (all grades),2027-05-26,2027-05-26,,,,,,
+1304380,Richmond County School District,2027-28,calendar,,,,,tentative,https://www.rcboe.org/news-events/academic-calendar,,,https://www.rcboe.org,"District web page explicitly lists 2027-28 Academic Calendar, but printable calendar not independently retrieved or parsed. Board approval and date details unverified."
+5308250,Spokane Public Schools,2026-27,calendar,,,2026-08-26,,tentative,https://www.spokaneschools.org/page/new-to-spokane-public-schools,,,https://www.spokaneschools.org,"District 2026-27 Balanced Calendar. Elementary grades 1-5 start Aug 26; Kindergarten A/B group Aug 27/28, all K attend Aug 31. Last day not established."
+5308250,Spokane Public Schools,2026-27,period,break,Fall Break,2026-10-19,2026-10-23,,,,,,
+5308250,Spokane Public Schools,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+5308250,Spokane Public Schools,2026-27,period,break,Mid-winter Break,2027-02-15,2027-02-19,,,,,,
+5308250,Spokane Public Schools,2026-27,period,break,Spring Break,2027-04-12,2027-04-16,,,,,,
+5308250,Spokane Public Schools,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.
+5308700,Tacoma Public Schools,2026-27,calendar,,,2026-09-09,2027-06-23,tentative,https://washington.tacomaschools.org/about/news/story-details/~board/2025-2026-school-year/post/2026-27-student-calendar-available-elementary-schools-change-to-semester-schedule,,,https://www.tacomaschools.org,Grades 1-12 start Sep 9; kindergarten Sep 14. Board approval not independently established; special schools have different calendars.
+5308700,Tacoma Public Schools,2026-27,period,break,Winter break,2026-12-21,2027-01-01,,,,,,
+5308700,Tacoma Public Schools,2026-27,period,break,Spring break,2027-04-05,2027-04-09,,,,,,
+5308700,Tacoma Public Schools,2026-27,period,teacher_day,No School: Teacher Work Day,2026-10-12,2026-10-12,,,,,,
+5308700,Tacoma Public Schools,2026-27,period,early_release,"All Grades Conferences, Early Release",2026-10-22,2026-10-23,,,,,,
+5308700,Tacoma Public Schools,2027-28,calendar,,,,,not_found,,,,,Official district school-year calendar not independently verified.

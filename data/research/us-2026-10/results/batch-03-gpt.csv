@@ -1,0 +1,481 @@
+nces_leaid,district_name,school_year,row_type,kind,label,start_date,end_date,board_status,source_url,feed_url,feed_format,website,notes
+0200180,Anchorage School District,2026-27,calendar,,,2026-08-19,2027-05-28,approved,https://www.asdk12.org/fs/resource-manager/view/ff951b95-35ef-448f-b783-5fe6fa71e519,,,https://www.asdk12.org,Elementary grades 1-6 begin Aug 19; grades 7-8 and 10-12 begin Aug 20; pre-K/K Aug 26. Board approved revised start/end dates Apr 21; early-release dates excluded.
+0200180,Anchorage School District,2026-27,period,holiday,Labor Day holiday,2026-09-07,2026-09-07,,,,,,
+0200180,Anchorage School District,2026-27,period,holiday,Indigenous Peoples Day,2026-10-12,2026-10-12,,,,,,
+0200180,Anchorage School District,2026-27,period,teacher_day,Student release grading day,2026-10-16,2026-10-16,,,,,,
+0200180,Anchorage School District,2026-27,period,teacher_day,Student release professional development day,2026-10-30,2026-10-30,,,,,,
+0200180,Anchorage School District,2026-27,period,teacher_day,Student release professional development day (State Election Day),2026-11-03,2026-11-03,,,,,,
+0200180,Anchorage School District,2026-27,period,holiday,Veterans Day,2026-11-11,2026-11-11,,,,,,
+0200180,Anchorage School District,2026-27,period,break,Thanksgiving holiday,2026-11-26,2026-11-27,,,,,,
+0200180,Anchorage School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+0200180,Anchorage School District,2026-27,period,holiday,Martin Luther King Jr. holiday,2027-01-18,2027-01-18,,,,,,
+0200180,Anchorage School District,2026-27,period,holiday,Presidents Day holiday,2027-02-15,2027-02-15,,,,,,
+0200180,Anchorage School District,2026-27,period,teacher_day,Student release professional development day,2027-02-26,2027-02-26,,,,,,
+0200180,Anchorage School District,2026-27,period,teacher_day,Student release grading day,2027-03-12,2027-03-12,,,,,,
+0200180,Anchorage School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+0200180,Anchorage School District,2027-28,calendar,,,,,approved,https://www.asdk12.org/calendar,,,https://www.asdk12.org,Board approved school-year calendar and April 2026 revisions; individual dates not safely transcribed from linked PDF.
+3172840,Lincoln Public Schools,2026-27,calendar,,,2026-08-12,,approved,https://www.lps.org/live-feed,,,https://www.lps.org,Grades K/6/9 start Aug 12; all other grades start Aug 13. Last day and full closure dates not verified.
+3172840,Lincoln Public Schools,2027-28,calendar,,,2027-08-10,2028-05-18,approved,https://www.lps.org/article/2942628,,,https://www.lps.org,Grades K/6/9 begin Aug 10; other grades Aug 11. Board approved March 24.
+3172840,Lincoln Public Schools,2027-28,period,break,Fall Break,2027-10-11,2027-10-12,,,,,,
+3172840,Lincoln Public Schools,2027-28,period,teacher_day,District professional learning day,2027-10-13,2027-10-13,,,,,,
+3172840,Lincoln Public Schools,2027-28,period,break,Winter Break,2027-12-22,2028-01-03,,,,,,
+2101860,Fayette County School District,2026-27,calendar,,,,,approved,https://www.fcps.net/fs/resource-manager/view/4b6722ee-cca0-417d-9429-67afc4d148f2,,,https://www.fcps.net,Board approved; date grid not fully independently transcribed. William Wells Brown Elementary follows a different calendar.
+2101860,Fayette County School District,2027-28,calendar,,,,,approved,https://www.fcps.net/fs/resource-manager/view/84e2246f-8c4f-4d39-83f7-59a89fc88010,,,https://www.fcps.net,Board approved; date grid not fully independently transcribed. William Wells Brown Elementary follows a different calendar.
+1301110,Cherokee County School District,2026-27,calendar,,,2026-08-03,2027-05-25,approved,https://www.cherokeek12.net/calendar/2026-27-school-year-calendar-text,,,https://www.cherokeek12.net,Remote-learning days excluded (instruction is provided). Elementary conference early release differs from secondary.
+1301110,Cherokee County School District,2026-27,period,holiday,School & District Holiday,2026-09-07,2026-09-07,,,,,,
+1301110,Cherokee County School District,2026-27,period,break,Holiday Break - Schools Closed,2026-09-21,2026-09-25,,,,,,
+1301110,Cherokee County School District,2026-27,period,teacher_day,Student Holiday - Teacher Planning,2026-10-12,2026-10-12,,,,,,
+1301110,Cherokee County School District,2026-27,period,early_release,Elementary Conference Days - Early Release PK-5,2026-10-13,2026-10-16,,,,,,Elementary only; secondary level has normal school hours
+1301110,Cherokee County School District,2026-27,period,break,Holiday Break - Schools & District Closed,2026-11-23,2026-11-27,,,,,,
+1301110,Cherokee County School District,2026-27,period,break,Holiday Break - Schools & District Closed,2026-12-21,2027-01-01,,,,,,
+1301110,Cherokee County School District,2026-27,period,teacher_day,Student Holiday - Teacher Planning,2027-01-04,2027-01-04,,,,,,
+1301110,Cherokee County School District,2026-27,period,holiday,School & District Holiday,2027-01-18,2027-01-18,,,,,,
+1301110,Cherokee County School District,2026-27,period,early_release,Conference Days - Early Release PK-12,2027-01-28,2027-01-29,,,,,,
+1301110,Cherokee County School District,2026-27,period,break,Holiday Break - Schools Closed,2027-02-15,2027-02-19,,,,,,
+1301110,Cherokee County School District,2026-27,period,break,Holiday Break - Schools & District Closed,2027-04-05,2027-04-09,,,,,,
+1301110,Cherokee County School District,2027-28,calendar,,,2027-08-02,2028-05-24,approved,https://www.cherokeek12.net/calendar/2027-28-school-year-calendar-text,,,https://www.cherokeek12.net,Remote-learning days excluded. Elementary conference early release differs from secondary.
+1301110,Cherokee County School District,2027-28,period,holiday,School & District Holiday,2027-09-06,2027-09-06,,,,,,
+1301110,Cherokee County School District,2027-28,period,break,Holiday Break - Schools Closed,2027-09-20,2027-09-24,,,,,,
+1301110,Cherokee County School District,2027-28,period,teacher_day,Student Holiday - Teacher Planning,2027-10-11,2027-10-11,,,,,,
+1301110,Cherokee County School District,2027-28,period,early_release,Elementary Conference Days - Early Release PK-5,2027-10-12,2027-10-15,,,,,,Elementary only; secondary level has normal school hours
+1301110,Cherokee County School District,2027-28,period,break,Holiday Break - Schools & District Closed,2027-11-22,2027-11-26,,,,,,
+1301110,Cherokee County School District,2027-28,period,break,Holiday Break - Schools & District Closed,2027-12-20,2028-01-03,,,,,,
+1301110,Cherokee County School District,2027-28,period,holiday,School & District Holiday,2028-01-17,2028-01-17,,,,,,
+1301110,Cherokee County School District,2027-28,period,early_release,Conference Days - Early Release PK-12,2028-01-27,2028-01-28,,,,,,
+1301110,Cherokee County School District,2027-28,period,break,Holiday Break - Schools Closed,2028-02-21,2028-02-25,,,,,,
+1301110,Cherokee County School District,2027-28,period,break,Holiday Break - Schools & District Closed,2028-04-03,2028-04-07,,,,,,
+4704530,Williamson County School District,2026-27,calendar,,,2026-08-10,2027-05-27,approved,https://infocus.wcs.edu/infocus-news-template/~board/infocus-news/post/board-approves-school-calendars,,,https://www.wcs.edu,Grades 1-12 begin half-day Aug 10; pre-K and kindergarten first full day Aug 17.
+4704530,Williamson County School District,2026-27,period,holiday,Labor Day - System Closed,2026-09-07,2026-09-07,,,,,,
+4704530,Williamson County School District,2026-27,period,other,Parent/Teacher Conference Day - No Students,2026-10-12,2026-10-12,,,,,,
+4704530,Williamson County School District,2026-27,period,teacher_day,Professional Development Day - No Students,2026-10-13,2026-10-13,,,,,,
+4704530,Williamson County School District,2026-27,period,break,Fall Break,2026-10-14,2026-10-16,,,,,,
+4704530,Williamson County School District,2026-27,period,teacher_day,Site-Based Professional Development Day,2026-11-03,2026-11-03,,,,,,
+4704530,Williamson County School District,2026-27,period,break,Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+4704530,Williamson County School District,2026-27,period,early_release,End of First Semester - Half-Day,2026-12-18,2026-12-18,,,,,,
+4704530,Williamson County School District,2026-27,period,break,Winter Break and New Year Day,2026-12-21,2027-01-01,,,,,,
+4704530,Williamson County School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+4704530,Williamson County School District,2026-27,period,teacher_day,Site-Based Professional Development Day,2027-02-12,2027-02-12,,,,,,
+4704530,Williamson County School District,2026-27,period,holiday,Mid-Winter Break,2027-02-15,2027-02-15,,,,,,
+4704530,Williamson County School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4704530,Williamson County School District,2026-27,period,holiday,Spring Holiday,2027-03-26,2027-03-26,,,,,,
+4704530,Williamson County School District,2026-27,period,early_release,Last Day - Half Day,2027-05-27,2027-05-27,,,,,,
+4704530,Williamson County School District,2027-28,calendar,,,2027-08-09,2028-05-25,approved,https://docs.wcs.edu/pdf/hr/Student-School-Calendar-2027-2028.pdf,,,https://www.wcs.edu,Grades 1-12 start Aug 9; half-day first/last days. Approved Nov 17 2025.
+4704530,Williamson County School District,2027-28,period,early_release,Start of School - Half Day,2027-08-09,2027-08-09,,,,,,
+4704530,Williamson County School District,2027-28,period,holiday,Labor Day,2027-09-06,2027-09-06,,,,,,
+4704530,Williamson County School District,2027-28,period,break,Fall Break,2027-10-11,2027-10-15,,,,,,
+4704530,Williamson County School District,2027-28,period,teacher_day,Site-Based Professional Development Day,2027-11-01,2027-11-01,,,,,,
+4704530,Williamson County School District,2027-28,period,break,Thanksgiving Holiday,2027-11-22,2027-11-26,,,,,,
+4704530,Williamson County School District,2027-28,period,early_release,End of First Semester - Half Day,2027-12-17,2027-12-17,,,,,,
+4704530,Williamson County School District,2027-28,period,break,Winter Break,2027-12-20,2027-12-31,,,,,,
+4704530,Williamson County School District,2027-28,period,holiday,Martin Luther King Jr. Day,2028-01-17,2028-01-17,,,,,,
+4704530,Williamson County School District,2027-28,period,break,Mid-Winter Break,2028-02-18,2028-02-21,,,,,,
+4704530,Williamson County School District,2027-28,period,other,Presidential Primary,2028-03-07,2028-03-07,,,,,,Election-related school closure
+4704530,Williamson County School District,2027-28,period,break,Spring Break,2028-03-13,2028-03-17,,,,,,
+4704530,Williamson County School District,2027-28,period,holiday,Spring Holiday,2028-04-14,2028-04-14,,,,,,
+4704530,Williamson County School District,2027-28,period,early_release,Last Day for Students - Half Day,2028-05-25,2028-05-25,,,,,,
+0401870,Chandler Unified District,2026-27,calendar,,,,,tentative,https://www.cusd80.com/calendar-71,,,https://www.cusd80.com,District posted student calendar link; dates and board approval not independently verified from linked document.
+0401870,Chandler Unified District,2027-28,calendar,,,,,tentative,https://www.cusd80.com/calendar-71,,,https://www.cusd80.com,District posted student calendar link; dates and board approval not independently verified from linked document.
+3704620,Union County Public Schools,2026-27,calendar,,,2026-08-24,2027-06-04,approved,https://www.ucpsnc.org/fs/resource-manager/view/35a297c0-9cc1-47e4-bcaf-f81d27e76a41,,,https://www.ucpsnc.org,Traditional calendar (not early college or Wolfe School). Color legend independently checked on official PDF. District Professional Development/Teacher Workday listed together.
+3704620,Union County Public Schools,2026-27,period,holiday,Holiday - Labor Day,2026-09-07,2026-09-07,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Optional Teacher Workday,2026-09-21,2026-09-21,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Required Teacher Workday,2026-10-19,2026-10-19,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,District Professional Development - Teacher Workday,2026-11-03,2026-11-03,,,,,,
+3704620,Union County Public Schools,2026-27,period,holiday,Holiday - Veterans Day,2026-11-11,2026-11-11,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Optional Teacher Workday,2026-11-25,2026-11-25,,,,,,
+3704620,Union County Public Schools,2026-27,period,break,Thanksgiving Holidays,2026-11-26,2026-11-27,,,,,,
+3704620,Union County Public Schools,2026-27,period,break,Winter Recess - Teacher Workdays; Annual Leave Days; Holidays,2026-12-21,2027-01-01,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Required Teacher Workday,2027-01-15,2027-01-15,,,,,,
+3704620,Union County Public Schools,2026-27,period,holiday,Holiday - MLK Day,2027-01-18,2027-01-18,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Optional Teacher Workday,2027-02-15,2027-02-15,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,District Professional Development - Teacher Workday,2027-03-02,2027-03-02,,,,,,
+3704620,Union County Public Schools,2026-27,period,holiday,Holiday,2027-03-26,2027-03-26,,,,,,
+3704620,Union County Public Schools,2026-27,period,break,Annual Leave Days (Spring Break),2027-03-29,2027-04-02,,,,,,
+3704620,Union County Public Schools,2026-27,period,teacher_day,Optional Teacher Workday,2027-04-30,2027-04-30,,,,,,
+3704620,Union County Public Schools,2026-27,period,holiday,Holiday - Memorial Day,2027-05-31,2027-05-31,,,,,,
+3704620,Union County Public Schools,2027-28,calendar,,,2027-08-23,2028-06-07,tentative,https://www.ucpsnc.org/fs/resource-manager/view/1f2c0b49-e3d0-481c-917f-80b7fc7acba3,,,https://www.ucpsnc.org,Official 2027-28 traditional calendar PDF; no board approval attestation printed. Adopted status not independently verified.
+3704620,Union County Public Schools,2027-28,period,holiday,Holiday - Labor Day,2027-09-06,2027-09-06,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,Optional Teacher Workday,2027-10-11,2027-10-11,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,District Professional Development - Teacher Workday,2027-11-02,2027-11-02,,,,,,
+3704620,Union County Public Schools,2027-28,period,holiday,Holiday - Veterans Day,2027-11-11,2027-11-11,,,,,,
+3704620,Union County Public Schools,2027-28,period,break,Optional Teacher Workdays and Thanksgiving Holidays,2027-11-22,2027-11-26,,,,,,
+3704620,Union County Public Schools,2027-28,period,break,Winter Recess - Workday; Annual Leave Days; Holidays,2027-12-20,2028-01-03,,,,,,
+3704620,Union County Public Schools,2027-28,period,holiday,Holiday - MLK Day,2028-01-17,2028-01-17,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,Optional Teacher Workday,2028-01-18,2028-01-18,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,Optional Teacher Workday,2028-02-21,2028-02-21,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,District Professional Development - Teacher Workday,2028-03-07,2028-03-07,,,,,,
+3704620,Union County Public Schools,2027-28,period,teacher_day,Required Teacher Workday,2028-03-27,2028-03-27,,,,,,
+3704620,Union County Public Schools,2027-28,period,break,Spring Break - Holidays and Annual Leave,2028-04-14,2028-04-21,,,,,,
+3704620,Union County Public Schools,2027-28,period,holiday,Holiday - Memorial Day,2028-05-29,2028-05-29,,,,,,
+4843650,United Independent School District,2026-27,calendar,,,2026-08-12,2027-05-26,approved,https://www.uisd.net/157684_2,,,https://www.uisd.net,Dates on district Important Information. Winter Break end corresponds to last weekday before students return Jan 6.
+4843650,United Independent School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4843650,United Independent School District,2026-27,period,holiday,Columbus/Indigenous Peoples Day,2026-10-12,2026-10-12,,,,,,
+4843650,United Independent School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+4843650,United Independent School District,2026-27,period,break,Winter Break,2026-12-17,2027-01-05,,,,,,
+4843650,United Independent School District,2026-27,period,holiday,WBCA Friday Student Holiday,2027-02-19,2027-02-19,,,,,,
+4843650,United Independent School District,2026-27,period,holiday,Presidents Day,2027-02-22,2027-02-22,,,,,,
+4843650,United Independent School District,2026-27,period,break,Spring Break,2027-03-08,2027-03-12,,,,,,
+4843650,United Independent School District,2026-27,period,holiday,Good Friday,2027-03-26,2027-03-26,,,,,,
+4843650,United Independent School District,2026-27,period,holiday,Easter Monday,2027-03-29,2027-03-29,,,,,,
+4843650,United Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.uisd.net,Official district student calendar for this school year not verified during this research pass.
+5100810,Chesapeake City Public Schools,2026-27,calendar,,,2026-09-08,2027-06-17,approved,https://www.cpschools.com/article/2555917,,,https://www.cpschools.com,Board approved Nov 17 2025; first and last dates verified; detailed dates require linked PDF review.
+5100810,Chesapeake City Public Schools,2027-28,calendar,,,2027-09-07,2028-06-15,approved,https://www.cpschools.com/article/2555917,,,https://www.cpschools.com,Board approved Nov 17 2025; first and last dates verified; detailed dates require linked PDF review.
+0607440,Capistrano Unified School District,2026-27,calendar,,,,,approved,https://www.capousd.org/District/Our-District/Calendars/index.html,,,https://www.capousd.org,Both calendars board approved Apr 22 2026; date grids not safely extracted.
+0607440,Capistrano Unified School District,2027-28,calendar,,,,,approved,https://www.capousd.org/District/Our-District/Calendars/index.html,,,https://www.capousd.org,Both calendars board approved Apr 22 2026; date grids not safely extracted.
+0408800,Tucson Unified District,2026-27,calendar,,,,,tentative,https://www.tusd1.org/Calendar,,,https://www.tusd1.org,Official 26-27 printable calendar linked; date grid and board status not verified.
+0408800,Tucson Unified District,2027-28,calendar,,,,,not_found,,,,https://www.tusd1.org,Official district student calendar for this school year not verified during this research pass.
+4814280,Clear Creek Independent School District,2026-27,calendar,,,,,tentative,https://www.ccisd.net/calendar,,,https://www.ccisd.net,Official 26-27 academic PDF linked; dates not fully checked.
+4814280,Clear Creek Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.ccisd.net,Official district student calendar for this school year not verified during this research pass.
+0634620,San Juan Unified School District,2026-27,calendar,,,,,tentative,https://www.sanjuan.edu/calendar,,,https://www.sanjuan.edu,Official 26-27 school year calendar linked; dates not fully checked.
+0634620,San Juan Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.sanjuan.edu,Official district student calendar for this school year not verified during this research pass.
+4501170,Berkeley County School District,2026-27,calendar,,,2026-08-12,2027-06-03,approved,https://www.bcsdschools.net/o/bcsd/page/instructional-calendar-2026-2027,,,https://www.bcsdschools.net,"Board adopted Oct 20 2025. Inclement weather/teacher days Oct 12, Feb 12, Mar 12 are contingent: omitted. No school for students normally."
+4501170,Berkeley County School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,1/2 Day Students; 1/2 Day Parent Conferences,2026-10-23,2026-10-23,,,,,,
+4501170,Berkeley County School District,2026-27,period,other,Election Day (Schools and Offices Closed),2026-11-03,2026-11-03,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,1/2 Day Students; 1/2 Day Staff Development,2026-11-20,2026-11-20,,,,,,
+4501170,Berkeley County School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,1/2 Day Students and Teachers,2026-12-18,2026-12-18,,,,,,
+4501170,Berkeley County School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-05,,,,,,
+4501170,Berkeley County School District,2026-27,period,teacher_day,Teachers Return/Teacher Workday,2027-01-06,2027-01-06,,,,,,
+4501170,Berkeley County School District,2026-27,period,holiday,MLK Jr. Day,2027-01-18,2027-01-18,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,1/2 Day Students; 1/2 Day Parent Conferences,2027-01-29,2027-01-29,,,,,,
+4501170,Berkeley County School District,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+4501170,Berkeley County School District,2026-27,period,break,Spring Break,2027-03-26,2027-04-02,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,1/2 Day Students; 1/2 Day Staff Development,2027-04-23,2027-04-23,,,,,,
+4501170,Berkeley County School District,2026-27,period,early_release,Last Day of Class - Half Day,2027-06-03,2027-06-03,,,,,,
+4501170,Berkeley County School District,2027-28,calendar,,,2027-08-11,2028-06-01,tentative,https://www.bcsdschools.net/page/instructional-calendar-2027-2028,,,https://www.bcsdschools.net,"Official district calendar published; approval not independently documented. Inclement-weather days Oct 11, Feb 18, Mar 14 omitted."
+4501170,Berkeley County School District,2027-28,period,holiday,Labor Day,2027-09-06,2027-09-06,,,,,,
+4501170,Berkeley County School District,2027-28,period,early_release,1/2 Day Students; 1/2 Day Parent Conferences,2027-10-22,2027-10-22,,,,,,
+4501170,Berkeley County School District,2027-28,period,teacher_day,1/2 Teacher Workday; 1/2 Staff Development (No school for students),2027-11-19,2027-11-19,,,,,,
+4501170,Berkeley County School District,2027-28,period,break,Thanksgiving Break,2027-11-22,2027-11-26,,,,,,
+4501170,Berkeley County School District,2027-28,period,early_release,1/2 Day Students and Teachers,2027-12-17,2027-12-17,,,,,,
+4501170,Berkeley County School District,2027-28,period,break,Winter Break,2027-12-20,2028-01-03,,,,,,
+4501170,Berkeley County School District,2027-28,period,teacher_day,Teacher Workday,2028-01-04,2028-01-04,,,,,,
+4501170,Berkeley County School District,2027-28,period,holiday,MLK Jr. Day,2028-01-17,2028-01-17,,,,,,
+4501170,Berkeley County School District,2027-28,period,early_release,1/2 Day Students; 1/2 Day Parent Conferences,2028-01-28,2028-01-28,,,,,,
+4501170,Berkeley County School District,2027-28,period,holiday,Presidents Day,2028-02-21,2028-02-21,,,,,,
+4501170,Berkeley County School District,2027-28,period,break,Spring Break,2028-04-10,2028-04-17,,,,,,
+4501170,Berkeley County School District,2027-28,period,holiday,Memorial Day,2028-05-29,2028-05-29,,,,,,
+4501170,Berkeley County School District,2027-28,period,early_release,Last Day of Class - Half Day,2028-06-01,2028-06-01,,,,,,
+4703030,Clarksville-Montgomery County School System,2026-27,calendar,,,,,approved,https://www.cmcss.net/calendars/,,,https://www.cmcss.net,District published adopted overview; amended/approved Dec 16 2025. Linked calendar dates not fully extracted.
+4703030,Clarksville-Montgomery County School System,2027-28,calendar,,,,,approved,https://www.cmcss.net/calendars/,,,https://www.cmcss.net,District published adopted overview; amended/approved Dec 16 2025. Linked calendar dates not fully extracted.
+2200540,East Baton Rouge Parish School District,2026-27,calendar,,,2026-08-06,2027-05-21,approved,https://ebrschools.org/wp-content/uploads/2026/04/Board-Approved-EBRPSS-26-27-SY-Calendar.pdf,,,https://www.ebrschools.org,Board-approved March 19 2026. March 12 asynchronous instructional day excluded because instruction is provided. January 4-5 staff-day classification not independently verified and therefore omitted.
+2200540,East Baton Rouge Parish School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,teacher_day,Teacher In-Service (Students Do Not Attend),2026-10-09,2026-10-09,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,break,Fall Break,2026-10-12,2026-10-13,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,holiday,Election Day,2026-11-03,2026-11-03,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,teacher_day,Teacher In-Service (Students Do Not Attend),2026-12-18,2026-12-18,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,holiday,Martin Luther King Jr. Holiday,2027-01-18,2027-01-18,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,break,Mardi Gras Break,2027-02-08,2027-02-10,,,,,,
+2200540,East Baton Rouge Parish School District,2026-27,period,break,Good Friday and Spring Break,2027-03-26,2027-04-02,,,,,,
+2200540,East Baton Rouge Parish School District,2027-28,calendar,,,,,not_found,,,,https://www.ebrschools.org,Official district student calendar for this school year not verified during this research pass.
+1200300,Clay County School District,2026-27,calendar,,,2026-08-11,2027-05-27,draft,https://agenda.oneclay.net/content/files/draft-student-calendar-2026-2027.pdf,,,https://www.oneclay.net,Explicit DRAFT watermark and School Board Approved field blank. Calendar warns the official updated version is posted separately. Elementary early release differs from junior/senior high: only all-level early dismissal days included.
+1200300,Clay County School District,2026-27,period,holiday,"Labor Day, Student/Teacher Holiday",2026-09-07,2026-09-07,,,,,,
+1200300,Clay County School District,2026-27,period,teacher_day,Planning Day/Student Holiday,2026-10-12,2026-10-12,,,,,,
+1200300,Clay County School District,2026-27,period,holiday,"Veterans Day, Student/Teacher Holiday",2026-11-11,2026-11-11,,,,,,
+1200300,Clay County School District,2026-27,period,break,"Thanksgiving, Student/Teacher Holidays",2026-11-23,2026-11-27,,,,,,
+1200300,Clay County School District,2026-27,period,break,"Christmas/New Year's Break, Student/Teacher Holidays",2026-12-21,2027-01-01,,,,,,
+1200300,Clay County School District,2026-27,period,teacher_day,Planning Day/Student Holiday,2027-01-04,2027-01-04,,,,,,
+1200300,Clay County School District,2026-27,period,holiday,"Martin Luther King Jr. Day, Student/Teacher Holiday",2027-01-18,2027-01-18,,,,,,
+1200300,Clay County School District,2026-27,period,holiday,"Presidents Day, Student/Teacher Holiday",2027-02-15,2027-02-15,,,,,,
+1200300,Clay County School District,2026-27,period,teacher_day,Planning Day/Student Holiday,2027-03-19,2027-03-19,,,,,,
+1200300,Clay County School District,2026-27,period,break,"Spring Break, Student/Teacher Holidays",2027-03-22,2027-03-26,,,,,,
+1200300,Clay County School District,2026-27,period,holiday,"Fair Day, Student/Teacher Holiday",2027-04-02,2027-04-02,,,,,,
+1200300,Clay County School District,2026-27,period,early_release,Early Dismissal Day (all school levels),2026-12-18,2026-12-18,,,,,,
+1200300,Clay County School District,2026-27,period,early_release,Early Dismissal Day (all school levels),2027-05-27,2027-05-27,,,,,,
+1200300,Clay County School District,2027-28,calendar,,,,,not_found,,,,https://www.oneclay.net,Official district student calendar for this school year not verified during this research pass.
+1602100,Meridian Joint School District 2,2026-27,calendar,,,2026-08-12,,tentative,https://www.westada.org/article/3068413,,,https://www.westada.org,District August 10 2026 publication states students return on Wednesday; Wednesday Aug 12 2026. Last day and nonattendance dates not independently verified from full calendar. Board approval not established.
+1602100,Meridian Joint School District 2,2027-28,calendar,,,,,not_found,,,,https://www.westada.org,Official district student calendar for this school year not verified during this research pass.
+0802340,Adams-Arapahoe School District 28J,2026-27,calendar,,,,,approved,https://frontier.aurorak12.org/cms/One.aspx?pageId=6545507&portalId=3217528,,,https://www.aurorak12.org,Conventional calendar board approved Jan 13 2026; no date extraction completed.
+0802340,Adams-Arapahoe School District 28J,2027-28,calendar,,,,,approved,https://frontier.aurorak12.org/cms/One.aspx?pageId=6545507&portalId=3217528,,,https://www.aurorak12.org,Conventional calendar board approved Jan 13 2026; no date extraction completed.
+4807830,Alief Independent School District,2026-27,calendar,,,,,tentative,https://www.aliefisd.net/o/yis/news,,,https://www.aliefisd.net,District announces academic calendars both years; linked files not extracted.
+4807830,Alief Independent School District,2027-28,calendar,,,,,tentative,https://www.aliefisd.net/o/yis/news,,,https://www.aliefisd.net,District announces academic calendars both years; linked files not extracted.
+2703180,Anoka-Hennepin Public School District,2026-27,calendar,,,,,tentative,https://dayton.ahschools.us/about-us/calendar,,,https://www.ahschools.us,K-12 district calendars linked; dates and approval not fully extracted.
+2703180,Anoka-Hennepin Public School District,2027-28,calendar,,,,,tentative,https://dayton.ahschools.us/about-us/calendar,,,https://www.ahschools.us,K-12 district calendars linked; dates and approval not fully extracted.
+0633150,Riverside Unified School District,2026-27,calendar,,,,,tentative,https://www.riversideunified.org/our-district/district-calendar,,,https://www.riversideunified.org,District calendar-at-a-glance linked; not fully transcribed.
+0633150,Riverside Unified School District,2027-28,calendar,,,,,tentative,https://www.riversideunified.org/our-district/district-calendar,,,https://www.riversideunified.org,District calendar-at-a-glance linked; not fully transcribed.
+0684500,Irvine Unified School District,2026-27,calendar,,,2026-08-18,2027-06-04,tentative,https://iusd.org/sites/default/files/documents/District%20Calendar%202026-27%20online%20listed.pdf,,,https://www.iusd.org,"Traditional elementary calendar, not year-round. District-wide Year-Round sites start Jul 20 2026 and have different fall and spring recess."
+0684500,Irvine Unified School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+0684500,Irvine Unified School District,2026-27,period,teacher_day,Staff Development Day/Student Holiday (PK-12),2026-10-12,2026-10-12,,,,,,
+0684500,Irvine Unified School District,2026-27,period,holiday,Veterans Day Observance,2026-11-11,2026-11-11,,,,,,
+0684500,Irvine Unified School District,2026-27,period,break,Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+0684500,Irvine Unified School District,2026-27,period,break,Winter Recess,2026-12-21,2027-01-01,,,,,,
+0684500,Irvine Unified School District,2026-27,period,teacher_day,Teacher Work Day/Student Holiday Traditional Only,2027-01-15,2027-01-15,,,,,,
+0684500,Irvine Unified School District,2026-27,period,holiday,Martin Luther King Jr. Day Observance,2027-01-18,2027-01-18,,,,,,
+0684500,Irvine Unified School District,2026-27,period,teacher_day,Staff Development Day/Student Holiday (TK-12),2027-02-12,2027-02-12,,,,,,
+0684500,Irvine Unified School District,2026-27,period,holiday,Presidents Day Observance,2027-02-15,2027-02-15,,,,,,
+0684500,Irvine Unified School District,2026-27,period,holiday,Teacher/Student Holiday (PK-12),2027-03-01,2027-03-01,,,,,,
+0684500,Irvine Unified School District,2026-27,period,break,Spring Recess - Traditional,2027-03-29,2027-04-02,,,,,,
+0684500,Irvine Unified School District,2026-27,period,holiday,Memorial Day Observance,2027-05-31,2027-05-31,,,,,,
+0684500,Irvine Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.iusd.org,Official district student calendar for this school year not verified during this research pass.
+4110820,Salem-Keizer School District 24J,2026-27,calendar,,,,2027-06-16,tentative,https://salkeiz.k12.or.us/about/calendar,,,https://www.salkeiz.k12.or.us,Calendar end date for elementary K-5 Jun 16; secondary (6-11) Jun 17; first day not established from accessible web text.
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Inservice,2026-10-09,2026-10-09,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,other,No School - Fall Conferences,2026-10-28,2026-10-29,,,,,,Conference closure
+4110820,Salem-Keizer School District 24J,2026-27,period,other,No School,2026-10-30,2026-10-30,,,,,,Closure following conferences
+4110820,Salem-Keizer School District 24J,2026-27,period,holiday,No School - District Offices Closed,2026-11-11,2026-11-11,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,break,No School - Thanksgiving,2026-11-25,2026-11-27,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Grading Day,2026-11-30,2026-11-30,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Grading Day / Staff Development,2026-12-11,2026-12-11,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,break,No School - Winter Break,2026-12-21,2027-01-01,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,Professional Development Day,2027-01-04,2027-01-04,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,holiday,No School - District Offices Closed,2027-01-18,2027-01-18,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Grading Day / Staff Development,2027-02-05,2027-02-05,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,holiday,No School,2027-02-15,2027-02-15,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Grading Day / Staff Development,2027-03-17,2027-03-17,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,other,No School - Spring Conferences,2027-03-18,2027-03-19,,,,,,Conference closure
+4110820,Salem-Keizer School District 24J,2026-27,period,break,No School - Spring Break,2027-03-22,2027-03-26,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,teacher_day,No School - Grading Day / Staff Development,2027-05-07,2027-05-07,,,,,,
+4110820,Salem-Keizer School District 24J,2026-27,period,holiday,No School - District Offices Closed,2027-05-31,2027-05-31,,,,,,
+4110820,Salem-Keizer School District 24J,2027-28,calendar,,,,,not_found,,,,https://www.salkeiz.k12.or.us,Official district student calendar for this school year not verified during this research pass.
+4830390,Mesquite Independent School District,2026-27,calendar,,,,,tentative,https://www.mesquiteisd.org/340622_2,,,https://www.mesquiteisd.org,District calendar and text-date Google Doc linked but student date sequence not independently verified.
+4830390,Mesquite Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.mesquiteisd.org,Official district student calendar for this school year not verified during this research pass.
+0633840,Sacramento City Unified School District,2026-27,calendar,,,2026-08-11,2027-05-27,tentative,https://www.scusd.edu/families/academic-calendars,,,https://www.scusd.edu,Traditional attendance calendar; dependent charter schools use different schedules.
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Indigenous Peoples Day,2026-10-12,2026-10-12,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Veterans Day,2026-11-11,2026-11-11,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,break,Fall Break,2026-11-23,2026-11-27,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-04,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Lincolns Birthday,2027-02-08,2027-02-08,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+0633840,Sacramento City Unified School District,2026-27,period,break,Spring Break,2027-03-22,2027-03-29,,,,,,
+0633840,Sacramento City Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.scusd.edu,Official district student calendar for this school year not verified during this research pass.
+4101920,Beaverton School District 48J,2026-27,calendar,,,,,tentative,https://www.beaverton.k12.or.us/about-us/calendar,,,https://www.beaverton.k12.or.us,District downloadable official student calendars; dates not transcribed; grade level differences possible.
+4101920,Beaverton School District 48J,2027-28,calendar,,,,,not_found,,,,https://www.beaverton.k12.or.us,Official district student calendar for this school year not verified during this research pass.
+2400390,Harford County Public Schools,2026-27,calendar,,,,,tentative,https://www.hcps.org/aboutus/calendars/Default.aspx,,,https://www.hcps.org,Official accessible 2026-27 student calendar; inclement-weather make-up options excluded; full day grid not processed.
+2400390,Harford County Public Schools,2027-28,calendar,,,,,not_found,,,,https://www.hcps.org,Official district student calendar for this school year not verified during this research pass.
+3702370,Johnston County Schools,2026-27,calendar,,,,,not_found,,,,https://www.johnston.k12.nc.us,District calendar proposals found but no uniquely identifiable adopted or selected 2026-27 student calendar dates could be verified; alternate proposals were not merged.
+3702370,Johnston County Schools,2027-28,calendar,,,,,not_found,,,,https://www.johnston.k12.nc.us,Official district student calendar for this school year not verified during this research pass.
+0614880,Garden Grove Unified School District,2026-27,calendar,,,2026-08-10,2027-05-25,tentative,https://www.ggusd.us/schools/calendar/,,,https://www.ggusd.us,Official district year calendar; approval status not stated.
+0614880,Garden Grove Unified School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,teacher_day,Non-student Day,2026-10-30,2026-10-30,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,holiday,Veterans Day,2026-11-11,2026-11-11,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,break,Thanksgiving Recess,2026-11-23,2026-11-27,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,break,Winter Recess,2026-12-21,2027-01-01,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,teacher_day,Non-student Day,2027-01-04,2027-01-04,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,holiday,Lincolns Birthday,2027-02-12,2027-02-12,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,holiday,Presidents Day,2027-02-15,2027-02-15,,,,,,
+0614880,Garden Grove Unified School District,2026-27,period,break,Spring Recess,2027-03-15,2027-03-19,,,,,,
+0614880,Garden Grove Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.ggusd.us,Official district student calendar for this school year not verified during this research pass.
+4837020,Richardson Independent School District,2026-27,calendar,,,2026-08-12,2027-05-26,approved,https://web.risd.org/home/wp-content/uploads/2026/07/Calendar-2026-27-Accessible-Eng.pdf,,,https://www.risd.org,Board adopted Dec 2025. ADSY three pilot elementary schools start Aug 11 rather than Aug 12. Contingent bad weather days not included.
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release,2026-08-26,2026-08-26,,,,,,
+4837020,Richardson Independent School District,2026-27,period,holiday,Labor Day,2026-09-07,2026-09-07,,,,,,
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release,2026-09-23,2026-09-23,,,,,,
+4837020,Richardson Independent School District,2026-27,period,break,Fall Break,2026-10-08,2026-10-12,,,,,,
+4837020,Richardson Independent School District,2026-27,period,teacher_day,Student Holiday/Staff Professional Learning Day,2026-11-02,2026-11-03,,,,,,
+4837020,Richardson Independent School District,2026-27,period,break,Student Holiday/Staff Exchange Days and Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release - Second Grading Period Ends,2026-12-18,2026-12-18,,,,,,
+4837020,Richardson Independent School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-04,,,,,,
+4837020,Richardson Independent School District,2026-27,period,teacher_day,Student Holiday/Staff Professional Learning Day,2027-01-05,2027-01-05,,,,,,
+4837020,Richardson Independent School District,2026-27,period,holiday,Martin Luther King Jr. Day Holiday,2027-01-18,2027-01-18,,,,,,
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release,2027-02-03,2027-02-03,,,,,,
+4837020,Richardson Independent School District,2026-27,period,teacher_day,Student Holiday/Staff Professional Learning Day,2027-02-15,2027-02-15,,,,,,
+4837020,Richardson Independent School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release,2027-05-05,2027-05-05,,,,,,
+4837020,Richardson Independent School District,2026-27,period,early_release,Early Release - Fourth Grading Period Ends,2027-05-26,2027-05-26,,,,,,
+4837020,Richardson Independent School District,2027-28,calendar,,,2027-08-11,2028-05-24,approved,https://web.risd.org/home/26-27-27-28-calendar/,,,https://www.risd.org,"Board approved Dec 2025; October break Oct 7-11 (three weekdays), February 14 student holiday; remaining dates not independently read."
+4837020,Richardson Independent School District,2027-28,period,break,October Days Off,2027-10-07,2027-10-11,,,,,,
+4837020,Richardson Independent School District,2027-28,period,holiday,February Day Off,2028-02-14,2028-02-14,,,,,,
+4901140,Washington School District,2026-27,calendar,,,2026-08-13,2027-05-26,approved,https://www.washk12.org/wp-content/uploads/2026/04/2026-27-Final-Calendar.pdf,,,https://www.washk12.org,"Approved Board Jan 6 2025, revised Dec 8 2025, website file updated Apr 22 2026. Enterprise schools use a separate district calendar. Elementary K diagnostic/assessment minimum days and K-specific minimum days included with level notes."
+4901140,Washington School District,2026-27,period,early_release,Kindergarten Minimum Day,2026-08-13,2026-08-14,,,,,,Kindergarten only; elementary grades 1-5 full-day
+4901140,Washington School District,2026-27,period,holiday,Labor Day (No School),2026-09-07,2026-09-07,,,,,,
+4901140,Washington School District,2026-27,period,break,Fall Break (No School),2026-10-15,2026-10-16,,,,,,
+4901140,Washington School District,2026-27,period,teacher_day,Legislative Teacher Prep/Professional Development Day (No School),2026-10-19,2026-10-19,,,,,,
+4901140,Washington School District,2026-27,period,other,SEP/SEOP Comp Recess Day (No School),2026-11-25,2026-11-25,,,,,,Conferences exchange/recess
+4901140,Washington School District,2026-27,period,break,Thanksgiving Vacation (No School),2026-11-26,2026-11-27,,,,,,
+4901140,Washington School District,2026-27,period,teacher_day,Legislative Teacher Prep/Professional Development Day (No School),2026-11-30,2026-11-30,,,,,,
+4901140,Washington School District,2026-27,period,break,Christmas Vacation/Winter Holiday (No School),2026-12-21,2027-01-01,,,,,,
+4901140,Washington School District,2026-27,period,teacher_day,Teacher Prep Day (No School),2027-01-04,2027-01-04,,,,,,
+4901140,Washington School District,2026-27,period,holiday,Martin Luther King Jr. Day (No School),2027-01-18,2027-01-18,,,,,,
+4901140,Washington School District,2026-27,period,holiday,Presidents Day (No School),2027-02-15,2027-02-15,,,,,,
+4901140,Washington School District,2026-27,period,early_release,Elementary SEP Days - Minimum Day,2027-02-22,2027-02-26,,,,,,Elementary only; secondary schedule differs
+4901140,Washington School District,2026-27,period,teacher_day,Legislative Teacher Prep/Professional Development Day (No School),2027-03-05,2027-03-05,,,,,,
+4901140,Washington School District,2026-27,period,break,Spring Break (No School),2027-03-08,2027-03-12,,,,,,
+4901140,Washington School District,2026-27,period,holiday,Easter Break (No School),2027-03-26,2027-03-26,,,,,,
+4901140,Washington School District,2026-27,period,teacher_day,Legislative Teacher Prep/Professional Development Day (No School),2027-04-15,2027-04-15,,,,,,
+4901140,Washington School District,2026-27,period,holiday,Spring Recess (No School),2027-04-16,2027-04-16,,,,,,
+4901140,Washington School District,2026-27,period,early_release,Minimum Day (High School Graduation),2027-05-25,2027-05-25,,,,,,
+4901140,Washington School District,2026-27,period,early_release,Last Day of School - Minimum Day,2027-05-26,2027-05-26,,,,,,
+4901140,Washington School District,2027-28,calendar,,,2027-08-12,2028-05-24,approved,https://www.washk12.org/wp-content/uploads/2026/04/Approved-2027-2028-Master-Calendar.pdf,,,https://www.washk12.org,"Approved Apr 27 2026. District master, excludes Enterprise school alternate calendar. First day labeled Aug12, ordinal student day 180 May24 by PDF layout; last date should be reviewed with district if any later revision."
+4901140,Washington School District,2027-28,period,holiday,Labor Day,2027-09-06,2027-09-06,,,,,,
+4901140,Washington School District,2027-28,period,break,Fall Break,2027-10-14,2027-10-15,,,,,,
+4901140,Washington School District,2027-28,period,teacher_day,Teacher Prep Day,2027-10-25,2027-10-25,,,,,,
+4901140,Washington School District,2027-28,period,break,Thanksgiving Break,2027-11-24,2027-11-26,,,,,,
+4901140,Washington School District,2027-28,period,teacher_day,Teacher Prep Day,2027-11-29,2027-11-29,,,,,,
+4901140,Washington School District,2027-28,period,break,Winter Break,2027-12-20,2027-12-31,,,,,,
+4901140,Washington School District,2027-28,period,teacher_day,Teacher Prep Day,2028-01-03,2028-01-03,,,,,,
+4901140,Washington School District,2027-28,period,holiday,Martin Luther King Jr. Holiday,2028-01-17,2028-01-17,,,,,,
+4901140,Washington School District,2027-28,period,teacher_day,Teacher Prep Day,2028-02-11,2028-02-11,,,,,,
+4901140,Washington School District,2027-28,period,holiday,Presidents Day,2028-02-14,2028-02-14,,,,,,
+4901140,Washington School District,2027-28,period,break,Spring Break,2028-03-13,2028-03-17,,,,,,
+4901140,Washington School District,2027-28,period,teacher_day,Teacher Prep Day,2028-03-20,2028-03-20,,,,,,
+4901140,Washington School District,2027-28,period,holiday,Easter Holiday,2028-04-14,2028-04-14,,,,,,
+4901140,Washington School District,2027-28,period,holiday,Easter Holiday,2028-04-17,2028-04-17,,,,,,
+1200510,Escambia County School District,2026-27,calendar,,,2026-08-12,2027-05-25,tentative,https://www.escambiaschools.org/calendars/school-calendars,,,https://www.escambiaschools.org,"District school-calendar page lists the year, and district-operated Ensley Elementary / Pensacola High / Washington High pages independently confirm student first and last dates. Full date grid embedded on district page cannot be retrieved as searchable text; only explicitly verified closures included. Board vote not independently confirmed."
+1200510,Escambia County School District,2026-27,period,break,Fall Break,2026-11-23,2026-11-27,,,,,,District-operated Washington High lists Fall Break
+1200510,Escambia County School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-04,,,,,,"District-operated Washington High lists December 21 to January 4, students return January 5"
+1200510,Escambia County School District,2026-27,period,early_release,Half Day / Early Release,2026-12-18,2026-12-18,,,,,,
+1200510,Escambia County School District,2026-27,period,early_release,Half Day / Early Release - Last Day of School,2027-05-25,2027-05-25,,,,,,
+1200510,Escambia County School District,2026-27,period,break,Spring Break,2027-03-22,2027-03-26,,,,,,District-operated Washington High lists spring break
+1200510,Escambia County School District,2027-28,calendar,,,,,tentative,https://www.escambiaschools.org/calendars/school-calendars,,,https://www.escambiaschools.org,District lists a 2027-28 student-calendar section but the document content could not be independently retrieved; dates intentionally left blank and board approval not established.
+4811680,Brownsville Independent School District,2026-27,calendar,,,,,approved,https://www.bisd.us/article/2680290,,,https://www.bisd.us,District Board of Trustees approved Feb 4 2026. Calendar image is not legible in verified text; first/last and all specific closure dates intentionally blank.
+4811680,Brownsville Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.bisd.us,Official district student calendar for this school year not verified during this research pass.
+0635310,Santa Ana Unified School District,2026-27,calendar,,,2026-08-10,2027-05-26,approved,https://resources.finalsite.net/images/v1772582717/sausdus/xe7kjj5ymhrokdpvpxny/2026-2027AcademicSchoolCalendar1.pdf,,,https://www.sausd.us,Board approved January 23 2024 (PDF footer). Early release on the last day applies TK-12. Elementary student-free November 16 added with explicit level note; intermediate school is instead off October 5. December 17 is a high-school-only student-free day and excluded in favor of elementary calendar. Parent conference modified instruction is not counted as closure.
+0635310,Santa Ana Unified School District,2026-27,period,holiday,Holiday - Labor Day,2026-09-07,2026-09-07,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,teacher_day,Duty Day/Student Free Day (TK-12),2026-10-30,2026-10-30,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,holiday,Holiday - Veterans Day,2026-11-11,2026-11-11,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,teacher_day,Duty Day/Student Free Day (ES),2026-11-16,2026-11-16,,,,,,Elementary only; intermediate and high schools have instruction
+0635310,Santa Ana Unified School District,2026-27,period,break,Non-Instruction - Thanksgiving Recess,2026-11-23,2026-11-27,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,break,Non-Instruction - Winter Break,2026-12-21,2027-01-01,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,holiday,Holiday - Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,holiday,Holiday - Presidents Day,2027-02-15,2027-02-15,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,teacher_day,Duty Day/Student Free Day TK-12,2027-02-19,2027-02-19,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,break,Non-Instruction - Spring Recess,2027-04-05,2027-04-09,,,,,,
+0635310,Santa Ana Unified School District,2026-27,period,early_release,Last Day of Instruction - Modified Day TK-12,2027-05-26,2027-05-26,,,,,,
+0635310,Santa Ana Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.sausd.us,Official district student calendar for this school year not verified during this research pass.
+2201650,St. Tammany Parish School District,2026-27,calendar,,,2026-08-06,2027-05-25,tentative,https://www.stpsb.org/fs/resource-manager/view/c2dc44b9-1d9d-4e37-9226-984872ca0023,https://stpsborg.finalsite.com/calendar/calendar_349.ics,ics,https://www.stpsb.org,"District issued 2026-27 calendar; board approval not independently attested on PDF. Smart Start Aug6 for surnames A-L and Aug7 for M-Z; all attend Aug10. No school Jan5. Published calendar iCal includes district events, feed not tested."
+2201650,St. Tammany Parish School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,holiday,Parish Fair Day,2026-10-02,2026-10-02,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,holiday,Fall Holiday,2026-10-05,2026-10-05,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,early_release,End of First Grading Period - Half Day for Students,2026-10-09,2026-10-09,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,holiday,Election Day - Schools Closed,2026-11-03,2026-11-03,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,break,Thanksgiving Holidays,2026-11-23,2026-11-27,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,early_release,End of Second Grading Period - Half Day for Students,2026-12-18,2026-12-18,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,break,Winter/Christmas Break,2026-12-21,2027-01-04,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,teacher_day,Professional Development / Teacher Work Day - No Students,2027-01-05,2027-01-05,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,holiday,Martin Luther King Holiday,2027-01-18,2027-01-18,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,break,Mardi Gras Holidays,2027-02-08,2027-02-12,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,early_release,End of Third Grading Period - Half Day for Students,2027-03-12,2027-03-12,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,break,Spring/Easter Break,2027-03-26,2027-04-02,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,teacher_day,Professional Development - No Students,2027-04-05,2027-04-05,,,,,,
+2201650,St. Tammany Parish School District,2026-27,period,early_release,End of Session - Half Day for Students,2027-05-25,2027-05-25,,,,,,
+2201650,St. Tammany Parish School District,2027-28,calendar,,,2027-08-10,2028-05-25,tentative,https://www.stpsb.org/fs/resource-manager/view/a59ffb80-a46d-4ee9-b38c-71a43256b7d2,https://stpsborg.finalsite.com/calendar/calendar_349.ics,ics,https://www.stpsb.org,"District published official 27-28 calendar; board approval not explicitly indicated. Smart Start Aug10 for surnames A-L, Aug11 for M-Z; all Aug12. District iCal link published but unable to test."
+2201650,St. Tammany Parish School District,2027-28,period,holiday,Labor Day Holiday,2027-09-06,2027-09-06,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,holiday,Parish Fair,2027-10-01,2027-10-01,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,break,Fall Holiday,2027-10-04,2027-10-05,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,early_release,End of First Grading Period - Half Day for Students,2027-10-08,2027-10-08,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,teacher_day,Teachers Professional Development - No Students,2027-11-01,2027-11-01,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,break,Thanksgiving Holidays,2027-11-22,2027-11-26,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,early_release,End of Second Grading Period - Half Day for Students,2027-12-17,2027-12-17,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,break,Winter/Christmas Break,2027-12-20,2027-12-31,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,teacher_day,Teachers Professional Development - No Students,2028-01-03,2028-01-03,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,holiday,Martin Luther King Holiday,2028-01-17,2028-01-17,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,break,Mardi Gras Holidays,2028-02-28,2028-03-03,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,early_release,End of Third Grading Period - Half Day for Students,2028-03-10,2028-03-10,,,,,,
+2201650,St. Tammany Parish School District,2027-28,period,break,Spring/Easter Break,2028-04-14,2028-04-21,,,,,,
+3700530,Cabarrus County Schools,2026-27,calendar,,,2026-08-12,2027-05-26,approved,https://www.cabarrus.k12.nc.us/58075_4,https://www.parentsquare.com/districts/1819/calendar.ics,ics,https://www.cabarrus.k12.nc.us,"District board approved; traditional calendar. Five restart schools and early colleges have different dates. District-published iCal download listed (ParentSquare district 1819). District news describes Winter Break through Jan 5 but staff days are within period, so separately list verified core holiday weekdays only."
+3700530,Cabarrus County Schools,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Day,2026-09-25,2026-09-25,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,early_release,End of First Quarter - Early Dismissal,2026-10-09,2026-10-09,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Days,2026-10-12,2026-10-13,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Election Day - Staff Development Day,2026-11-03,2026-11-03,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,holiday,Veterans Day,2026-11-11,2026-11-11,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,break,Thanksgiving Break,2026-11-25,2026-11-27,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,early_release,End of Second Quarter - Early Dismissal,2026-12-18,2026-12-18,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Days,2026-12-21,2026-12-22,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,break,Winter Break,2026-12-23,2027-01-01,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Day,2027-01-04,2027-01-04,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Days,2027-02-15,2027-02-16,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,break,Spring Break,2027-03-08,2027-03-12,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,early_release,End of Third Quarter - Early Dismissal,2027-03-19,2027-03-19,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,holiday,Good Friday,2027-03-26,2027-03-26,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Day,2027-03-29,2027-03-29,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Day,2027-04-16,2027-04-16,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,teacher_day,Staff Development Day,2027-04-19,2027-04-19,,,,,,
+3700530,Cabarrus County Schools,2026-27,period,early_release,Last Day of School - Early Dismissal,2027-05-26,2027-05-26,,,,,,
+3700530,Cabarrus County Schools,2027-28,calendar,,,,,not_found,,,,https://www.cabarrus.k12.nc.us,Official district student calendar for this school year not verified during this research pass.
+1301020,Chatham County School District,2026-27,calendar,,,2026-08-03,2027-05-21,tentative,https://www.sccpss.com/departments/human-resources/fy26-fy27-fy28-work-schedules,,,https://www.sccpss.com,District staff work schedules explicitly state student school out; verify holiday year/date inconsistencies against published student PDF (page lists Sep 1 as Labor Day despite 2026 Labor Day being Sep 7). September date omitted.
+1301020,Chatham County School District,2026-27,period,teacher_day,Staff Planning,2026-10-08,2026-10-08,,,,,,
+1301020,Chatham County School District,2026-27,period,break,School Out,2026-10-09,2026-10-12,,,,,,
+1301020,Chatham County School District,2026-27,period,holiday,Veterans Day,2026-11-11,2026-11-11,,,,,,
+1301020,Chatham County School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+1301020,Chatham County School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+1301020,Chatham County School District,2026-27,period,teacher_day,Staff Planning Day,2027-01-04,2027-01-04,,,,,,
+1301020,Chatham County School District,2026-27,period,holiday,Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+1301020,Chatham County School District,2026-27,period,teacher_day,Staff Planning Day,2027-02-15,2027-02-15,,,,,,
+1301020,Chatham County School District,2026-27,period,holiday,St. Patricks Day,2027-03-17,2027-03-17,,,,,,
+1301020,Chatham County School District,2026-27,period,holiday,Good Friday,2027-03-26,2027-03-26,,,,,,
+1301020,Chatham County School District,2026-27,period,break,Spring Break for Schools,2027-03-29,2027-04-02,,,,,,
+1301020,Chatham County School District,2027-28,calendar,,,,,tentative,https://www.sccpss.com/calendar,,,https://www.sccpss.com,"2027-28 district printable calendar exists, but dates have not been independently read."
+0101920,Jefferson County School District,2026-27,calendar,,,,,not_found,,,,https://www.jefcoed.com,Official district student calendar for this school year not verified during this research pass.
+0101920,Jefferson County School District,2027-28,calendar,,,,,not_found,,,,https://www.jefcoed.com,Official district student calendar for this school year not verified during this research pass.
+4828920,Mansfield Independent School District,2026-27,calendar,,,2026-08-12,2027-05-20,tentative,https://www.mansfieldisd.org/news-events/calendars,,,https://www.mansfieldisd.org,District says Feb 12 and Mar 26 are BAD WEATHER days; excluded as contingencies. Blank-placeholder student holidays ignored.
+4828920,Mansfield Independent School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,teacher_day,Student Holiday,2026-09-18,2026-09-18,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,holiday,Columbus Day,2026-10-12,2026-10-12,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,break,Thanksgiving Break,2026-11-23,2026-11-27,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,teacher_day,Student Holiday,2026-12-18,2026-12-18,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,break,Winter Holiday,2026-12-21,2027-01-01,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,teacher_day,Student Holiday,2027-01-04,2027-01-06,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,holiday,Dr. Martin Luther King Jr. Day,2027-01-18,2027-01-18,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,holiday,Student & Teacher Holiday,2027-02-15,2027-02-15,,,,,,
+4828920,Mansfield Independent School District,2026-27,period,break,Spring Break,2027-03-15,2027-03-19,,,,,,
+4828920,Mansfield Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.mansfieldisd.org,Official district student calendar for this school year not verified during this research pass.
+2801320,DeSoto County School District,2026-27,calendar,,,2026-08-03,2027-05-25,tentative,https://www.desotocountyschools.org/page/school-calendar-26-27/,,,https://www.desotocountyschools.org,"Official schedule published. Feb 15 and Mar 29 labeled holidays but also tentative MAKE-UP days, so excluded as conditional closures. Board approval not established from official page."
+2801320,DeSoto County School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+2801320,DeSoto County School District,2026-27,period,break,Fall Break,2026-10-05,2026-10-09,,,,,,
+2801320,DeSoto County School District,2026-27,period,break,Thanksgiving Holidays,2026-11-23,2026-11-27,,,,,,
+2801320,DeSoto County School District,2026-27,period,early_release,60% Day - Last Day of First Semester,2026-12-18,2026-12-18,,,,,,
+2801320,DeSoto County School District,2026-27,period,break,Christmas Break,2026-12-21,2027-01-01,,,,,,
+2801320,DeSoto County School District,2026-27,period,teacher_day,Staff Development Day,2027-01-04,2027-01-05,,,,,,
+2801320,DeSoto County School District,2026-27,period,holiday,Martin Luther King Jr. Holiday,2027-01-18,2027-01-18,,,,,,
+2801320,DeSoto County School District,2026-27,period,break,Spring Break,2027-03-08,2027-03-12,,,,,,
+2801320,DeSoto County School District,2026-27,period,holiday,Good Friday Holiday,2027-03-26,2027-03-26,,,,,,
+2801320,DeSoto County School District,2027-28,calendar,,,,,not_found,,,,https://www.desotocountyschools.org,Official district student calendar for this school year not verified during this research pass.
+3904375,Cincinnati City School District,2026-27,calendar,,,2026-08-19,2027-05-25,tentative,https://resources.finalsite.net/images/v1789749659/cpsk12/s1vpqtvz27fes9h5ltyv/2026-27_calendarupdate.pdf,,,https://www.cps-k12.org,Published updated 2026-09-11. Calendar was not independently documented as board approved. Only dates during student year included.
+3904375,Cincinnati City School District,2026-27,period,holiday,Labor Day Holiday - All CPS Buildings and Offices Closed,2026-09-07,2026-09-07,,,,,,
+3904375,Cincinnati City School District,2026-27,period,other,All CPS Buildings and Offices Closed,2026-09-21,2026-09-21,,,,,,Closure stated on district calendar
+3904375,Cincinnati City School District,2026-27,period,other,All CPS Buildings and Offices Closed,2026-11-02,2026-11-02,,,,,,Closure stated on district calendar
+3904375,Cincinnati City School District,2026-27,period,other,Election Day - Only Schools Closed,2026-11-03,2026-11-03,,,,,,Election Day school closure
+3904375,Cincinnati City School District,2026-27,period,holiday,Veterans Day Holiday,2026-11-11,2026-11-11,,,,,,
+3904375,Cincinnati City School District,2026-27,period,break,Holiday/Break - Only Schools Closed; Thanksgiving Holiday,2026-11-23,2026-11-27,,,,,,
+3904375,Cincinnati City School District,2026-27,period,break,Winter Recess,2026-12-21,2027-01-01,,,,,,
+3904375,Cincinnati City School District,2026-27,period,teacher_day,District Professional Development Day - No Students,2027-01-04,2027-01-04,,,,,,
+3904375,Cincinnati City School District,2026-27,period,holiday,Martin Luther King Jr. Day Holiday,2027-01-18,2027-01-18,,,,,,
+3904375,Cincinnati City School District,2026-27,period,other,Holiday/Break - Teacher Conference Exchange Days,2027-02-08,2027-02-08,,,,,,Schools closed; conference exchange day
+3904375,Cincinnati City School District,2026-27,period,holiday,Presidents Day Holiday,2027-02-15,2027-02-15,,,,,,
+3904375,Cincinnati City School District,2026-27,period,other,All CPS Buildings and Offices Closed,2027-03-01,2027-03-01,,,,,,Closure stated on district calendar
+3904375,Cincinnati City School District,2026-27,period,break,Spring Break,2027-03-22,2027-03-26,,,,,,
+3904375,Cincinnati City School District,2027-28,calendar,,,2027-08-18,2028-05-24,tentative,https://resources.finalsite.net/images/v1789749681/cpsk12/vci0wgig5zznvpmxkjed/27-28calendarupdate.pdf,,,https://www.cps-k12.org,Published district calendar; board approval not independently established. Dates verified from page 2 listing.
+3904375,Cincinnati City School District,2027-28,period,holiday,Labor Day Holiday - Schools Closed/Central Office Closed,2027-09-06,2027-09-06,,,,,,
+3904375,Cincinnati City School District,2027-28,period,teacher_day,Teacher classroom workday - No Students,2027-10-11,2027-10-11,,,,,,
+3904375,Cincinnati City School District,2027-28,period,teacher_day,District Professional Development Day - No Students,2027-11-01,2027-11-01,,,,,,
+3904375,Cincinnati City School District,2027-28,period,other,Election Day - Only Schools Closed,2027-11-02,2027-11-02,,,,,,Election Day closure
+3904375,Cincinnati City School District,2027-28,period,holiday,Veterans Day Holiday,2027-11-11,2027-11-11,,,,,,
+3904375,Cincinnati City School District,2027-28,period,break,Holiday/Break - Only Schools Closed; Thanksgiving Holiday,2027-11-22,2027-11-26,,,,,,
+3904375,Cincinnati City School District,2027-28,period,break,Winter Recess,2027-12-20,2027-12-31,,,,,,
+3904375,Cincinnati City School District,2027-28,period,teacher_day,District Professional Development Day - No Students,2028-01-03,2028-01-03,,,,,,
+3904375,Cincinnati City School District,2027-28,period,holiday,Martin Luther King Jr. Day Holiday,2028-01-17,2028-01-17,,,,,,
+3904375,Cincinnati City School District,2027-28,period,other,Holiday/Break - Teacher Conference Exchange Day,2028-02-07,2028-02-07,,,,,,Schools closed; teacher conference exchange day
+3904375,Cincinnati City School District,2027-28,period,holiday,Presidents Day Holiday,2028-02-21,2028-02-21,,,,,,
+3904375,Cincinnati City School District,2027-28,period,teacher_day,District Professional Development Day - No Students,2028-03-06,2028-03-06,,,,,,
+3904375,Cincinnati City School District,2027-28,period,break,Spring Break,2028-03-20,2028-03-24,,,,,,
+0806900,Adams 12 Five Star Schools,2026-27,calendar,,,,,tentative,https://www.adams12.org/our-district/calendar,,,https://www.adams12.org,Published year-at-a-glance calendar; detailed date grid not fully extracted.
+0806900,Adams 12 Five Star Schools,2027-28,calendar,,,,,tentative,https://www.adams12.org/our-district/calendar,,,https://www.adams12.org,Published year-at-a-glance calendar; detailed date grid not fully extracted.
+0406250,Peoria Unified School District,2026-27,calendar,,,,,approved,https://www.peoriaunified.org/page/school-year-calendars,,,https://www.peoriaunified.org,Board approved both calendars Nov 13 2025; no full dates independently extracted. District-wide recurring modified Wednesday release omitted.
+0406250,Peoria Unified School District,2027-28,calendar,,,,,approved,https://www.peoriaunified.org/page/school-year-calendars,,,https://www.peoriaunified.org,Board approved both calendars Nov 13 2025; no full dates independently extracted. District-wide recurring modified Wednesday release omitted.
+0631530,Poway Unified School District,2026-27,calendar,,,2026-08-13,2027-06-03,approved,https://www.powayusd.com/apps/pages/calendars,,,https://www.powayusd.com,Revised board-approved Feb 26 2026. Abraxas non-traditional uses another schedule.
+0631530,Poway Unified School District,2026-27,period,holiday,Labor Day Holiday,2026-09-07,2026-09-07,,,,,,
+0631530,Poway Unified School District,2026-27,period,holiday,Veterans Day Holiday Observance,2026-11-11,2026-11-11,,,,,,
+0631530,Poway Unified School District,2026-27,period,teacher_day,Non-Student Day,2026-11-16,2026-11-16,,,,,,
+0631530,Poway Unified School District,2026-27,period,break,District Recess - Thanksgiving,2026-11-23,2026-11-27,,,,,,
+0631530,Poway Unified School District,2026-27,period,break,Winter Break,2026-12-21,2027-01-01,,,,,,
+0631530,Poway Unified School District,2026-27,period,holiday,Dr. Martin Luther King Jr. Non-Student Day,2027-01-18,2027-01-18,,,,,,
+0631530,Poway Unified School District,2026-27,period,teacher_day,Non-Student Day - Professional Growth Day,2027-01-25,2027-01-25,,,,,,
+0631530,Poway Unified School District,2026-27,period,break,District Recess,2027-02-15,2027-02-19,,,,,,
+0631530,Poway Unified School District,2026-27,period,break,Spring Break - District Recess,2027-04-12,2027-04-16,,,,,,
+0631530,Poway Unified School District,2026-27,period,holiday,Memorial Day Holiday,2027-05-31,2027-05-31,,,,,,
+0631530,Poway Unified School District,2027-28,calendar,,,,,not_found,,,,https://www.powayusd.com,Official district student calendar for this school year not verified during this research pass.
+0638640,Sweetwater Union High School District,2026-27,calendar,,,,,tentative,https://www.sweetwaterschools.org/calendars/student-calendars,,,https://www.sweetwaterschools.org,District has separate board student academic calendar PDFs; exact grid dates not transcribed. High-school-only district; elementary-date instruction inapplicable.
+0638640,Sweetwater Union High School District,2027-28,calendar,,,,,tentative,https://www.sweetwaterschools.org/calendars/student-calendars,,,https://www.sweetwaterschools.org,District has separate board student academic calendar PDFs; exact grid dates not transcribed. High-school-only district; elementary-date instruction inapplicable.
+4846680,Ysleta Independent School District,2026-27,calendar,,,2026-08-03,2027-06-04,tentative,https://www.yisd.net/o/presa/live-feed,,,https://www.yisd.net,"Ysleta district announcement posted via official Presa Elementary states student first/last school day. District calendar PDF listed on school news but not fully independently extracted, so individual period dates not added without reliable verification. Board approval unspecified."
+4846680,Ysleta Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.yisd.net,Official district student calendar for this school year not verified during this research pass.
+1713710,School District U-46,2026-27,calendar,,,,,not_found,,,,https://www.u-46.org,Official district student calendar for this school year not verified during this research pass.
+1713710,School District U-46,2027-28,calendar,,,,,not_found,,,,https://www.u-46.org,Official district student calendar for this school year not verified during this research pass.
+0628050,Oakland Unified School District,2026-27,calendar,,,2026-08-10,,tentative,https://www.ousd.org/about-us/districtcalendar,,,https://www.ousd.org,District publishes English district calendars. First day confirmed in district website; remaining grid not transcribed.
+0628050,Oakland Unified School District,2027-28,calendar,,,2027-08-09,,tentative,https://www.ousd.org/about-us/districtcalendar,,,https://www.ousd.org,District publishes English district calendars. First day confirmed in district website; remaining grid not transcribed.
+4818000,Ector County Independent School District,2026-27,calendar,,,,,tentative,https://www.ectorcountyisd.org/calendar,,,https://www.ectorcountyisd.org,District has 2026-27 academic calendar; student dates not safely transcribed.
+4818000,Ector County Independent School District,2027-28,calendar,,,,,not_found,,,,https://www.ectorcountyisd.org,Official district student calendar for this school year not verified during this research pass.
