@@ -1,13 +1,16 @@
 name: Deploy website
 
-# Builds web/ and deploys it to Cloudflare (holibase.org) whenever it changes on main.
-# Uses the same repository secrets as the API: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID.
-# Without them the job is skipped, so nothing breaks.
+# Builds web/ and deploys it to Cloudflare (holibase.org) whenever it changes on main, and every
+# morning, so the generated holiday pages (one per region, district and country) stay current.
+# Secrets: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (as for the API), DATABASE_URL (read-only
+# use, to generate the pages). Without the Cloudflare secrets the job is skipped.
 
 on:
   push:
     branches: [main]
     paths: ["web/**"]
+  schedule:
+    - cron: "17 3 * * *"   # daily 03:17 UTC
   workflow_dispatch:
 
 permissions:
@@ -33,7 +36,11 @@ jobs:
         with:
           python-version: "3.12"
       - name: Build
-        run: python web/build.py
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          pip install -q "psycopg[binary]>=3.2" "babel>=2.16"
+          if [ -n "$DATABASE_URL" ]; then python web/build.py --fetch; else echo "::warning::DATABASE_URL not set, building without generated pages"; python web/build.py; fi
       - uses: actions/setup-node@v5
         if: env.CLOUDFLARE_API_TOKEN != ''
         with:
@@ -46,7 +53,7 @@ jobs:
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: |
           sleep 10
-          for p in / /calendar/ /coverage/ /docs/ /docs/reference/ /licence/ /legal/ /privacy/ /assets/site.css; do
+          for p in / /calendar/ /coverage/ /docs/ /docs/reference/ /licence/ /legal/ /privacy/ /school-holidays/ /public-holidays/ /public-holidays/de/ /llms.txt /assets/site.css; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://holibase.org$p")
             echo "$p $code"; [ "$code" = 200 ] || exit 1
           done

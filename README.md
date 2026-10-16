@@ -169,4 +169,14 @@ python -m http.server -d web/public 8080               # then open http://localh
 http://localhost:8080/calendar/?api=http://localhost:8787   # use a local API (wrangler dev in api/)
 ```
 
-`.github/workflows/deploy-web.yml` builds and deploys on every push to `web/` (same Cloudflare secrets as the API).
+Generated pages: one static page per school calendar region and district (`/school-holidays/...`) and per
+country (`/public-holidays/...`), with the dates in the HTML, FAQ and structured data, plus `sitemap.xml`,
+`llms.txt` and `assets/pages.json`. They are built from a snapshot of the database (`web/snapshot.py`,
+read-only) by `web/generate.py`:
+
+```
+DATABASE_URL=postgresql://... python web/build.py --fetch    # snapshot + all pages
+```
+
+`.github/workflows/deploy-web.yml` builds and deploys on every push to `web/` and every morning, so the
+generated pages stay current (secrets: the Cloudflare ones as for the API, plus `DATABASE_URL`).

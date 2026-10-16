@@ -23,6 +23,7 @@ const EN_ALIAS = {
   "DE-RP": "Rhineland-Palatinate", "DE-SN": "Saxony", "DE-ST": "Saxony-Anhalt", "DE-TH": "Thuringia",
   "DE-MV": "Mecklenburg-Western Pomerania", "AT-2": "Carinthia", "AT-3": "Lower Austria", "AT-4": "Upper Austria",
   "AT-6": "Styria", "AT-7": "Tyrol", "AT-9": "Vienna", "CH-ZH": "Zurich", "CH-BE": "Bern", "CH-GE": "Geneva",
+  "FR-971": "Guadeloupe", "FR-972": "Martinique", "FR-973": "French Guiana", "FR-974": "Réunion", "FR-976": "Mayotte",
 };
 const q = $("#q");
 const results = $("#results");
@@ -42,7 +43,7 @@ async function loadCountries() {
     countries: data.countries.map((c) => ({ code: c.code, name: name(c.names, countryName(c.code)) })),
     subdivisions: data.subdivisions.map((s) => {
       let n = name(s.names, s.name || s.code);
-      if (/^[A-Z]{2}$/.test(n)) n = countryName(n); // French overseas regions are stored by their ISO code
+      if (/^[A-Z]{2}$/.test(n)) n = EN_ALIAS[s.code] || countryName(n); // French overseas regions are stored by their ISO code
       return { code: s.code, country: s.country_code, name: n, alias: EN_ALIAS[s.code] || "" };
     }),
   };
@@ -196,6 +197,7 @@ async function show() {
     notice.append(el("div", { class: "notice", text: "This calendar has not been verified against a second source yet. Check important dates with the school or district." }));
   }
 
+  permalink(title);
   renderNext(school.periods);
   renderFacts(school, pub, region);
   renderFeeds(title, scope, region, cov.status !== "none");
@@ -323,4 +325,13 @@ function renderSources(school, pub) {
     el("td", {}, c.source_url && /^https?:\/\//.test(c.source_url) ? el("a", { href: c.source_url, rel: "noopener nofollow", target: "_blank", text: new URL(c.source_url).hostname }) : "–")));
   table.replaceChildren(el("thead", {}, head), el("tbody", {}, ...(rows.length ? rows : [el("tr", {}, el("td", { colspan: "6", class: "muted", text: "No school calendar in this range." }))])));
   $("#v-attribution").textContent = school.attribution;
+}
+
+// Link to the static page for this calendar (shareable, printable, indexed by search engines).
+async function permalink(title) {
+  try {
+    const pages = await (await fetch("/assets/pages.json")).json();
+    const url = pages[authority ? `auth:${authority}` : subdivision || country] || (!subdivision && !authority ? pages[`public:${country}`] : null);
+    if (url) $("#v-pills").append(el("a", { class: "link-arrow body-s", href: url, text: "All dates on one page →" }));
+  } catch { /* no page map */ }
 }

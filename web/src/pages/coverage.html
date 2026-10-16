@@ -48,7 +48,7 @@ script: coverage.js
       <div class="table-scroll">
         <table class="data" id="school-table">
           <thead><tr><th scope="col">Country</th><th scope="col">Level</th><th scope="col">Verified</th><th scope="col">Unverified</th><th scope="col">School years</th><th scope="col">Source</th></tr></thead>
-          <tbody><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+          <tbody><tr><td colspan="6" class="muted">Loading…</td></tr><!--coverage-rows--></tbody>
         </table>
       </div>
     </div>
@@ -78,13 +78,13 @@ script: coverage.js
   <div class="wrap">
     <p class="overline">03. Public holidays</p>
     <h2 class="h2" style="margin-bottom: 8px">All countries</h2>
-    <p class="body-s muted measure" style="margin: 0 0 24px">Pick a country to see its public holidays for the next twelve months and subscribe to them.</p>
+    <p class="body-s muted measure" style="margin: 0 0 24px">Pick a country to see its public holidays for this year and next, and subscribe to them.</p>
     <label class="visually-hidden" for="country-filter">Filter countries</label>
     <div class="field" style="max-width: 420px; margin-bottom: 24px">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input class="input" id="country-filter" type="search" placeholder="Filter countries" autocomplete="off">
     </div>
-    <div class="chips" id="country-list" aria-live="polite"></div>
+    <div class="chips" id="country-list" aria-live="polite"><!--country-chips--></div>
   </div>
 </section>
 
