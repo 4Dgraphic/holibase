@@ -46,9 +46,11 @@ jobs:
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: |
           sleep 10
-          for p in / /calendar/ /coverage/ /docs/ /docs/reference/ /licence/ /assets/site.css; do
+          for p in / /calendar/ /coverage/ /docs/ /docs/reference/ /licence/ /legal/ /privacy/ /assets/site.css; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://holibase.org$p")
             echo "$p $code"; [ "$code" = 200 ] || exit 1
           done
           code=$(curl -s -o /dev/null -w '%{http_code}' https://holibase.org/does-not-exist)
           echo "404 page: $code"; [ "$code" = 404 ]
+          loc=$(curl -s -o /dev/null -w '%{redirect_url}' https://www.holibase.org/docs/)
+          echo "www redirect: $loc"; [ "$loc" = "https://holibase.org/docs/" ]

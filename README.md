@@ -158,7 +158,8 @@ calendar, as 10 ready-to-paste prompts. Results dropped into `results/` are vali
 
 ## Website
 
-`web/` is the static site at holibase.org: no framework, no build dependencies, no cookies.
+`web/` is the static site at holibase.org: no framework, no build dependencies.
+Google Analytics loads only after consent in the cookie banner (`web/public/assets/consent.js`). `www.` redirects to the apex domain (`web/src/worker/index.js`).
 Pages live in `web/src/pages/` (front matter on top), shared header and footer in `web/src/partials/`,
 CSS, JavaScript and fonts in `web/public/assets/`. Colours, type and spacing follow the Holibase design system.
 

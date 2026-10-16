@@ -1,4 +1,5 @@
-// Shared helpers for holibase.org. No framework, no tracking, no cookies.
+// Shared helpers for holibase.org. No framework. Analytics only after consent (consent.js).
+import "./consent.js";
 
 const params = new URLSearchParams(location.search);
 // ?api=http://localhost:8787 points the site at a local API (development only).

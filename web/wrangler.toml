@@ -1,10 +1,11 @@
 name = "holibase-web"
+main = "src/worker/index.js"
 compatibility_date = "2026-09-01"
 
-# holibase.org and www.holibase.org: static files from web/public, served by Cloudflare.
-# Wrangler creates the DNS records and certificates on deploy. Requirement: the zone
-# holibase.org is in the same Cloudflare account and has no existing A/AAAA/CNAME
-# record for "holibase.org" or "www" (delete those first, e.g. a parking page).
+# holibase.org and www.holibase.org: Wrangler creates the DNS records and certificates on deploy.
+# Requirement: the zone holibase.org is in the same Cloudflare account and has no existing
+# A/AAAA/CNAME record for "holibase.org" or "www" (delete those first, e.g. a parking page).
+# www.holibase.org redirects to holibase.org (src/worker/index.js).
 routes = [
   { pattern = "holibase.org", custom_domain = true },
   { pattern = "www.holibase.org", custom_domain = true }
@@ -12,5 +13,8 @@ routes = [
 
 [assets]
 directory = "./public"
+binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"
+# Send every request through the worker first so www can be redirected.
+run_worker_first = true
