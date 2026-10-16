@@ -27,7 +27,7 @@ ROOT = pathlib.Path(__file__).parent
 SRC, OUT = ROOT / "src", ROOT / "public"
 SNAPSHOT = ROOT / ".cache" / "snapshot.json"
 SITE = "https://holibase.org"
-GENERATED_DIRS = ["school-holidays", "public-holidays"]
+GENERATED_DIRS = ["school-holidays", "public-holidays", "de", "fr", "nl"]
 
 ORG = {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Holibase", "url": SITE,
        "logo": f"{SITE}/assets/logo-512.png", "sameAs": ["https://github.com/4Dgraphic/holibase"]}
@@ -74,14 +74,20 @@ def render(meta: dict, body: str, ld: list | None = None) -> str:
     canonical = SITE + ("/404" if path == "/404" else path)
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in (ld or []))
     robots = '<meta name="robots" content="noindex">\n' if meta.get("noindex") or path == "/404" else ""
+    alts = meta.get("alternates") or {}
+    hreflang = "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{u}">\n' for l, u in alts.items())
+    if alts.get("en"):
+        hreflang += f'<link rel="alternate" hreflang="x-default" href="{SITE}{alts["en"]}">\n'
+    og_locale = {"en": "en_US", "de": "de_DE", "fr": "fr_FR", "nl": "nl_NL"}.get(meta.get("lang", "en"), "en_US")
     return f"""<!doctype html>
-<html lang="en" data-theme="{meta.get('theme', 'dark')}">
+<html lang="{meta.get('lang', 'en')}" data-theme="{meta.get('theme', 'dark')}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{t}</title>
 <meta name="description" content="{desc}">
 {robots}<link rel="canonical" href="{canonical}">
+{hreflang}<meta property="og:locale" content="{og_locale}">
 <meta property="og:site_name" content="Holibase">
 <meta property="og:title" content="{t}">
 <meta property="og:description" content="{desc}">
@@ -152,9 +158,14 @@ def llms_txt(stats: dict, extras: dict | None) -> str:
         "- [Coverage](https://holibase.org/coverage/)",
         "- [Sources and licences](https://holibase.org/licence/)",
     ]
+    if extras and extras.get("localized"):
+        names = {"de": "German", "fr": "French", "nl": "Dutch"}
+        lines += ["", "## Other languages", ""]
+        lines += [f"- [School holidays in {names.get(l, l)}](https://holibase.org{u})" for l, u in extras["localized"].items()]
     if extras:
         lines += ["", "## School holidays", ""]
-        lines += [f"- [School holidays in {cc}](https://holibase.org/school-holidays/{cc.lower()}/)" for cc in extras["school_ccs"]]
+        from generate import country_name
+        lines += [f"- [School holidays in {country_name(cc)}](https://holibase.org/school-holidays/{cc.lower()}/)" for cc in extras["school_ccs"]]
     return "\n".join(lines) + "\n"
 
 

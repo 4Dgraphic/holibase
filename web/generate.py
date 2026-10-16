@@ -1,14 +1,15 @@
 """
-Static pages generated from web/.cache/snapshot.json (see snapshot.py):
+Static pages generated from web/.cache/snapshot.json (see snapshot.py), in English and, for the
+countries where it matters, German, French and Dutch (texts in i18n.py):
 
-    /school-holidays/                     all countries with school holidays
-    /school-holidays/{cc}/                one country: its regions, zones or districts (or its calendar)
-    /school-holidays/{cc}/{slug}/         one region, zone or school district
-    /public-holidays/                     all countries
-    /public-holidays/{cc}/                one country, this year and next
+    /school-holidays/  /school-holidays/{cc}/  /school-holidays/{cc}/{region}/
+    /public-holidays/  /public-holidays/{cc}/
+    /de/schulferien/deutschland/niedersachsen/   /de/feiertage/deutschland/
+    /fr/vacances-scolaires/france/zone-a/        /fr/jours-feries/france/
+    /nl/schoolvakanties/nederland/regio-noord/   /nl/feestdagen/nederland/
 
 Every page carries its dates in the HTML, so search engines and AI crawlers can read them without
-running JavaScript. Used by build.py; nothing here talks to the network.
+running JavaScript, and links its language versions with hreflang. Nothing here talks to the network.
 """
 from __future__ import annotations
 
@@ -21,37 +22,13 @@ import urllib.parse
 from collections import defaultdict
 
 from babel import Locale
+from babel.dates import format_date
+
+from i18n import DATE, LANG_NAMES, LANGS, PATHS, REGION, T, in_country
 
 API = "https://api.holibase.org"
 SITE = "https://holibase.org"
-TERRITORIES = Locale("en").territories
-
-# English names for regions stored under their local name or an ISO code.
-REGION_EN = {
-    "DE-BW": "Baden-Württemberg", "DE-BY": "Bavaria", "DE-BE": "Berlin", "DE-BB": "Brandenburg", "DE-HB": "Bremen",
-    "DE-HH": "Hamburg", "DE-HE": "Hesse", "DE-MV": "Mecklenburg-Western Pomerania", "DE-NI": "Lower Saxony",
-    "DE-NW": "North Rhine-Westphalia", "DE-RP": "Rhineland-Palatinate", "DE-SL": "Saarland", "DE-SN": "Saxony",
-    "DE-ST": "Saxony-Anhalt", "DE-SH": "Schleswig-Holstein", "DE-TH": "Thuringia",
-    "AT-1": "Burgenland", "AT-2": "Carinthia", "AT-3": "Lower Austria", "AT-4": "Upper Austria", "AT-5": "Salzburg",
-    "AT-6": "Styria", "AT-7": "Tyrol", "AT-8": "Vorarlberg", "AT-9": "Vienna",
-    "CH-ZH": "Zurich", "CH-GE": "Geneva", "CH-LU": "Lucerne", "CH-SG": "St. Gallen", "CH-FR": "Fribourg",
-    "CH-GR": "Graubünden", "CH-TI": "Ticino", "CH-VD": "Vaud", "CH-VS": "Valais", "CH-NE": "Neuchâtel",
-    "CH-BS": "Basel-Stadt", "CH-BL": "Basel-Landschaft", "CH-STADT-ZURICH": "City of Zurich",
-    "FR-971": "Guadeloupe", "FR-972": "Martinique", "FR-973": "French Guiana", "FR-974": "Réunion", "FR-976": "Mayotte",
-    "FR-NC": "New Caledonia", "FR-PF": "French Polynesia", "FR-PM": "Saint Pierre and Miquelon",
-    "FR-WF": "Wallis and Futuna", "FR-BL": "Saint Barthélemy", "FR-MF": "Saint Martin", "FR-6AE": "Alsace",
-}
-ORIGIN = {
-    "official": "Official open data",
-    "library": "python-holidays",
-    "editorial": "Researched by Holibase",
-    "community": "Community submission",
-}
-KIND = {"break": "School holiday", "holiday": "Day off", "teacher_day": "No school for students",
-        "early_release": "Early release", "other": "No school"}
-
-
-# ---------------------------------------------------------------- helpers
+TERRITORIES = {lang: Locale(lang).territories for lang in LANGS}
 
 esc = lambda s: html.escape(str(s if s is not None else ""), quote=True)  # noqa: E731
 
@@ -60,74 +37,124 @@ def d(s: str) -> dt.date:
     return dt.date.fromisoformat(s[:10])
 
 
-def day(x: dt.date) -> str:
-    return f"{x:%a} {x.day} {x:%b %Y}"
-
-
-def cell(x: dt.date) -> str:
-    """Table date; the weekday is hidden on narrow screens."""
-    return f'<span class="wd">{x:%a} </span>{x.day} {x:%b %Y}'
-
-
-def day_long(x: dt.date) -> str:
-    return f"{x:%A} {x.day} {x:%B %Y}"
-
-
-def day_short(x: dt.date) -> str:
-    return f"{x.day} {x:%b}"
-
-
-def span(a: dt.date, b: dt.date) -> str:
-    if a == b:
-        return day(a)
-    if a.year == b.year:
-        return f"{a:%a} {day_short(a)} – {day(b)}"
-    return f"{day(a)} – {day(b)}"
-
-
-def slugify(s: str) -> str:
+def slugify(s: str, lang: str = "en") -> str:
+    s = s.replace("ß", "ss")
+    if lang == "de":
+        for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("Ä", "Ae"), ("Ö", "Oe"), ("Ü", "Ue")):
+            s = s.replace(a, b)
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-") or "x"
 
 
-def country_name(cc: str) -> str:
-    return TERRITORIES.get(cc, cc)
-
-
-def school_year_label(sy: str) -> str:
-    return sy.replace("-", "/")
+def country_name(cc: str, lang: str = "en") -> str:
+    return TERRITORIES[lang].get(cc, cc)
 
 
 def host(url: str | None) -> str:
-    return urllib.parse.urlparse(url).hostname or "" if url else ""
+    return (urllib.parse.urlparse(url).hostname or "") if url else ""
 
+
+class Loc:
+    """Formatting and texts for one language."""
+
+    def __init__(self, lang: str):
+        self.lang = lang
+        self.p_short, self.p_long, self.p_noyear = DATE[lang]
+
+    def t(self, key: str, **kw) -> str:
+        return T[self.lang][key].format(**kw)
+
+    def day(self, x: dt.date) -> str:
+        return format_date(x, self.p_short, locale=self.lang)
+
+    def day_long(self, x: dt.date) -> str:
+        return format_date(x, self.p_long, locale=self.lang)
+
+    def cell(self, x: dt.date) -> str:
+        """Table date; the weekday is hidden on narrow screens."""
+        wd = format_date(x, "EEE", locale=self.lang)
+        rest = self.day(x)
+        rest = rest[len(wd):].lstrip(", ") if rest.startswith(wd) else rest
+        return f'<span class="wd">{esc(wd)}{"," if self.lang == "de" else ""} </span>{esc(rest)}'
+
+    def span(self, a: dt.date, b: dt.date) -> str:
+        if a == b:
+            return self.day(a)
+        first = format_date(a, self.p_noyear, locale=self.lang) if a.year == b.year else self.day(a)
+        return f"{first} – {self.day(b)}"
+
+    def sy(self, school_year: str) -> str:
+        if self.t("sy_sep") == "-" and re.fullmatch(r"\d{4}-\d{2}", school_year):
+            return f"{school_year[:4]}-{school_year[:2]}{school_year[5:]}"  # 2026-27 -> 2026-2027
+        return school_year.replace("-", self.t("sy_sep"))
+
+    def years(self, dates: list[dt.date]) -> str:
+        ys = sorted({x.year for x in dates})[:2]
+        return f" {self.t('and')} ".join(str(y) for y in ys)
+
+    def country(self, cc: str) -> str:
+        return country_name(cc, self.lang)
+
+    def in_country(self, cc: str) -> str:
+        return in_country(self.lang, cc, self.country(cc))
+
+    @property
+    def colon(self) -> str:
+        return "\u202f:" if self.lang == "fr" else ":"
+
+    def origin(self, o: str) -> str:
+        key = f"origin_{o}"
+        return self.t(key) if key in T[self.lang] else o
+
+
+# ---------------------------------------------------------------- URLs
+
+def school_index_url(lang):
+    p = PATHS[lang]
+    return f"{p['prefix']}/{p['school']}/"
+
+
+def public_index_url(lang):
+    p = PATHS[lang]
+    return f"{p['prefix']}/{p['public']}/"
+
+
+def school_country_url(lang, cc):
+    seg = cc.lower() if lang == "en" else slugify(country_name(cc, lang), lang)
+    return f"{school_index_url(lang)}{seg}/"
+
+
+def public_country_url(lang, cc):
+    seg = cc.lower() if lang == "en" else slugify(country_name(cc, lang), lang)
+    return f"{public_index_url(lang)}{seg}/"
+
+
+# ---------------------------------------------------------------- shared blocks
 
 def feed_links(path: str, name: str) -> dict:
     https = API + path
     webcal = "webcal:" + https[len("https:"):]
     return {
-        "https": https,
-        "apple": webcal,
+        "https": https, "apple": webcal,
         "google": "https://calendar.google.com/calendar/render?cid=" + urllib.parse.quote(webcal, safe=""),
         "outlook": "https://outlook.live.com/calendar/0/addfromweb?url=" + urllib.parse.quote(https, safe="")
                    + "&name=" + urllib.parse.quote(name, safe=""),
     }
 
 
-def subscribe_html(label: str, path: str, name: str) -> str:
+def subscribe_html(L: Loc, label: str, path: str, name: str) -> str:
     f = feed_links(path, name)
     return f"""<div><p class="body-s muted" style="margin: 0 0 8px">{esc(label)}</p>
 <div class="row">
 <a class="btn btn-primary btn-sm" href="{esc(f['apple'])}">Apple Calendar</a>
 <a class="btn btn-secondary btn-sm" href="{esc(f['google'])}" rel="noopener" target="_blank">Google Calendar</a>
 <a class="btn btn-secondary btn-sm" href="{esc(f['outlook'])}" rel="noopener" target="_blank">Outlook</a>
-<a class="btn btn-secondary btn-sm" href="{esc(f['https'])}" download>Download .ics</a>
+<a class="btn btn-secondary btn-sm" href="{esc(f['https'])}" download>{esc(L.t('download'))}</a>
 </div></div>"""
 
 
 def breadcrumb(items: list[tuple[str, str]]) -> tuple[str, dict]:
-    """items: (name, path). Returns the visible trail and its JSON-LD."""
-    links = " <span aria-hidden=\"true\">/</span> ".join(
+    links = ' <span aria-hidden="true">/</span> '.join(
         f'<a href="{esc(p)}">{esc(n)}</a>' if i < len(items) - 1 else f'<span aria-current="page">{esc(n)}</span>'
         for i, (n, p) in enumerate(items))
     ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -135,18 +162,38 @@ def breadcrumb(items: list[tuple[str, str]]) -> tuple[str, dict]:
     return f'<nav class="crumbs" aria-label="Breadcrumb">{links}</nav>', ld
 
 
-def faq_html(faq: list[tuple[str, str]]) -> tuple[str, dict | None]:
+def faq_html(L: Loc, faq: list[tuple[str, str]]) -> tuple[str, dict | None]:
     if not faq:
         return "", None
     body = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faq)
-    ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": L.lang, "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
-    return f'<section class="gen-section"><h2>Frequently asked questions</h2>{body}</section>', ld
+    return f'<section class="gen-section"><h2>{esc(L.t("faq"))}</h2>{body}</section>', ld
 
 
-def page(path, title, description, body, nav="", ld=(), lastmod=None):
-    return {"path": path, "title": title, "description": description, "body": body, "nav": nav,
-            "ld": [x for x in ld if x], "theme": "dark", "lastmod": lastmod}
+def holiday_rows(L: Loc, hs: list[dict], today: dt.date, mark_past: bool) -> str:
+    out = []
+    for h in hs:
+        x = d(h["date"])
+        past = mark_past and x < today
+        extra = ""
+        if h.get("local_name") and h["local_name"] != h["name"]:
+            extra += f' <span class="muted">{esc(h["local_name"])}</span>'
+        if h.get("is_estimated"):
+            extra += f' <span class="pill pill-estimated">{esc(L.t("estimated"))}</span>'
+        if h.get("is_observed") and "observ" not in h["name"].lower():
+            extra += f' <span class="pill pill-neutral">{esc(L.t("observed"))}</span>'
+        out.append(f'<tr{" class=\"past\"" if past else ""}><td class="num">{L.cell(x)}</td><td><b>{esc(h["name"])}</b>{extra}</td></tr>')
+    return "".join(out)
+
+
+def page(lang, path, title, description, body, nav="", ld=(), lastmod=None, group=None):
+    return {"lang": lang, "path": path, "title": title, "description": description, "body": body, "nav": nav,
+            "ld": [x for x in ld if x], "theme": "dark", "lastmod": lastmod, "group": group}
+
+
+def lang_switch_placeholder() -> str:
+    return "<!--langs-->"
 
 
 # ---------------------------------------------------------------- school holidays
@@ -158,39 +205,57 @@ class Scope:
         self.sub = raw.get("sub")
         self.auth = raw.get("auth")
         self.region = self.sub or raw.get("auth_sub")
-        self.region_name = REGION_EN.get(self.region) or raw.get("sub_name") or ""
-        if re.fullmatch(r"[A-Z]{2}", self.region_name or ""):
-            self.region_name = country_name(self.region_name)
-        self.country = country_name(self.cc)
         self.national = not self.sub and not self.auth
-        self.name = raw.get("auth_name") or (self.region_name if self.sub else self.country)
-        self.local_name = raw.get("sub_name") if self.sub and raw.get("sub_name") not in (None, self.name) and not re.fullmatch(r"[A-Z]{2}", raw.get("sub_name") or "") else None
-        self.periods = [p for p in raw["periods"] if p["status"] == "confirmed"]
         self.calendars = [c for c in raw["calendars"] if c["status"] == "confirmed"]
-        self.public = raw.get("public") or []
-        self.slug = ""
+        self.langs = ["en"] + [l for l in (raw.get("l10n") or {}) if l in LANGS and l != "en"]
+        self.slug = {}
         self.key = f"auth:{self.auth}" if self.auth else (self.sub or self.cc)
 
-    @property
-    def url(self):
-        return f"/school-holidays/{self.cc.lower()}/" + (f"{self.slug}/" if self.slug else "")
+    def periods(self, lang):
+        src = self.raw["periods"] if lang == "en" else self.raw["l10n"][lang]["periods"]
+        return [p for p in src if p["status"] == "confirmed"]
 
-    def kept(self, today: dt.date):
-        """Periods of school years that are not over yet."""
+    def public(self, lang):
+        return (self.raw.get("public") if lang == "en" else self.raw["l10n"][lang]["public"]) or []
+
+    def region_name(self, lang):
+        stored = self.raw.get("sub_name") or ""
+        name = REGION[lang].get(self.region)
+        if not name:
+            name = stored
+        if re.fullmatch(r"[A-Z]{2}", name or ""):
+            name = country_name(name, lang)
+        return name or ""
+
+    def name(self, lang):
+        return self.raw.get("auth_name") or (self.region_name(lang) if self.sub else country_name(self.cc, lang))
+
+    def local_name(self, lang):
+        """The stored local name, shown next to a translated name (Lower Saxony (Niedersachsen))."""
+        stored = self.raw.get("sub_name")
+        if self.sub and stored and stored != self.name(lang) and not re.fullmatch(r"[A-Z]{2}", stored):
+            return stored
+        return None
+
+    def url(self, lang):
+        base = school_country_url(lang, self.cc)
+        return base + (f"{self.slug[lang]}/" if self.slug.get(lang) else "")
+
+    def kept(self, today: dt.date, lang="en"):
         by_year = defaultdict(list)
-        for p in self.periods:
+        for p in self.periods(lang):
             by_year[p["school_year"]].append(p)
         years = [y for y, ps in by_year.items() if max(d(p["end_date"]) for p in ps) >= today]
         return {y: sorted(by_year[y], key=lambda p: p["start_date"]) for y in sorted(years)}
 
-    def next_break(self, today: dt.date):
-        upcoming = [p for p in self.periods if d(p["end_date"]) >= today and p["kind"] != "early_release"]
+    def next_break(self, today: dt.date, lang="en"):
+        upcoming = [p for p in self.periods(lang) if d(p["end_date"]) >= today and p["kind"] != "early_release"]
         breaks = [p for p in upcoming if p["kind"] == "break"]
         return (breaks or upcoming or [None])[0]
 
-    def feed_path(self):
+    def feed_path(self, lang):
         q = f"authority={self.auth}&" if self.auth else f"subdivision={self.sub}&" if self.sub else ""
-        return f"/v1/school-holidays/{self.cc}.ics?{q}lang=en"
+        return f"/v1/school-holidays/{self.cc}.ics?{q}lang={lang}"
 
     def app_url(self):
         q = {"country": self.cc}
@@ -200,9 +265,9 @@ class Scope:
             q["subdivision"] = self.sub
         return "/calendar/?" + urllib.parse.urlencode(q)
 
-    def where(self):
-        parts = [self.raw.get("auth_city"), self.region_name if self.auth else None, self.country]
-        return ", ".join(p for p in parts if p and p != self.name)
+    def where(self, lang):
+        parts = [self.raw.get("auth_city"), self.region_name(lang) if self.auth else None, country_name(self.cc, lang)]
+        return ", ".join(p for p in parts if p and p != self.name(lang))
 
 
 def assign_slugs(scopes: list[Scope]) -> None:
@@ -212,49 +277,43 @@ def assign_slugs(scopes: list[Scope]) -> None:
     for cc, group in by_cc.items():
         if len(group) == 1 and group[0].national:
             continue  # the country page is the calendar
-        seen = {}
-        for s in sorted(group, key=lambda s: (s.national, s.name)):
-            base = "nationwide" if s.national else slugify(s.name)
-            slug = base
-            if slug in seen:
-                slug = f"{base}-{slugify(s.raw.get('auth_city') or s.region_name or '')}".strip("-")
-            if slug in seen:
-                slug = f"{base}-{str(s.auth)[:6]}"
-            seen[slug] = s
-            s.slug = slug
+        for lang in LANGS:
+            seen = set()
+            for s in sorted((s for s in group if lang in s.langs), key=lambda s: (s.national, s.name(lang))):
+                base = "nationwide" if s.national else slugify(s.name(lang), lang)
+                slug = base
+                if slug in seen:
+                    slug = f"{base}-{slugify(s.raw.get('auth_city') or s.region_name(lang) or '')}".strip("-")
+                if slug in seen:
+                    slug = f"{base}-{str(s.auth)[:6]}"
+                seen.add(slug)
+                s.slug[lang] = slug
 
 
-def years_label(dates: list[dt.date]) -> str:
-    ys = sorted({x.year for x in dates})[:2]
-    return " and ".join(str(y) for y in ys)
-
-
-def scope_page(s: Scope, siblings: list[Scope], today: dt.date) -> dict:
-    kept = s.kept(today)
+def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, public_langs: dict) -> dict:
+    L = Loc(lang)
+    name = s.name(lang)
+    kept = s.kept(today, lang)
     all_kept = [p for ps in kept.values() for p in ps]
-    years = years_label([d(p["start_date"]) for p in all_kept] or [today])
-    nb = s.next_break(today)
+    years = L.years([d(p["start_date"]) for p in all_kept] or [today])
+    nb = s.next_break(today, lang)
     district = bool(s.auth) and s.cc == "US"
-    noun = "break" if district else "school holiday"
 
-    # answer first
     if nb:
         a, b = d(nb["start_date"]), d(nb["end_date"])
         n = (b - a).days + 1
         if a <= today:
-            answer = f"School is out in {s.name} right now: {nb['name']} runs until {day_long(b)}."
+            answer = L.t("ongoing", name=name, holiday=nb["name"], end=L.day_long(b))
         else:
-            answer = f"The next {noun} in {s.name} is {nb['name']}, from {day_long(a)} to {day_long(b)}" + (f" ({n} days)." if n > 1 else ".")
+            answer = L.t("next_district" if district else "next", name=name, holiday=nb["name"],
+                         start=L.day_long(a), end=L.day_long(b), days=L.t("days_paren", n=n) if n > 1 else "")
     else:
-        answer = f"Holibase has no upcoming school holidays for {s.name} yet."
-    sys_label = " and ".join(school_year_label(y) for y in kept)
-    lead2 = f"Below are all school holidays for the {sys_label} school year{'s' if len(kept) > 1 else ''}" if kept else ""
-    if lead2:
-        lead2 += ", with the first and last day of school where known, and the public holidays of the next twelve months."
+        answer = L.t("none", name=name)
+    sy_list = f" {L.t('and')} ".join(L.sy(y) for y in kept)
+    lead2 = L.t("lead_many" if len(kept) > 1 else "lead_one", sy=sy_list) if kept else ""
 
     cal_by_year = {c["school_year"]: c for c in s.calendars}
-    sections = []
-    faq = []
+    sections, faq = [], []
     for sy, ps in kept.items():
         cal = cal_by_year.get(sy, {})
         rows = []
@@ -262,273 +321,323 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date) -> dict:
             a, b = d(p["start_date"]), d(p["end_date"])
             n = (b - a).days + 1
             past = b < today
-            label = KIND.get(p["kind"], "No school")
-            rows.append(
-                f'<tr{" class=\"past\"" if past else ""}><td><b>{esc(p["name"])}</b>'
-                + (f' <span class="pill pill-neutral">{esc(label)}</span>' if p["kind"] not in ("break", "holiday") else "")
-                + f'</td><td class="num">{cell(a)}</td><td class="num">{cell(b)}</td><td class="num">{n}</td></tr>')
+            kind = p["kind"] if f"kind_{p['kind']}" in T[lang] else "other"
+            pill = f' <span class="pill pill-neutral">{esc(L.t("kind_" + kind))}</span>' if kind not in ("break", "holiday") else ""
+            rows.append(f'<tr{" class=\"past\"" if past else ""}><td><b>{esc(p["name"])}</b>{pill}</td>'
+                        f'<td class="num">{L.cell(a)}</td><td class="num">{L.cell(b)}</td><td class="num">{n}</td></tr>')
             if p["kind"] == "break" and not past and len(faq) < 5:
-                faq.append((f"When is {p['name']} {a.year} in {s.name}?",
-                            (f"{p['name']} {a.year} in {s.name} is from {day_long(a)} to {day_long(b)}, {n} days including weekends." if n > 1 else f"{p['name']} {a.year} in {s.name} is on {day_long(a)}.")))
+                if n > 1:
+                    faq.append((L.t("q_when", holiday=p["name"], year=a.year, name=name),
+                                L.t("a_when", holiday=p["name"], year=a.year, name=name, start=L.day_long(a), end=L.day_long(b), n=n)))
+                else:
+                    faq.append((L.t("q_when", holiday=p["name"], year=a.year, name=name),
+                                L.t("a_when1", holiday=p["name"], year=a.year, name=name, start=L.day_long(a))))
         facts = []
         if cal.get("first_day"):
-            facts.append(f"First day of school: <b>{esc(day(d(cal['first_day'])))}</b>")
-            if d(cal["first_day"]) >= today:
-                faq.append((f"When does school start in {s.name}?", f"The first day of school for {school_year_label(sy)} is {day_long(d(cal['first_day']))}."))
+            fd = d(cal["first_day"])
+            facts.append(f"{esc(L.t('first_day'))}{L.colon} <b>{esc(L.day(fd))}</b>")
+            if fd >= today:
+                faq.append((L.t("q_start", name=name), L.t("a_start", sy=L.sy(sy), date=L.day_long(fd))))
         if cal.get("last_day"):
-            facts.append(f"Last day of school: <b>{esc(day(d(cal['last_day'])))}</b>")
-            if d(cal["last_day"]) >= today:
-                faq.append((f"When is the last day of school in {s.name}?", f"The last day of the {school_year_label(sy)} school year is {day_long(d(cal['last_day']))}."))
+            ld_ = d(cal["last_day"])
+            facts.append(f"{esc(L.t('last_day'))}{L.colon} <b>{esc(L.day(ld_))}</b>")
+            if ld_ >= today:
+                faq.append((L.t("q_last", name=name), L.t("a_last", sy=L.sy(sy), date=L.day_long(ld_))))
         sections.append(f"""<section class="gen-section">
-<h2>School year {esc(school_year_label(sy))}</h2>
+<h2>{esc(L.t('school_year', sy=L.sy(sy)))}</h2>
 {('<p>' + ' · '.join(facts) + '</p>') if facts else ''}
 <div class="table-scroll"><table class="data">
-<thead><tr><th scope="col">Holiday</th><th scope="col">From</th><th scope="col">To</th><th scope="col">Days</th></tr></thead>
+<thead><tr><th scope="col">{esc(L.t('th_holiday'))}</th><th scope="col">{esc(L.t('th_from'))}</th><th scope="col">{esc(L.t('th_to'))}</th><th scope="col">{esc(L.t('th_days'))}</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
 </section>""")
 
-    pub_rows = "".join(
-        f'<tr><td class="num">{cell(d(h["date"]))}</td><td><b>{esc(h["name"])}</b>'
-        + (f' <span class="muted">{esc(h["local_name"])}</span>' if h.get("local_name") and h["local_name"] != h["name"] else "")
-        + (' <span class="pill pill-estimated">Estimated</span>' if h.get("is_estimated") else "")
-        + (' <span class="pill pill-neutral">Observed</span>' if h.get("is_observed") and "observed" not in h["name"].lower() else "")
-        + "</td></tr>" for h in s.public)
-    region_label = s.region_name or s.country
+    pub = s.public(lang)
+    region_label = s.region_name(lang) or L.country(s.cc)
+    pub_lang = lang if lang in public_langs.get(s.cc, []) else "en"
     public_section = f"""<section class="gen-section">
-<h2>Public holidays in {esc(region_label)}, next 12 months</h2>
-<div class="table-scroll"><table class="data"><thead><tr><th scope="col">Date</th><th scope="col">Holiday</th></tr></thead>
-<tbody>{pub_rows}</tbody></table></div>
-<p class="body-s"><a href="/public-holidays/{s.cc.lower()}/">All public holidays in {esc(s.country)} →</a></p>
-</section>""" if s.public else ""
+<h2>{esc(L.t('public_next12', region=region_label))}</h2>
+<div class="table-scroll"><table class="data"><thead><tr><th scope="col">{esc(L.t('th_date'))}</th><th scope="col">{esc(L.t('th_public'))}</th></tr></thead>
+<tbody>{holiday_rows(L, pub, today, False)}</tbody></table></div>
+<p class="body-s"><a href="{public_country_url(pub_lang, s.cc)}">{esc(L.t('all_public', in_country=L.in_country(s.cc)))}</a></p>
+</section>""" if pub else ""
 
-    faq.append((f"Can I add the {s.name} school holidays to my calendar?",
-                f"Yes. Subscribe to the free calendar feed {API}{s.feed_path()} in Apple Calendar, Google Calendar or Outlook. It updates by itself."))
+    faq.append((L.t("q_feed", name=name), L.t("a_feed", url=API + s.feed_path(lang))))
 
-    # sources
     src_rows = []
     for c in s.calendars:
         if c["school_year"] not in kept:
             continue
-        origin = ORIGIN.get(c["origin"], c["origin"])
         url = c.get("source_url") or ("https://github.com/vacanza/holidays" if c["origin"] == "library" else None)
         link = f'<a href="{esc(url)}" rel="noopener nofollow">{esc(host(url))}</a>' if url else "–"
-        retrieved = day(d(c["source_retrieved_at"])) if c.get("source_retrieved_at") else "–"
-        src_rows.append(f'<tr><td class="num">{esc(school_year_label(c["school_year"]))}</td><td>{esc(origin)}</td><td>{link}</td><td class="num">{esc(retrieved)}</td></tr>')
+        checked = L.day(d(c["source_retrieved_at"])) if c.get("source_retrieved_at") else "–"
+        src_rows.append(f'<tr><td class="num">{esc(L.sy(c["school_year"]))}</td><td>{esc(L.origin(c["origin"]))}</td><td>{link}</td><td class="num">{esc(checked)}</td></tr>')
         if c.get("notes") and c["origin"] == "official":
             src_rows.append(f'<tr><td></td><td colspan="3" class="body-s muted">{esc(c["notes"])}</td></tr>')
 
-    sib = [x for x in siblings if x is not s]
+    sib = [x for x in siblings if x is not s and lang in x.langs]
     related = ""
     if sib:
-        links = "".join(f'<a class="chip" href="{x.url}">{esc(x.name)}</a>' for x in sorted(sib, key=lambda x: x.name)[:40])
-        related = f'<section class="gen-section"><h2>Other {"districts" if s.cc == "US" else "regions"} in {esc(s.country)}</h2><div class="chips">{links}</div></section>'
+        links = "".join(f'<a class="chip" href="{x.url(lang)}">{esc(x.name(lang))}</a>' for x in sorted(sib, key=lambda x: x.name(lang))[:40])
+        heading = L.t("other_districts" if s.cc == "US" else "other_regions", in_country=L.in_country(s.cc))
+        related = f'<section class="gen-section"><h2>{esc(heading)}</h2><div class="chips">{links}</div></section>'
 
-    crumbs = [("Home", "/"), ("School holidays", "/school-holidays/"), (s.country, f"/school-holidays/{s.cc.lower()}/")]
-    if s.slug:
-        crumbs.append((s.name, s.url))
+    crumbs = [(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang)), (L.country(s.cc), school_country_url(lang, s.cc))]
+    if s.slug.get(lang):
+        crumbs.append((name, s.url(lang)))
     crumb_html, crumb_ld = breadcrumb(crumbs)
-    faq_section, faq_ld = faq_html(faq)
-    name_extra = f' <span class="muted">({esc(s.local_name)})</span>' if s.local_name else ""
-    title = f"{s.name} school holidays {years}" if not district else f"{s.name} calendar {' and '.join(kept)}"
-    desc = (f"{answer} All school holidays {years} for {s.name}" + (f", {s.where()}" if s.where() else "")
-            + ", from the official calendar, with a free calendar feed.")
+    faq_section, faq_ld = faq_html(L, faq)
+    local = s.local_name(lang)
+    name_extra = f' <span class="muted">({esc(local)})</span>' if local else ""
+    title = L.t("title_district", name=name, sy=f" {L.t('and')} ".join(L.sy(y) for y in kept)) if district else L.t("title_scope", name=name, years=years)
+    where = s.where(lang) or L.country(s.cc)
+    overline = L.t("overline_district" if district else "overline_scope", where=where)
+    desc = L.t("desc_scope", answer=answer, years=years, name=name)
+    report = "https://github.com/4Dgraphic/holibase/issues/new?title=" + urllib.parse.quote("Correction: " + s.name("en"))
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
-<p class="overline">{'School district' if district else 'School holidays'} · {esc(s.where() or s.country)}</p>
+<p class="overline">{esc(overline)}</p>
 <h1 class="h1">{esc(title)}{name_extra}</h1>
 <p class="body-l answer">{esc(answer)}</p>
-<p class="body-s muted">{esc(lead2)} Updated {esc(day(today))}.</p>
-<div class="card subscribe-card"><h2 class="h3">Add to your calendar</h2>
-<p class="body-s muted" style="margin: 4px 0 16px">Subscribe once; new dates and changes appear by themselves.</p>
-<div class="subscribe">{subscribe_html("School holidays", s.feed_path(), f"School holidays {s.name}")}</div>
-<p class="body-s" style="margin: 16px 0 0"><a href="{esc(s.app_url())}">Open in the interactive calendar →</a></p></div>
+<p class="body-s muted">{esc(lead2)} {esc(L.t('updated', date=L.day(today)))}</p>
+<!--langs-->
+<div class="card subscribe-card"><h2 class="h3">{esc(L.t('add_title'))}</h2>
+<p class="body-s muted" style="margin: 4px 0 16px">{esc(L.t('add_desc'))}</p>
+<div class="subscribe">{subscribe_html(L, L.t('feed_school'), s.feed_path(lang), f"{L.t('school_holidays')} {name}")}</div>
+<p class="body-s" style="margin: 16px 0 0"><a href="{esc(s.app_url())}">{esc(L.t('open_app'))}</a></p></div>
 {''.join(sections)}
 {public_section}
 {faq_section}
-<section class="gen-section"><h2>Sources</h2>
-<div class="table-scroll"><table class="data"><thead><tr><th scope="col">School year</th><th scope="col">Source</th><th scope="col">Document</th><th scope="col">Checked</th></tr></thead>
+<section class="gen-section"><h2>{esc(L.t('sources'))}</h2>
+<div class="table-scroll"><table class="data"><thead><tr><th scope="col">{esc(L.t('th_sy'))}</th><th scope="col">{esc(L.t('th_source'))}</th><th scope="col">{esc(L.t('th_doc'))}</th><th scope="col">{esc(L.t('th_checked'))}</th></tr></thead>
 <tbody>{''.join(src_rows) or '<tr><td colspan="4">–</td></tr>'}</tbody></table></div>
-<p class="body-s subtle">Public holidays © python-holidays contributors (MIT). School calendars © Holibase contributors (CC BY 4.0). Schools can change their calendar; for important decisions, confirm with the school or authority. <a href="https://github.com/4Dgraphic/holibase/issues/new?title={urllib.parse.quote('Correction: ' + s.name)}">Report a mistake</a>.</p>
+<p class="body-s subtle">{esc(L.t('attribution'))} <a href="{esc(report)}">{esc(L.t('report'))}</a>.</p>
 </section>
 {related}
 </div></section>"""
-    return page(s.url, title, desc[:300], body, nav="calendar", ld=[crumb_ld, faq_ld], lastmod=today.isoformat())
+    return page(lang, s.url(lang), title, desc[:300], body, nav="calendar", ld=[crumb_ld, faq_ld],
+                lastmod=today.isoformat(), group=f"school:{s.key}")
 
 
-def country_school_page(cc: str, group: list[Scope], today: dt.date) -> dict:
-    country = country_name(cc)
+def country_school_page(cc: str, group: list[Scope], today: dt.date, lang: str, public_langs: dict) -> dict:
+    L = Loc(lang)
     us = cc == "US"
-    rows = []
+    group = [s for s in group if lang in s.langs]
     by_state = defaultdict(list)
     for s in group:
-        by_state[s.region_name if us else ""].append(s)
+        by_state[s.region_name(lang) if us else ""].append(s)
     blocks = []
     for state in sorted(by_state):
         rows = []
-        for s in sorted(by_state[state], key=lambda x: x.name):
-            nb = s.next_break(today)
-            when = esc(span(d(nb["start_date"]), d(nb["end_date"]))) if nb else "–"
-            rows.append(f'<tr><td><a href="{s.url}"><b>{esc(s.name)}</b></a>'
-                        + (f' <span class="muted">{esc(s.local_name)}</span>' if s.local_name else "")
+        for s in sorted(by_state[state], key=lambda x: x.name(lang)):
+            nb = s.next_break(today, lang)
+            when = esc(L.span(d(nb["start_date"]), d(nb["end_date"]))) if nb else "–"
+            local = s.local_name(lang)
+            rows.append(f'<tr><td><a href="{s.url(lang)}"><b>{esc(s.name(lang))}</b></a>'
+                        + (f' <span class="muted">{esc(local)}</span>' if local else "")
                         + f'</td><td>{esc(nb["name"]) if nb else "–"}</td><td class="num">{when}</td></tr>')
         head = f"<h2>{esc(state)}</h2>" if state else ""
         blocks.append(f"""<section class="gen-section">{head}<div class="table-scroll"><table class="data">
-<thead><tr><th scope="col">{'District' if us else 'Region'}</th><th scope="col">Next school holiday</th><th scope="col">Dates</th></tr></thead>
+<thead><tr><th scope="col">{esc(L.t('th_district' if us else 'th_region'))}</th><th scope="col">{esc(L.t('th_next'))}</th><th scope="col">{esc(L.t('th_dates'))}</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div></section>""")
     n = len(group)
-    unit = "school districts" if us else "regions"
-    crumb_html, crumb_ld = breadcrumb([("Home", "/"), ("School holidays", "/school-holidays/"), (country, f"/school-holidays/{cc.lower()}/")])
-    title = f"School holidays in {country} {years_label([today, today.replace(year=today.year + 1)])}"
-    intro = (f"School calendars for {n} of the largest US school districts, researched from each district's published calendar. "
-             "Search all 19,000 districts in the interactive calendar.") if us else \
-        f"School holidays for {n} {unit} of {country}, with the next holiday for each. Pick a region for all dates and a calendar feed."
+    url = school_country_url(lang, cc)
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang)), (L.country(cc), url)])
+    title = L.t("hub_title", in_country=L.in_country(cc), years=L.years([today, today.replace(year=today.year + 1)]))
+    intro = L.t("hub_intro_us" if us else "hub_intro", n=n, in_country=L.in_country(cc))
+    pub_lang = lang if lang in public_langs.get(cc, []) else "en"
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
-<p class="overline">School holidays</p>
+<p class="overline">{esc(L.t('school_holidays'))}</p>
 <h1 class="h1">{esc(title)}</h1>
 <p class="body-l answer">{esc(intro)}</p>
-<p class="body-s"><a href="/calendar/">Search the interactive calendar →</a> · <a href="/public-holidays/{cc.lower()}/">Public holidays in {esc(country)} →</a></p>
+<!--langs-->
+<p class="body-s"><a href="/calendar/">{esc(L.t('search_link'))}</a> · <a href="{public_country_url(pub_lang, cc)}">{esc(L.t('public_link', in_country=L.in_country(cc)))}</a></p>
 {''.join(blocks)}
 </div></section>"""
-    desc = f"{title}: next holidays and full dates for {n} {unit}, with free calendar feeds for Apple, Google and Outlook."
-    return page(f"/school-holidays/{cc.lower()}/", title, desc, body, nav="calendar", ld=[crumb_ld], lastmod=today.isoformat())
+    return page(lang, url, title, L.t("hub_desc", title=title, n=n), body, nav="calendar", ld=[crumb_ld],
+                lastmod=today.isoformat(), group=f"school-country:{cc}")
 
 
-def school_index(by_cc: dict[str, list[Scope]], today: dt.date) -> dict:
-    items = sorted(by_cc.items(), key=lambda kv: (-len(kv[1]), country_name(kv[0])))
+def school_index(by_cc: dict[str, list[Scope]], today: dt.date, lang: str) -> dict:
+    L = Loc(lang)
+    items = [(cc, [s for s in g if lang in s.langs]) for cc, g in by_cc.items()]
+    items = sorted([x for x in items if x[1]], key=lambda kv: (-len(kv[1]), L.country(kv[0])))
     rows = "".join(
-        f'<tr><td><a href="/school-holidays/{cc.lower()}/"><b>{esc(country_name(cc))}</b></a> <span class="pill pill-code">{cc}</span></td>'
-        f'<td class="num">{len(g)}</td><td>{esc(", ".join(sorted({ORIGIN.get(c["origin"], c["origin"]) for s in g for c in s.calendars})))}</td></tr>'
+        f'<tr><td><a href="{school_country_url(lang, cc)}"><b>{esc(L.country(cc))}</b></a> <span class="pill pill-code">{cc}</span></td>'
+        f'<td class="num">{len(g)}</td><td>{esc(", ".join(sorted({L.origin(c["origin"]) for s in g for c in s.calendars})))}</td></tr>'
         for cc, g in items)
-    crumb_html, crumb_ld = breadcrumb([("Home", "/"), ("School holidays", "/school-holidays/")])
-    n = sum(len(g) for g in by_cc.values())
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang))])
+    n = sum(len(g) for _, g in items)
+    more = f'<p class="body-s"><a href="{school_index_url("en")}">{esc(L.t("all_countries"))}</a></p>' if lang != "en" else ""
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
-<p class="overline">School holidays</p>
-<h1 class="h1">School holidays by country</h1>
-<p class="body-l answer">School holiday calendars for {n} regions, zones and school districts in {len(by_cc)} countries, from official open data where it exists and researched calendars elsewhere.</p>
+<p class="overline">{esc(L.t('school_holidays'))}</p>
+<h1 class="h1">{esc(L.t('index_title'))}</h1>
+<p class="body-l answer">{esc(L.t('index_intro', n=n, c=len(items)))}</p>
+<!--langs-->
 <section class="gen-section"><div class="table-scroll"><table class="data">
-<thead><tr><th scope="col">Country</th><th scope="col">Calendars</th><th scope="col">Source</th></tr></thead>
-<tbody>{rows}</tbody></table></div></section>
+<thead><tr><th scope="col">{esc(L.t('th_country'))}</th><th scope="col">{esc(L.t('th_calendars'))}</th><th scope="col">{esc(L.t('th_source'))}</th></tr></thead>
+<tbody>{rows}</tbody></table></div>{more}</section>
 </div></section>"""
-    return page("/school-holidays/", "School holidays by country", f"School holiday calendars for {n} regions and school districts in {len(by_cc)} countries, free as open data, API and calendar feeds.", body, nav="calendar", ld=[crumb_ld], lastmod=today.isoformat())
+    return page(lang, school_index_url(lang), L.t("index_title"), L.t("index_desc", n=n, c=len(items)), body,
+                nav="calendar", ld=[crumb_ld], lastmod=today.isoformat(), group="school-index")
 
 
 # ---------------------------------------------------------------- public holidays
 
-def public_country_page(c: dict, school_ccs: set, today: dt.date) -> dict | None:
+def public_country_page(c: dict, school_urls: dict, today: dt.date, lang: str) -> dict | None:
+    L = Loc(lang)
     cc = c["cc"]
-    hs = c["holidays"]
+    hs = c["holidays"] if lang == "en" else (c.get("l10n") or {}).get(lang) or []
     if not hs:
         return None
-    country = country_name(cc)
     by_year = defaultdict(list)
     for h in hs:
         by_year[d(h["date"]).year].append(h)
     upcoming = [h for h in hs if d(h["date"]) >= today and not h.get("is_observed")]
     nxt = upcoming[0] if upcoming else None
     years = sorted(by_year)
-    if nxt:
-        answer = f"The next public holiday in {country} is {nxt['name']} on {day_long(d(nxt['date']))}."
-    else:
-        answer = f"Public holidays in {country} for {' and '.join(map(str, years))}."
+    years_s = f" {L.t('and')} ".join(map(str, years))
+    inc = L.in_country(cc)
+    answer = (L.t("pub_answer", in_country=inc, holiday=nxt["name"], date=L.day_long(d(nxt["date"]))) if nxt
+              else L.t("pub_answer_none", in_country=inc, years=years_s))
     sections, faq = [], []
     for y in years:
-        rows = "".join(
-            f'<tr{" class=\"past\"" if d(h["date"]) < today else ""}><td class="num">{cell(d(h["date"]))}</td><td><b>{esc(h["name"])}</b>'
-            + (f' <span class="muted">{esc(h["local_name"])}</span>' if h.get("local_name") and h["local_name"] != h["name"] else "")
-            + (' <span class="pill pill-estimated">Estimated</span>' if h.get("is_estimated") else "")
-            + (' <span class="pill pill-neutral">Observed</span>' if h.get("is_observed") and "observed" not in h["name"].lower() else "")
-            + "</td></tr>" for h in by_year[y])
         count = len([h for h in by_year[y] if not h.get("is_observed")])
-        sections.append(f"""<section class="gen-section"><h2>Public holidays in {esc(country)} {y}</h2>
-<div class="table-scroll"><table class="data"><thead><tr><th scope="col">Date</th><th scope="col">Holiday</th></tr></thead>
-<tbody>{rows}</tbody></table></div></section>""")
-        faq.append((f"How many public holidays does {country} have in {y}?",
-                    f"{country} has {count} nationwide public holidays in {y}" + (", plus regional holidays in some regions." if c.get("subdivisions") else ".")))
+        sections.append(f"""<section class="gen-section"><h2>{esc(L.t('pub_year', in_country=inc, year=y))}</h2>
+<div class="table-scroll"><table class="data"><thead><tr><th scope="col">{esc(L.t('th_date'))}</th><th scope="col">{esc(L.t('th_public'))}</th></tr></thead>
+<tbody>{holiday_rows(L, by_year[y], today, True)}</tbody></table></div></section>""")
+        extra = L.t("a_count_extra") if c.get("subdivisions") else ""
+        faq.append((L.t("q_count", country=L.country(cc), in_country=inc, year=y),
+                    L.t("a_count", country=L.country(cc), In_country=inc[:1].upper() + inc[1:], n=count, year=y, extra=extra)))
     if nxt:
-        faq.insert(0, (f"When is the next public holiday in {country}?", answer))
-    est = any(h.get("is_estimated") for h in hs)
+        faq.insert(0, (L.t("q_next", in_country=inc), answer))
     notes = []
     if c.get("subdivisions"):
-        notes.append(f"These are the nationwide holidays. {country} has {c['subdivisions']} regions, some with extra holidays: "
-                     f'<a href="/calendar/?country={cc}">pick a region in the interactive calendar</a>.')
-    if est:
-        notes.append("Dates marked Estimated depend on the sighting of the moon and can still move by a day or two.")
-    crumb_html, crumb_ld = breadcrumb([("Home", "/"), ("Public holidays", "/public-holidays/"), (country, f"/public-holidays/{cc.lower()}/")])
-    faq_section, faq_ld = faq_html(faq)
-    title = f"Public holidays in {country} {' and '.join(map(str, years))}"
-    school_link = f' · <a href="/school-holidays/{cc.lower()}/">School holidays in {esc(country)} →</a>' if cc in school_ccs else ""
+        notes.append(L.t("note_regions", country=esc(L.country(cc)), n=c["subdivisions"], url=f"/calendar/?country={cc}"))
+    if any(h.get("is_estimated") for h in hs):
+        notes.append(esc(L.t("note_est")))
+    url = public_country_url(lang, cc)
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("public_holidays"), public_index_url(lang)), (L.country(cc), url)])
+    faq_section, faq_ld = faq_html(L, faq)
+    title = L.t("pub_title", in_country=inc, years=years_s)
+    school_url = school_urls.get((lang, cc)) or school_urls.get(("en", cc))
+    school_link = f' · <a href="{school_url}">{esc(L.t("school_link", in_country=inc))}</a>' if school_url else ""
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
-<p class="overline">Public holidays · {cc}</p>
+<p class="overline">{esc(L.t('public_holidays'))} · {cc}</p>
 <h1 class="h1">{esc(title)}</h1>
 <p class="body-l answer">{esc(answer)}</p>
-<p class="body-s muted">{' '.join(notes)} Updated {esc(day(today))}.</p>
-<div class="card subscribe-card"><h2 class="h3">Add to your calendar</h2>
-<div class="subscribe" style="margin-top: 12px">{subscribe_html(f"Public holidays {country}", f"/v1/public-holidays/{cc}.ics?lang=en", f"Public holidays {country}")}</div>
-<p class="body-s" style="margin: 16px 0 0"><a href="/calendar/?country={cc}">Open in the interactive calendar →</a>{school_link}</p></div>
+<p class="body-s muted">{' '.join(notes)} {esc(L.t('updated', date=L.day(today)))}</p>
+<!--langs-->
+<div class="card subscribe-card"><h2 class="h3">{esc(L.t('add_title'))}</h2>
+<div class="subscribe" style="margin-top: 12px">{subscribe_html(L, L.t('feed_public', country=L.country(cc)), f"/v1/public-holidays/{cc}.ics?lang={lang}", L.t('feed_public', country=L.country(cc)))}</div>
+<p class="body-s" style="margin: 16px 0 0"><a href="/calendar/?country={cc}">{esc(L.t('open_app'))}</a>{school_link}</p></div>
 {''.join(sections)}
 {faq_section}
-<section class="gen-section"><h2>Source</h2>
-<p class="body-s">Computed with <a href="https://github.com/vacanza/holidays" rel="noopener">python-holidays</a> (MIT), synced every week. Use the data in your own app with the free <a href="/docs/">Holibase API</a>: <code>GET {API}/v1/public-holidays/{cc}/{years[0]}</code>.</p>
+<section class="gen-section"><h2>{esc(L.t('source'))}</h2>
+<p class="body-s">{L.t('source_public')} <code>GET {API}/v1/public-holidays/{cc}/{years[0]}</code></p>
 </section>
 </div></section>"""
-    desc = f"{answer} All public holidays in {country} for {' and '.join(map(str, years))}, with local names and a free calendar feed."
-    return page(f"/public-holidays/{cc.lower()}/", title, desc[:300], body, nav="coverage", ld=[crumb_ld, faq_ld], lastmod=today.isoformat())
+    return page(lang, url, title, L.t("desc_public", answer=answer, in_country=inc, years=years_s)[:300], body,
+                nav="coverage", ld=[crumb_ld, faq_ld], lastmod=today.isoformat(), group=f"public:{cc}")
 
 
-def public_index(countries: list[str], today: dt.date) -> dict:
-    chips = "".join(f'<a class="chip" href="/public-holidays/{cc.lower()}/">{esc(country_name(cc))}</a>'
-                    for cc in sorted(countries, key=country_name))
-    crumb_html, crumb_ld = breadcrumb([("Home", "/"), ("Public holidays", "/public-holidays/")])
+def public_index(countries: list[str], today: dt.date, lang: str) -> dict:
+    L = Loc(lang)
+    chips = "".join(f'<a class="chip" href="{public_country_url(lang, cc)}">{esc(L.country(cc))}</a>'
+                    for cc in sorted(countries, key=L.country))
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("public_holidays"), public_index_url(lang))])
+    title = L.t("pub_index_title", n=len(countries))
+    more = f'<p class="body-s"><a href="{public_index_url("en")}">{esc(L.t("all_countries"))}</a></p>' if lang != "en" else ""
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
-<p class="overline">Public holidays</p>
-<h1 class="h1">Public holidays in {len(countries)} countries</h1>
-<p class="body-l answer">Public holidays for {today.year} and {today.year + 1} in every country python-holidays supports, with local names and calendar feeds.</p>
-<section class="gen-section"><div class="chips">{chips}</div></section>
+<p class="overline">{esc(L.t('public_holidays'))}</p>
+<h1 class="h1">{esc(title)}</h1>
+<p class="body-l answer">{esc(L.t('pub_index_intro', y0=today.year, y1=today.year + 1))}</p>
+<!--langs-->
+<section class="gen-section"><div class="chips">{chips}</div>{more}</section>
 </div></section>"""
-    return page("/public-holidays/", f"Public holidays in {len(countries)} countries", f"Public holidays {today.year} and {today.year + 1} for {len(countries)} countries, free as open data, API and calendar feeds.", body, nav="coverage", ld=[crumb_ld], lastmod=today.isoformat())
+    return page(lang, public_index_url(lang), title, L.t("pub_index_desc", y0=today.year, y1=today.year + 1, n=len(countries)),
+                body, nav="coverage", ld=[crumb_ld], lastmod=today.isoformat(), group="public-index")
+
+
+# ---------------------------------------------------------------- language links
+
+def link_languages(pages: list[dict]) -> None:
+    """Fill in hreflang alternates and the visible language switch for pages that exist in several languages."""
+    groups = defaultdict(dict)
+    for p in pages:
+        if p.get("group"):
+            groups[p["group"]][p["lang"]] = p["path"]
+    for p in pages:
+        alts = groups.get(p.get("group"), {})
+        if len(alts) > 1:
+            p["alternates"] = dict(alts)
+            others = " · ".join(f'<a href="{alts[l]}" hreflang="{l}" lang="{l}">{LANG_NAMES[l]}</a>'
+                                for l in LANGS if l in alts and l != p["lang"])
+            switch = f'<p class="langs body-s">{esc(T[p["lang"]]["also_in"])}{Loc(p["lang"]).colon} {others}</p>'
+        else:
+            switch = ""
+        p["body"] = p["body"].replace("<!--langs-->", switch)
 
 
 # ---------------------------------------------------------------- entry point
 
 def generate(snapshot: dict) -> tuple[list[dict], dict]:
-    """Returns (pages, extras). extras: page map for the calendar app, coverage rows, llms.txt lines."""
+    """Returns (pages, extras). extras: page map for the calendar app and lists for llms.txt."""
     today = d(snapshot["today"])
-    scopes = [Scope(r) for r in snapshot["scopes"]]
-    scopes = [s for s in scopes if s.kept(today)]
+    scopes = [s for s in (Scope(r) for r in snapshot["scopes"]) if s.kept(today)]
+    for s in scopes:  # a translation without dates for the current years is not worth a page
+        s.langs = [l for l in s.langs if s.kept(today, l)]
     assign_slugs(scopes)
     by_cc = defaultdict(list)
     for s in scopes:
         by_cc[s.cc].append(s)
+    public_langs = {c["cc"]: ["en"] + [l for l, hs in (c.get("l10n") or {}).items() if hs] for c in snapshot["public"]}
 
-    pages = [school_index(by_cc, today)]
-    for cc, group in by_cc.items():
-        if len(group) == 1 and group[0].national:
-            pages.append(scope_page(group[0], [], today))
-        else:
-            pages.append(country_school_page(cc, group, today))
-            pages += [scope_page(s, group, today) for s in group]
+    pages = []
+    school_urls = {}
+    for lang in LANGS:
+        if not any(lang in s.langs for s in scopes):
+            continue
+        pages.append(school_index(by_cc, today, lang))
+        for cc, group in by_cc.items():
+            g = [s for s in group if lang in s.langs]
+            if not g:
+                continue
+            school_urls[(lang, cc)] = school_country_url(lang, cc)
+            if len(group) == 1 and group[0].national:
+                pages.append(scope_page(group[0], [], today, lang, public_langs))
+                pages[-1]["group"] = f"school-country:{cc}"
+            else:
+                pages.append(country_school_page(cc, group, today, lang, public_langs))
+                pages += [scope_page(s, group, today, lang, public_langs) for s in g]
 
-    public_ccs = []
-    for c in snapshot["public"]:
-        p = public_country_page(c, set(by_cc), today)
-        if p:
-            pages.append(p)
-            public_ccs.append(c["cc"])
-    pages.append(public_index(public_ccs, today))
+    public_ccs = defaultdict(list)
+    for lang in LANGS:
+        for c in snapshot["public"]:
+            if lang not in public_langs.get(c["cc"], ["en"]):
+                continue
+            p = public_country_page(c, school_urls, today, lang)
+            if p:
+                pages.append(p)
+                public_ccs[lang].append(c["cc"])
+        if public_ccs[lang]:
+            pages.append(public_index(public_ccs[lang], today, lang))
 
-    page_map = {s.key: s.url for s in scopes}
-    page_map.update({f"public:{cc}": f"/public-holidays/{cc.lower()}/" for cc in public_ccs})
-    extras = {"page_map": page_map, "school_ccs": sorted(by_cc), "public_ccs": public_ccs,
-              "scope_count": len(scopes), "coverage": snapshot.get("coverage")}
+    link_languages(pages)
+    page_map = {s.key: s.url("en") for s in scopes}
+    page_map.update({f"public:{cc}": public_country_url("en", cc) for cc in public_ccs["en"]})
+    extras = {"page_map": page_map, "school_ccs": sorted(by_cc), "public_ccs": public_ccs["en"],
+              "scope_count": len(scopes), "coverage": snapshot.get("coverage"),
+              "localized": {l: school_index_url(l) for l in LANGS if l != "en" and any(l in s.langs for s in scopes)}}
     return pages, extras
 
 
 def coverage_rows(coverage: dict) -> str:
     """Server-rendered rows of the coverage table (coverage.js refreshes them live)."""
+    L = Loc("en")
     out = []
     for x in coverage["school_holidays"]["by_country"]:
         cc = x["country_code"]
@@ -539,7 +648,7 @@ def coverage_rows(coverage: dict) -> str:
         unver = x["scopes"] - x["scopes_verified"]
         out.append(f'<tr><td><a href="/school-holidays/{cc.lower()}/">{esc(name)}</a> <span class="pill pill-code">{cc}</span></td>'
                    f'<td>{level}</td><td class="num">{x["scopes_verified"]:,}</td><td class="num muted">{f"{unver:,}" if unver else "–"}</td>'
-                   f'<td class="num">{esc(years)}</td><td>{esc(", ".join(ORIGIN.get(o, o) for o in x["origins"]))}</td></tr>')
+                   f'<td class="num">{esc(years)}</td><td>{esc(", ".join(L.origin(o) for o in x["origins"]))}</td></tr>')
     return "".join(out)
 
 

@@ -23,5 +23,8 @@ web/public/llms.txt
 web/public/assets/pages.json
 web/public/school-holidays/
 web/public/public-holidays/
+web/public/de/
+web/public/fr/
+web/public/nl/
 web/.cache/
 web/.wrangler/
