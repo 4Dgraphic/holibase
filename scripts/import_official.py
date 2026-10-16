@@ -227,17 +227,20 @@ def adapter_fr(raw: bytes) -> list[dict]:
             continue
         if "enseignant" in pop:
             continue
-        if d.startswith("debut des vacances") and (end is None or end == start):
-            c["last_day"] = start  # summer end not yet published
+        if d.startswith("debut des") and "vacances" in d and (end is None or end == start):
+            c["last_day"] = start  # summer end not yet published ("Début des Grandes Vacances")
             continue
         label, kind = next(((lbl, k) for pat, lbl, k in FR_LABELS if re.search(rf"\b{pat}\b", d)), (desc, "break"))
         if end is None:
             unknown[f"no end: {desc}"] += 1
             continue
-        first, last = start + dt.timedelta(days=1), end - dt.timedelta(days=1)
-        if last < first:
-            unknown[f"empty: {desc} {start}"] += 1
+        if (end - start).days <= 1:
+            # Single closure days (Pont de l'Ascension, Lundi de Pentecôte, Abolition de l'esclavage ...)
+            # are published as the day itself, not as "after classes" / "classes resume".
+            kind = "teacher_day" if "banalis" in d else "holiday"
+            c["periods"].append(dict(start_date=start, end_date=start, kind=kind, label=label, names={"fr": desc}))
             continue
+        first, last = start + dt.timedelta(days=1), end - dt.timedelta(days=1)
         if label == "Été":
             c["last_day"] = c["last_day"] or start
         c["periods"].append(dict(start_date=first, end_date=last, kind=kind, label=label, names={"fr": desc}))
