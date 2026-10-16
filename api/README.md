@@ -19,6 +19,8 @@ Reachable at `https://api.holibase.org`.
 | GET | `/v1/school-holidays/{CC}.ics?subdivision=\|authority=&lang=&include=pending` | iCalendar feed with first/last school day |
 | GET | `/data/<path>.json` | static files from R2 (layout of the repo's `data/`) |
 | GET | `/v1/health` | liveness |
+| GET | `/openapi.json` | OpenAPI 3.1 description (source: `src/openapi.ts`) |
+| GET | `/docs` | interactive API reference (Redoc, rendered from `/openapi.json`) |
 
 Codes are case-insensitive (`de`, `de-by`, `EN`); the cache key is normalised.
 Errors: `{"error":{"code","message"}}` with status 400/404/405/429/502/503.
@@ -53,6 +55,15 @@ Google Calendar ("From URL").
   subscription moves forward by itself.
 - Calendar names and the notes "observed", "estimated", "unverified", "first/last day of school" follow
   `lang` (en, de, fr, es, it, nl, pt; others fall back to English). Holiday names follow `lang` as in JSON.
+
+## OpenAPI
+
+`src/openapi.ts` is the single source of the API description; the worker serves it at `/openapi.json`
+and renders it at `/docs`. After every deploy, `scripts/check_openapi.py` calls each endpoint and
+validates the live responses against the description (deploy workflow). Change a response field in
+`index.ts` without changing `openapi.ts` and the deploy run turns red.
+
+Generate a client: `npx @openapitools/openapi-generator-cli generate -i https://api.holibase.org/openapi.json -g typescript-fetch -o client`.
 
 ## Behaviour
 

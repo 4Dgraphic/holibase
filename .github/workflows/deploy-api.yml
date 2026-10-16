@@ -3,11 +3,12 @@ name: Deploy API worker
 # Deploys api/ to Cloudflare (api.holibase.org) whenever it changes on main.
 # Needs two repository secrets: CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers")
 # and CLOUDFLARE_ACCOUNT_ID. Without them the job is skipped, so nothing breaks.
+# After deploying, every endpoint is called and validated against /openapi.json.
 
 on:
   push:
     branches: [main]
-    paths: ["api/**"]
+    paths: ["api/**", "scripts/check_openapi.py"]
   workflow_dispatch:
 
 permissions:
@@ -36,3 +37,14 @@ jobs:
           cache-dependency-path: api/package-lock.json
       - if: env.CLOUDFLARE_API_TOKEN != ''
         run: npm ci && npx tsc --noEmit && npx wrangler deploy
+      - uses: actions/setup-python@v6
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        with:
+          python-version: "3.12"
+      - name: Contract test (live responses against the OpenAPI description)
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        working-directory: .
+        run: |
+          pip install -q "jsonschema>=4.23"
+          sleep 10
+          python scripts/check_openapi.py https://api.holibase.org

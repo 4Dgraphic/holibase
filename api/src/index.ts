@@ -14,6 +14,8 @@
  * and never count against the rate limit.
  */
 
+import { openapi } from "./openapi";
+
 export interface Env {
   SUPABASE_URL: string;
   SUPABASE_KEY: string;
@@ -52,6 +54,8 @@ export default {
       const route = matchRoute(url);
 
       if (route.kind === "index") return json(indexDoc(url), 200, 300);
+      if (route.kind === "openapi") return json(openapi, 200, 3600);
+      if (route.kind === "docs") return html(DOCS_HTML, 3600);
       if (route.kind === "health") return json({ status: "ok" }, 200, 0);
 
       // Edge cache first: normalised URL as key, so ?lang=DE and ?lang=de share one entry.
@@ -83,6 +87,8 @@ export default {
 type Route =
   | { kind: "index" }
   | { kind: "health" }
+  | { kind: "openapi" }
+  | { kind: "docs" }
   | { kind: "data"; cacheKey: string; handle: (env: Env) => Promise<Response> };
 
 function matchRoute(url: URL): Route {
@@ -99,6 +105,8 @@ function matchRoute(url: URL): Route {
 
   if (parts.length === 0) return { kind: "index" };
   if (parts[0] === "data") return staticFile(url, parts);
+  if (parts.length === 1 && parts[0] === "openapi.json") return { kind: "openapi" };
+  if (parts.length === 1 && parts[0] === "docs") return { kind: "docs" };
   if (parts[0] !== API_VERSION) throw new ApiError(404, "not_found", `Unknown path. Start at ${url.origin}/`);
 
   const [, resource, rawCountry, rawYear, ...rest] = parts;
@@ -414,6 +422,29 @@ function json(data: unknown, status: number, maxAge: number): Response {
   });
 }
 
+function html(body: string, maxAge: number): Response {
+  return new Response(body, {
+    status: 200,
+    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": `public, max-age=${maxAge}` },
+  });
+}
+
+/** Interactive reference rendered from /openapi.json (Redoc). The website embeds the same spec. */
+const DOCS_HTML = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holibase API reference</title>
+<meta name="description" content="Public holidays and school holidays worldwide: free, open API with iCalendar feeds.">
+<style>body{margin:0}</style>
+</head>
+<body>
+<redoc spec-url="/openapi.json" hide-download-button="false" path-in-middle-panel="true"></redoc>
+<script src="https://cdn.jsdelivr.net/npm/redoc@2.1.5/bundles/redoc.standalone.js"></script>
+</body>
+</html>`;
+
 function errorResponse(err: ApiError): Response {
   const res = json({ error: { code: err.code, message: err.message } }, err.status, 0);
   if (err.status === 429) res.headers.set("Retry-After", "60");
@@ -447,7 +478,9 @@ function indexDoc(url: URL) {
   return {
     name: "Holibase API",
     version: API_VERSION,
-    docs: "https://holibase.org",
+    docs: `${o}/docs`,
+    openapi: `${o}/openapi.json`,
+    website: "https://holibase.org",
     endpoints: {
       countries: `${o}/v1/countries`,
       public_holidays_year: `${o}/v1/public-holidays/DE/2026?subdivision=DE-BY&lang=de&categories=public,catholic`,
