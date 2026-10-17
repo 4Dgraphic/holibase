@@ -196,3 +196,11 @@ DATABASE_URL=postgresql://... python web/build.py --fetch    # snapshot + all pa
 
 `.github/workflows/deploy-web.yml` builds and deploys on every push to `web/` and every morning, so the
 generated pages stay current (secrets: the Cloudflare ones as for the API, plus `DATABASE_URL`).
+
+## Monthly data report
+
+`scripts/data_report.py` (`.github/workflows/data-report.yml`, 1st of every month) posts a GitHub issue
+labelled `data-report`: market readiness per country (priority markets first), regions whose next school
+year is missing, sources that disagree, unverified calendars, overdue sources and the last run of every
+automatic job. Last month's issue is closed, so the open one is always current and each new one arrives
+by email. Run it any time from the Actions tab.

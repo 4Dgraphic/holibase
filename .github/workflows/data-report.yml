@@ -1,0 +1,58 @@
+name: Monthly data report
+
+# On the 1st of every month: how complete and current the school holiday data is (market readiness,
+# missing next school years, disagreeing sources, overdue sources, failing workflows).
+# Posted as a GitHub issue labelled data-report, so it arrives by email; last month's issue is closed.
+
+on:
+  schedule:
+    - cron: "13 6 1 * *"        # 1st of the month, 06:13 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+jobs:
+  report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - name: Build report
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python scripts/data_report.py --out report.md
+      - name: Add workflow health
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "## 6. Automatic jobs"
+            echo
+            echo "| Job | Last run | Result |"
+            echo "|---|---|---|"
+            for wf in sync-holidays.yml import-official.yml import-openholidays.yml import-nces.yml deploy-web.yml deploy-api.yml; do
+              gh run list --workflow "$wf" --limit 1 --json conclusion,createdAt,displayTitle,url \
+                --jq ".[] | \"| $wf | \(.createdAt[:10]) | \(if .conclusion == \"success\" then \"✅\" elif .conclusion == \"\" then \"running\" else \"❌ [\(.conclusion)](\(.url))\" end) |\"" \
+                || echo "| $wf | – | not found |"
+            done
+          } >> report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Post as issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create data-report --color 4ADEA8 --description "Monthly data report" --force
+          title="Data report $(date -u +'%B %Y')"
+          for n in $(gh issue list --label data-report --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Replaced by the report for $(date -u +'%B %Y')."
+          done
+          gh issue create --title "$title" --label data-report --body-file report.md

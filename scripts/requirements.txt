@@ -1,2 +1,3 @@
 holidays>=0.106
 psycopg[binary]>=3.2
+babel>=2.16
