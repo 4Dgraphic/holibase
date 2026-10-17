@@ -28,6 +28,8 @@ scripts/import_editorial.py           imports reviewed school calendars from dat
 scripts/import_nces.py                imports the US school district directory from NCES
 scripts/import_official.py            imports school holidays from official open data (NL, FR)
 scripts/research_to_editorial.py      validates deep-research results and turns them into editorial calendars
+scripts/auto_research.py              finds missing school calendars in official documents (language model)
+scripts/data_report.py                monthly data report (GitHub issue)
 supabase/migrations/                  database schema
 supabase/seed.sql                     data sources (run once after the schema)
 web/                                  website holibase.org (static, Cloudflare Worker assets)
@@ -204,3 +206,21 @@ labelled `data-report`: market readiness per country (priority markets first), r
 year is missing, sources that disagree, unverified calendars, overdue sources and the last run of every
 automatic job. Last month's issue is closed, so the open one is always current and each new one arrives
 by email. Run it any time from the Actions tab.
+
+## Automatic research
+
+`scripts/auto_research.py` (`.github/workflows/auto-research.yml`, every Monday) fills the gaps the data
+report lists: regions whose current or next school year has no confirmed calendar. For each country it
+reads the official pages in `data/research/sources.json`, or searches the web for them (only URLs on the
+country's official domains are used; discovered sources that deliver are saved back to the file). A
+language model copies the dates out of the document; the script then checks them:
+
+- **rejected** when implausible (outside the school year, overlapping breaks, no Christmas break, …);
+- **pending** when they contradict another source, or not every date is printed in the document;
+- **confirmed** when every date was found in the official document, or a second source agrees.
+
+The result is imported and committed as `data/editorial/auto-<date>.json` (revert the commit to undo it),
+and a summary is added to the open data report issue. Set the `OPENAI_API_KEY` secret (optional variable
+`OPENAI_MODEL`, default `gpt-5-mini`) or `ANTHROPIC_API_KEY` (`ANTHROPIC_MODEL`). Each run reads at most
+30 documents and does at most 10 web searches; run it by hand from the Actions tab for one country, with a
+dry run first if you like.

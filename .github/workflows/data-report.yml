@@ -39,7 +39,7 @@ jobs:
             echo
             echo "| Job | Last run | Result |"
             echo "|---|---|---|"
-            for wf in sync-holidays.yml import-official.yml import-openholidays.yml import-nces.yml deploy-web.yml deploy-api.yml; do
+            for wf in sync-holidays.yml import-official.yml import-openholidays.yml auto-research.yml import-nces.yml deploy-web.yml deploy-api.yml; do
               gh run list --workflow "$wf" --limit 1 --json conclusion,createdAt,displayTitle,url \
                 --jq ".[] | \"| $wf | \(.createdAt[:10]) | \(if .conclusion == \"success\" then \"✅\" elif .conclusion == \"\" then \"running\" else \"❌ [\(.conclusion)](\(.url))\" end) |\"" \
                 || echo "| $wf | – | not found |"

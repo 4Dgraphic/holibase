@@ -1,0 +1,292 @@
+{
+  "about": "Where scripts/auto_research.py looks for official school holiday dates. 'official' are host patterns (regular expressions) of the authorities' own websites; hosts like gov.xx, gouv.xx, gob.xx and gv.xx always count. 'sources' are pages or PDFs to read, for all scopes ('*') or a list of subdivision codes or authority names; entries with 'learned' were found by the research itself. 'skip' leaves a country to its own importer.",
+  "countries": {
+    "AD": {
+      "name": "Andorra",
+      "lang": "ca",
+      "official": [
+        "(^|\\.)govern\\.ad$",
+        "(^|\\.)educacio\\.ad$",
+        "(^|\\.)bopa\\.ad$"
+      ]
+    },
+    "AT": {
+      "name": "Austria",
+      "lang": "de",
+      "official": [
+        "\\.gv\\.at$"
+      ],
+      "hint": "The federal ministry (bmb.gv.at) and oesterreich.gv.at publish the holidays of all nine states."
+    },
+    "BE": {
+      "name": "Belgium",
+      "lang": "nl",
+      "official": [
+        "(^|\\.)vlaanderen\\.be$",
+        "(^|\\.)fw-b\\.be$",
+        "(^|\\.)enseignement\\.be$",
+        "(^|\\.)ostbelgienbildung\\.be$",
+        "(^|\\.)ostbelgienlive\\.be$",
+        "(^|\\.)belgium\\.be$"
+      ],
+      "hint": "Each community sets its own calendar: Flemish (onderwijs.vlaanderen.be), French (enseignement.be) and German-speaking (ostbelgienbildung.be)."
+    },
+    "CH": {
+      "name": "Switzerland",
+      "lang": "de",
+      "official": [
+        "(^|\\.)(admin|edk|ag|ai|ar|be|bl|bs|fr|ge|gl|gr|ju|lu|ne|nw|ow|sg|sh|so|sz|tg|ti|ur|vd|vs|zg|zh)\\.ch$",
+        "(^|\\.)stadt-zuerich\\.ch$",
+        "(^|\\.)engelberg\\.ch$",
+        "(^|\\.)kbs-solothurn\\.ch$",
+        "(^|\\.)schulen-[a-z-]+\\.ch$"
+      ],
+      "hint": "Each canton publishes its Ferienplan / plan des vacances, usually as a PDF on the canton's website (e.g. so.ch, vs.ch, tg.ch). Some cantons differ by municipality; then the canton's recommended or majority plan is wanted."
+    },
+    "CZ": {
+      "name": "Czechia",
+      "lang": "cs",
+      "official": [
+        "(^|\\.)msmt\\.(cz|gov\\.cz)$"
+      ]
+    },
+    "DE": {
+      "name": "Germany",
+      "lang": "de",
+      "official": [
+        "(^|\\.)kmk\\.org$",
+        "(^|\\.)(km|mk|bm|smk|mb|mbjs|mbwk|mbk)\\.[a-z-]+\\.de$",
+        "(^|\\.)(kultus|kultusministerium|bildung|schulministerium)\\.[a-z-]+\\.de$",
+        "(^|\\.)(berlin|hamburg|bremen|saarland|niedersachsen|sachsen|sachsen-anhalt|thueringen|brandenburg|hessen|bayern|baden-wuerttemberg|rlp|schleswig-holstein|regierung-mv|schulministerium\\.nrw)\\.de$",
+        "(^|\\.)schulministerium\\.nrw$"
+      ],
+      "hint": "The Kultusministerkonferenz (kmk.org) publishes the holidays of all 16 states; each state ministry publishes its own Ferienordnung."
+    },
+    "EE": {
+      "name": "Estonia",
+      "lang": "et",
+      "official": [
+        "(^|\\.)hm\\.ee$",
+        "(^|\\.)riigiteataja\\.ee$",
+        "(^|\\.)valitsus\\.ee$"
+      ]
+    },
+    "ES": {
+      "name": "Spain",
+      "lang": "es",
+      "official": [
+        "(^|\\.)(juntadeandalucia|aragon|asturias|educastur|cantabria|educantabria|jcyl|castillalamancha|juntaex|navarra|euskadi|carm|caib|ceuta|melilla|gva|educacion\\.gob)\\.es$",
+        "(^|\\.)(educa\\.jcyl|educa\\.aragon|edu\\.gva|educacion\\.navarra|educa\\.caib)\\.es$",
+        "(^|\\.)gobiernodecanarias\\.org$",
+        "(^|\\.)larioja\\.org$",
+        "(^|\\.)madrid\\.org$",
+        "(^|\\.)comunidad\\.madrid$",
+        "(^|\\.)gencat\\.cat$",
+        "(^|\\.)xunta\\.gal$",
+        "(^|\\.)boe\\.es$",
+        "(^|\\.)educacionfpydeportes\\.gob\\.es$"
+      ],
+      "hint": "Each autonomous community sets its calendario escolar by order of its Consejería de Educación (published in the regional official bulletin and on the education portal, e.g. educa.madrid.org, educacio.gencat.cat, edu.xunta.gal). Ceuta and Melilla are set by the Ministry (educacionfpydeportes.gob.es)."
+    },
+    "FR": {
+      "name": "France",
+      "lang": "fr",
+      "official": [
+        "(^|\\.)education\\.gouv\\.fr$",
+        "(^|\\.)ac-[a-z-]+\\.fr$",
+        "(^|\\.)gouv\\.nc$",
+        "(^|\\.)ac-noumea\\.nc$",
+        "(^|\\.)ac-polynesie\\.pf$",
+        "(^|\\.)wallis-et-futuna\\.wf$",
+        "(^|\\.)vice-rectorat-wf\\.(fr|wf)$",
+        "(^|\\.)isula\\.corsica$"
+      ],
+      "hint": "Overseas academies (ac-reunion.fr, ac-guadeloupe.fr, ac-martinique.fr, ac-guyane.fr, ac-noumea.nc, Saint-Pierre-et-Miquelon, Wallis-et-Futuna) and the academy of Corsica (ac-corse.fr) publish their own calendrier scolaire."
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "lang": "en",
+      "official": [
+        "\\.gov\\.uk$",
+        "\\.gov\\.wales$",
+        "\\.gov\\.scot$",
+        "(^|\\.)nidirect\\.gov\\.uk$"
+      ],
+      "hint": "Each local authority (council) publishes its school term dates on its own website."
+    },
+    "HR": {
+      "name": "Croatia",
+      "lang": "hr",
+      "official": [
+        "(^|\\.)gov\\.hr$",
+        "(^|\\.)narodne-novine\\.nn\\.hr$",
+        "(^|\\.)mzom\\.gov\\.hr$",
+        "(^|\\.)mzo\\.gov\\.hr$"
+      ],
+      "hint": "The Ministry of Science, Education and Youth publishes the 'Pravilnik o kalendaru rada osnovnih i srednjih škola' for each school year."
+    },
+    "HU": {
+      "name": "Hungary",
+      "lang": "hu",
+      "official": [
+        "(^|\\.)kormany\\.hu$",
+        "(^|\\.)magyarkozlony\\.hu$",
+        "(^|\\.)oktatas\\.hu$",
+        "(^|\\.)njt\\.hu$"
+      ],
+      "hint": "The tanév rendje (school year order) is published as a ministerial decree each year."
+    },
+    "IE": {
+      "name": "Ireland",
+      "lang": "en",
+      "official": [
+        "(^|\\.)gov\\.ie$"
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.ie/en/department-of-education/circulars/standardisation-of-the-school-year-in-respect-of-primary-post-primary-schools-for-the-years-202627-202728-and-202829",
+          "scopes": "*"
+        }
+      ]
+    },
+    "IT": {
+      "name": "Italy",
+      "lang": "it",
+      "official": [
+        "(^|\\.)regione\\.[a-z-]+\\.it$",
+        "(^|\\.)provincia\\.(bz|tn)\\.it$",
+        "(^|\\.)istruzione\\.it$",
+        "(^|\\.)mim\\.gov\\.it$",
+        "(^|\\.)vivoscuola\\.it$",
+        "(^|\\.)regione\\.vda\\.it$",
+        "(^|\\.)gov\\.it$",
+        "(^|\\.)bur[a-z]*\\.regione\\.[a-z-]+\\.it$"
+      ],
+      "hint": "Each region approves its calendario scolastico by a regional council decision (delibera di giunta regionale), published on the region's website; Bolzano/South Tyrol and Trento are set by the autonomous provinces."
+    },
+    "LI": {
+      "name": "Liechtenstein",
+      "lang": "de",
+      "official": [
+        "(^|\\.)llv\\.li$",
+        "(^|\\.)regierung\\.li$",
+        "(^|\\.)schulen\\.li$",
+        "(^|\\.)schulamt\\.li$"
+      ]
+    },
+    "LT": {
+      "name": "Lithuania",
+      "lang": "lt",
+      "official": [
+        "(^|\\.)smsm\\.lrv\\.lt$",
+        "(^|\\.)lrv\\.lt$",
+        "(^|\\.)e-tar\\.lt$"
+      ]
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "lang": "fr",
+      "official": [
+        "(^|\\.)men\\.lu$",
+        "(^|\\.)public\\.lu$",
+        "(^|\\.)gouvernement\\.lu$",
+        "(^|\\.)legilux\\.public\\.lu$"
+      ],
+      "hint": "The Ministry of Education (men.public.lu) publishes the 'vacances et congés scolaires' for several school years."
+    },
+    "LV": {
+      "name": "Latvia",
+      "lang": "lv",
+      "official": [
+        "(^|\\.)izm\\.gov\\.lv$",
+        "(^|\\.)gov\\.lv$",
+        "(^|\\.)likumi\\.lv$"
+      ]
+    },
+    "MC": {
+      "name": "Monaco",
+      "lang": "fr",
+      "official": [
+        "(^|\\.)gouv\\.mc$"
+      ]
+    },
+    "MT": {
+      "name": "Malta",
+      "lang": "en",
+      "official": [
+        "(^|\\.)gov\\.mt$",
+        "(^|\\.)education\\.gov\\.mt$"
+      ]
+    },
+    "NL": {
+      "name": "Netherlands",
+      "skip": true
+    },
+    "PL": {
+      "name": "Poland",
+      "lang": "pl",
+      "official": [
+        "(^|\\.)gov\\.pl$",
+        "(^|\\.)kuratorium\\.[a-z.]+\\.pl$",
+        "(^|\\.)isap\\.sejm\\.gov\\.pl$"
+      ],
+      "hint": "The Ministry of National Education (gov.pl/web/edukacja) publishes the calendar of the school year, including the winter holidays (ferie zimowe) of each voivodeship."
+    },
+    "PT": {
+      "name": "Portugal",
+      "lang": "pt",
+      "official": [
+        "(^|\\.)gov\\.pt$",
+        "(^|\\.)dge\\.mec\\.pt$",
+        "(^|\\.)diariodarepublica\\.pt$",
+        "(^|\\.)dre\\.pt$"
+      ]
+    },
+    "RO": {
+      "name": "Romania",
+      "lang": "ro",
+      "official": [
+        "(^|\\.)edu\\.ro$",
+        "(^|\\.)gov\\.ro$",
+        "(^|\\.)monitoruloficial\\.ro$",
+        "(^|\\.)isj[a-z]*\\.ro$",
+        "(^|\\.)ismb\\.edu\\.ro$"
+      ],
+      "hint": "The Ministry of Education (edu.ro) publishes the 'structura anului școlar' by ministerial order; the February holiday (vacanța de schi) differs by county (județ)."
+    },
+    "RS": {
+      "name": "Serbia",
+      "lang": "sr",
+      "official": [
+        "(^|\\.)mpn\\.gov\\.rs$",
+        "(^|\\.)gov\\.rs$",
+        "(^|\\.)prosveta\\.gov\\.rs$"
+      ]
+    },
+    "SI": {
+      "name": "Slovenia",
+      "lang": "sl",
+      "official": [
+        "(^|\\.)gov\\.si$"
+      ]
+    },
+    "SK": {
+      "name": "Slovakia",
+      "lang": "sk",
+      "official": [
+        "(^|\\.)minedu\\.sk$",
+        "(^|\\.)minv\\.sk$",
+        "(^|\\.)slov-lex\\.sk$"
+      ]
+    },
+    "SM": {
+      "name": "San Marino",
+      "lang": "it",
+      "official": [
+        "(^|\\.)gov\\.sm$",
+        "(^|\\.)educazione\\.sm$",
+        "(^|\\.)scuola\\.sm$"
+      ]
+    }
+  }
+}

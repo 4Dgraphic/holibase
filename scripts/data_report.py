@@ -62,14 +62,19 @@ def main() -> int:
             select c.country_code::text, coalesce(c.authority_id::text, c.subdivision_code, '-') as scope,
                    coalesce(a.name, sd.name, c.subdivision_code, c.country_code::text) as label,
                    array_agg(distinct c.school_year) as years,
-                   array_agg(distinct c.source_id) as sources
+                   array_agg(distinct c.source_id) as sources, c.subdivision_code, c.authority_id is not null
               from public.school_calendars c
               left join public.education_authorities a on a.id = c.authority_id
               left join public.subdivisions sd on sd.code = c.subdivision_code
              where c.status = 'confirmed' and public.calendar_visible(c.id)
-             group by 1, 2, 3""")
+             group by 1, 2, 3, 6, 7""")
+        rows_ = cur.fetchall()
+        # a region split into local authorities is covered by them; its region-wide calendar is only a fallback
+        split = {(cc, sub) for cc, _, _, _, _, sub, is_auth in rows_ if is_auth and sub}
         scopes = defaultdict(list)
-        for cc, scope, label, years, sources in cur.fetchall():
+        for cc, scope, label, years, sources, sub, is_auth in rows_:
+            if not is_auth and (cc, sub) in split:
+                continue
             scopes[cc].append(dict(scope=scope, label="nationwide" if scope == "-" else label, years=set(years), sources=set(sources)))
 
         # 1. market readiness
