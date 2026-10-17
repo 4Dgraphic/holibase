@@ -9,6 +9,7 @@ const ORIGIN = {
   editorial: "Researched by Holibase",
   community: "Community submission",
 };
+const sourceLabel = (c) => (c.source_id === "openholidays" ? "OpenHolidays (ODbL)" : ORIGIN[c.origin] || c.origin);
 const KIND = {
   break: ["School holiday", "pill-school"],
   holiday: ["Day off school", "pill-school"],
@@ -179,8 +180,8 @@ async function show() {
   const pills = $("#v-pills");
   const where = [authorityInfo?.authority.city, EN_ALIAS[region], countryName(country)].filter(Boolean);
   pills.append(el("span", { class: "pill pill-code", text: region || country }), el("span", { class: "muted body-s", text: where.join(" · ") }));
-  const origins = [...new Set(school.calendars.map((c) => c.origin))];
-  for (const o of origins) pills.append(el("span", { class: "pill pill-neutral", text: ORIGIN[o] || o }));
+  const origins = [...new Set(school.calendars.map(sourceLabel))];
+  for (const o of origins) pills.append(el("span", { class: "pill pill-neutral", text: o }));
   if (school.calendars.some((c) => c.status === "pending")) pills.append(el("span", { class: "pill pill-estimated", text: "Unverified" }));
 
   // coverage notice
@@ -318,7 +319,7 @@ function renderSources(school, pub) {
   const head = el("tr", {}, ...["School year", "Source", "Status", "First day", "Last day", "Document"].map((h) => el("th", { scope: "col", text: h })));
   const rows = school.calendars.map((c) => el("tr", {},
     el("td", { class: "num", text: c.school_year }),
-    el("td", { text: ORIGIN[c.origin] || c.origin }),
+    el("td", { text: sourceLabel(c) }),
     el("td", {}, el("span", { class: `pill ${c.status === "confirmed" ? "pill-public" : "pill-estimated"}`, text: c.status === "confirmed" ? "Verified" : "Unverified" })),
     el("td", { class: "num", text: c.first_day ? fmtDay(c.first_day) : "–" }),
     el("td", { class: "num", text: c.last_day ? fmtDay(c.last_day) : "–" }),

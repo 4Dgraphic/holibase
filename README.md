@@ -96,9 +96,25 @@ Everything is free to use, also commercially. The only condition is credit.
 | Code (this repository) | MIT (`LICENSE`) | – |
 | Holibase's own data: editorial and community school calendars, authority directory, the compiled database | CC BY 4.0 (`LICENSE-DATA`) | "Holibase (holibase.org), CC BY 4.0" |
 | Public and school holidays from python-holidays | MIT | "© python-holidays contributors" |
+| School holidays from OpenHolidays API (calendars with `source_id = 'openholidays'`) | ODbL 1.0, share-alike | "School holidays from OpenHolidays API (openholidaysapi.org), ODbL 1.0" |
 | US school district directory (NCES CCD / EDGE) | public domain (U.S. federal government) | "Source: U.S. Department of Education, NCES" (courtesy) |
 
 The API returns the credit line in every response (`attribution`, `license`) and in every iCalendar feed.
+
+OpenHolidays data is share-alike (ODbL). Holibase keeps it as its own, identifiable layer: every such
+calendar carries `source_id: "openholidays"` and `license: "ODbL-1.0"`, responses that contain one credit
+OpenHolidays, and if you redistribute those calendars as a database, they stay under ODbL. An app or page
+that only displays the data (a "produced work") needs the credit, not the share-alike.
+
+## OpenHolidays import
+
+`scripts/import_openholidays.py` reads github.com/openpotato/openholidaysapi.data every Wednesday
+(`.github/workflows/import-openholidays.yml`) and adds the school calendars of every country it covers,
+except France and the Netherlands (official data) and Belgium (not mapped yet). It only fills gaps: for the
+same region and school year, official, editorial and community calendars and python-holidays win
+(`public.calendar_rank`, `public.calendar_visible`). Partial school years (fewer than three breaks) are
+left out; a country whose calendar count suddenly halves is skipped. The job summary shows how well the
+data agrees with the calendars Holibase already has.
 
 ## Editorial school calendars
 

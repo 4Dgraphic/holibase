@@ -57,7 +57,7 @@ async function coverage() {
         el("div", { class: "status-row" },
           el("div", {},
             el("div", { class: "name", text: `${x.name || countryName(x.country_code)}, ${x.scopes_verified} ${x.authorities ? (x.country_code === "US" ? "districts" : "calendars") : "regions"}` }),
-            el("div", { class: "meta", text: `${x.origins.map((o) => ORIGIN_LABEL[o] || o).join(" · ")} · ${x.first_school_year === x.last_school_year ? x.last_school_year : `${x.first_school_year} to ${x.last_school_year}`}` })),
+            el("div", { class: "meta", text: `${[...new Set([...(x.sources || []).filter((s) => s === "openholidays" || s === "python-holidays").map((s) => (s === "openholidays" ? "OpenHolidays" : "python-holidays")), ...x.origins.filter((o) => o !== "library" || !(x.sources || []).length).map((o) => ORIGIN_LABEL[o] || o)])].join(" · ")} · ${x.first_school_year === x.last_school_year ? x.last_school_year : `${x.first_school_year} to ${x.last_school_year}`}` })),
           el("span", { class: "pill pill-public", text: "Live" }))),
       el("a", { class: "link-arrow", href: "/coverage/", style: "margin-top: 8px", text: `All ${sh.countries} countries →` }));
   } catch {

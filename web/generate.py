@@ -106,6 +106,12 @@ class Loc:
         key = f"origin_{o}"
         return self.t(key) if key in T[self.lang] else o
 
+    def source(self, cal: dict) -> str:
+        """Label for a calendar's source: OpenHolidays is named, other origins by their kind."""
+        if cal.get("source_id") == "openholidays":
+            return "OpenHolidays (ODbL)"
+        return self.origin(cal["origin"])
+
 
 # ---------------------------------------------------------------- URLs
 
@@ -370,7 +376,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
         url = c.get("source_url") or ("https://github.com/vacanza/holidays" if c["origin"] == "library" else None)
         link = f'<a href="{esc(url)}" rel="noopener nofollow">{esc(host(url))}</a>' if url else "–"
         checked = L.day(d(c["source_retrieved_at"])) if c.get("source_retrieved_at") else "–"
-        src_rows.append(f'<tr><td class="num">{esc(L.sy(c["school_year"]))}</td><td>{esc(L.origin(c["origin"]))}</td><td>{link}</td><td class="num">{esc(checked)}</td></tr>')
+        src_rows.append(f'<tr><td class="num">{esc(L.sy(c["school_year"]))}</td><td>{esc(L.source(c))}</td><td>{link}</td><td class="num">{esc(checked)}</td></tr>')
         if c.get("notes") and c["origin"] == "official":
             src_rows.append(f'<tr><td></td><td colspan="3" class="body-s muted">{esc(c["notes"])}</td></tr>')
 
@@ -392,6 +398,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
     where = s.where(lang) or L.country(s.cc)
     overline = L.t("overline_district" if district else "overline_scope", where=where)
     desc = L.t("desc_scope", answer=answer, years=years, name=name)
+    oh_credit = " " + esc(L.t("attribution_oh")) if any(c.get("source_id") == "openholidays" and c["school_year"] in kept for c in s.calendars) else ""
     report = "https://github.com/4Dgraphic/holibase/issues/new?title=" + urllib.parse.quote("Correction: " + s.name("en"))
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
@@ -410,7 +417,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
 <section class="gen-section"><h2>{esc(L.t('sources'))}</h2>
 <div class="table-scroll"><table class="data"><thead><tr><th scope="col">{esc(L.t('th_sy'))}</th><th scope="col">{esc(L.t('th_source'))}</th><th scope="col">{esc(L.t('th_doc'))}</th><th scope="col">{esc(L.t('th_checked'))}</th></tr></thead>
 <tbody>{''.join(src_rows) or '<tr><td colspan="4">–</td></tr>'}</tbody></table></div>
-<p class="body-s subtle">{esc(L.t('attribution'))} <a href="{esc(report)}">{esc(L.t('report'))}</a>.</p>
+<p class="body-s subtle">{esc(L.t('attribution'))}{oh_credit} <a href="{esc(report)}">{esc(L.t('report'))}</a>.</p>
 </section>
 {related}
 </div></section>"""
@@ -464,7 +471,7 @@ def school_index(by_cc: dict[str, list[Scope]], today: dt.date, lang: str) -> di
     items = sorted([x for x in items if x[1]], key=lambda kv: (-len(kv[1]), L.country(kv[0])))
     rows = "".join(
         f'<tr><td><a href="{school_country_url(lang, cc)}"><b>{esc(L.country(cc))}</b></a> <span class="pill pill-code">{cc}</span></td>'
-        f'<td class="num">{len(g)}</td><td>{esc(", ".join(sorted({L.origin(c["origin"]) for s in g for c in s.calendars})))}</td></tr>'
+        f'<td class="num">{len(g)}</td><td>{esc(", ".join(sorted({L.source(c) for s in g for c in s.calendars})))}</td></tr>'
         for cc, g in items)
     crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang))])
     n = sum(len(g) for _, g in items)
@@ -648,8 +655,19 @@ def coverage_rows(coverage: dict) -> str:
         unver = x["scopes"] - x["scopes_verified"]
         out.append(f'<tr><td><a href="/school-holidays/{cc.lower()}/">{esc(name)}</a> <span class="pill pill-code">{cc}</span></td>'
                    f'<td>{level}</td><td class="num">{x["scopes_verified"]:,}</td><td class="num muted">{f"{unver:,}" if unver else "–"}</td>'
-                   f'<td class="num">{esc(years)}</td><td>{esc(", ".join(L.origin(o) for o in x["origins"]))}</td></tr>')
+                   f'<td class="num">{esc(years)}</td><td>{esc(", ".join(dict.fromkeys(("OpenHolidays (ODbL)" if src == "openholidays" else "python-holidays" if src == "python-holidays" else None) or L.origin(o) for o, src in _origin_source_pairs(x))))}</td></tr>')
     return "".join(out)
+
+
+def _origin_source_pairs(x: dict):
+    """(origin, source) pairs for a coverage row; sources are listed separately by get_coverage()."""
+    srcs = x.get("sources") or []
+    for src in srcs:
+        if src in ("openholidays", "python-holidays"):
+            yield ("library", src)
+    for o in x["origins"]:
+        if o != "library" or not srcs:
+            yield (o, None)
 
 
 def stats(coverage: dict) -> dict:

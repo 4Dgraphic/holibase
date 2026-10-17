@@ -1,0 +1,57 @@
+name: Import OpenHolidays school holidays
+
+# Pulls school holidays from the OpenHolidays API data (github.com/openpotato/openholidaysapi.data, ODbL 1.0)
+# for every country it covers, except where Holibase has official open data. Fills school years and regions
+# that no better source covers; the job summary shows how well it agrees with the existing calendars.
+# Weekly; a push of the importer runs a dry run.
+
+on:
+  schedule:
+    - cron: "23 5 * * 3"        # Wednesdays 05:23 UTC
+  push:
+    branches: [main]
+    paths:
+      - "scripts/import_openholidays.py"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (import and report, then roll back)"
+        type: boolean
+        default: false
+      only:
+        description: "Only these countries, comma separated (de,at,ch). Empty = all"
+        type: string
+        default: ""
+
+concurrency:
+  group: database-write
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - name: Fetch OpenHolidays data
+        run: git clone --depth 1 https://github.com/openpotato/openholidaysapi.data "$RUNNER_TEMP/openholidays"
+      - name: Import
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          args=()
+          if [ "${{ github.event_name }}" = "push" ]; then args+=(--dry-run); fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+            if [ -n "${{ inputs.only }}" ]; then args+=(--only "${{ inputs.only }}"); fi
+          fi
+          python scripts/import_openholidays.py --source "$RUNNER_TEMP/openholidays/src" "${args[@]}"

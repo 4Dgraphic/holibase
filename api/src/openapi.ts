@@ -288,7 +288,7 @@ export const openapi = {
           school_year: { type: "string" },
           origin: {
             type: "string", enum: ["official", "editorial", "community", "library"],
-            description: "`official`: government open data. `editorial`: researched by Holibase. `community`: submitted. `library`: python-holidays.",
+            description: "`official`: government open data. `editorial`: researched by Holibase. `community`: submitted. `library`: a maintained dataset, python-holidays or OpenHolidays (see `source_id`).",
           },
           status: { type: "string", enum: ["confirmed", "pending"] },
           first_day: nullable(date),
@@ -297,8 +297,16 @@ export const openapi = {
           source_url: nullable({ type: "string" }),
           source_retrieved_at: nullable({ type: "string", format: "date-time" }),
           notes: nullable({ type: "string" }),
+          source_id: {
+            type: "string",
+            description: "Where the calendar comes from, e.g. `python-holidays`, `openholidays`, `education-gouv-fr`, `editorial`.",
+          },
+          license: {
+            ...nullable({ type: "string" }),
+            description: "Licence of this calendar's data (SPDX id). Calendars from OpenHolidays are `ODbL-1.0` (share-alike); the response `attribution` then credits OpenHolidays.",
+          },
         },
-        required: ["calendar_id", "school_year", "origin", "status", "first_day", "last_day", "title", "source_url", "source_retrieved_at", "notes"],
+        required: ["calendar_id", "school_year", "origin", "status", "first_day", "last_day", "title", "source_url", "source_retrieved_at", "notes", "source_id", "license"],
       },
       Coverage: {
         oneOf: [
@@ -466,6 +474,7 @@ export const openapi = {
                     first_school_year: nullable({ type: "string" }),
                     last_school_year: nullable({ type: "string" }),
                     origins: { type: "array", items: { type: "string", enum: ["official", "editorial", "community", "library"] } },
+                    sources: { type: "array", items: { type: "string" }, description: "Source ids of the calendars, e.g. python-holidays, openholidays." },
                   },
                   required: ["country_code", "name", "scopes", "scopes_verified", "authorities", "first_school_year", "last_school_year", "origins"],
                 },

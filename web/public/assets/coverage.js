@@ -1,6 +1,13 @@
 import { api, $, el, setText, countryName, compact } from "./site.js";
 
 const ORIGIN = { official: "Official open data", library: "python-holidays", editorial: "Researched by Holibase", community: "Community" };
+// Origins, with "library" split into the datasets behind it (python-holidays, OpenHolidays).
+function sourcesOf(x) {
+  const out = [];
+  for (const s of x.sources || []) if (s === "openholidays") out.push("OpenHolidays (ODbL)"); else if (s === "python-holidays") out.push("python-holidays");
+  for (const o of x.origins) if (o !== "library" || !(x.sources || []).length) out.push(ORIGIN[o] || o);
+  return [...new Set(out)];
+}
 const fmtN = (n) => n.toLocaleString("en-US");
 
 async function stats() {
@@ -29,7 +36,7 @@ async function stats() {
       el("td", { class: "num", text: fmtN(x.scopes_verified) }),
       el("td", { class: "num muted", text: x.scopes > x.scopes_verified ? fmtN(x.scopes - x.scopes_verified) : "–" }),
       el("td", { class: "num", text: years }),
-      el("td", { text: x.origins.map((o) => ORIGIN[o] || o).join(", ") }));
+      el("td", { text: sourcesOf(x).join(", ") }));
   });
   $("#school-table tbody").replaceChildren(...rows);
 }

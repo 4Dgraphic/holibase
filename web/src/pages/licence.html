@@ -46,6 +46,7 @@ nav: licence
           <thead><tr><th scope="col">Source</th><th scope="col">Used for</th><th scope="col">Licence</th><th scope="col">Updated</th></tr></thead>
           <tbody>
             <tr><td><a href="https://github.com/vacanza/holidays">python-holidays</a></td><td>Public holidays for all countries; school holidays for some countries</td><td>MIT</td><td>Weekly</td></tr>
+            <tr><td><a href="https://www.openholidaysapi.org">OpenHolidays API</a></td><td>School holidays for many European countries, used where no better source exists</td><td>ODbL 1.0 (share-alike)</td><td>Weekly</td></tr>
             <tr><td><a href="https://nces.ed.gov/ccd/">NCES Common Core of Data</a></td><td>Directory of US school districts, enrolment, location</td><td>Public domain</td><td>Monthly</td></tr>
             <tr><td><a href="https://www.rijksoverheid.nl/onderwerpen/schoolvakanties">Rijksoverheid</a></td><td>School holidays in the Netherlands</td><td>CC0</td><td>Weekly</td></tr>
             <tr><td><a href="https://data.education.gouv.fr/explore/dataset/fr-en-calendrier-scolaire/">Ministère de l’Éducation nationale</a></td><td>School holidays in France, including overseas regions</td><td>Licence Ouverte 2.0</td><td>Weekly</td></tr>
@@ -54,6 +55,7 @@ nav: licence
         </table>
       </div>
       <p class="body-s subtle" style="margin: 16px 0 0">Every calendar in the API names its source document and the date it was retrieved, so you can check it against the original.</p>
+      <p class="body-s subtle" style="margin: 8px 0 0">Calendars from OpenHolidays stay under the Open Database License: the API marks them with <code>source_id: "openholidays"</code> and <code>license: "ODbL-1.0"</code> and adds their credit line to the response. Showing them in an app or on a page only needs that credit; if you republish them as a database, it stays under ODbL.</p>
     </div>
   </div>
 </section>

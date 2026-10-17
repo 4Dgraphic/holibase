@@ -227,7 +227,7 @@ function matchRoute(url: URL): Route {
               count: rows.length,
               calendars,
               periods: rows,
-              attribution: ATTRIBUTION,
+              attribution: schoolAttribution(calendars as SchoolCalendarRow[]),
               license: LICENSE,
             },
             200,
@@ -305,6 +305,12 @@ function staticFile(url: URL, parts: string[]): Route {
 const ATTRIBUTION =
   "Public holidays © python-holidays contributors (MIT). School calendars © Holibase contributors (CC BY 4.0). https://holibase.org";
 const LICENSE = { data: "CC-BY-4.0", url: "https://creativecommons.org/licenses/by/4.0/", attribution_required: true };
+const OPENHOLIDAYS_ATTRIBUTION = "School holidays partly from OpenHolidays API (openholidaysapi.org), ODbL 1.0.";
+
+/** Credit line for a school holiday response: adds OpenHolidays (ODbL) when one of its calendars is included. */
+function schoolAttribution(calendars: SchoolCalendarRow[]): string {
+  return calendars.some((c) => c.source_id === "openholidays") ? `${ATTRIBUTION} ${OPENHOLIDAYS_ATTRIBUTION}` : ATTRIBUTION;
+}
 
 async function rpc(env: Env, fn: string, params: Record<string, unknown>): Promise<unknown[]> {
   // Omit null params so the SQL defaults apply (e.g. p_categories = {public}).
@@ -571,7 +577,7 @@ type SchoolPeriodRow = {
 };
 type SchoolCalendarRow = {
   calendar_id: string; school_year: string; title: string | null; status: string; source_url: string | null;
-  first_day: string | null; last_day: string | null;
+  first_day: string | null; last_day: string | null; source_id?: string | null; license?: string | null;
 };
 
 type FeedLabels = { public: string; school: string; observed: string; estimated: string; unverified: string; first: string; last: string };
@@ -646,10 +652,10 @@ function schoolHolidayFeed(
       );
     }
   }
-  return vcalendar(`${l.school} ${title}`, events);
+  return vcalendar(`${l.school} ${title}`, events, schoolAttribution(calendars));
 }
 
-function vcalendar(name: string, events: string[][]): string {
+function vcalendar(name: string, events: string[][], attribution: string = ATTRIBUTION): string {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -658,7 +664,7 @@ function vcalendar(name: string, events: string[][]): string {
     "METHOD:PUBLISH",
     `NAME:${esc(name)}`,
     `X-WR-CALNAME:${esc(name)}`,
-    `X-WR-CALDESC:${esc(ATTRIBUTION)}`,
+    `X-WR-CALDESC:${esc(attribution)}`,
     "REFRESH-INTERVAL;VALUE=DURATION:P1D",
     "X-PUBLISHED-TTL:P1D",
     ...events.flat(),

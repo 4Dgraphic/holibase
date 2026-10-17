@@ -23,5 +23,11 @@ Data from third parties keeps its own licence:
     MIT, © python-holidays contributors, https://github.com/vacanza/holidays
   - NCES Common Core of Data / EDGE (US school district directory):
     U.S. federal government work, public domain.
+  - OpenHolidays API (school holidays, source_id 'openholidays'):
+    Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/
+    Source: https://www.openholidaysapi.org, github.com/openpotato/openholidaysapi.data
+    These calendars are kept as a separate, identifiable layer of the Holibase database
+    and remain under ODbL (share-alike). Credit: "School holidays from OpenHolidays API
+    (openholidaysapi.org), ODbL 1.0"
 
 The code in this repository is licensed separately under MIT (see LICENSE).
