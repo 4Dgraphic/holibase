@@ -311,8 +311,11 @@ Rules:
   holiday = a single public holiday or school day off; teacher_day = a day without classes for teacher
   training; other = anything else without classes. Leave out exams, make-up days and days with classes.
 - first_day/last_day: first and last day of classes of the school year if printed, else null.
-- Use the scope codes exactly as given. If the document has one calendar for several of the regions, repeat it
-  for each of them. If it distinguishes school types, use primary and lower secondary schools.
+- Use the scope codes exactly as given. Periods that apply to all requested scopes (e.g. nationwide Christmas,
+  Easter and summer holidays) go once into a calendar with scope "ALL"; each scope's own calendar then holds only
+  what differs for it (e.g. a winter break that depends on the region). If the dates are the same for every
+  scope, return only the "ALL" calendar. If the document distinguishes school types, use primary and lower
+  secondary schools.
 - name_local in the document's language, name_en a short English name (e.g. "Autumn break").
 - source_url: the URL of the document part (see the headers) the dates come from."""
 
@@ -459,6 +462,40 @@ def make_model():
     if os.environ.get("ANTHROPIC_API_KEY"):
         return AnthropicModel(os.environ["ANTHROPIC_API_KEY"], os.environ.get("ANTHROPIC_MODEL") or "claude-haiku-5-5")
     return None
+
+
+def merge_all(cals: list[dict], codes: set[str]) -> list[dict]:
+    """Expand the model's answer: periods given once for "ALL" scopes are added to each scope's own periods.
+    A scope without its own calendar only gets the ALL calendar when no scope has one (the document is the
+    same everywhere); otherwise its own dates are unknown and it is left out."""
+    alls: dict[str, dict] = {}
+    own: dict[str, dict[str, dict]] = defaultdict(dict)
+    for cal in cals:
+        sy = (cal.get("school_year") or "").replace("/", "-").strip()
+        if re.fullmatch(r"\d{4}-\d{4}", sy):
+            sy = f"{sy[:4]}-{sy[-2:]}"
+        cal = {**cal, "school_year": sy, "periods": list(cal.get("periods") or [])}
+        if (cal.get("scope") or "").upper() == "ALL":
+            alls[sy] = cal
+        elif cal.get("scope") in codes:
+            own[sy][cal["scope"]] = cal
+    out = []
+    for sy in set(alls) | set(own):
+        base = alls.get(sy)
+        for code in sorted(codes):
+            c = own[sy].get(code)
+            if c is None:
+                if base is None or own[sy]:
+                    continue
+                c = {**base, "scope": code}
+            elif base:
+                c = {**c, "periods": base["periods"] + c["periods"],
+                     "first_day": c.get("first_day") or base.get("first_day"),
+                     "last_day": c.get("last_day") or base.get("last_day"),
+                     "source_url": c.get("source_url") or base.get("source_url"),
+                     "language": c.get("language") or base.get("language")}
+            out.append(c)
+    return out
 
 
 # ---------------------------------------------------------------- school years and checks
@@ -718,13 +755,10 @@ def main() -> int:
                     delivered.update(codes)
                     urls = {u for u, _ in parts}
                     found_here = 0
-                    for cal in data.get("calendars", []):
-                        code, sy = cal.get("scope"), (cal.get("school_year") or "").replace("/", "-").strip()
-                        if re.fullmatch(r"\d{4}-\d{4}", sy):
-                            sy = f"{sy[:4]}-{sy[-2:]}"
-                        if code not in codes or sy not in by_code[code]["want"]:
+                    for cal in merge_all(data.get("calendars", []), codes):
+                        code, sy = cal["scope"], cal["school_year"]
+                        if sy not in by_code[code]["want"]:
                             continue
-                        cal["school_year"] = sy
                         periods, errors = check(cal, cc)
                         if errors:
                             rejected.append(f"{cc} {by_code[code]['name']} {sy} ({host(url)}): {'; '.join(errors[:3])}")
