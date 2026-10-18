@@ -40,10 +40,13 @@ def main() -> int:
     calendars: dict[str, tuple] = {}
     periods: dict[tuple, tuple] = {}
     seen_calendars: set[str] = set()
+    by_key: dict[tuple, str] = {}  # same scope, year and source document -> one calendar, the later file wins
     stats = Counter()
     for path in files:
         data = json.load(open(path, encoding="utf-8"))
         for c in data["calendars"]:
+            key = (c["country_code"], c["subdivision_code"], c.get("authority_id"), c["school_year"], c.get("source_url"))
+            c["id"] = by_key.setdefault(key, c["id"])
             if c.get("authority_id"):
                 authorities[c["authority_id"]] = (
                     c["authority_id"], c["country_code"], c["subdivision_code"], c.get("authority_kind") or "other",
@@ -73,6 +76,22 @@ def main() -> int:
             with cur.copy(f"copy {table} from stdin") as cp:
                 for r in rows:
                     cp.write_row(r)
+
+        # A calendar already stored under another id with the same scope, year and source document (e.g. found
+        # earlier by deep research, now again by the automatic research) is updated instead of duplicated.
+        cur.execute("""
+            create temp table remap on commit drop as
+            select distinct on (i.id) i.id as old_id, c.id as new_id
+              from in_cal i join public.school_calendars c
+                on c.id <> i.id and c.country_code = i.country_code
+               and c.subdivision_code is not distinct from i.subdivision_code
+               and c.authority_id is not distinct from i.authority_id and c.school_year = i.school_year
+               and c.source_id = %s and c.source_url is not distinct from i.source_url
+             where not exists (select 1 from in_cal j where j.id = c.id)""", (SOURCE_ID,))
+        cur.execute("update in_per p set calendar_id = r.new_id from remap r where p.calendar_id = r.old_id")
+        cur.execute("update in_cal i set id = r.new_id from remap r where i.id = r.old_id")
+        cur.execute("select count(*) from remap")
+        stats["calendars_matched_existing"] = cur.fetchone()[0]
 
         cur.execute("""
             with up as (

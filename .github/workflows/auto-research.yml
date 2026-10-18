@@ -58,14 +58,8 @@ jobs:
           args=(--report research.md --max-calls "${{ inputs.max_calls || '30' }}")
           if [ -n "${{ inputs.countries }}" ]; then args+=(--countries "${{ inputs.countries }}"); fi
           python scripts/auto_research.py "${args[@]}"
-      - name: Import
-        if: steps.research.outputs.file != ''
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: |
-          args=()
-          if [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
-          python scripts/import_editorial.py "${args[@]}" "${{ steps.research.outputs.file }}"
+      # Committed before the import, so a failed import never loses a long research run:
+      # the file can then be imported with the "Import editorial calendars" workflow.
       - name: Commit
         if: steps.research.outputs.file != '' && inputs.dry_run != true
         run: |
@@ -75,6 +69,14 @@ jobs:
           git commit -m "Automatic research $(date -u +%F)"
           git pull --rebase
           git push
+      - name: Import
+        if: steps.research.outputs.file != ''
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          args=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+          python scripts/import_editorial.py "${args[@]}" "${{ steps.research.outputs.file }}"
       - name: Comment on the data report
         if: steps.research.outputs.file != '' && inputs.dry_run != true
         env:
