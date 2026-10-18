@@ -239,7 +239,7 @@ def http_get(url: str) -> tuple[bytes, str]:
     raise RuntimeError("unreachable")
 
 
-KEYWORDS = re.compile(r"ferien|vacan|vakant|vacaci|ferie|holiday|kalend|calend|schuljahr|anno.?scol|ano.?escol|"
+KEYWORDS = re.compile(r"ferien|vacan|vakant|vacaci|ferie|holiday|kalend|calend|schuljahr|anno.?scol|ano.?escol|circular|"
                       r"curso|schooljaar|annee.?scol|structura|rok.?szkol|tanev|skolsk|school.?year|term", re.I)
 
 
@@ -260,25 +260,25 @@ def fetch_document(url: str, years: list[str], log: list[str]) -> list[tuple[str
     charset = (re.search(r"charset=([\w-]+)", ctype) or [None, "utf-8"])[1]
     text, links = html_to_text(raw.decode(charset, errors="replace"))
     parts.append((url, text))
-    digits = {y[:4] for y in years} | {y[-2:] for y in years}
-    seen = set()
+    digits = {y[:4] for y in years}
+    scored: dict[str, int] = {}
     for href, label in links:
         full = urllib.parse.urljoin(url, html.unescape(href or ""))
-        if full in seen or not full.startswith("http"):
-            continue
         blob = f"{full} {label}"
-        if (".pdf" in full.lower() or "pdf" in label.lower()) and KEYWORDS.search(blob) \
-                and any(d in blob for d in digits) and host(full).split(".")[-2:] == host(url).split(".")[-2:]:
-            seen.add(full)
-            if len(seen) > 3:
-                break
-            time.sleep(1)
-            try:
-                raw2, ctype2 = http_get(full)
-                if raw2[:5] == b"%PDF-" or "pdf" in ctype2:
-                    parts.append((full, pdf_to_text(raw2)))
-            except Exception as e:  # noqa: BLE001
-                log.append(f"could not fetch linked {full}: {e}")
+        if not full.startswith("http") or not (".pdf" in full.lower() or "pdf" in label.lower()) \
+                or host(full).split(".")[-2:] != host(url).split(".")[-2:]:
+            continue
+        score = 2 * bool(KEYWORDS.search(blob)) + sum(d in blob for d in digits)
+        if score:
+            scored[full] = max(scored.get(full, 0), score)
+    for full in sorted(scored, key=scored.get, reverse=True)[:3]:
+        time.sleep(1)
+        try:
+            raw2, ctype2 = http_get(full)
+            if raw2[:5] == b"%PDF-" or "pdf" in ctype2:
+                parts.append((full, pdf_to_text(raw2)))
+        except Exception as e:  # noqa: BLE001
+            log.append(f"could not fetch linked {full}: {e}")
     return parts
 
 
@@ -479,6 +479,20 @@ def merge_all(cals: list[dict], codes: set[str]) -> list[dict]:
             alls[sy] = cal
         elif cal.get("scope") in codes:
             own[sy][cal["scope"]] = cal
+    # The model sometimes gives the shared periods only to some regions. Periods that every complete regional
+    # calendar has in common are then treated as shared (each date is still checked against the document).
+    for sy, by in own.items():
+        if sy in alls or len(by) < 2:
+            continue
+        key = lambda p: (p.get("kind"), p.get("start_date"), p.get("end_date"))  # noqa: E731
+        complete = [c for c in by.values() if sum(p.get("kind") == "break" for p in c["periods"]) >= 3]
+        if len(complete) < 2 or len(complete) == len(by):
+            continue
+        common = set.intersection(*({key(p) for p in c["periods"]} for c in complete))
+        if common:
+            alls[sy] = {**complete[0], "periods": [p for p in complete[0]["periods"] if key(p) in common]}
+            for c in by.values():
+                c["periods"] = [p for p in c["periods"] if key(p) not in common]
     out = []
     for sy in set(alls) | set(own):
         base = alls.get(sy)
@@ -757,7 +771,7 @@ def main() -> int:
                     found_here = 0
                     for cal in merge_all(data.get("calendars", []), codes):
                         code, sy = cal["scope"], cal["school_year"]
-                        if sy not in by_code[code]["want"]:
+                        if sy not in by_code[code]["want"] or not (cal.get("periods") or cal.get("first_day")):
                             continue
                         periods, errors = check(cal, cc)
                         if errors:
