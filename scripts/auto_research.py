@@ -674,10 +674,12 @@ def main() -> int:
 
         # what to research: scopes whose current or next school year is missing
         targets: dict[str, list[dict]] = defaultdict(list)
-        cy_country = {cc for (cc, _, _), s in scopes.items() for y in s["others"] if len(y) == 4} | CALENDAR_YEAR
         for key, s in scopes.items():
             cc = s["cc"]
-            years = school_years(today, cc in cy_country)
+            # calendar-year school years per region (New Caledonia is, French Guiana is not), by its own labels
+            labels = list(s["others"])
+            s["cy"] = cc in CALENDAR_YEAR or sum(len(y) == 4 for y in labels) > sum(len(y) == 7 for y in labels)
+            years = school_years(today, s["cy"])
             missing = [y for y in years if y not in s["years"]
                        and not (s["auth"] is None and (cc, s["sub"], y) in covered_sub)]
             if years[0] in missing or years[1] in missing:
@@ -697,6 +699,8 @@ def main() -> int:
                 s["code"] = f"A{i + 1}"
             by_code = {s["code"]: s for s in items}
             years = sorted({y for s in items for y in s["want"]})
+            start = calls  # each country gets a share of the documents, so one country cannot use up the run
+            per_country = max(5, args.max_calls // 4)
 
             got: dict[tuple, list[dict]] = defaultdict(list)  # (code, year) -> calendars from different URLs
             discovered: set[str] = set()
@@ -743,8 +747,8 @@ def main() -> int:
             def read(plan: dict[str, set[str]]) -> None:
                 nonlocal calls
                 for url, codes in plan.items():
-                    if calls >= args.max_calls:
-                        log.append(f"{cc}: stopped at the limit of {args.max_calls} documents for this run")
+                    if calls >= args.max_calls or calls - start >= per_country:
+                        log.append(f"{cc}: stopped at the limit of documents for this run; the rest follows next run")
                         return
                     time.sleep(1)
                     parts = fetch_document(url, years, log)
@@ -755,9 +759,10 @@ def main() -> int:
                         stats["documents_unreadable"] += 1
                         continue
                     mentions = date_mentions(text)
-                    regions = "\n".join(f"- {c}: {by_code[c]['name']}" for c in sorted(codes))
+                    regions = "\n".join(f"- {c}: {by_code[c]['name']}"
+                                        f"{' (school year = calendar year)' if by_code[c]['cy'] else ''}" for c in sorted(codes))
                     user = (f"Country: {cc}\nSchool years wanted: {', '.join(years)} "
-                            f"({'calendar years' if cc in cy_country else 'from summer to summer, e.g. 2026-27'})\n"
+                            "(e.g. 2026-27 runs from summer 2026 to summer 2027; a plain year like 2027 is a calendar year)\n"
                             f"Scopes:\n{regions}\n\nDocument:\n{shorten(text)}")
                     calls += 1
                     try:
@@ -808,7 +813,7 @@ def main() -> int:
                 for sy in s["want"]:
                     cands = got.get((s["code"], sy))
                     if not cands:
-                        if sy in school_years(today, cc in cy_country)[:2]:
+                        if sy in school_years(today, s["cy"])[:2]:
                             unresolved[cc].append(f"{s['name']} {sy}")
                         continue
                     cands.sort(key=lambda c: (c["ok"] == c["total"], c["official"], c["ok"]), reverse=True)
