@@ -1,6 +1,6 @@
 name: Automatic research
 
-# Every Monday: looks for the school calendars the data report lists as missing, reads the official
+# Once a month (28th, so the data report on the 1st shows the result): looks for the school calendars the data report lists as missing, reads the official
 # documents with a language model (OpenAI or Anthropic, whichever key is set), checks the dates and
 # imports them. The result is committed as data/editorial/auto-<date>.json, so every change is in the
 # history and can be reverted. Confirmed calendars go live at once; doubtful ones stay pending.
@@ -8,7 +8,7 @@ name: Automatic research
 
 on:
   schedule:
-    - cron: "37 5 * * 1"        # Mondays, 05:37 UTC
+    - cron: "37 4 28 * *"       # 28th of the month, 04:37 UTC
   workflow_dispatch:
     inputs:
       countries:
@@ -16,7 +16,7 @@ on:
         required: false
       max_calls:
         description: "Documents the model may read in this run"
-        default: "30"
+        default: "80"
       dry_run:
         description: "Dry run (research and report, import rolled back, nothing committed)"
         type: boolean
@@ -33,7 +33,7 @@ permissions:
 jobs:
   research:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -55,7 +55,7 @@ jobs:
             echo "Set the OPENAI_API_KEY (or ANTHROPIC_API_KEY) secret to enable automatic research." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          args=(--report research.md --max-calls "${{ inputs.max_calls || '30' }}")
+          args=(--report research.md --max-calls "${{ inputs.max_calls || '80' }}")
           if [ -n "${{ inputs.countries }}" ]; then args+=(--countries "${{ inputs.countries }}"); fi
           python scripts/auto_research.py "${args[@]}"
       # Committed before the import, so a failed import never loses a long research run:

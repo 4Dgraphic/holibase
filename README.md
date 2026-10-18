@@ -209,7 +209,7 @@ by email. Run it any time from the Actions tab.
 
 ## Automatic research
 
-`scripts/auto_research.py` (`.github/workflows/auto-research.yml`, every Monday) fills the gaps the data
+`scripts/auto_research.py` (`.github/workflows/auto-research.yml`, on the 28th of every month) fills the gaps the data
 report lists: regions whose current or next school year has no confirmed calendar. For each country it
 reads the official pages in `data/research/sources.json`, or searches the web for them (only URLs on the
 country's official domains are used; discovered sources that deliver are saved back to the file). A
@@ -222,5 +222,6 @@ language model copies the dates out of the document; the script then checks them
 The result is imported and committed as `data/editorial/auto-<date>.json` (revert the commit to undo it),
 and a summary is added to the open data report issue. Set the `OPENAI_API_KEY` secret (optional variable
 `OPENAI_MODEL`, default `gpt-5-mini`) or `ANTHROPIC_API_KEY` (`ANTHROPIC_MODEL`). Each run reads at most
-30 documents and does at most 10 web searches; run it by hand from the Actions tab for one country, with a
+80 documents (a share per country) and does at most 25 web searches; `HORIZON` in the script (or `horizon` per
+country in sources.json) sets how many school years ahead a country is kept filled (2, or 4 for DE, AT, CH, NL, BE, LU); run it by hand from the Actions tab for one country, with a
 dry run first if you like.

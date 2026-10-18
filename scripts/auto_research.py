@@ -54,6 +54,8 @@ MAX_BYTES = 15_000_000
 PRIORITY = ["DE", "AT", "CH", "NL", "BE", "FR", "LU", "GB", "IE", "US", "CA", "AU", "NZ",
             "ES", "IT", "PT", "PL", "CZ", "SE", "NO", "DK", "FI"]
 CALENDAR_YEAR = {"AU", "NZ", "ZA", "BR", "AR", "CL"}
+# school years kept filled ahead (default 2); these authorities publish several years in advance
+HORIZON = {"DE": 4, "AT": 4, "CH": 4, "NL": 4, "BE": 4, "LU": 4}
 EUROPE = set("AD AL AT BA BE BG BY CH CY CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LI LT LU LV MC MD ME MK MT "
              "NL NO PL PT RO RS SE SI SK SM UA VA XK".split())
 AGGREGATORS = re.compile(r"publicholidays|schoolholidays|schulferien\.org|ferienwiki|officeholidays|timeanddate|"
@@ -556,10 +558,20 @@ def check(cal: dict, cc: str) -> tuple[list[dict], list[str]]:
         periods.append({**p, "kind": kind, "start": s, "end": e})
     uniq = {(p["start"], p["end"], p["kind"]): p for p in periods}
     periods = sorted(uniq.values(), key=lambda p: (p["start"], p["end"]))
-    breaks = [p for p in periods if p["kind"] == "break"]
-    for a, b in zip(breaks, breaks[1:]):
-        if b["start"] <= a["end"]:
-            errors.append(f"breaks overlap: {a['name_en']} and {b['name_en']}")
+    # Easter inside the spring break, a long weekend touching a break: a break within another is dropped,
+    # breaks overlapping by up to three days are joined; anything else (e.g. two variants) is an error.
+    breaks: list[dict] = []
+    for p in (p for p in periods if p["kind"] == "break"):
+        prev = breaks[-1] if breaks else None
+        if prev and p["start"] <= prev["end"]:
+            if p["end"] <= prev["end"]:
+                continue
+            if (prev["end"] - p["start"]).days < 3 or prev["start"] == p["start"]:
+                prev["end"] = p["end"]
+                continue
+            errors.append(f"breaks overlap: {prev['name_en']} and {p['name_en']}")
+        breaks.append(p)
+    periods = sorted([p for p in periods if p["kind"] != "break"] + breaks, key=lambda p: (p["start"], p["end"]))
     if len(breaks) < 2:
         errors.append(f"only {len(breaks)} break(s)")
     if len(sy) == 7 and cc in EUROPE:
@@ -638,8 +650,8 @@ def other_breaks(cur, ids: list[str]) -> dict[str, list[tuple[dt.date, dt.date]]
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--countries", help="comma-separated, default: all with gaps")
-    ap.add_argument("--max-calls", type=int, default=30, help="documents read by the model per run")
-    ap.add_argument("--max-searches", type=int, default=10, help="web searches for new sources per run")
+    ap.add_argument("--max-calls", type=int, default=80, help="documents read by the model per run")
+    ap.add_argument("--max-searches", type=int, default=25, help="web searches for new sources per run")
     ap.add_argument("--no-discover", action="store_true")
     ap.add_argument("--out")
     ap.add_argument("--report")
@@ -679,10 +691,13 @@ def main() -> int:
             # calendar-year school years per region (New Caledonia is, French Guiana is not), by its own labels
             labels = list(s["others"])
             s["cy"] = cc in CALENDAR_YEAR or sum(len(y) == 4 for y in labels) > sum(len(y) == 7 for y in labels)
-            years = school_years(today, s["cy"])
+            years = school_years(today, s["cy"], 5)
+            # how many school years ahead to keep filled: 2 by default, more where authorities plan further ahead
+            horizon = conf.get(cc, {}).get("horizon", HORIZON.get(cc, 2))
             missing = [y for y in years if y not in s["years"]
                        and not (s["auth"] is None and (cc, s["sub"], y) in covered_sub)]
-            if years[0] in missing or years[1] in missing:
+            s["horizon"] = years[:horizon]
+            if any(y in missing for y in years[:horizon]):
                 s["want"] = missing
                 s["code"] = (s["sub"] or cc) if s["auth"] is None else None
                 targets[cc].append(s)
@@ -813,7 +828,7 @@ def main() -> int:
                 for sy in s["want"]:
                     cands = got.get((s["code"], sy))
                     if not cands:
-                        if sy in school_years(today, s["cy"])[:2]:
+                        if sy in s["horizon"]:
                             unresolved[cc].append(f"{s['name']} {sy}")
                         continue
                     cands.sort(key=lambda c: (c["ok"] == c["total"], c["official"], c["ok"]), reverse=True)
