@@ -37,6 +37,13 @@
             "German-speaking Community"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.vlaanderen.be/onderwijs-en-vorming/wat-mag-en-moet-op-school/schoolvakanties-vrije-dagen-en-afwezigheden/schoolvakanties",
+          "scopes": [
+            "Flemish Community"
+          ],
+          "learned": "2026-10-18"
         }
       ]
     },
@@ -63,6 +70,58 @@
           "url": "https://www.zh.ch/de/bildung/bildungssystem/schulferien.html",
           "scopes": [
             "Kantonsschulen Stadt Zürich"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.fr.ch/dfac/vacances-scolaires",
+          "scopes": [
+            "CH-FR",
+            "Calendrier majoritaire (toutes les communes sauf Morat/Murten et Kerzers)",
+            "Kerzers",
+            "Morat / Murten"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://volksschulbildung.lu.ch/index/syst_schulen/ss_schulsystem/ss_syst_ferien.htm",
+          "scopes": [
+            "CH-LU"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.ne.ch/themes/scolarite-et-formation/calendrier-et-vacances-scolaires",
+          "scopes": [
+            "CH-NE"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.vd.ch/fileadmin/user_upload/themes/formation/Vacances_scolaires/def_calendrier_vacances_scolaires_2023_2031.pdf",
+          "scopes": [
+            "CH-VD"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.akvb-gemeinden.bkd.be.ch/de/start/organisation-finanzierung/schulorganisation/schulferienplanung.html",
+          "scopes": [
+            "CH-BE"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.akvb-gemeinden.bkd.be.ch/content/dam/akvb-gemeinden_bkd/dokumente/de/startseite/organisation-finanzierung/schulorganisation/schulferienplanung/schulferien-kanton-bern-d.pdf",
+          "scopes": [
+            "CH-BE"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.sg.ch/bildung-sport/volksschule/aus-dem-amt/ferienplan.html",
+          "scopes": [
+            "CH-SG"
           ],
           "learned": "2026-10-18"
         }
@@ -111,7 +170,65 @@
         "(^|\\.)boe\\.es$",
         "(^|\\.)educacionfpydeportes\\.gob\\.es$"
       ],
-      "hint": "Each autonomous community sets its calendario escolar by order of its Consejería de Educación (published in the regional official bulletin and on the education portal, e.g. educa.madrid.org, educacio.gencat.cat, edu.xunta.gal). Ceuta and Melilla are set by the Ministry (educacionfpydeportes.gob.es)."
+      "hint": "Each autonomous community sets its calendario escolar by order of its Consejería de Educación (published in the regional official bulletin and on the education portal, e.g. educa.madrid.org, educacio.gencat.cat, edu.xunta.gal). Ceuta and Melilla are set by the Ministry (educacionfpydeportes.gob.es).",
+      "sources": [
+        {
+          "url": "https://educa.aragon.es/calendario-escolar",
+          "scopes": [
+            "ES-AR"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+          "scopes": [
+            "ES-AR"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://bocyl.jcyl.es/boletines/2026/05/28/pdf/BOCYL-D-28052026-101-28.pdf",
+          "scopes": [
+            "ES-CL"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.educa.jcyl.es/en/calendario-escolar-e1c54",
+          "scopes": [
+            "ES-CL"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.gobiernodecanarias.org/boc/2026/061/1025.html",
+          "scopes": [
+            "ES-CN"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.juntaex.es/w/20260605-actividad-lectiva-del-curso-2026-2027-el-10-de-septiembre",
+          "scopes": [
+            "ES-EX"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.carm.es/web/pagina?IDCONTENIDO=125293&IDTIPO=10&RASTRO=c%24m59491%2C70",
+          "scopes": [
+            "ES-MC"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://dogv.gva.es/datos/2026/06/18/pdf/2026_20810_va.pdf",
+          "scopes": [
+            "ES-VC"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "FR": {
       "name": "France",
@@ -196,6 +313,27 @@
             "Nottinghamshire County Council"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.derbyshire.gov.uk/education/schools/term-dates-school-holidays/school-term-dates-and-holidays.aspx",
+          "scopes": [
+            "Derbyshire County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.worcestershire.gov.uk/council-services/schools-education-and-learning/apply-school-place/school-term-dates",
+          "scopes": [
+            "Worcestershire County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.sheffield.gov.uk/schools-childcare/school-information-term-dates",
+          "scopes": [
+            "Sheffield City Council"
+          ],
+          "learned": "2026-10-18"
         }
       ]
     },
@@ -247,7 +385,93 @@
         "(^|\\.)gov\\.it$",
         "(^|\\.)bur[a-z]*\\.regione\\.[a-z-]+\\.it$"
       ],
-      "hint": "Each region approves its calendario scolastico by a regional council decision (delibera di giunta regionale), published on the region's website; Bolzano/South Tyrol and Trento are set by the autonomous provinces."
+      "hint": "Each region approves its calendario scolastico by a regional council decision (delibera di giunta regionale), published on the region's website; Bolzano/South Tyrol and Trento are set by the autonomous provinces.",
+      "sources": [
+        {
+          "url": "https://www.regione.vda.it/notizie/details_i.asp?id=522964",
+          "scopes": [
+            "IT-23"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://bur.regione.veneto.it/BurvServices/pubblica/html2pdf.aspx?id=580729&storico=False&tipoAtto=9",
+          "scopes": [
+            "IT-34"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.veneto.it/article-detail?articleGroupId=3059728&articleId=3061491",
+          "scopes": [
+            "IT-34"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.fvg.it/rafvg/cms/RAFVG/istruzione-ricerca/regione-per-scuole/FOGLIA22/",
+          "scopes": [
+            "IT-36"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://scuola.regione.emilia-romagna.it/novita/notizie/2026/calendario-scolastico-2026-27",
+          "scopes": [
+            "IT-45"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.toscana.it/it/-/direttive-per-il-calendario-scolastico-2026-2027",
+          "scopes": [
+            "IT-52"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.toscana.it/documents/d/guest/lettera-firma-congiunta_calendario-con-firma-_firmato-pdf",
+          "scopes": [
+            "IT-52"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.lazio.it/sites/default/files/documentazione/2026/SCU-CIR-143880-11-02-2026-Schema-calendario-scolastico-2026-2027.pdf",
+          "scopes": [
+            "IT-62"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22166",
+          "scopes": [
+            "IT-67"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.calabria.it/approvato-calendario-scolastico-2026-2027-micheli-garantita-una-programmazione-omogenea-per-famiglie-istituzioni-scolastiche-ed-enti-locali/",
+          "scopes": [
+            "IT-78"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.calabria.it/wp-content/uploads/2026/04/DPGR-32_2026.pdf",
+          "scopes": [
+            "IT-78"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.sicilia.it/la-regione-informa/1396-01042026",
+          "scopes": [
+            "IT-82"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "LI": {
       "name": "Liechtenstein",
@@ -346,7 +570,39 @@
         "(^|\\.)isj[a-z]*\\.ro$",
         "(^|\\.)ismb\\.edu\\.ro$"
       ],
-      "hint": "The Ministry of Education (edu.ro) publishes the 'structura anului școlar' by ministerial order; the February holiday (vacanța de schi) differs by county (județ)."
+      "hint": "The Ministry of Education (edu.ro) publishes the 'structura anului școlar' by ministerial order; the February holiday (vacanța de schi) differs by county (județ).",
+      "sources": [
+        {
+          "url": "https://www.edu.ro/sites/default/files/PO_structura_an_scolar_2026_2027.pdf",
+          "scopes": [
+            "RO-AB",
+            "RO-AG",
+            "RO-AR",
+            "RO-B",
+            "RO-BC",
+            "RO-BH",
+            "RO-BN",
+            "RO-BR",
+            "RO-DB",
+            "RO-DJ",
+            "RO-GJ",
+            "RO-GL",
+            "RO-GR",
+            "RO-HD",
+            "RO-HR",
+            "RO-IF",
+            "RO-IL",
+            "RO-IS",
+            "RO-MH",
+            "RO-MM",
+            "RO-MS",
+            "RO-NT",
+            "RO-OT",
+            "RO-PH"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "RS": {
       "name": "Serbia",
