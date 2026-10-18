@@ -216,14 +216,27 @@ def is_official(url: str, patterns: list[str]) -> bool:
     return any(re.search(p, h) for p in patterns + [GENERIC_OFFICIAL])
 
 
+BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
+              "Chrome/141.0.0.0 Safari/537.36")
+
+
 def http_get(url: str) -> tuple[bytes, str]:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/pdf,*/*;q=0.8",
-                                               "Accept-Language": "en,de;q=0.8,fr;q=0.7,*;q=0.5"})
-    with urllib.request.urlopen(req, timeout=40) as r:
-        data = r.read(MAX_BYTES + 1)
-        if len(data) > MAX_BYTES:
-            raise ValueError("document larger than 15 MB")
-        return data, r.headers.get("Content-Type", "")
+    """Some government sites refuse unknown clients (HTTP 403); then retry once like a browser."""
+    for ua in (UA, BROWSER_UA):
+        req = urllib.request.Request(url, headers={
+            "User-Agent": ua, "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
+            "Accept-Language": "en,de;q=0.8,fr;q=0.7,*;q=0.5", "Upgrade-Insecure-Requests": "1"})
+        try:
+            with urllib.request.urlopen(req, timeout=40) as r:
+                data = r.read(MAX_BYTES + 1)
+                if len(data) > MAX_BYTES:
+                    raise ValueError("document larger than 15 MB")
+                return data, r.headers.get("Content-Type", "")
+        except urllib.error.HTTPError as e:
+            if e.code not in (401, 403, 406, 429) or ua == BROWSER_UA:
+                raise
+            time.sleep(2)
+    raise RuntimeError("unreachable")
 
 
 KEYWORDS = re.compile(r"ferien|vacan|vakant|vacaci|ferie|holiday|kalend|calend|schuljahr|anno.?scol|ano.?escol|"
@@ -322,7 +335,11 @@ def _post(url: str, headers: dict, body: dict, tries: int = 3) -> dict:
             with urllib.request.urlopen(req, timeout=300) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            msg = e.read().decode(errors="replace")[:500]
+            raw = e.read().decode(errors="replace")
+            try:
+                msg = json.loads(raw)["error"]["message"]
+            except (ValueError, KeyError, TypeError):
+                msg = raw[:300]
             if e.code in (429, 500, 502, 503, 529) and attempt < tries - 1:
                 time.sleep(20 * (attempt + 1))
                 continue
@@ -597,6 +614,7 @@ def main() -> int:
     candidates: list[str] = []
     learned: list[dict] = []
     unresolved: dict[str, list[str]] = defaultdict(list)
+    errors_model: list[str] = []  # the model could not be used: shown on top, and the run fails
 
     with psycopg.connect(dsn) as conn:
         conn.read_only = True
@@ -629,92 +647,112 @@ def main() -> int:
             by_code = {s["code"]: s for s in items}
             years = sorted({y for s in items for y in s["want"]})
 
-            # 1. sources: listed ones first, then discovery for the rest
+            got: dict[tuple, list[dict]] = defaultdict(list)  # (code, year) -> calendars from different URLs
+            discovered: set[str] = set()
+            searched: set[str] = set()
+            delivered: set[str] = set()  # scope codes with at least one readable document
+
+            def discover(todo: list[dict]) -> dict[str, set[str]]:
+                nonlocal searches
+                plan: dict[str, set[str]] = defaultdict(set)
+                todo = [s for s in todo if s["code"] not in searched]
+                for chunk in [todo[i:i + 8] for i in range(0, len(todo), 8)]:
+                    if args.no_discover or searches >= args.max_searches:
+                        break
+                    searches += 1
+                    searched.update(s["code"] for s in chunk)
+                    regions = "\n".join(f"- {s['code']}: {s['name']}" for s in chunk)
+                    prompt = (f"Country: {cc} ({cfg.get('name', cc)})\nSchool years: {', '.join(years)}\n"
+                              f"{cfg.get('hint', '')}\nScopes:\n{regions}")
+                    try:
+                        found, cited = model.search(DISCOVER_SYSTEM, prompt)
+                    except ModelError as e:
+                        errors_model.append(f"{cc}: web search failed: {e}")
+                        continue
+                    listed = found.get("sources", []) if isinstance(found, dict) else []
+                    for f in listed:
+                        url = (f.get("url") or "").strip()
+                        codes = [c for c in f.get("scopes", []) if c in by_code] or [s["code"] for s in chunk]
+                        if not url.startswith("http"):
+                            continue
+                        if is_official(url, patterns):
+                            plan[url].update(codes)
+                            discovered.add(url)
+                        else:
+                            candidates.append(f"{cc} {', '.join(codes)}: {url}")
+                    for url in cited:  # pages the search cited; official ones are read if the answer listed none
+                        if is_official(url, patterns):
+                            if not listed:
+                                plan[url].update(s["code"] for s in chunk)
+                                discovered.add(url)
+                        elif not AGGREGATORS.search(url):
+                            candidates.append(f"{cc} (cited): {url}")
+                return plan
+
+            def read(plan: dict[str, set[str]]) -> None:
+                nonlocal calls
+                for url, codes in plan.items():
+                    if calls >= args.max_calls:
+                        log.append(f"{cc}: stopped at the limit of {args.max_calls} documents for this run")
+                        return
+                    time.sleep(1)
+                    parts = fetch_document(url, years, log)
+                    text = "\n\n".join(f"=== Document part: {u} ===\n{t}" for u, t in parts if t.strip())
+                    if not text or not date_mentions(text):
+                        if parts:
+                            log.append(f"{cc}: no dates in {url}")
+                        stats["documents_unreadable"] += 1
+                        continue
+                    mentions = date_mentions(text)
+                    regions = "\n".join(f"- {c}: {by_code[c]['name']}" for c in sorted(codes))
+                    user = (f"Country: {cc}\nSchool years wanted: {', '.join(years)} "
+                            f"({'calendar years' if cc in cy_country else 'from summer to summer, e.g. 2026-27'})\n"
+                            f"Scopes:\n{regions}\n\nDocument:\n{shorten(text)}")
+                    calls += 1
+                    try:
+                        data = model.extract(EXTRACT_SYSTEM, user)
+                    except (ModelError, json.JSONDecodeError, KeyError) as e:
+                        errors_model.append(f"{cc}: reading {url} failed: {e}")
+                        continue
+                    stats["documents_read"] += 1
+                    delivered.update(codes)
+                    urls = {u for u, _ in parts}
+                    found_here = 0
+                    for cal in data.get("calendars", []):
+                        code, sy = cal.get("scope"), (cal.get("school_year") or "").replace("/", "-").strip()
+                        if re.fullmatch(r"\d{4}-\d{4}", sy):
+                            sy = f"{sy[:4]}-{sy[-2:]}"
+                        if code not in codes or sy not in by_code[code]["want"]:
+                            continue
+                        cal["school_year"] = sy
+                        periods, errors = check(cal, cc)
+                        if errors:
+                            rejected.append(f"{cc} {by_code[code]['name']} {sy} ({host(url)}): {'; '.join(errors[:3])}")
+                            stats["rejected"] += 1
+                            continue
+                        ok, total = verified(cal, periods, mentions)
+                        src = cal.get("source_url") if cal.get("source_url") in urls else url
+                        found_here += 1
+                        got[(code, sy)].append(dict(cal=cal, periods=periods, ok=ok, total=total, url=src, page=url,
+                                                    official=is_official(src, patterns) or url not in discovered,
+                                                    language=(cal.get("language") or cfg.get("lang") or "en")[:2].lower()))
+                    if url in discovered and found_here:
+                        learned.append({"country": cc, "url": url,
+                                        "scopes": sorted(by_code[c]["name"] if by_code[c]["auth"] else c for c in codes)})
+
+            # 1. listed sources; scopes without one are searched for on the web
             plan: dict[str, set[str]] = defaultdict(set)
             for src in cfg.get("sources", []):
                 for s in items:
                     if src.get("scopes", "*") == "*" or s["code"] in src["scopes"] or s["name"] in src["scopes"]:
                         plan[src["url"]].add(s["code"])
-            todo = [s for s in items if not any(s["code"] in v for v in plan.values())]
-            discovered: set[str] = set()
-            for chunk in [todo[i:i + 8] for i in range(0, len(todo), 8)]:
-                if args.no_discover or searches >= args.max_searches:
-                    break
-                searches += 1
-                regions = "\n".join(f"- {s['code']}: {s['name']}" for s in chunk)
-                prompt = (f"Country: {cc} ({cfg.get('name', cc)})\nSchool years: {', '.join(years)}\n"
-                          f"{cfg.get('hint', '')}\nScopes:\n{regions}")
-                try:
-                    found, cited = model.search(DISCOVER_SYSTEM, prompt)
-                except ModelError as e:
-                    log.append(f"{cc}: search failed: {e}")
-                    continue
-                for f in found.get("sources", []) if isinstance(found, dict) else []:
-                    url = (f.get("url") or "").strip()
-                    codes = [c for c in f.get("scopes", []) if c in by_code] or [s["code"] for s in chunk]
-                    if not url.startswith("http"):
-                        continue
-                    if is_official(url, patterns):
-                        plan[url].update(codes)
-                        discovered.add(url)
-                    else:
-                        candidates.append(f"{cc} {', '.join(codes)}: {url}")
-                for url in cited:  # pages the search cited; official ones are read if the answer listed none
-                    if is_official(url, patterns):
-                        if not found.get("sources") if isinstance(found, dict) else True:
-                            plan[url].update(s["code"] for s in chunk)
-                            discovered.add(url)
-                    elif not AGGREGATORS.search(url):
-                        candidates.append(f"{cc} (cited): {url}")
-
-            # 2. read every planned document once, for all scopes it should cover
-            got: dict[tuple, list[dict]] = defaultdict(list)  # (code, year) -> calendars from different URLs
-            for url, codes in plan.items():
-                if calls >= args.max_calls:
-                    log.append(f"{cc}: stopped at the limit of {args.max_calls} documents for this run")
-                    break
-                time.sleep(1)
-                parts = fetch_document(url, years, log)
-                text = "\n\n".join(f"=== Document part: {u} ===\n{t}" for u, t in parts if t.strip())
-                if not text or not date_mentions(text):
-                    log.append(f"{cc}: no dates in {url}")
-                    stats["documents_without_dates"] += 1
-                    continue
-                mentions = date_mentions(text)
-                regions = "\n".join(f"- {c}: {by_code[c]['name']}" for c in sorted(codes))
-                user = (f"Country: {cc}\nSchool years wanted: {', '.join(years)} "
-                        f"({'calendar years' if cc in cy_country else 'from summer to summer, e.g. 2026-27'})\n"
-                        f"Scopes:\n{regions}\n\nDocument:\n{shorten(text)}")
-                calls += 1
-                try:
-                    data = model.extract(EXTRACT_SYSTEM, user)
-                except (ModelError, json.JSONDecodeError, KeyError) as e:
-                    log.append(f"{cc}: model failed on {url}: {e}")
-                    continue
-                stats["documents_read"] += 1
-                urls = {u for u, _ in parts}
-                found_here = 0
-                for cal in data.get("calendars", []):
-                    code, sy = cal.get("scope"), (cal.get("school_year") or "").replace("/", "-").strip()
-                    if re.fullmatch(r"\d{4}-\d{4}", sy):
-                        sy = f"{sy[:4]}-{sy[-2:]}"
-                    if code not in codes or sy not in by_code[code]["want"]:
-                        continue
-                    cal["school_year"] = sy
-                    periods, errors = check(cal, cc)
-                    if errors:
-                        rejected.append(f"{cc} {by_code[code]['name']} {sy} ({host(url)}): {'; '.join(errors[:3])}")
-                        stats["rejected"] += 1
-                        continue
-                    ok, total = verified(cal, periods, mentions)
-                    src = cal.get("source_url") if cal.get("source_url") in urls else url
-                    found_here += 1
-                    got[(code, sy)].append(dict(cal=cal, periods=periods, ok=ok, total=total, url=src, page=url,
-                                                official=is_official(src, patterns) or url not in discovered,
-                                                language=(cal.get("language") or cfg.get("lang") or "en")[:2].lower()))
-                if url in discovered and found_here:
-                    learned.append({"country": cc, "url": url,
-                                    "scopes": sorted(by_code[c]["name"] if by_code[c]["auth"] else c for c in codes)})
+            for url, codes in discover([s for s in items if not any(s["code"] in v for v in plan.values())]).items():
+                plan[url].update(codes)
+            # 2. read every document once, for all scopes it should cover
+            read(plan)
+            # 2b. scopes whose documents could not be read (blocked, moved, no dates): search for another source
+            retry = discover([s for s in items if s["code"] not in delivered])
+            read({u: c for u, c in retry.items() if u not in plan})
 
             # 3. decide, compare with what the database already has
             others = other_breaks(cur, [cid for s in items for y in s["want"] for cid in s["others"].get(y, [])])
@@ -795,6 +833,9 @@ def main() -> int:
              f"- ✅ confirmed: {stats['calendars_confirmed']}",
              f"- 🟡 pending (served only with include=pending): {stats['calendars_pending']}",
              f"- ❌ rejected as implausible: {stats['rejected']}", ""]
+    if errors_model:
+        lines[2:2] = [f"> [!CAUTION]\n> The language model could not be used ({len(errors_model)} failed requests). "
+                      f"First error: {errors_model[0]}", ""]
     if results:
         lines += ["| Region | Status | Source | Why |", "|---|---|---|---|"]
         for c in sorted(results.values(), key=lambda c: (c["country_code"], c["_label"])):
@@ -826,6 +867,9 @@ def main() -> int:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
             f.write(f"file={os.path.relpath(out_path, ROOT) if results else ''}\n")
+    if errors_model and not stats["documents_read"]:
+        print("::error::The language model could not be used: " + errors_model[0].replace("\n", " "))
+        return 1
     return 0
 
 
