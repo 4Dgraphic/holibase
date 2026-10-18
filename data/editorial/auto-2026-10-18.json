@@ -1,0 +1,1888 @@
+{
+ "dataset": "auto-research-2026-10-18",
+ "retrieved": "2026-10-18",
+ "method": "Automatic research: official documents read by OpenAI gpt-5-mini, dates checked against the document text and other sources (scripts/auto_research.py).",
+ "calendars": [
+  {
+   "id": "c65ebd32-0606-537a-9677-b10dfb3db53b",
+   "country_code": "CH",
+   "subdivision_code": "CH-SO",
+   "authority": "KBS Solothurn",
+   "authority_id": "ffd1b3e5-f5ef-531a-af7f-e74e7fde10cd",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://so.ch/fileadmin/internet/dbk/dbk-abmh/Dokumente/abmh/Ferienplaene/Ferienplan_2027-28-Web_20201104_ABMH.pdf",
+   "first_day": "2027-08-16",
+   "last_day": "2028-07-07",
+   "notes": "Automatically extracted from so.ch (OpenAI gpt-5-mini); 12 of 12 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2027-10-04",
+     "end_date": "2027-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-27",
+     "end_date": "2028-01-07",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-02-07",
+     "end_date": "2028-02-18",
+     "kind": "break",
+     "label": "Winterferien",
+     "names": {
+      "en": "Winter break",
+      "de": "Winterferien"
+     }
+    },
+    {
+     "start_date": "2028-04-10",
+     "end_date": "2028-04-21",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2028-07-10",
+     "end_date": "2028-08-11",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "d247a4ea-cd3a-5b00-90a0-1037c766659b",
+   "country_code": "CH",
+   "subdivision_code": "CH-SO",
+   "authority": "KBS Solothurn",
+   "authority_id": "ffd1b3e5-f5ef-531a-af7f-e74e7fde10cd",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://so.ch/fileadmin/internet/dbk/dbk-abmh/Dokumente/abmh/Ferienplaene/ferienplan_2028-29-web_20201105_ABMH.pdf",
+   "first_day": "2028-08-16",
+   "last_day": "2029-07-06",
+   "notes": "Automatically extracted from so.ch (OpenAI gpt-5-mini); 12 of 12 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-02",
+     "end_date": "2028-10-20",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-05",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-02-05",
+     "end_date": "2029-02-16",
+     "kind": "break",
+     "label": "Winterferien",
+     "names": {
+      "en": "Winter break",
+      "de": "Winterferien"
+     }
+    },
+    {
+     "start_date": "2029-04-09",
+     "end_date": "2029-04-20",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-07-09",
+     "end_date": "2029-08-10",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "16a35716-9cae-5b02-9c68-fe78c0f554d0",
+   "country_code": "CH",
+   "subdivision_code": "CH-SO",
+   "authority": "KBS Solothurn",
+   "authority_id": "ffd1b3e5-f5ef-531a-af7f-e74e7fde10cd",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "confirmed",
+   "source_url": "https://so.ch/verwaltung/departement-fuer-bildung-kultur-und-sport/amt-fuer-berufsbildung-mittel-und-hochschulen/aktuell/ferienplaene/",
+   "first_day": "2029-08-13",
+   "last_day": "2030-07-07",
+   "notes": "Automatically extracted from so.ch (OpenAI gpt-5-mini); 12 of 12 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2029-10-01",
+     "end_date": "2029-10-19",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2029-12-24",
+     "end_date": "2030-01-04",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2030-02-04",
+     "end_date": "2030-02-15",
+     "kind": "break",
+     "label": "Winterferien",
+     "names": {
+      "en": "Winter break",
+      "de": "Winterferien"
+     }
+    },
+    {
+     "start_date": "2030-04-08",
+     "end_date": "2030-04-22",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2030-07-08",
+     "end_date": "2030-08-09",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "afeb256f-0bb2-5cf3-9a0b-b8e459dbec2e",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/bildung/bildungssystem/schulferien/mittel--und-berufsfachschulen/mittelschulen/Ferien_Mittelschulen_SJ_2028_2029.pdf",
+   "first_day": "2028-08-21",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 18 of 18 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-09",
+     "end_date": "2028-10-21",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-06",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-02-12",
+     "end_date": "2029-02-24",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2029-03-30",
+     "end_date": "2029-04-02",
+     "kind": "break",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2029-04-16",
+     "end_date": "2029-04-16",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (City of Zurich)",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2029-04-23",
+     "end_date": "2029-05-05",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-12",
+     "kind": "break",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension long weekend",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2029-05-19",
+     "end_date": "2029-05-21",
+     "kind": "break",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2029-07-16",
+     "end_date": "2029-08-18",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "441699e5-57ca-56f1-987f-54bc947daeac",
+   "country_code": "BE",
+   "subdivision_code": null,
+   "authority": "German-speaking Community",
+   "authority_id": "0d8246df-2d28-5855-90bd-b7908f597f94",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://ostbelgienbildung.be/DownloadCount.aspx?raid=217306&docid=49581&rn=7310fce6-e295-455d-9697-f1e6e932cc20",
+   "first_day": "2026-09-01",
+   "last_day": "2027-06-30",
+   "notes": "Automatically extracted from ostbelgienbildung.be (OpenAI gpt-5-mini); 17 of 17 dates found in the document; all dates found in the official document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-11-02",
+     "end_date": "2026-11-07",
+     "kind": "break",
+     "label": "Allerheiligenferien",
+     "names": {
+      "en": "All Saints' break",
+      "de": "Allerheiligenferien"
+     }
+    },
+    {
+     "start_date": "2026-11-11",
+     "end_date": "2026-11-11",
+     "kind": "holiday",
+     "label": "Waffenstillstand",
+     "names": {
+      "en": "Armistice Day",
+      "de": "Waffenstillstand"
+     }
+    },
+    {
+     "start_date": "2026-11-15",
+     "end_date": "2026-11-15",
+     "kind": "holiday",
+     "label": "Tag der Deutschsprachigen Gemeinschaft",
+     "names": {
+      "en": "Day of the German-speaking Community",
+      "de": "Tag der Deutschsprachigen Gemeinschaft"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2027-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2026-12-24",
+     "end_date": "2026-12-24",
+     "kind": "holiday",
+     "label": "Heiligabend",
+     "names": {
+      "en": "Christmas Eve",
+      "de": "Heiligabend"
+     }
+    },
+    {
+     "start_date": "2027-02-08",
+     "end_date": "2027-02-13",
+     "kind": "break",
+     "label": "Karnevalsferien",
+     "names": {
+      "en": "Carnival break",
+      "de": "Karnevalsferien"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Ostermontag",
+     "names": {
+      "en": "Easter Monday",
+      "de": "Ostermontag"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-04-10",
+     "kind": "break",
+     "label": "Osterferien",
+     "names": {
+      "en": "Easter holidays",
+      "de": "Osterferien"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Tag der Arbeit",
+     "names": {
+      "en": "Labour Day",
+      "de": "Tag der Arbeit"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-06",
+     "kind": "holiday",
+     "label": "Christi Himmelfahrt",
+     "names": {
+      "en": "Ascension Day",
+      "de": "Christi Himmelfahrt"
+     }
+    },
+    {
+     "start_date": "2027-05-17",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ab34f255-763d-51ce-b142-5c244ffbdd52",
+   "country_code": "BE",
+   "subdivision_code": null,
+   "authority": "German-speaking Community",
+   "authority_id": "0d8246df-2d28-5855-90bd-b7908f597f94",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://ostbelgienbildung.be/DownloadCount.aspx?raid=217306&docid=49581&rn=7310fce6-e295-455d-9697-f1e6e932cc20",
+   "first_day": "2027-09-01",
+   "last_day": "2028-06-30",
+   "notes": "Automatically extracted from ostbelgienbildung.be (OpenAI gpt-5-mini); 17 of 17 dates found in the document; all dates found in the official document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-11-01",
+     "end_date": "2027-11-06",
+     "kind": "break",
+     "label": "Allerheiligenferien",
+     "names": {
+      "en": "All Saints' break",
+      "de": "Allerheiligenferien"
+     }
+    },
+    {
+     "start_date": "2027-11-11",
+     "end_date": "2027-11-11",
+     "kind": "holiday",
+     "label": "Waffenstillstand",
+     "names": {
+      "en": "Armistice Day",
+      "de": "Waffenstillstand"
+     }
+    },
+    {
+     "start_date": "2027-11-15",
+     "end_date": "2027-11-15",
+     "kind": "holiday",
+     "label": "Tag der Deutschsprachigen Gemeinschaft",
+     "names": {
+      "en": "Day of the German-speaking Community",
+      "de": "Tag der Deutschsprachigen Gemeinschaft"
+     }
+    },
+    {
+     "start_date": "2027-12-24",
+     "end_date": "2027-12-24",
+     "kind": "holiday",
+     "label": "Heiligabend",
+     "names": {
+      "en": "Christmas Eve",
+      "de": "Heiligabend"
+     }
+    },
+    {
+     "start_date": "2027-12-27",
+     "end_date": "2028-01-08",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-02-28",
+     "end_date": "2028-03-04",
+     "kind": "break",
+     "label": "Karnevalsferien",
+     "names": {
+      "en": "Carnival break",
+      "de": "Karnevalsferien"
+     }
+    },
+    {
+     "start_date": "2028-04-17",
+     "end_date": "2028-04-17",
+     "kind": "holiday",
+     "label": "Ostermontag",
+     "names": {
+      "en": "Easter Monday",
+      "de": "Ostermontag"
+     }
+    },
+    {
+     "start_date": "2028-04-17",
+     "end_date": "2028-04-29",
+     "kind": "break",
+     "label": "Osterferien",
+     "names": {
+      "en": "Easter holidays",
+      "de": "Osterferien"
+     }
+    },
+    {
+     "start_date": "2028-05-01",
+     "end_date": "2028-05-01",
+     "kind": "holiday",
+     "label": "Tag der Arbeit",
+     "names": {
+      "en": "Labour Day",
+      "de": "Tag der Arbeit"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-05-25",
+     "kind": "holiday",
+     "label": "Christi Himmelfahrt",
+     "names": {
+      "en": "Ascension Day",
+      "de": "Christi Himmelfahrt"
+     }
+    },
+    {
+     "start_date": "2028-06-05",
+     "end_date": "2028-06-05",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    }
+   ]
+  },
+  {
+   "id": "de8a1ba2-2ba8-5346-be7c-f9282477a50d",
+   "country_code": "BE",
+   "subdivision_code": null,
+   "authority": "German-speaking Community",
+   "authority_id": "0d8246df-2d28-5855-90bd-b7908f597f94",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://ostbelgienbildung.be/DownloadCount.aspx?raid=217306&docid=49581&rn=7310fce6-e295-455d-9697-f1e6e932cc20",
+   "first_day": "2028-09-01",
+   "last_day": "2029-06-29",
+   "notes": "Automatically extracted from ostbelgienbildung.be (OpenAI gpt-5-mini); 17 of 17 dates found in the document; all dates found in the official document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2028-10-30",
+     "end_date": "2028-11-04",
+     "kind": "break",
+     "label": "Allerheiligenferien",
+     "names": {
+      "en": "All Saints' break",
+      "de": "Allerheiligenferien"
+     }
+    },
+    {
+     "start_date": "2028-11-11",
+     "end_date": "2028-11-11",
+     "kind": "holiday",
+     "label": "Waffenstillstand",
+     "names": {
+      "en": "Armistice Day",
+      "de": "Waffenstillstand"
+     }
+    },
+    {
+     "start_date": "2028-11-15",
+     "end_date": "2028-11-15",
+     "kind": "holiday",
+     "label": "Tag der Deutschsprachigen Gemeinschaft",
+     "names": {
+      "en": "Day of the German-speaking Community",
+      "de": "Tag der Deutschsprachigen Gemeinschaft"
+     }
+    },
+    {
+     "start_date": "2028-12-24",
+     "end_date": "2028-12-24",
+     "kind": "holiday",
+     "label": "Heiligabend",
+     "names": {
+      "en": "Christmas Eve",
+      "de": "Heiligabend"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-06",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-02-12",
+     "end_date": "2029-02-17",
+     "kind": "break",
+     "label": "Karnevalsferien",
+     "names": {
+      "en": "Carnival break",
+      "de": "Karnevalsferien"
+     }
+    },
+    {
+     "start_date": "2029-04-02",
+     "end_date": "2029-04-02",
+     "kind": "holiday",
+     "label": "Ostermontag",
+     "names": {
+      "en": "Easter Monday",
+      "de": "Ostermontag"
+     }
+    },
+    {
+     "start_date": "2029-04-02",
+     "end_date": "2029-04-14",
+     "kind": "break",
+     "label": "Osterferien",
+     "names": {
+      "en": "Easter holidays",
+      "de": "Osterferien"
+     }
+    },
+    {
+     "start_date": "2029-05-01",
+     "end_date": "2029-05-01",
+     "kind": "holiday",
+     "label": "Tag der Arbeit",
+     "names": {
+      "en": "Labour Day",
+      "de": "Tag der Arbeit"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-10",
+     "kind": "holiday",
+     "label": "Christi Himmelfahrt",
+     "names": {
+      "en": "Ascension Day",
+      "de": "Christi Himmelfahrt"
+     }
+    },
+    {
+     "start_date": "2029-05-21",
+     "end_date": "2029-05-21",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ef150422-9506-5673-961f-721273a0bfd5",
+   "country_code": "FR",
+   "subdivision_code": "FR-973",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026",
+   "status": "confirmed",
+   "source_url": "https://www.ac-guyane.fr/le-calendrier-scolaire-121444",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Automatically extracted from ac-guyane.fr (OpenAI gpt-5-mini); 8 of 8 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2025-12-20",
+     "end_date": "2026-01-05",
+     "kind": "break",
+     "label": "Noël",
+     "names": {
+      "en": "Christmas break",
+      "fr": "Noël"
+     }
+    },
+    {
+     "start_date": "2026-02-07",
+     "end_date": "2026-02-23",
+     "kind": "break",
+     "label": "Carnaval",
+     "names": {
+      "en": "Carnival break",
+      "fr": "Carnaval"
+     }
+    },
+    {
+     "start_date": "2026-04-01",
+     "end_date": "2026-04-16",
+     "kind": "break",
+     "label": "Pâques",
+     "names": {
+      "en": "Easter break",
+      "fr": "Pâques"
+     }
+    },
+    {
+     "start_date": "2026-05-15",
+     "end_date": "2026-05-16",
+     "kind": "holiday",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension (days off)",
+      "fr": "Ascension"
+     }
+    }
+   ]
+  },
+  {
+   "id": "210fbf47-1895-502e-b586-a261662691a2",
+   "country_code": "FR",
+   "subdivision_code": "FR-973",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027",
+   "status": "confirmed",
+   "source_url": "https://www.ac-guyane.fr/le-calendrier-scolaire-121444",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Automatically extracted from ac-guyane.fr (OpenAI gpt-5-mini); 8 of 8 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-04",
+     "kind": "break",
+     "label": "Noël",
+     "names": {
+      "en": "Christmas break",
+      "fr": "Noël"
+     }
+    },
+    {
+     "start_date": "2027-02-06",
+     "end_date": "2027-02-18",
+     "kind": "break",
+     "label": "Carnaval",
+     "names": {
+      "en": "Carnival break",
+      "fr": "Carnaval"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-04-12",
+     "kind": "break",
+     "label": "Pâques",
+     "names": {
+      "en": "Easter break",
+      "fr": "Pâques"
+     }
+    },
+    {
+     "start_date": "2027-04-30",
+     "end_date": "2027-05-10",
+     "kind": "break",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension break",
+      "fr": "Ascension"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a74d4db9-78a3-5fab-8e5b-5be1f059ca7b",
+   "country_code": "FR",
+   "subdivision_code": "FR-NC",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027",
+   "status": "confirmed",
+   "source_url": "https://juridoc.gouv.nc/juridoc/jdjopj.nsf/0/33FE2E7255FC2D7A4B258C9700109D3E/%24File/Annexe.pdf?OpenElement",
+   "first_day": "2027-02-15",
+   "last_day": null,
+   "notes": "Automatically extracted from juridoc.gouv.nc (OpenAI gpt-5-mini); 11 of 11 dates found in the document; all dates found in the official document; agrees with a second page (denc.gouv.nc).",
+   "periods": [
+    {
+     "start_date": "2027-02-12",
+     "end_date": "2027-02-12",
+     "kind": "teacher_day",
+     "label": "Rentrée scolaire des enseignants",
+     "names": {
+      "en": "Teachers' return",
+      "fr": "Rentrée scolaire des enseignants"
+     }
+    },
+    {
+     "start_date": "2027-04-03",
+     "end_date": "2027-04-18",
+     "kind": "break",
+     "label": "Vacances 1ère période",
+     "names": {
+      "en": "First break",
+      "fr": "Vacances 1ère période"
+     }
+    },
+    {
+     "start_date": "2027-06-05",
+     "end_date": "2027-06-20",
+     "kind": "break",
+     "label": "Vacances 2e période",
+     "names": {
+      "en": "Second break",
+      "fr": "Vacances 2e période"
+     }
+    },
+    {
+     "start_date": "2027-08-07",
+     "end_date": "2027-08-22",
+     "kind": "break",
+     "label": "Vacances 3e période",
+     "names": {
+      "en": "Third break",
+      "fr": "Vacances 3e période"
+     }
+    },
+    {
+     "start_date": "2027-10-09",
+     "end_date": "2027-10-24",
+     "kind": "break",
+     "label": "Vacances 4e période",
+     "names": {
+      "en": "Fourth break",
+      "fr": "Vacances 4e période"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2027-12-18",
+     "kind": "break",
+     "label": "Début des vacances d’été",
+     "names": {
+      "en": "Start of summer holidays",
+      "fr": "Début des vacances d’été"
+     }
+    }
+   ]
+  },
+  {
+   "id": "6f52d7ec-fadc-5890-b703-3ac3305406be",
+   "country_code": "FR",
+   "subdivision_code": "FR-NC",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028",
+   "status": "confirmed",
+   "source_url": "https://juridoc.gouv.nc/juridoc/jdjopj.nsf/0/33FE2E7255FC2D7A4B258C9700109D3E/%24File/Annexe.pdf?OpenElement",
+   "first_day": "2028-02-14",
+   "last_day": null,
+   "notes": "Automatically extracted from juridoc.gouv.nc (OpenAI gpt-5-mini); 11 of 11 dates found in the document; all dates found in the official document; agrees with a second page (denc.gouv.nc).",
+   "periods": [
+    {
+     "start_date": "2028-02-11",
+     "end_date": "2028-02-11",
+     "kind": "teacher_day",
+     "label": "Rentrée scolaire des enseignants",
+     "names": {
+      "en": "Teachers' return",
+      "fr": "Rentrée scolaire des enseignants"
+     }
+    },
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-23",
+     "kind": "break",
+     "label": "Vacances 1ère période",
+     "names": {
+      "en": "First break",
+      "fr": "Vacances 1ère période"
+     }
+    },
+    {
+     "start_date": "2028-06-10",
+     "end_date": "2028-06-25",
+     "kind": "break",
+     "label": "Vacances 2e période",
+     "names": {
+      "en": "Second break",
+      "fr": "Vacances 2e période"
+     }
+    },
+    {
+     "start_date": "2028-08-12",
+     "end_date": "2028-08-27",
+     "kind": "break",
+     "label": "Vacances 3e période",
+     "names": {
+      "en": "Third break",
+      "fr": "Vacances 3e période"
+     }
+    },
+    {
+     "start_date": "2028-10-14",
+     "end_date": "2028-10-29",
+     "kind": "break",
+     "label": "Vacances 4e période",
+     "names": {
+      "en": "Fourth break",
+      "fr": "Vacances 4e période"
+     }
+    },
+    {
+     "start_date": "2028-12-16",
+     "end_date": "2028-12-16",
+     "kind": "break",
+     "label": "Début des vacances d’été",
+     "names": {
+      "en": "Start of summer holidays",
+      "fr": "Début des vacances d’été"
+     }
+    }
+   ]
+  },
+  {
+   "id": "7d1888e5-afc2-541e-9f05-bc0eed708f36",
+   "country_code": "LU",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://men.public.lu/fr/vacances-scolaires.html",
+   "first_day": "2027-09-15",
+   "last_day": "2028-07-14",
+   "notes": "Automatically extracted from men.public.lu (OpenAI gpt-5-mini); 21 of 21 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2027-10-30",
+     "end_date": "2027-11-07",
+     "kind": "break",
+     "label": "congé de la Toussaint",
+     "names": {
+      "en": "Autumn break",
+      "fr": "congé de la Toussaint"
+     }
+    },
+    {
+     "start_date": "2027-12-06",
+     "end_date": "2027-12-06",
+     "kind": "holiday",
+     "label": "fête de Saint Nicolas (uniquement pour l'enseignement fondamental)",
+     "names": {
+      "en": "Saint Nicholas' Day (primary only)",
+      "fr": "fête de Saint Nicolas (uniquement pour l'enseignement fondamental)"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2028-01-02",
+     "kind": "break",
+     "label": "vacances de Noël",
+     "names": {
+      "en": "Christmas holidays",
+      "fr": "vacances de Noël"
+     }
+    },
+    {
+     "start_date": "2028-02-12",
+     "end_date": "2028-02-20",
+     "kind": "break",
+     "label": "congé de Carnaval",
+     "names": {
+      "en": "Carnival break",
+      "fr": "congé de Carnaval"
+     }
+    },
+    {
+     "start_date": "2028-04-01",
+     "end_date": "2028-04-16",
+     "kind": "break",
+     "label": "vacances de Pâques",
+     "names": {
+      "en": "Easter holidays",
+      "fr": "vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2028-04-17",
+     "end_date": "2028-04-17",
+     "kind": "holiday",
+     "label": "lundi de Pâques",
+     "names": {
+      "en": "Easter Monday",
+      "fr": "lundi de Pâques"
+     }
+    },
+    {
+     "start_date": "2028-05-01",
+     "end_date": "2028-05-01",
+     "kind": "holiday",
+     "label": "jour férié légal",
+     "names": {
+      "en": "Labour Day",
+      "fr": "jour férié légal"
+     }
+    },
+    {
+     "start_date": "2028-05-09",
+     "end_date": "2028-05-09",
+     "kind": "holiday",
+     "label": "Journée de l’Europe (jour férié légal)",
+     "names": {
+      "en": "Europe Day",
+      "fr": "Journée de l’Europe (jour férié légal)"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-05-25",
+     "kind": "holiday",
+     "label": "jour de congé pour l’Ascension",
+     "names": {
+      "en": "Ascension (public holiday)",
+      "fr": "jour de congé pour l’Ascension"
+     }
+    },
+    {
+     "start_date": "2028-05-27",
+     "end_date": "2028-06-04",
+     "kind": "break",
+     "label": "congé de la Pentecôte",
+     "names": {
+      "en": "Pentecost break",
+      "fr": "congé de la Pentecôte"
+     }
+    },
+    {
+     "start_date": "2028-06-05",
+     "end_date": "2028-06-05",
+     "kind": "holiday",
+     "label": "lundi de Pentecôte (jour férié légal)",
+     "names": {
+      "en": "Whit Monday",
+      "fr": "lundi de Pentecôte (jour férié légal)"
+     }
+    },
+    {
+     "start_date": "2028-06-23",
+     "end_date": "2028-06-23",
+     "kind": "holiday",
+     "label": "jour de congé pour la célébration publique de l’anniversaire de S.A.R. le Grand-Duc",
+     "names": {
+      "en": "Grand Duke's Official Birthday",
+      "fr": "jour de congé pour la célébration publique de l’anniversaire de S.A.R. le Grand-Duc"
+     }
+    },
+    {
+     "start_date": "2028-07-14",
+     "end_date": "2028-09-14",
+     "kind": "break",
+     "label": "vacances d’été",
+     "names": {
+      "en": "Summer holidays",
+      "fr": "vacances d’été"
+     }
+    }
+   ]
+  },
+  {
+   "id": "76676b79-82bc-5dce-a079-ac9cc0a60804",
+   "country_code": "LU",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://men.public.lu/fr/vacances-scolaires.html",
+   "first_day": "2028-09-15",
+   "last_day": "2029-07-13",
+   "notes": "Automatically extracted from men.public.lu (OpenAI gpt-5-mini); 20 of 20 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-28",
+     "end_date": "2028-11-05",
+     "kind": "break",
+     "label": "congé de la Toussaint",
+     "names": {
+      "en": "Autumn break",
+      "fr": "congé de la Toussaint"
+     }
+    },
+    {
+     "start_date": "2028-12-06",
+     "end_date": "2028-12-06",
+     "kind": "holiday",
+     "label": "fête de Saint Nicolas (uniquement pour l'enseignement fondamental)",
+     "names": {
+      "en": "Saint Nicholas' Day (primary only)",
+      "fr": "fête de Saint Nicolas (uniquement pour l'enseignement fondamental)"
+     }
+    },
+    {
+     "start_date": "2028-12-16",
+     "end_date": "2028-12-31",
+     "kind": "break",
+     "label": "vacances de Noël",
+     "names": {
+      "en": "Christmas holidays",
+      "fr": "vacances de Noël"
+     }
+    },
+    {
+     "start_date": "2029-01-01",
+     "end_date": "2029-01-01",
+     "kind": "holiday",
+     "label": "Jour de l’an (jour férié légal)",
+     "names": {
+      "en": "New Year's Day",
+      "fr": "Jour de l’an (jour férié légal)"
+     }
+    },
+    {
+     "start_date": "2029-02-10",
+     "end_date": "2029-02-18",
+     "kind": "break",
+     "label": "congé de Carnaval",
+     "names": {
+      "en": "Carnival break",
+      "fr": "congé de Carnaval"
+     }
+    },
+    {
+     "start_date": "2029-03-31",
+     "end_date": "2029-04-15",
+     "kind": "break",
+     "label": "vacances de Pâques",
+     "names": {
+      "en": "Easter holidays",
+      "fr": "vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2029-05-01",
+     "end_date": "2029-05-01",
+     "kind": "holiday",
+     "label": "jour férié légal",
+     "names": {
+      "en": "Labour Day",
+      "fr": "jour férié légal"
+     }
+    },
+    {
+     "start_date": "2029-05-09",
+     "end_date": "2029-05-09",
+     "kind": "holiday",
+     "label": "Journée de l’Europe (jour férié légal)",
+     "names": {
+      "en": "Europe Day",
+      "fr": "Journée de l’Europe (jour férié légal)"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-10",
+     "kind": "holiday",
+     "label": "jour férié légal pour l’Ascension",
+     "names": {
+      "en": "Ascension (public holiday)",
+      "fr": "jour férié légal pour l’Ascension"
+     }
+    },
+    {
+     "start_date": "2029-05-19",
+     "end_date": "2029-05-27",
+     "kind": "break",
+     "label": "congé de la Pentecôte",
+     "names": {
+      "en": "Pentecost break",
+      "fr": "congé de la Pentecôte"
+     }
+    },
+    {
+     "start_date": "2029-06-23",
+     "end_date": "2029-06-23",
+     "kind": "holiday",
+     "label": "jour de congé pour la célébration publique de l’anniversaire de S.A.R. le Grand-Duc",
+     "names": {
+      "en": "Grand Duke's Official Birthday",
+      "fr": "jour de congé pour la célébration publique de l’anniversaire de S.A.R. le Grand-Duc"
+     }
+    },
+    {
+     "start_date": "2029-07-13",
+     "end_date": "2029-09-16",
+     "kind": "break",
+     "label": "vacances d’été",
+     "names": {
+      "en": "Summer holidays",
+      "fr": "vacances d’été"
+     }
+    }
+   ]
+  },
+  {
+   "id": "d3cba830-b64b-5a9a-b1ec-b1cfa3b2ff8c",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Essex County Council",
+   "authority_id": "beec3adc-3733-5e3f-91e5-ee671fe8627b",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.essex.gov.uk/schools-and-learning/schools/essex-school-terms-and-holidays/academic-year-2026-2027",
+   "first_day": "2026-09-01",
+   "last_day": "2027-07-21",
+   "notes": "Automatically extracted from essex.gov.uk (OpenAI gpt-5-mini); 17 of 17 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-26",
+     "end_date": "2026-10-30",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2026-12-31",
+     "kind": "break",
+     "label": "Winter holiday (Christmas)",
+     "names": {
+      "en": "Winter holiday (Christmas)"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-19",
+     "kind": "break",
+     "label": "Spring half term",
+     "names": {
+      "en": "Spring half term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Easter bank holiday",
+     "names": {
+      "en": "Easter bank holiday"
+     }
+    },
+    {
+     "start_date": "2027-03-30",
+     "end_date": "2027-04-09",
+     "kind": "break",
+     "label": "Spring holiday (Easter)",
+     "names": {
+      "en": "Spring holiday (Easter)"
+     }
+    },
+    {
+     "start_date": "2027-05-03",
+     "end_date": "2027-05-03",
+     "kind": "holiday",
+     "label": "Early May bank holiday",
+     "names": {
+      "en": "Early May bank holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-06-04",
+     "kind": "break",
+     "label": "Summer half term",
+     "names": {
+      "en": "Summer half term"
+     }
+    },
+    {
+     "start_date": "2027-07-22",
+     "end_date": "2027-08-31",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a26cf19d-865c-54a7-a1e8-64c1d0bfe60e",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Lancashire County Council",
+   "authority_id": "8dec3f39-cef5-5ede-a007-381f9fa91c28",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://live.lancashire.gov.uk/schools-and-education/school-term-dates-and-holidays/",
+   "first_day": "2026-09-01",
+   "last_day": "2027-07-21",
+   "notes": "Automatically extracted from live.lancashire.gov.uk (OpenAI gpt-5-mini); 10 of 13 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-26",
+     "end_date": "2026-10-30",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-19",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-03",
+     "end_date": "2027-05-03",
+     "kind": "holiday",
+     "label": "May Day",
+     "names": {
+      "en": "May Day"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-06-04",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    }
+   ]
+  },
+  {
+   "id": "236646b1-db72-53fe-bdd5-7449e3c35b0d",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Lancashire County Council",
+   "authority_id": "8dec3f39-cef5-5ede-a007-381f9fa91c28",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://live.lancashire.gov.uk/schools-and-education/school-term-dates-and-holidays/",
+   "first_day": "2027-09-01",
+   "last_day": "2028-07-21",
+   "notes": "Automatically extracted from live.lancashire.gov.uk (OpenAI gpt-5-mini); 10 of 13 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-25",
+     "end_date": "2027-10-29",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2028-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2028-02-14",
+     "end_date": "2028-02-18",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2028-04-01",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2028-05-01",
+     "end_date": "2028-05-01",
+     "kind": "holiday",
+     "label": "May Day",
+     "names": {
+      "en": "May Day"
+     }
+    },
+    {
+     "start_date": "2028-05-29",
+     "end_date": "2028-06-02",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e7d75e5b-c543-56ec-b39d-4b94952d6cdd",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Surrey County Council",
+   "authority_id": "dbc9b317-d4af-57cd-bc2f-2d491d803c02",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://surreyeducationservices.surreycc.gov.uk/Pages/Download/37683b8c-d36f-4671-b28a-6c6320a8cf80/PageSectionDocuments",
+   "first_day": "2026-09-01",
+   "last_day": "2027-07-28",
+   "notes": "Automatically extracted from surreyeducationservices.surreycc.gov.uk (OpenAI gpt-5-mini); 17 of 20 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-19",
+     "end_date": "2026-10-30",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Christmas Day",
+     "names": {
+      "en": "Christmas Day"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Boxing Day",
+     "names": {
+      "en": "Boxing Day"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "New Year’s Day",
+     "names": {
+      "en": "New Year’s Day"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-19",
+     "kind": "break",
+     "label": "Spring half term",
+     "names": {
+      "en": "Spring half term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-26",
+     "kind": "holiday",
+     "label": "Good Friday",
+     "names": {
+      "en": "Good Friday"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Easter Monday",
+     "names": {
+      "en": "Easter Monday"
+     }
+    },
+    {
+     "start_date": "2027-05-03",
+     "end_date": "2027-05-03",
+     "kind": "holiday",
+     "label": "May Day Holiday",
+     "names": {
+      "en": "May Day Holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-05-31",
+     "kind": "holiday",
+     "label": "Spring Bank Holiday",
+     "names": {
+      "en": "Spring Bank Holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-06-04",
+     "kind": "break",
+     "label": "Summer half term",
+     "names": {
+      "en": "Summer half term"
+     }
+    },
+    {
+     "start_date": "2027-08-30",
+     "end_date": "2027-08-30",
+     "kind": "holiday",
+     "label": "Summer Bank Holiday",
+     "names": {
+      "en": "Summer Bank Holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "5fb0b912-2f78-5521-a4d8-516395ae9350",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Surrey County Council",
+   "authority_id": "dbc9b317-d4af-57cd-bc2f-2d491d803c02",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://surreyeducationservices.surreycc.gov.uk/Pages/Download/03669e08-5903-41f5-af1a-ac188cb5d3d4/PageSectionDocuments",
+   "first_day": "2027-09-01",
+   "last_day": "2028-07-19",
+   "notes": "Automatically extracted from surreyeducationservices.surreycc.gov.uk (OpenAI gpt-5-mini); 8 of 12 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-25",
+     "end_date": "2027-10-29",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-12-22",
+     "end_date": "2028-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2028-02-14",
+     "end_date": "2028-02-18",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2028-04-01",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2028-05-29",
+     "end_date": "2028-06-02",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    }
+   ]
+  },
+  {
+   "id": "818f8366-1e27-56e9-839c-75f520fa7a4d",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Nottinghamshire County Council",
+   "authority_id": "fe68ef5f-c830-51a2-a65c-05531f7ae6a2",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.nottinghamshire.gov.uk/education/school-holidays-and-closures/school-holiday-and-term-dates",
+   "first_day": "2027-09-01",
+   "last_day": "2028-07-26",
+   "notes": "Automatically extracted from nottinghamshire.gov.uk (OpenAI gpt-5-mini); 11 of 14 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-18",
+     "end_date": "2027-10-29",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-12-22",
+     "end_date": "2028-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2028-02-14",
+     "end_date": "2028-02-18",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2028-03-31",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2028-05-29",
+     "end_date": "2028-06-02",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2028-06-27",
+     "end_date": "2028-07-26",
+     "kind": "break",
+     "label": "Summer term end (schools close)",
+     "names": {
+      "en": "Summer term end (schools close)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "622556b8-3d62-5c8b-a634-6801b901e6c3",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Nottinghamshire County Council",
+   "authority_id": "fe68ef5f-c830-51a2-a65c-05531f7ae6a2",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.nottinghamshire.gov.uk/education/school-holidays-and-closures/school-holiday-and-term-dates",
+   "first_day": "2028-09-01",
+   "last_day": "2029-07-27",
+   "notes": "Automatically extracted from nottinghamshire.gov.uk (OpenAI gpt-5-mini); 11 of 14 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2028-10-23",
+     "end_date": "2028-11-03",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2028-12-21",
+     "end_date": "2029-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2029-02-12",
+     "end_date": "2029-02-16",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2029-03-24",
+     "end_date": "2029-04-08",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2029-05-28",
+     "end_date": "2029-06-01",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2029-07-28",
+     "end_date": "2029-08-31",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "579cb309-e9bd-54b9-b179-960de695b34d",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Nottinghamshire County Council",
+   "authority_id": "fe68ef5f-c830-51a2-a65c-05531f7ae6a2",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "pending",
+   "source_url": "https://www.nottinghamshire.gov.uk/education/school-holidays-and-closures/school-holiday-and-term-dates",
+   "first_day": "2029-09-03",
+   "last_day": "2030-07-26",
+   "notes": "Automatically extracted from nottinghamshire.gov.uk (OpenAI gpt-5-mini); 9 of 14 dates found in the document; 5 of 14 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2029-10-22",
+     "end_date": "2029-11-02",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2029-12-22",
+     "end_date": "2030-01-02",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2030-02-18",
+     "end_date": "2030-02-22",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2030-04-06",
+     "end_date": "2030-04-22",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2030-05-27",
+     "end_date": "2030-05-31",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2030-07-27",
+     "end_date": "2030-08-31",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  }
+ ]
+}

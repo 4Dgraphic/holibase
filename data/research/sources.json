@@ -29,7 +29,16 @@
         "(^|\\.)ostbelgienlive\\.be$",
         "(^|\\.)belgium\\.be$"
       ],
-      "hint": "Each community sets its own calendar: Flemish (onderwijs.vlaanderen.be), French (enseignement.be) and German-speaking (ostbelgienbildung.be)."
+      "hint": "Each community sets its own calendar: Flemish (onderwijs.vlaanderen.be), French (enseignement.be) and German-speaking (ostbelgienbildung.be).",
+      "sources": [
+        {
+          "url": "https://ostbelgienbildung.be/desktopdefault.aspx/tabid-2212/4397_read-31727/",
+          "scopes": [
+            "German-speaking Community"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "CH": {
       "name": "Switzerland",
@@ -41,7 +50,23 @@
         "(^|\\.)kbs-solothurn\\.ch$",
         "(^|\\.)schulen-[a-z-]+\\.ch$"
       ],
-      "hint": "Each canton publishes its Ferienplan / plan des vacances, usually as a PDF on the canton's website (e.g. so.ch, vs.ch, tg.ch). Some cantons differ by municipality; then the canton's recommended or majority plan is wanted."
+      "hint": "Each canton publishes its Ferienplan / plan des vacances, usually as a PDF on the canton's website (e.g. so.ch, vs.ch, tg.ch). Some cantons differ by municipality; then the canton's recommended or majority plan is wanted.",
+      "sources": [
+        {
+          "url": "https://so.ch/verwaltung/departement-fuer-bildung-kultur-und-sport/amt-fuer-berufsbildung-mittel-und-hochschulen/aktuell/ferienplaene/",
+          "scopes": [
+            "KBS Solothurn"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.zh.ch/de/bildung/bildungssystem/schulferien.html",
+          "scopes": [
+            "Kantonsschulen Stadt Zürich"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "CZ": {
       "name": "Czechia",
@@ -101,7 +126,30 @@
         "(^|\\.)vice-rectorat-wf\\.(fr|wf)$",
         "(^|\\.)isula\\.corsica$"
       ],
-      "hint": "Overseas academies (ac-reunion.fr, ac-guadeloupe.fr, ac-martinique.fr, ac-guyane.fr, ac-noumea.nc, Saint-Pierre-et-Miquelon, Wallis-et-Futuna) and the academy of Corsica (ac-corse.fr) publish their own calendrier scolaire."
+      "hint": "Overseas academies (ac-reunion.fr, ac-guadeloupe.fr, ac-martinique.fr, ac-guyane.fr, ac-noumea.nc, Saint-Pierre-et-Miquelon, Wallis-et-Futuna) and the academy of Corsica (ac-corse.fr) publish their own calendrier scolaire.",
+      "sources": [
+        {
+          "url": "https://www.ac-guyane.fr/le-calendrier-scolaire-121444",
+          "scopes": [
+            "FR-973"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://denc.gouv.nc/calendrier-scolaire",
+          "scopes": [
+            "FR-NC"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://juridoc.gouv.nc/juridoc/jdjopj.nsf/0/33FE2E7255FC2D7A4B258C9700109D3E/%24File/Annexe.pdf?OpenElement",
+          "scopes": [
+            "FR-NC"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "GB": {
       "name": "United Kingdom",
@@ -112,7 +160,44 @@
         "\\.gov\\.scot$",
         "(^|\\.)nidirect\\.gov\\.uk$"
       ],
-      "hint": "Each local authority (council) publishes its school term dates on its own website."
+      "hint": "Each local authority (council) publishes its school term dates on its own website.",
+      "sources": [
+        {
+          "url": "https://www.essex.gov.uk/schools-and-learning/schools/essex-school-terms-and-holidays/academic-year-2026-2027",
+          "scopes": [
+            "Essex County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://live.lancashire.gov.uk/schools-and-education/school-term-dates-and-holidays/",
+          "scopes": [
+            "Lancashire County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://surreyeducationservices.surreycc.gov.uk/Pages/Download/37683b8c-d36f-4671-b28a-6c6320a8cf80/PageSectionDocuments",
+          "scopes": [
+            "Surrey County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://surreyeducationservices.surreycc.gov.uk/Pages/Download/03669e08-5903-41f5-af1a-ac188cb5d3d4/PageSectionDocuments",
+          "scopes": [
+            "Surrey County Council"
+          ],
+          "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.nottinghamshire.gov.uk/education/school-holidays-and-closures/school-holiday-and-term-dates",
+          "scopes": [
+            "Nottinghamshire County Council"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "HR": {
       "name": "Croatia",
@@ -192,7 +277,16 @@
         "(^|\\.)gouvernement\\.lu$",
         "(^|\\.)legilux\\.public\\.lu$"
       ],
-      "hint": "The Ministry of Education (men.public.lu) publishes the 'vacances et congés scolaires' for several school years."
+      "hint": "The Ministry of Education (men.public.lu) publishes the 'vacances et congés scolaires' for several school years.",
+      "sources": [
+        {
+          "url": "https://men.public.lu/fr/vacances-scolaires.html",
+          "scopes": [
+            "LU"
+          ],
+          "learned": "2026-10-18"
+        }
+      ]
     },
     "LV": {
       "name": "Latvia",
