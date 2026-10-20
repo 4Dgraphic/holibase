@@ -5,3 +5,5 @@
 /datenschutz /privacy/ 301
 /datenschutz/ /privacy/ 301
 /api /docs/ 301
+/melden /submit/?lang=de 302
+/melden/ /submit/?lang=de 302

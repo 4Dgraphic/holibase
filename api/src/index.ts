@@ -9,6 +9,8 @@
  *   GET /v1/school-holidays/{CC}.ics?subdivision=DE-NI         iCalendar feed (also ?format=ics)
  *   GET /data/...json            static files from R2 (same layout as the repo's data/)
  *   GET /v1/health
+ *   POST /v1/submissions         school calendar sent with the form on holibase.org (checked later, see
+ *                                scripts/process_submissions.py)
  *
  * Every successful response is cached at the edge. Cache hits never reach Supabase
  * and never count against the rate limit.
@@ -24,6 +26,7 @@ export interface Env {
   TTL_REFERENCE?: string;
   DATA?: R2Bucket;
   RATE_LIMITER?: { limit(opts: { key: string }): Promise<{ success: boolean }> };
+  SUBMIT_LIMITER?: { limit(opts: { key: string }): Promise<{ success: boolean }> };
 }
 
 const API_VERSION = "v1";
@@ -45,8 +48,17 @@ class ApiError extends Error {
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders() });
+    if (request.method === "POST" && new URL(request.url).pathname.replace(/\/+$/, "") === "/v1/submissions") {
+      try {
+        return await submit(request, env);
+      } catch (err) {
+        if (err instanceof ApiError) return errorResponse(err);
+        console.error("submit", err);
+        return errorResponse(new ApiError(500, "internal_error", "Unexpected error."));
+      }
+    }
     if (request.method !== "GET" && request.method !== "HEAD") {
-      return errorResponse(new ApiError(405, "method_not_allowed", "Only GET is supported."));
+      return errorResponse(new ApiError(405, "method_not_allowed", "Only GET is supported (and POST on /v1/submissions)."));
     }
 
     try {
@@ -300,6 +312,62 @@ function staticFile(url: URL, parts: string[]): Route {
   };
 }
 
+// ---------------------------------------------------------------- submissions
+
+/**
+ * POST /v1/submissions: a school calendar sent with the form on holibase.org.
+ * The database function checks every field; this only filters bots and floods. Nothing personal is stored.
+ */
+async function submit(request: Request, env: Env): Promise<Response> {
+  if (!(request.headers.get("Content-Type") ?? "").includes("application/json")) {
+    throw new ApiError(415, "unsupported_media_type", "Send JSON (Content-Type: application/json).");
+  }
+  const raw = await request.text();
+  if (raw.length > 32_000) throw new ApiError(413, "too_large", "The submission is too large.");
+  let body: Record<string, unknown>;
+  try {
+    body = JSON.parse(raw);
+  } catch {
+    throw new ApiError(400, "invalid_json", "The body is not valid JSON.");
+  }
+  if (!body || typeof body !== "object" || Array.isArray(body)) throw new ApiError(400, "invalid_json", "Send a JSON object.");
+  // Honeypot field and time on the form: bots get a normal-looking answer, nothing is stored.
+  const elapsed = Number(body.elapsed_ms);
+  if (body.website || (Number.isFinite(elapsed) && elapsed < 3000)) return json({ id: crypto.randomUUID(), status: "received" }, 201, 0);
+
+  if (env.SUBMIT_LIMITER) {
+    const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
+    const { success } = await env.SUBMIT_LIMITER.limit({ key: ip });
+    if (!success) throw new ApiError(429, "rate_limited", "Too many submissions. Please wait a minute.");
+  }
+  const allowed = ["country", "subdivision", "authority", "school_year", "source_url", "first_day", "last_day", "periods", "note", "lang"];
+  const payload = Object.fromEntries(allowed.filter((k) => body[k] !== undefined).map((k) => [k, body[k]]));
+
+  if (!env.SUPABASE_URL || env.SUPABASE_URL.includes("REPLACE_ME") || !env.SUPABASE_KEY) {
+    throw new ApiError(503, "not_configured", "Upstream database is not configured.");
+  }
+  let res: Response;
+  try {
+    res = await fetch(env.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/rpc/submit_school_calendar", {
+      method: "POST",
+      headers: { apikey: env.SUPABASE_KEY, "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ p: payload }),
+    });
+  } catch (e) {
+    console.error("supabase unreachable", e);
+    throw new ApiError(502, "upstream_unreachable", "The database could not be reached.");
+  }
+  const data = (await res.json().catch(() => ({}))) as { id?: string; message?: string; code?: string };
+  if (!res.ok) {
+    // Checks in submit_school_calendar raise SQLSTATE 22023 (bad value) or 53400 (daily limit) with a readable message.
+    if (data.code === "22023") throw new ApiError(400, "invalid_submission", data.message ?? "The submission is incomplete.");
+    if (data.code === "53400") throw new ApiError(429, "rate_limited", data.message ?? "Too many submissions today.");
+    console.error("submit", res.status, data);
+    throw new ApiError(502, "upstream_error", "The database did not answer as expected.");
+  }
+  return json({ id: data.id, status: "received" }, 201, 0);
+}
+
 // ---------------------------------------------------------------- upstream
 
 const ATTRIBUTION =
@@ -422,7 +490,7 @@ function ttl(raw: string | undefined, fallback: number): number {
 function corsHeaders(): Record<string, string> {
   return {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, If-None-Match",
     "Access-Control-Expose-Headers": "ETag, X-Cache",
     "Access-Control-Max-Age": "86400",

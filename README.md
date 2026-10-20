@@ -225,3 +225,20 @@ and a summary is added to the open data report issue. Set the `OPENAI_API_KEY` s
 80 documents (a share per country) and does at most 25 web searches; `HORIZON` in the script (or `horizon` per
 country in sources.json) sets how many school years ahead a country is kept filled (2, or 4 for DE, AT, CH, NL, BE, LU); run it by hand from the Actions tab for one country, with a
 dry run first if you like.
+
+## Submissions
+
+Parents, schools and authorities can send missing or wrong school holidays with the form at
+https://holibase.org/submit/ (German: `/submit/?lang=de`, short link `/melden`). Region pages and the
+calendar view link to it with the region filled in, and it starts with the dates Holibase already has.
+
+- The form posts to `POST /v1/submissions` (API worker; honeypot, minimum time on the form, 5 per minute
+  per IP). The database function `submit_school_calendar()` checks every field and stores the submission
+  as `received`. No name, email or IP address is stored.
+- `scripts/process_submissions.py` (`.github/workflows/process-submissions.yml`, every night at 02:41 UTC,
+  before the website is rebuilt) checks each submission: implausible dates are **rejected**; dates that
+  match the calendar already shown add a **confirmation** to it; otherwise the linked document is read and
+  every date looked for in it. All found on an official domain → published as a **community calendar**
+  (it replaces library data, but never official or researched calendars); otherwise it is kept as
+  unverified (**needs_review**).
+- The monthly data report lists the submissions of the month and the ones waiting for a look.

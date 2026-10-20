@@ -42,6 +42,7 @@ export const openapi = {
     { name: "Public holidays" },
     { name: "School holidays" },
     { name: "School authorities", description: "School districts, councils, zones and other bodies that set their own school calendar." },
+    { name: "Submissions", description: "Send missing or wrong school holidays." },
     { name: "Reference" },
   ],
   paths: {
@@ -151,6 +152,34 @@ export const openapi = {
         },
       },
     },
+    "/v1/submissions": {
+      post: {
+        tags: ["Submissions"],
+        operationId: "submitSchoolCalendar",
+        summary: "Send a school calendar",
+        description:
+          "Missing or wrong school holidays for a region or school authority, with a link to the official calendar. " +
+          "Used by the form at https://holibase.org/submit/. Every submission is checked against the linked document " +
+          "before it appears in the API (usually within a day). Submitted data is published under CC BY 4.0. " +
+          "Limited to 5 requests per minute per IP.",
+        requestBody: {
+          required: true,
+          content: { "application/json": { schema: ref("SubmissionRequest") } },
+        },
+        responses: {
+          "201": {
+            description: "Received; it is checked against the source before it is published.",
+            content: { "application/json": { schema: {
+              type: "object", required: ["id", "status"],
+              properties: { id: { type: "string", format: "uuid" }, status: { const: "received" } },
+            } } },
+          },
+          "400": ref_response("BadRequest"),
+          "429": ref_response("RateLimited"),
+          "502": ref_response("Upstream"),
+        },
+      },
+    },
     "/v1/health": {
       get: {
         tags: ["Reference"],
@@ -209,6 +238,33 @@ export const openapi = {
       Upstream: { description: "The database could not be reached. Retry later.", content: { "application/json": { schema: ref("Error") } } },
     },
     schemas: {
+      SubmissionRequest: {
+        type: "object",
+        required: ["country", "school_year", "source_url", "periods"],
+        properties: {
+          country: { type: "string", pattern: "^[A-Za-z]{2}$", examples: ["DE"] },
+          subdivision: { type: "string", examples: ["DE-NI"], description: "ISO 3166-2 region, if the calendar is for a region." },
+          authority: { type: "string", format: "uuid", description: "School authority id from /v1/authorities, if the calendar is for one." },
+          school_year: { type: "string", pattern: "^\\d{4}(-\\d{2})?$", examples: ["2027-28"] },
+          source_url: { type: "string", format: "uri", description: "Link to the official calendar (page or PDF)." },
+          first_day: { ...date, description: "First day of school, if known." },
+          last_day: { ...date, description: "Last day of school, if known." },
+          periods: {
+            type: "array", minItems: 1, maxItems: 40,
+            items: {
+              type: "object", required: ["start_date"],
+              properties: {
+                name: { type: "string", maxLength: 120, examples: ["Herbstferien"] },
+                start_date: date,
+                end_date: { ...date, description: "Last day off; the start date if omitted." },
+                kind: { type: "string", enum: ["break", "holiday", "teacher_day", "other"] },
+              },
+            },
+          },
+          note: { type: "string", maxLength: 1000, description: "Anything we should know. Please no personal data." },
+          lang: { type: "string", examples: ["de"], description: "Language of the names." },
+        },
+      },
       Error: {
         type: "object",
         properties: {

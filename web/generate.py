@@ -399,7 +399,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
     overline = L.t("overline_district" if district else "overline_scope", where=where)
     desc = L.t("desc_scope", answer=answer, years=years, name=name)
     oh_credit = " " + esc(L.t("attribution_oh")) if any(c.get("source_id") == "openholidays" and c["school_year"] in kept for c in s.calendars) else ""
-    report = "https://github.com/4Dgraphic/holibase/issues/new?title=" + urllib.parse.quote("Correction: " + s.name("en"))
+    report = "/submit/?" + urllib.parse.urlencode({"country": s.cc, **({"authority": s.auth} if s.auth else {"subdivision": s.sub} if s.sub else {}), "lang": lang})
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
 {crumb_html}
 <p class="overline">{esc(overline)}</p>

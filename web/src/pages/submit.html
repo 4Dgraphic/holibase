@@ -1,0 +1,76 @@
+<!--
+path: /submit/
+title: Submit school holidays
+description: Missing or wrong school holidays for your region? Send them with a link to the official calendar. Every date is checked against the document before it is published.
+theme: dark
+script: submit.js
+-->
+<section>
+  <div class="wrap">
+    <p class="overline" data-t="overline">Submit holidays</p>
+    <h1 class="h1" data-t="h1">Missing or wrong holidays? Tell us.</h1>
+    <p class="body-l muted measure" style="margin: 16px 0 0" data-t="lead">Send the school holidays of your region with a link to the official calendar. We check every date against that document before it appears on Holibase and in the API, usually within a day.</p>
+  </div>
+</section>
+
+<section style="padding-top: 32px">
+  <div class="wrap submit-layout">
+    <form class="card card-lg submit-form" id="submit-form" novalidate>
+      <fieldset>
+        <legend class="h3" data-t="where">1. Which calendar?</legend>
+        <div class="form-grid">
+          <label class="flabel"><span data-t="country">Country</span>
+            <select class="input plain" id="f-country" required></select></label>
+          <label class="flabel"><span data-t="region">State, region or canton</span>
+            <select class="input plain" id="f-region"></select></label>
+          <label class="flabel" id="f-authority-wrap" hidden><span data-t="authority">School or local variant</span>
+            <select class="input plain" id="f-authority"></select></label>
+          <label class="flabel"><span data-t="year">School year</span>
+            <select class="input plain" id="f-year" required></select></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="h3" data-t="dates">2. All holidays of this school year</legend>
+        <p class="body-s muted" id="f-prefill-note" data-t="dates_help">Enter every break and day off of the school year, including Christmas and summer. Correct the dates that are wrong.</p>
+        <div class="period-head" aria-hidden="true"><span data-t="name">Name</span><span data-t="from">First day off</span><span data-t="to">Last day off</span><span></span></div>
+        <div id="f-periods"></div>
+        <button class="btn btn-secondary btn-sm" type="button" id="f-add" data-t="add">+ Add a holiday</button>
+        <div class="form-grid" style="margin-top: 24px">
+          <label class="flabel"><span data-t="first_day">First day of school (optional)</span>
+            <input class="input plain" type="date" id="f-first"></label>
+          <label class="flabel"><span data-t="last_day">Last day of school (optional)</span>
+            <input class="input plain" type="date" id="f-last"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="h3" data-t="source">3. Where is it published?</legend>
+        <label class="flabel"><span data-t="url">Link to the official calendar</span>
+          <input class="input plain" type="url" id="f-url" required placeholder="https://" inputmode="url" autocomplete="off"></label>
+        <p class="body-s muted" data-t="url_help">The page or PDF of the ministry, canton, council or school district that publishes these dates. Holiday websites and news articles cannot be used.</p>
+        <label class="flabel"><span data-t="note">Anything else we should know? (optional)</span>
+          <textarea class="input plain" id="f-note" rows="3" maxlength="1000"></textarea></label>
+        <p class="body-s subtle" data-t="note_help">Please do not include personal data such as names or email addresses.</p>
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" id="f-website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="check"><input type="checkbox" id="f-licence" required>
+          <span data-t="licence">I agree that these dates are published as open data under CC BY 4.0.</span></label>
+      </fieldset>
+
+      <div id="f-message" role="status" aria-live="polite"></div>
+      <div class="actions"><button class="btn btn-primary" type="submit" id="f-submit" data-t="submit">Send</button></div>
+    </form>
+
+    <aside class="submit-aside">
+      <div class="card">
+        <h2 class="h3" style="margin-bottom: 12px" data-t="how_title">What happens next</h2>
+        <ul class="points">
+          <li data-t="how_1">Every night we open the linked document and look for each date you entered.</li>
+          <li data-t="how_2">If all dates are in an official document, the calendar is published, usually the next morning.</li>
+          <li data-t="how_3">If something does not match, it stays unverified until a second source confirms it.</li>
+          <li data-t="how_4">Calendars from ministries and official open data always take precedence.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

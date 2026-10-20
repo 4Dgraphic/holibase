@@ -188,7 +188,7 @@ async function show() {
   const notice = $("#v-notice");
   const cov = school.coverage;
   if (cov.status === "none") {
-    const issue = `https://github.com/4Dgraphic/holibase/issues/new?title=${encodeURIComponent(`School calendar for ${title}`)}&body=${encodeURIComponent(`Calendar page: ${location.href}\nLink to the official school calendar: `)}`;
+    const issue = submitUrl();
     notice.append(el("div", { class: "notice coral" },
       el("p", { style: "margin: 0 0 8px", text: `There is no school calendar for ${title} in Holibase yet. Public holidays are shown below.` }),
       el("div", { class: "actions" },
@@ -325,7 +325,15 @@ function renderSources(school, pub) {
     el("td", { class: "num", text: c.last_day ? fmtDay(c.last_day) : "–" }),
     el("td", {}, c.source_url && /^https?:\/\//.test(c.source_url) ? el("a", { href: c.source_url, rel: "noopener nofollow", target: "_blank", text: new URL(c.source_url).hostname }) : "–")));
   table.replaceChildren(el("thead", {}, head), el("tbody", {}, ...(rows.length ? rows : [el("tr", {}, el("td", { colspan: "6", class: "muted", text: "No school calendar in this range." }))])));
-  $("#v-attribution").textContent = school.attribution;
+  $("#v-attribution").replaceChildren(school.attribution, " ", el("a", { href: submitUrl(), text: "Dates missing or wrong? Tell us." }));
+}
+
+// The submission form, prefilled with this calendar.
+function submitUrl() {
+  const q = new URLSearchParams({ country });
+  if (authority) q.set("authority", authority);
+  else if (subdivision) q.set("subdivision", subdivision);
+  return `/submit/?${q}`;
 }
 
 // Link to the static page for this calendar (shareable, printable, indexed by search engines).

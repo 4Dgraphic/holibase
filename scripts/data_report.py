@@ -13,6 +13,7 @@ Sections
   3. Disagreements between sources for the current and next school year (e.g. OpenHolidays vs research).
   4. Unverified calendars waiting for a second source.
   5. Sources that have not delivered for a while.
+  6. Submissions from the form on holibase.org and those waiting for a look.
 """
 from __future__ import annotations
 
@@ -30,6 +31,11 @@ PRIORITY = ["DE", "AT", "CH", "NL", "BE", "FR", "LU", "GB", "IE", "US", "CA", "A
 CALENDAR_YEAR = {"AU", "NZ", "ZA", "BR", "AR", "CL"}  # school year = calendar year
 STALE_DAYS = {"openholidays": 14, "python-holidays": 14, "education-gouv-fr": 14, "rijksoverheid-nl": 14}
 NAMES = Locale("en").territories
+
+
+def ar_host(url: str | None) -> str:
+    from urllib.parse import urlsplit
+    return (urlsplit(url or "").hostname or "").removeprefix("www.") or "–"
 
 
 def school_years(today: dt.date) -> tuple[str, str, str, str]:
@@ -178,6 +184,24 @@ def main() -> int:
             limit = STALE_DAYS.get(src)
             flag = "⚠️ overdue" if limit and age is not None and age > limit else ""
             out.append(f"| {src} | {last:%d %b %Y} ({age} days ago) | {n} | {flag} |")
+        out.append("")
+
+        # 6. submissions from the form on holibase.org (scripts/process_submissions.py)
+        cur.execute("""select status, count(*) from public.submissions
+                        where created_at > now() - interval '35 days' group by 1 order by 2 desc""")
+        counts = cur.fetchall()
+        out += ["## 6. Submissions (last 35 days)", ""]
+        out.append(", ".join(f"{s}: {n}" for s, n in counts) if counts else "None.")
+        cur.execute("""select s.country_code::text, coalesce(s.authority_name, s.subdivision_code, 'nationwide'), s.school_year,
+                              s.source_url, s.rejection_reason, s.extracted->>'note', s.calendar_id::text
+                         from public.submissions s where s.status = 'needs_review' order by s.created_at desc limit 30""")
+        review = cur.fetchall()
+        if review:
+            out += ["", "Waiting for a look (kept as unverified; to publish one, set its calendar to confirmed):", "",
+                    "| Region | Year | Source | Why | Note | Calendar |", "|---|---|---|---|---|---|"]
+            for cc, name, sy, url, why, note, cid in review:
+                note = (note or "").replace("|", "/").replace("\n", " ")[:120]
+                out.append(f"| {cc} {name} | {sy} | [{ar_host(url)}]({url}) | {why or ''} | {note} | `{cid}` |")
         out.append("")
 
     text = "\n".join(out) + "\n"
