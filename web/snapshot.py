@@ -15,9 +15,14 @@ import sys
 ROOT = pathlib.Path(__file__).parent
 
 # Languages the generated pages are translated into, per country (see generate.py).
-SCHOOL_LANGS = {"DE": ["de"], "AT": ["de"], "CH": ["de", "fr"], "FR": ["fr"], "BE": ["fr", "nl"], "NL": ["nl"]}
-PUBLIC_LANGS = {"DE": ["de"], "AT": ["de"], "CH": ["de", "fr"], "LI": ["de"], "LU": ["de", "fr"],
-                "FR": ["fr"], "BE": ["fr", "nl"], "MC": ["fr"], "NL": ["nl"]}
+SCHOOL_LANGS = {"DE": ["de"], "AT": ["de"], "CH": ["de", "fr", "it"], "FR": ["fr"], "BE": ["fr", "nl"], "NL": ["nl"],
+                "LU": ["fr", "de"], "LI": ["de"], "ES": ["es"], "IT": ["it"], "SM": ["it"], "PL": ["pl"], "PT": ["pt"],
+                "CZ": ["cs"], "SK": ["sk"], "RO": ["ro"], "MD": ["ro"], "MX": ["es"]}
+_ES = ["ES", "MX", "AR", "CL", "CO", "PE", "VE", "EC", "GT", "CU", "BO", "DO", "HN", "PY", "SV", "NI", "CR", "PA", "UY"]
+PUBLIC_LANGS = {"DE": ["de"], "AT": ["de"], "CH": ["de", "fr", "it"], "LI": ["de"], "LU": ["de", "fr"],
+                "FR": ["fr"], "BE": ["fr", "nl"], "MC": ["fr"], "NL": ["nl"],
+                **{cc: ["es"] for cc in _ES}, "IT": ["it"], "SM": ["it"], "VA": ["it"], "PL": ["pl"],
+                "PT": ["pt"], "BR": ["pt"], "AO": ["pt"], "MZ": ["pt"], "CZ": ["cs"], "SK": ["sk"], "RO": ["ro"], "MD": ["ro"]}
 
 
 def lang_case(column: str, mapping: dict) -> str:

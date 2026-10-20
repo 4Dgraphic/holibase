@@ -26,6 +26,21 @@ function clearAnalyticsCookies() {
   }
 }
 
+// Banner text in the page's language: [text, privacy, accept, decline]
+const CONSENT_TEXT = {
+  en: ["Holibase uses Google Analytics to count visits, only if you agree. It sets cookies and sends usage data to Google.", "Privacy", "Accept", "Decline"],
+  de: ["Holibase nutzt Google Analytics, um Besuche zu zählen, nur wenn du zustimmst. Dabei werden Cookies gesetzt und Nutzungsdaten an Google gesendet.", "Datenschutz", "Zustimmen", "Ablehnen"],
+  fr: ["Holibase utilise Google Analytics pour compter les visites, seulement avec votre accord. Des cookies sont déposés et des données d'utilisation envoyées à Google.", "Confidentialité", "Accepter", "Refuser"],
+  nl: ["Holibase gebruikt Google Analytics om bezoeken te tellen, alleen als je akkoord gaat. Daarbij worden cookies geplaatst en gebruiksgegevens naar Google gestuurd.", "Privacy", "Akkoord", "Weigeren"],
+  es: ["Holibase usa Google Analytics para contar visitas, solo si lo aceptas. Instala cookies y envía datos de uso a Google.", "Privacidad", "Aceptar", "Rechazar"],
+  it: ["Holibase usa Google Analytics per contare le visite, solo se accetti. Imposta cookie e invia dati di utilizzo a Google.", "Privacy", "Accetta", "Rifiuta"],
+  pl: ["Holibase korzysta z Google Analytics do liczenia odwiedzin, tylko za Twoją zgodą. Zapisuje pliki cookie i wysyła dane o korzystaniu do Google.", "Prywatność", "Akceptuję", "Odrzucam"],
+  pt: ["O Holibase usa o Google Analytics para contar visitas, só com o seu consentimento. Guarda cookies e envia dados de utilização à Google.", "Privacidade", "Aceitar", "Recusar"],
+  cs: ["Holibase používá Google Analytics k počítání návštěv, jen s vaším souhlasem. Ukládá cookies a posílá údaje o používání společnosti Google.", "Soukromí", "Souhlasím", "Odmítnout"],
+  sk: ["Holibase používa Google Analytics na počítanie návštev, len s vaším súhlasom. Ukladá cookies a posiela údaje o používaní spoločnosti Google.", "Súkromie", "Súhlasím", "Odmietnuť"],
+  ro: ["Holibase folosește Google Analytics pentru a număra vizitele, doar cu acordul tău. Setează cookie-uri și trimite date de utilizare către Google.", "Confidențialitate", "Accept", "Refuz"],
+};
+
 let banner;
 function showBanner() {
   if (banner) { banner.hidden = false; banner.querySelector("button").focus(); return; }
@@ -33,12 +48,13 @@ function showBanner() {
   banner.className = "consent";
   banner.setAttribute("role", "dialog");
   banner.setAttribute("aria-label", "Cookie settings");
+  const [text, privacy, accept, decline] = CONSENT_TEXT[(document.documentElement.lang || "en").slice(0, 2)] || CONSENT_TEXT.en;
   banner.innerHTML = `
-    <p>Holibase uses Google Analytics to count visits, only if you agree. It sets cookies and sends usage data to Google.
-      <a href="/privacy/#analytics">Privacy</a></p>
+    <p>${text}
+      <a href="/privacy/#analytics">${privacy}</a></p>
     <div class="row">
-      <button class="btn btn-primary btn-sm" type="button" data-choice="granted">Accept</button>
-      <button class="btn btn-secondary btn-sm" type="button" data-choice="denied">Decline</button>
+      <button class="btn btn-primary btn-sm" type="button" data-choice="granted">${accept}</button>
+      <button class="btn btn-secondary btn-sm" type="button" data-choice="denied">${decline}</button>
     </div>`;
   banner.addEventListener("click", (e) => {
     const choice = e.target.closest("[data-choice]")?.dataset.choice;

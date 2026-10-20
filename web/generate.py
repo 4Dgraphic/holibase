@@ -1,6 +1,7 @@
 """
 Static pages generated from web/.cache/snapshot.json (see snapshot.py), in English and, for the
-countries where it matters, German, French and Dutch (texts in i18n.py):
+countries where it matters, German, French, Dutch, Spanish, Italian, Polish, Portuguese, Czech, Slovak and
+Romanian (texts in i18n.py and i18n_more.py), plus a home page per language (/de/, /es/, ...):
 
     /school-holidays/  /school-holidays/{cc}/  /school-holidays/{cc}/{region}/
     /public-holidays/  /public-holidays/{cc}/
@@ -39,6 +40,8 @@ def d(s: str) -> dt.date:
 
 def slugify(s: str, lang: str = "en") -> str:
     s = s.replace("ß", "ss")
+    for a, b in (("ł", "l"), ("Ł", "L"), ("đ", "d"), ("Đ", "D"), ("ø", "o"), ("Ø", "O"), ("æ", "ae"), ("œ", "oe")):
+        s = s.replace(a, b)
     if lang == "de":
         for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("Ä", "Ae"), ("Ö", "Oe"), ("Ü", "Ue")):
             s = s.replace(a, b)
@@ -114,6 +117,10 @@ class Loc:
 
 
 # ---------------------------------------------------------------- URLs
+
+def home_url(lang):
+    return PATHS[lang]["prefix"] + "/"
+
 
 def school_index_url(lang):
     p = PATHS[lang]
@@ -193,9 +200,9 @@ def holiday_rows(L: Loc, hs: list[dict], today: dt.date, mark_past: bool) -> str
     return "".join(out)
 
 
-def page(lang, path, title, description, body, nav="", ld=(), lastmod=None, group=None):
-    return {"lang": lang, "path": path, "title": title, "description": description, "body": body, "nav": nav,
-            "ld": [x for x in ld if x], "theme": "dark", "lastmod": lastmod, "group": group}
+def page(lang, path, title, description, body, nav="", ld=(), lastmod=None, group=None, meta_title=None):
+    return {"lang": lang, "path": path, "title": meta_title or title, "description": description, "body": body, "nav": nav,
+            "ld": [x for x in ld if x], "theme": "dark", "lastmod": lastmod, "group": group, "no_brand": bool(meta_title)}
 
 
 def lang_switch_placeholder() -> str:
@@ -368,6 +375,8 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
 </section>""" if pub else ""
 
     faq.append((L.t("q_feed", name=name), L.t("a_feed", url=API + s.feed_path(lang))))
+    faq.append((L.t("q_iphone", name=name), L.t("a_iphone")))
+    faq.append((L.t("q_google", name=name), L.t("a_google")))
 
     src_rows = []
     for c in s.calendars:
@@ -387,7 +396,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
         heading = L.t("other_districts" if s.cc == "US" else "other_regions", in_country=L.in_country(s.cc))
         related = f'<section class="gen-section"><h2>{esc(heading)}</h2><div class="chips">{links}</div></section>'
 
-    crumbs = [(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang)), (L.country(s.cc), school_country_url(lang, s.cc))]
+    crumbs = [(L.t("home"), home_url(lang)), (L.t("school_holidays"), school_index_url(lang)), (L.country(s.cc), school_country_url(lang, s.cc))]
     if s.slug.get(lang):
         crumbs.append((name, s.url(lang)))
     crumb_html, crumb_ld = breadcrumb(crumbs)
@@ -422,7 +431,7 @@ def scope_page(s: Scope, siblings: list[Scope], today: dt.date, lang: str, publi
 {related}
 </div></section>"""
     return page(lang, s.url(lang), title, desc[:300], body, nav="calendar", ld=[crumb_ld, faq_ld],
-                lastmod=today.isoformat(), group=f"school:{s.key}")
+                lastmod=today.isoformat(), group=f"school:{s.key}", meta_title=title + L.t("seo_suffix"))
 
 
 def country_school_page(cc: str, group: list[Scope], today: dt.date, lang: str, public_langs: dict) -> dict:
@@ -448,7 +457,7 @@ def country_school_page(cc: str, group: list[Scope], today: dt.date, lang: str, 
 <tbody>{''.join(rows)}</tbody></table></div></section>""")
     n = len(group)
     url = school_country_url(lang, cc)
-    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang)), (L.country(cc), url)])
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), home_url(lang)), (L.t("school_holidays"), school_index_url(lang)), (L.country(cc), url)])
     title = L.t("hub_title", in_country=L.in_country(cc), years=L.years([today, today.replace(year=today.year + 1)]))
     intro = L.t("hub_intro_us" if us else "hub_intro", n=n, in_country=L.in_country(cc))
     pub_lang = lang if lang in public_langs.get(cc, []) else "en"
@@ -461,7 +470,7 @@ def country_school_page(cc: str, group: list[Scope], today: dt.date, lang: str, 
 <p class="body-s"><a href="/calendar/">{esc(L.t('search_link'))}</a> · <a href="{public_country_url(pub_lang, cc)}">{esc(L.t('public_link', in_country=L.in_country(cc)))}</a></p>
 {''.join(blocks)}
 </div></section>"""
-    return page(lang, url, title, L.t("hub_desc", title=title, n=n), body, nav="calendar", ld=[crumb_ld],
+    return page(lang, url, title, L.t("hub_desc", title=title, n=n), body, nav="calendar", ld=[crumb_ld], meta_title=title + L.t("seo_suffix"),
                 lastmod=today.isoformat(), group=f"school-country:{cc}")
 
 
@@ -473,7 +482,7 @@ def school_index(by_cc: dict[str, list[Scope]], today: dt.date, lang: str) -> di
         f'<tr><td><a href="{school_country_url(lang, cc)}"><b>{esc(L.country(cc))}</b></a> <span class="pill pill-code">{cc}</span></td>'
         f'<td class="num">{len(g)}</td><td>{esc(", ".join(sorted({L.source(c) for s in g for c in s.calendars})))}</td></tr>'
         for cc, g in items)
-    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("school_holidays"), school_index_url(lang))])
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), home_url(lang)), (L.t("school_holidays"), school_index_url(lang))])
     n = sum(len(g) for _, g in items)
     more = f'<p class="body-s"><a href="{school_index_url("en")}">{esc(L.t("all_countries"))}</a></p>' if lang != "en" else ""
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
@@ -525,7 +534,7 @@ def public_country_page(c: dict, school_urls: dict, today: dt.date, lang: str) -
     if any(h.get("is_estimated") for h in hs):
         notes.append(esc(L.t("note_est")))
     url = public_country_url(lang, cc)
-    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("public_holidays"), public_index_url(lang)), (L.country(cc), url)])
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), home_url(lang)), (L.t("public_holidays"), public_index_url(lang)), (L.country(cc), url)])
     faq_section, faq_ld = faq_html(L, faq)
     title = L.t("pub_title", in_country=inc, years=years_s)
     school_url = school_urls.get((lang, cc)) or school_urls.get(("en", cc))
@@ -554,7 +563,7 @@ def public_index(countries: list[str], today: dt.date, lang: str) -> dict:
     L = Loc(lang)
     chips = "".join(f'<a class="chip" href="{public_country_url(lang, cc)}">{esc(L.country(cc))}</a>'
                     for cc in sorted(countries, key=L.country))
-    crumb_html, crumb_ld = breadcrumb([(L.t("home"), "/"), (L.t("public_holidays"), public_index_url(lang))])
+    crumb_html, crumb_ld = breadcrumb([(L.t("home"), home_url(lang)), (L.t("public_holidays"), public_index_url(lang))])
     title = L.t("pub_index_title", n=len(countries))
     more = f'<p class="body-s"><a href="{public_index_url("en")}">{esc(L.t("all_countries"))}</a></p>' if lang != "en" else ""
     body = f"""<section style="padding-bottom: 0"><div class="wrap gen">
@@ -567,6 +576,95 @@ def public_index(countries: list[str], today: dt.date, lang: str) -> dict:
 </div></section>"""
     return page(lang, public_index_url(lang), title, L.t("pub_index_desc", y0=today.year, y1=today.year + 1, n=len(countries)),
                 body, nav="coverage", ld=[crumb_ld], lastmod=today.isoformat(), group="public-index")
+
+
+# ---------------------------------------------------------------- localized home pages
+
+# Countries a language's home page lists first (then the rest by number of calendars).
+HOME_FIRST = {"de": ["DE", "AT", "CH", "LI", "LU"], "fr": ["FR", "BE", "CH", "LU"], "nl": ["NL", "BE"],
+              "es": ["ES", "MX"], "it": ["IT", "CH", "SM"], "pl": ["PL"], "pt": ["PT"], "cs": ["CZ"], "sk": ["SK"],
+              "ro": ["RO", "MD"]}
+
+
+def home_page(lang: str, by_cc: dict[str, list[Scope]], public_ccs: list[str], today: dt.date) -> dict | None:
+    """A home page for parents in their language: subscribe to the school holidays of a region."""
+    L = Loc(lang)
+    groups = {cc: [s for s in g if lang in s.langs] for cc, g in by_cc.items()}
+    groups = {cc: g for cc, g in groups.items() if g}
+    if not groups:
+        return None
+    first = HOME_FIRST.get(lang, [])
+    order = sorted(groups, key=lambda cc: (first.index(cc) if cc in first else len(first), -len(groups[cc]), L.country(cc)))
+    cards = []
+    for cc in order:
+        g = sorted(groups[cc], key=lambda s: s.name(lang))
+        national = len(g) == 1 and g[0].national
+        chips = "" if national else "".join(
+            f'<a class="chip" href="{s.url(lang)}">{esc(s.name(lang))}</a>' for s in g[:48])
+        links = [] if national else [(school_country_url(lang, cc), L.t("home_all_regions", in_country=L.in_country(cc)))]
+        if cc in public_ccs:
+            links.append((public_country_url(lang, cc), L.t("home_public_link", in_country=L.in_country(cc))))
+        more = ('<p class="body-s" style="margin: 16px 0 0">'
+                + " · ".join(f'<a class="link-arrow" href="{u}">{esc(t)}</a>' for u, t in links) + "</p>") if links else ""
+        cards.append(f"""<article class="card card-lg home-country">
+<h3 class="h2"><a href="{school_country_url(lang, cc)}">{esc(L.t('title_scope', name=L.country(cc), years='').strip()) if national else esc(L.country(cc))}</a></h3>
+{f'<div class="chips" style="margin-top: 16px">{chips}</div>' if chips else ''}
+{more}</article>""")
+    others = [cc for cc in public_ccs if cc not in groups]
+    public_chips = "".join(f'<a class="chip" href="{public_country_url(lang, cc)}">{esc(L.country(cc))}</a>'
+                           for cc in sorted(others, key=L.country))
+    faq = [(L.t("home_q_free"), L.t("home_a_free")), (L.t("home_q_update"), L.t("home_a_update")),
+           (L.t("home_q_apps"), L.t("home_a_apps"))]
+    faq_section, faq_ld = faq_html(L, faq)
+    steps = "".join(f'<li><span class="step-n">{i}</span><span>{esc(L.t(k))}</span></li>'
+                    for i, k in enumerate(("home_step1", "home_step2", "home_step3"), 1))
+    submit = "/submit/?lang=de" if lang == "de" else "/submit/"
+    body = f"""<section>
+  <div class="wrap hero home-hero">
+    <div>
+      <p class="overline">{esc(L.t('home_overline'))}</p>
+      <h1 class="display">{esc(L.t('home_h1'))}</h1>
+      <p class="body-l">{esc(L.t('home_lead'))}</p>
+      <form class="card" style="padding: 20px; max-width: 560px" action="/calendar/" method="get" role="search">
+        <label class="h3" for="home-q" style="display: block; margin-bottom: 12px">{esc(L.t('home_search_label'))}</label>
+        <div class="field">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input class="input" id="home-q" name="q" type="search" placeholder="{esc(L.t('home_search_ph'))}" autocomplete="off">
+        </div>
+      </form>
+      <!--langs-->
+    </div>
+    <div class="card card-lg home-how">
+      <h2 class="h3" style="margin-bottom: 16px">{esc(L.t('home_how'))}</h2>
+      <ol class="steps">{steps}</ol>
+      <div class="row" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px">
+        <span class="pill pill-neutral">Apple Calendar</span><span class="pill pill-neutral">Google Calendar</span><span class="pill pill-neutral">Outlook</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="countries" style="padding-top: 0">
+  <div class="wrap">
+    <h2 class="h1" style="margin-bottom: 24px">{esc(L.t('home_countries'))}</h2>
+    <div class="home-countries">{''.join(cards)}</div>
+    <p class="body-s" style="margin-top: 16px"><a class="link-arrow" href="{submit}">{esc(L.t('home_submit'))}</a></p>
+  </div>
+</section>
+{f'<section style="padding-top: 0"><div class="wrap"><h2 class="h2" style="margin-bottom: 16px">{esc(L.t("home_more_public"))}</h2><div class="chips">{public_chips}</div></div></section>' if public_chips else ''}
+<section style="padding-top: 0"><div class="wrap gen">{faq_section}</div></section>
+<section style="padding-top: 0">
+  <div class="wrap">
+    <div class="card">
+      <h2 class="h3">{esc(L.t('home_dev'))}</h2>
+      <p class="body-s muted" style="margin: 8px 0 16px">{esc(L.t('home_dev_text'))}</p>
+      <a class="btn btn-secondary btn-sm" href="/docs/">{esc(L.t('home_dev_cta'))}</a>
+    </div>
+  </div>
+</section>"""
+    site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Holibase", "url": SITE + home_url(lang),
+               "inLanguage": lang, "publisher": {"@id": f"{SITE}/#org"}}
+    return page(lang, home_url(lang), L.t("home_title"), L.t("home_desc"), body, nav="home", ld=[site_ld, faq_ld],
+                lastmod=today.isoformat(), group="home", meta_title=L.t("home_title"))
 
 
 # ---------------------------------------------------------------- language links
@@ -633,12 +731,27 @@ def generate(snapshot: dict) -> tuple[list[dict], dict]:
         if public_ccs[lang]:
             pages.append(public_index(public_ccs[lang], today, lang))
 
+    homes = {"en": "/"}
+    for lang in LANGS[1:]:
+        hp = home_page(lang, by_cc, public_ccs.get(lang, []), today)
+        if hp:
+            pages.append(hp)
+            homes[lang] = hp["path"]
+
     link_languages(pages)
+    for p in pages:  # the English home is a hand-written page: add it to the alternates and the language switch
+        if p.get("group") == "home":
+            p["alternates"] = dict(homes)
+            others = " · ".join(f'<a href="{homes[l]}" hreflang="{l}" lang="{l}">{LANG_NAMES[l]}</a>'
+                                for l in LANGS if l in homes and l != p["lang"])
+            switch = f'<p class="langs body-s">{esc(T[p["lang"]]["also_in"])}{Loc(p["lang"]).colon} {others}</p>'
+            p["body"] = re.sub(r'<p class="langs body-s">.*?</p>', lambda m: switch, p["body"], count=1, flags=re.S)
     page_map = {s.key: s.url("en") for s in scopes}
     page_map.update({f"public:{cc}": public_country_url("en", cc) for cc in public_ccs["en"]})
     extras = {"page_map": page_map, "school_ccs": sorted(by_cc), "public_ccs": public_ccs["en"],
               "scope_count": len(scopes), "coverage": snapshot.get("coverage"),
-              "localized": {l: school_index_url(l) for l in LANGS if l != "en" and any(l in s.langs for s in scopes)}}
+              "localized": {l: school_index_url(l) for l in LANGS if l != "en" and any(l in s.langs for s in scopes)},
+              "homes": homes}
     return pages, extras
 
 

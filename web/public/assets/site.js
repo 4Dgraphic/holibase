@@ -181,3 +181,34 @@ if (toggle) {
   });
 }
 copyButtons();
+
+// ---------------------------------------------------------------- language hint
+// If this page exists in the visitor's browser language (hreflang alternates), offer it once.
+// No automatic redirect: search engines and travellers keep the page they asked for.
+(() => {
+  const HINT = {
+    de: ["Diese Seite gibt es auch auf Deutsch.", "Wechseln"], fr: ["Cette page existe aussi en français.", "Changer"],
+    nl: ["Deze pagina is ook in het Nederlands.", "Wisselen"], es: ["Esta página también está en español.", "Cambiar"],
+    it: ["Questa pagina è disponibile anche in italiano.", "Cambia"], pl: ["Ta strona jest też po polsku.", "Przełącz"],
+    pt: ["Esta página também está em português.", "Mudar"], cs: ["Tato stránka je i v češtině.", "Přepnout"],
+    sk: ["Táto stránka je aj v slovenčine.", "Prepnúť"], ro: ["Această pagină există și în română.", "Schimbă"],
+    en: ["This page is also available in English.", "Switch"],
+  };
+  const current = document.documentElement.lang || "en";
+  const alts = Object.fromEntries([...document.querySelectorAll('link[rel="alternate"][hreflang]')]
+    .map((l) => [l.hreflang, l.href]).filter(([h]) => h !== "x-default"));
+  const wanted = (navigator.languages || [navigator.language || ""]).map((l) => l.slice(0, 2).toLowerCase());
+  const lang = wanted.find((l) => alts[l]);
+  if (!lang || lang === current || !HINT[lang]) return;
+  let dismissed = false;
+  try { dismissed = localStorage.getItem("hb-lang-hint") === "off"; } catch { /* storage unavailable */ }
+  if (dismissed) return;
+  const box = el("div", { class: "lang-hint", role: "note", lang },
+    el("span", { text: HINT[lang][0] }),
+    el("a", { href: new URL(alts[lang]).pathname, hreflang: lang, text: `${HINT[lang][1]} →` }),
+    el("button", { type: "button", "aria-label": "×", text: "×", onclick: () => {
+      box.remove();
+      try { localStorage.setItem("hb-lang-hint", "off"); } catch { /* ignore */ }
+    } }));
+  document.body.append(box);
+})();

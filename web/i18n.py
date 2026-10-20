@@ -1,5 +1,5 @@
 """
-Texts and names for the generated pages in English, German, French and Dutch.
+Texts and names for the generated pages in English, German, French and Dutch (more languages in i18n_more.py).
 
 Placeholders in braces are filled by generate.py. Keep the same keys in every language.
 """
@@ -64,6 +64,8 @@ _FR_IN = {"FR": "en France", "BE": "en Belgique", "CH": "en Suisse", "LU": "au L
 
 
 def in_country(lang: str, cc: str, name: str) -> str:
+    if lang in IN_COUNTRY or lang in IN_DEFAULT:
+        return IN_COUNTRY.get(lang, {}).get(cc) or IN_DEFAULT[lang].format(name=name)
     if lang == "en":
         return f"in the {name}" if cc in _EN_THE else f"in {name}"
     if lang == "de":
@@ -335,5 +337,19 @@ T = {
         "also_in": "Ook beschikbaar in",
     },
 }
+
+# ---------------------------------------------------------------- more languages (i18n_more.py)
+from i18n_more import (IN_COUNTRY, IN_DEFAULT, NEW_DATE, NEW_KEYS, NEW_LANG_NAMES, NEW_LANGS,  # noqa: E402
+                       NEW_PATHS, NEW_REGION, T_MORE)
+
+LANGS += NEW_LANGS
+LANG_NAMES.update(NEW_LANG_NAMES)
+PATHS.update(NEW_PATHS)
+DATE.update(NEW_DATE)
+for _l in NEW_LANGS:
+    REGION.setdefault(_l, {}).update(NEW_REGION.get(_l, {}))
+for _l, _keys in NEW_KEYS.items():
+    T[_l].update(_keys)
+T.update(T_MORE)
 
 assert all(set(T[l]) == set(T["en"]) for l in LANGS), {l: set(T["en"]) ^ set(T[l]) for l in LANGS}

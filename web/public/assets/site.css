@@ -386,3 +386,24 @@ textarea.input.plain { height: auto; padding: var(--space-3) var(--space-4); res
 .check { display: flex; gap: var(--space-3); align-items: flex-start; font-size: 14px; line-height: 20px; cursor: pointer; margin-top: var(--space-4); }
 .check input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--mint); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- localized home pages */
+.home-hero { align-items: start; }
+.home-hero .display { margin-bottom: var(--space-4); }
+.home-hero .body-l { margin-bottom: var(--space-6); }
+.home-hero .langs { margin-top: var(--space-4); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+.steps li { display: flex; gap: var(--space-3); align-items: flex-start; color: var(--ink-muted); }
+.step-n { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--on-mint);
+  display: inline-flex; align-items: center; justify-content: center; font: 600 15px/1 var(--font-display); }
+.home-countries { display: grid; gap: var(--space-4); }
+.home-country h3 a { color: var(--ink); text-decoration: none; }
+.home-country h3 a:hover { text-decoration: underline; }
+
+/* ---------- language suggestion */
+.lang-hint { position: fixed; left: 50%; transform: translateX(-50%); top: 96px; z-index: 30; max-width: calc(100% - 32px);
+  display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  background: var(--surface-inverse); color: var(--ink-inverse); border-radius: var(--radius-pill); box-shadow: var(--shadow-float);
+  font: 500 14px/20px var(--font-text); }
+.lang-hint a { color: var(--ink-inverse); font-weight: 600; white-space: nowrap; }
+.lang-hint button { background: none; border: 0; color: var(--ink-inverse); font-size: 20px; line-height: 1; cursor: pointer; padding: 4px 10px; }

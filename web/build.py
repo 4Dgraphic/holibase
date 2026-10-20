@@ -27,7 +27,7 @@ ROOT = pathlib.Path(__file__).parent
 SRC, OUT = ROOT / "src", ROOT / "public"
 SNAPSHOT = ROOT / ".cache" / "snapshot.json"
 SITE = "https://holibase.org"
-GENERATED_DIRS = ["school-holidays", "public-holidays", "de", "fr", "nl"]
+GENERATED_DIRS = ["school-holidays", "public-holidays", "de", "fr", "nl", "es", "it", "pl", "pt", "cs", "sk", "ro"]
 
 ORG = {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Holibase", "url": SITE,
        "logo": f"{SITE}/assets/logo-512.png", "sameAs": ["https://github.com/4Dgraphic/holibase"]}
@@ -62,8 +62,11 @@ def home_ld(stats: dict) -> list:
 def render(meta: dict, body: str, ld: list | None = None) -> str:
     logo = partial("logo").strip()
     path = meta["path"]
-    title = meta["title"] if path == "/" else f"{meta['title']} · Holibase"
-    header = partial("header").replace("{{logo}}", logo)
+    title = meta["title"] if path == "/" or meta.get("no_brand") else f"{meta['title']} · Holibase"
+    lang = meta.get("lang", "en")
+    from i18n import PATHS, T
+    header = partial("header").replace("{{logo}}", logo).replace("{{home}}", PATHS.get(lang, PATHS["en"])["prefix"] + "/")
+    header = re.sub(r"\{\{t:(\w+)\}\}", lambda m: T.get(lang, T["en"])[m.group(1)], header)
     for nav in ("calendar", "coverage", "docs", "licence"):
         header = header.replace("{{cur:%s}}" % nav, ' aria-current="page"' if meta.get("nav") == nav else "")
     scripts = '<script type="module" src="/assets/site.js"></script>'
@@ -78,7 +81,8 @@ def render(meta: dict, body: str, ld: list | None = None) -> str:
     hreflang = "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{u}">\n' for l, u in alts.items())
     if alts.get("en"):
         hreflang += f'<link rel="alternate" hreflang="x-default" href="{SITE}{alts["en"]}">\n'
-    og_locale = {"en": "en_US", "de": "de_DE", "fr": "fr_FR", "nl": "nl_NL"}.get(meta.get("lang", "en"), "en_US")
+    og_locale = {"en": "en_US", "de": "de_DE", "fr": "fr_FR", "nl": "nl_NL", "es": "es_ES", "it": "it_IT", "pl": "pl_PL",
+                 "pt": "pt_PT", "cs": "cs_CZ", "sk": "sk_SK", "ro": "ro_RO"}.get(meta.get("lang", "en"), "en_US")
     return f"""<!doctype html>
 <html lang="{meta.get('lang', 'en')}" data-theme="{meta.get('theme', 'dark')}">
 <head>
@@ -159,7 +163,8 @@ def llms_txt(stats: dict, extras: dict | None) -> str:
         "- [Sources and licences](https://holibase.org/licence/)",
     ]
     if extras and extras.get("localized"):
-        names = {"de": "German", "fr": "French", "nl": "Dutch"}
+        names = {"de": "German", "fr": "French", "nl": "Dutch", "es": "Spanish", "it": "Italian", "pl": "Polish",
+                 "pt": "Portuguese", "cs": "Czech", "sk": "Slovak", "ro": "Romanian"}
         lines += ["", "## Other languages", ""]
         lines += [f"- [School holidays in {names.get(l, l)}](https://holibase.org{u})" for l, u in extras["localized"].items()]
     if extras:
@@ -212,6 +217,8 @@ def build(fetch: bool = False) -> None:
                             for cc in sorted(extras["public_ccs"], key=generate.country_name))
             body = body.replace("<!--country-chips-->", chips)
         ld = home_ld(stats) if meta["path"] == "/" else None
+        if meta["path"] == "/" and extras and len(extras.get("homes", {})) > 1:
+            meta["alternates"] = extras["homes"]
         target = target_for(meta["path"])
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(render(meta, body, ld))

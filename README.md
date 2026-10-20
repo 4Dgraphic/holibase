@@ -242,3 +242,13 @@ calendar view link to it with the region filled in, and it starts with the dates
   (it replaces library data, but never official or researched calendars); otherwise it is kept as
   unverified (**needs_review**).
 - The monthly data report lists the submissions of the month and the ones waiting for a look.
+
+## Languages
+
+Region, country and public holiday pages are generated in English and, for the countries where they are
+spoken, German, French, Dutch, Spanish, Italian, Polish, Portuguese, Czech, Slovak and Romanian
+(`web/i18n.py`, `web/i18n_more.py`; countries per language in `web/snapshot.py`). Each language also gets a
+home page for parents (`/de/`, `/es/`, …) that links every region and explains subscribing. All versions are
+linked with hreflang. There is no redirect by IP or browser language (search engines crawl from the US and
+travellers keep the page they asked for); instead a small hint offers the page in the browser's language
+when it exists. Page titles and FAQs name the calendar apps people search for (iPhone, Google Calendar, Outlook).
