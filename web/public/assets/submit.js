@@ -2,15 +2,16 @@
 import { API, api, $, $$, el } from "./site.js";
 
 const params = new URLSearchParams(location.search);
-const LANG = (params.get("lang") || navigator.language || "en").slice(0, 2).toLowerCase() === "de" ? "de" : "en";
+// English unless the link asks for German (/melden and the German region pages add ?lang=de).
+const LANG = (params.get("lang") || "en").slice(0, 2).toLowerCase() === "de" ? "de" : "en";
 const CALENDAR_YEAR = new Set(["AU", "NZ", "ZA", "BR", "AR", "CL"]);
-const FIRST = ["DE", "AT", "CH"]; // listed first: where most submissions will come from
 
 const T = {
   en: {
     overline: "Submit holidays", h1: "Missing or wrong holidays? Tell us.",
     lead: "Send the school holidays of your region with a link to the official calendar. We check every date against that document before it appears on Holibase and in the API, usually within a day.",
-    where: "1. Which calendar?", country: "Country", region: "State, region or canton", authority: "School or local variant",
+    where: "1. Which calendar?", country: "Country", choose_country: "Choose a country",
+    err_country: "Choose a country.", region: "State, region or canton", authority: "School or local variant",
     year: "School year", whole_country: "Whole country", whole_region: "Whole region (most schools)",
     dates: "2. All holidays of this school year",
     dates_help: "Enter every break and day off of the school year, including Christmas and summer. Correct the dates that are wrong.",
@@ -38,7 +39,8 @@ const T = {
   de: {
     overline: "Ferien melden", h1: "Ferien fehlen oder sind falsch? Sag es uns.",
     lead: "Schick uns die Schulferien deiner Region mit einem Link zum offiziellen Ferienplan. Wir prüfen jedes Datum gegen dieses Dokument, bevor es auf Holibase und in der API erscheint, meist innerhalb eines Tages.",
-    where: "1. Welcher Ferienplan?", country: "Land", region: "Bundesland, Region oder Kanton", authority: "Schule oder Gemeinde-Variante",
+    where: "1. Welcher Ferienplan?", country: "Land", choose_country: "Land wählen",
+    err_country: "Wähle ein Land.", region: "Bundesland, Region oder Kanton", authority: "Schule oder Gemeinde-Variante",
     year: "Schuljahr", whole_country: "Ganzes Land", whole_region: "Ganze Region (die meisten Schulen)",
     dates: "2. Alle Ferien dieses Schuljahres",
     dates_help: "Trag alle Ferien und freien Tage des Schuljahres ein, auch Weihnachts- und Sommerferien. Korrigiere, was falsch ist.",
@@ -98,14 +100,14 @@ function options(select, items, selected) {
 
 function fillCountries() {
   const list = ref.countries.map((c) => [c.code, countryLabel(c.code)]).sort((a, b) => a[1].localeCompare(b[1], LANG));
-  const first = FIRST.map((cc) => list.find((c) => c[0] === cc)).filter(Boolean);
   const wanted = (params.get("country") || "").toUpperCase();
-  options(fCountry, [...first, ["", "──────────"], ...list.filter((c) => !FIRST.includes(c[0]))], wanted || (LANG === "de" ? "DE" : first[0]?.[0]));
+  options(fCountry, [["", t("choose_country")], ...list], wanted);
   fCountry.querySelector('option[value=""]').disabled = true;
 }
 
 function fillRegions(selected) {
   const cc = fCountry.value;
+  if (!cc) { fRegion.replaceChildren(); fYear.replaceChildren(); return; }
   const subs = ref.subdivisions.filter((s) => s.country_code === cc && !s.parent_code)
     .map((s) => [s.code, s.name || s.code]).sort((a, b) => a[1].localeCompare(b[1], LANG));
   options(fRegion, [["", t("whole_country")], ...subs], selected);
@@ -116,6 +118,7 @@ async function fillAuthorities(selected) {
   const cc = fCountry.value, sub = fRegion.value;
   $("#f-authority-wrap").hidden = true;
   fAuthority.replaceChildren();
+  if (!cc) return;
   if (!sub && cc === "US") return; // ~19,000 districts: choose a state first
   try {
     const q = new URLSearchParams({ country: cc, limit: "60" });
@@ -146,6 +149,7 @@ function addRows(n, items = []) {
 
 async function prefill() {
   const cc = fCountry.value, sy = fYear.value;
+  if (!cc) { $("#f-periods").replaceChildren(); addRows(5); return; }
   const [from, to] = yearWindow(sy);
   const scope = fAuthority.value ? `&authority=${fAuthority.value}` : fRegion.value ? `&subdivision=${fRegion.value}` : "";
   $("#f-periods").replaceChildren();
@@ -174,6 +178,7 @@ function message(kind, ...children) {
 }
 
 function collect() {
+  if (!fCountry.value) throw new Error(t("err_country"));
   const periods = [];
   for (const row of $$(".period-row")) {
     const [name, start, end] = $$("input", row).map((i) => i.value.trim());
@@ -229,7 +234,7 @@ fAuthority.addEventListener("change", prefill);
 fYear.addEventListener("change", prefill);
 
 (async () => {
-  try { ref = await api("/v1/countries"); } catch { ref = { countries: FIRST.map((code) => ({ code })), subdivisions: [] }; }
+  try { ref = await api("/v1/countries"); } catch { ref = { countries: [], subdivisions: [] }; }
   let sub = (params.get("subdivision") || "").toUpperCase();
   if (params.get("authority") && !sub) {
     try { sub = (await api(`/v1/authorities/${params.get("authority")}`)).authority.subdivision_code || ""; } catch { /* unknown */ }

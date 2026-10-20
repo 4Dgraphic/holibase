@@ -94,7 +94,9 @@ function renderResults(items, term) {
   results.replaceChildren();
   active = -1;
   if (!items.length) {
-    results.append(el("li", { class: "group", text: `Nothing found for “${term}”` }));
+    results.append(el("li", { class: "group", text: `Nothing found for “${term}”` }),
+      el("li", { role: "presentation", onclick: () => { location.href = "/submit/"; } },
+        el("a", { class: "link-arrow body-s", href: "/submit/", text: "Missing your region? Submit its holidays →" })));
   }
   items.forEach((it, i) => {
     if (it.group) { results.append(el("li", { class: "group", role: "presentation", text: it.group })); return; }
