@@ -152,6 +152,41 @@
             "CH-AI"
           ],
           "learned": "2026-10-21"
+        },
+        {
+          "url": "https://av.tg.ch/public/upload/assets/179040/Ferienplan_SJ_2026_2027.pdf?fp=1",
+          "scopes": [
+            "CH-TG"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://av.tg.ch/public/upload/assets/8713/10_Jahresplan_Schulferien_Volksschule_2023_-_2033.pdf?fp=4",
+          "scopes": [
+            "CH-TG"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://www4.ti.ch/fileadmin/DECS/calendario_scolastico/Calendario_scolastico_2029-2030.pdf",
+          "scopes": [
+            "CH-TI"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://www.ur.ch/_doc/443665",
+          "scopes": [
+            "CH-UR"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://www.gr.ch/de/institutionen/verwaltung/ekud/ahb/bks/uberuns/ferienplan/Seiten/default.aspx",
+          "scopes": [
+            "CH-GR"
+          ],
+          "learned": "2026-10-21"
         }
       ]
     },

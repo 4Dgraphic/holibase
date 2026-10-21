@@ -1,0 +1,1231 @@
+{
+ "dataset": "auto-research-2026-10-21",
+ "retrieved": "2026-10-21",
+ "method": "Automatic research: official documents read by OpenAI gpt-5-mini, dates checked against the document text and other sources (scripts/auto_research.py).",
+ "calendars": [
+  {
+   "id": "4f14bd17-3e21-5066-b45c-45bc59c3c5d9",
+   "country_code": "CH",
+   "subdivision_code": "CH-FR",
+   "authority": "Calendrier majoritaire (toutes les communes sauf Morat/Murten et Kerzers)",
+   "authority_id": "046a91c2-fe87-5098-9f5f-338ad0217b71",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "pending",
+   "source_url": "https://www.fr.ch/dfac/vacances-scolaires",
+   "first_day": "2029-08-23",
+   "last_day": "2030-07-05",
+   "notes": "Automatically extracted from fr.ch (OpenAI gpt-5-mini); 15 of 16 dates found in the document; 1 of 16 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2029-10-15",
+     "end_date": "2029-10-26",
+     "kind": "break",
+     "label": "Vacances d'automne",
+     "names": {
+      "en": "Autumn break",
+      "fr": "Vacances d'automne"
+     }
+    },
+    {
+     "start_date": "2029-11-01",
+     "end_date": "2029-11-01",
+     "kind": "holiday",
+     "label": "Toussaint",
+     "names": {
+      "en": "All Saints' Day",
+      "fr": "Toussaint"
+     }
+    },
+    {
+     "start_date": "2029-12-08",
+     "end_date": "2029-12-08",
+     "kind": "holiday",
+     "label": "Immaculée Conception",
+     "names": {
+      "en": "Immaculate Conception",
+      "fr": "Immaculée Conception"
+     }
+    },
+    {
+     "start_date": "2029-12-24",
+     "end_date": "2030-01-04",
+     "kind": "break",
+     "label": "Vacances Noël",
+     "names": {
+      "en": "Christmas break",
+      "fr": "Vacances Noël"
+     }
+    },
+    {
+     "start_date": "2030-02-04",
+     "end_date": "2030-02-08",
+     "kind": "break",
+     "label": "Vacances carnaval",
+     "names": {
+      "en": "Carnival break",
+      "fr": "Vacances carnaval"
+     }
+    },
+    {
+     "start_date": "2030-04-19",
+     "end_date": "2030-05-03",
+     "kind": "break",
+     "label": "Vacances de Pâques",
+     "names": {
+      "en": "Easter break",
+      "fr": "Vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2030-05-30",
+     "end_date": "2030-05-30",
+     "kind": "holiday",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension",
+      "fr": "Ascension"
+     }
+    },
+    {
+     "start_date": "2030-05-31",
+     "end_date": "2030-05-31",
+     "kind": "holiday",
+     "label": "Pont de l'Ascension",
+     "names": {
+      "en": "Bridge day after Ascension",
+      "fr": "Pont de l'Ascension"
+     }
+    },
+    {
+     "start_date": "2030-06-10",
+     "end_date": "2030-06-10",
+     "kind": "holiday",
+     "label": "Lundi de Pentecôte",
+     "names": {
+      "en": "Whit Monday",
+      "fr": "Lundi de Pentecôte"
+     }
+    },
+    {
+     "start_date": "2030-06-20",
+     "end_date": "2030-06-20",
+     "kind": "holiday",
+     "label": "Fête-Dieu",
+     "names": {
+      "en": "Corpus Christi",
+      "fr": "Fête-Dieu"
+     }
+    }
+   ]
+  },
+  {
+   "id": "878db632-6f68-541f-b1df-9d47333bd52c",
+   "country_code": "CH",
+   "subdivision_code": "CH-TG",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://av.tg.ch/public/upload/assets/179040/Ferienplan_SJ_2026_2027.pdf?fp=1",
+   "first_day": "2026-08-10",
+   "last_day": null,
+   "notes": "Automatically extracted from av.tg.ch (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document; agrees with a second page (av.tg.ch).",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-18",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-02-01",
+     "end_date": "2027-02-07",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Winter/sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-17",
+     "kind": "break",
+     "label": "Pfingstferien",
+     "names": {
+      "en": "Whitsun/Pentecost break",
+      "de": "Pfingstferien"
+     }
+    },
+    {
+     "start_date": "2027-07-12",
+     "end_date": "2027-08-15",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "1ddd8a26-ebe3-5e4d-8c73-b11f3fcfdebb",
+   "country_code": "CH",
+   "subdivision_code": "CH-TG",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://av.tg.ch/public/upload/assets/8713/10_Jahresplan_Schulferien_Volksschule_2023_-_2033.pdf?fp=4",
+   "first_day": "2027-08-16",
+   "last_day": null,
+   "notes": "Automatically extracted from av.tg.ch (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2027-10-11",
+     "end_date": "2027-10-24",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-20",
+     "end_date": "2028-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-01-31",
+     "end_date": "2028-02-06",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2028-04-03",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-06-05",
+     "kind": "break",
+     "label": "Pfingstferien",
+     "names": {
+      "en": "Whitsun/Pentecost break",
+      "de": "Pfingstferien"
+     }
+    },
+    {
+     "start_date": "2028-07-10",
+     "end_date": "2028-08-13",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "09c561a3-950e-5177-a037-787504407933",
+   "country_code": "CH",
+   "subdivision_code": "CH-TG",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://av.tg.ch/public/upload/assets/8713/10_Jahresplan_Schulferien_Volksschule_2023_-_2033.pdf?fp=4",
+   "first_day": "2028-08-14",
+   "last_day": null,
+   "notes": "Automatically extracted from av.tg.ch (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-09",
+     "end_date": "2028-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-01-29",
+     "end_date": "2029-02-04",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2029-03-30",
+     "end_date": "2029-04-15",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-21",
+     "kind": "break",
+     "label": "Pfingstferien",
+     "names": {
+      "en": "Whitsun/Pentecost break",
+      "de": "Pfingstferien"
+     }
+    },
+    {
+     "start_date": "2029-07-09",
+     "end_date": "2029-08-12",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "1e11cc0f-776a-55d2-8e4f-e34e6e1bf623",
+   "country_code": "CH",
+   "subdivision_code": "CH-TG",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "confirmed",
+   "source_url": "https://av.tg.ch/public/upload/assets/8713/10_Jahresplan_Schulferien_Volksschule_2023_-_2033.pdf?fp=4",
+   "first_day": "2029-08-13",
+   "last_day": null,
+   "notes": "Automatically extracted from av.tg.ch (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2029-10-08",
+     "end_date": "2029-10-21",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2029-12-24",
+     "end_date": "2030-01-06",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2030-01-28",
+     "end_date": "2030-02-03",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2030-04-08",
+     "end_date": "2030-04-22",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2030-05-30",
+     "end_date": "2030-06-10",
+     "kind": "break",
+     "label": "Pfingstferien",
+     "names": {
+      "en": "Whitsun/Pentecost break",
+      "de": "Pfingstferien"
+     }
+    },
+    {
+     "start_date": "2030-07-08",
+     "end_date": "2030-08-11",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c7905cb3-57bb-5e68-a590-84a00d3bff97",
+   "country_code": "CH",
+   "subdivision_code": "CH-TG",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2030-31",
+   "status": "confirmed",
+   "source_url": "https://av.tg.ch/public/upload/assets/8713/10_Jahresplan_Schulferien_Volksschule_2023_-_2033.pdf?fp=4",
+   "first_day": "2030-08-12",
+   "last_day": null,
+   "notes": "Automatically extracted from av.tg.ch (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2030-10-07",
+     "end_date": "2030-10-20",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2030-12-23",
+     "end_date": "2031-01-05",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2031-01-27",
+     "end_date": "2031-02-02",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2031-03-31",
+     "end_date": "2031-04-14",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2031-05-22",
+     "end_date": "2031-06-02",
+     "kind": "break",
+     "label": "Pfingstferien",
+     "names": {
+      "en": "Whitsun/Pentecost break",
+      "de": "Pfingstferien"
+     }
+    },
+    {
+     "start_date": "2031-07-07",
+     "end_date": "2031-08-10",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "0fa6b15c-ec86-5bf2-a638-db8ceffb817f",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/bildung/bildungssystem/schulferien/mittel--und-berufsfachschulen/mittelschulen/Ferien_Mittelschulen_SJ_2026_2027.pdf",
+   "first_day": "2026-08-17",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 19 of 19 dates found in the document; differs from editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-17",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2027-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-15",
+     "kind": "other",
+     "label": "Fasnacht (Stadt Winterthur)",
+     "names": {
+      "en": "Carnival (Winterthur) - no entry for Stadt Zürich",
+      "de": "Fasnacht (Stadt Winterthur)"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-27",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports holidays",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-29",
+     "kind": "other",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2027-04-19",
+     "end_date": "2027-04-19",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (Zurich) - holiday",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2027-04-26",
+     "end_date": "2027-05-08",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-08",
+     "kind": "holiday",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension bridge days",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2027-05-15",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2027-07-19",
+     "end_date": "2027-08-21",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "129075da-b47a-5bdf-aec9-f4d358d002b4",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "pending",
+   "source_url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/bildung/bildungssystem/schulferien/mittel--und-berufsfachschulen/mittelschulen/Ferien_Mittelschulen_SJ_2027_2028.pdf",
+   "first_day": "2027-08-23",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 19 of 19 dates found in the document; differs from editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-11",
+     "end_date": "2027-10-23",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-20",
+     "end_date": "2028-01-01",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-02-14",
+     "end_date": "2028-02-26",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports holidays",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2028-02-28",
+     "end_date": "2028-02-28",
+     "kind": "other",
+     "label": "Beginn Frühlingssemester",
+     "names": {
+      "en": "Start spring semester (date printed)",
+      "de": "Beginn Frühlingssemester"
+     }
+    },
+    {
+     "start_date": "2028-04-14",
+     "end_date": "2028-04-17",
+     "kind": "other",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2028-04-17",
+     "end_date": "2028-04-29",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2028-04-24",
+     "end_date": "2028-04-24",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (Zurich) - holiday",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-05-27",
+     "kind": "holiday",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension bridge days",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2028-06-03",
+     "end_date": "2028-06-05",
+     "kind": "holiday",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2028-07-17",
+     "end_date": "2028-08-19",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "97e44317-1b93-5126-9518-362f0ecdbe27",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "pending",
+   "source_url": "https://www.zh.ch/de/bildung/bildungssystem/schulferien.html",
+   "first_day": "2029-08-20",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 9 of 19 dates found in the document; 10 of 19 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2029-10-09",
+     "end_date": "2029-10-21",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2029-12-25",
+     "end_date": "2030-01-06",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2030-02-11",
+     "end_date": "2030-02-23",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports holidays",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2030-02-26",
+     "end_date": "2030-02-26",
+     "kind": "other",
+     "label": "Beginn Frühlingssemester",
+     "names": {
+      "en": "Start spring semester (date printed)",
+      "de": "Beginn Frühlingssemester"
+     }
+    },
+    {
+     "start_date": "2030-03-30",
+     "end_date": "2030-04-01",
+     "kind": "other",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2030-04-16",
+     "end_date": "2030-04-16",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (Zurich) - holiday",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2030-04-22",
+     "end_date": "2030-05-04",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2030-05-09",
+     "end_date": "2030-05-11",
+     "kind": "holiday",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension bridge days",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2030-05-18",
+     "end_date": "2030-05-20",
+     "kind": "holiday",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2030-07-15",
+     "end_date": "2030-08-17",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "285d131b-a273-51bd-beb7-3a937c713425",
+   "country_code": "CH",
+   "subdivision_code": "CH-TI",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "pending",
+   "source_url": "https://www4.ti.ch/fileadmin/DECS/calendario_scolastico/Calendario_scolastico_2029-2030.pdf",
+   "first_day": "2029-09-03",
+   "last_day": "2030-06-19",
+   "notes": "Automatically extracted from www4.ti.ch (OpenAI gpt-5-mini); 14 of 15 dates found in the document; 1 of 15 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2029-10-27",
+     "end_date": "2029-11-04",
+     "kind": "break",
+     "label": "vacanze autunnali",
+     "names": {
+      "en": "Autumn break",
+      "it": "vacanze autunnali"
+     }
+    },
+    {
+     "start_date": "2029-12-22",
+     "end_date": "2030-01-06",
+     "kind": "break",
+     "label": "vacanze di Natale",
+     "names": {
+      "en": "Christmas break",
+      "it": "vacanze di Natale"
+     }
+    },
+    {
+     "start_date": "2030-03-02",
+     "end_date": "2030-03-10",
+     "kind": "break",
+     "label": "vacanze di Carnevale",
+     "names": {
+      "en": "Carnival break",
+      "it": "vacanze di Carnevale"
+     }
+    },
+    {
+     "start_date": "2030-03-19",
+     "end_date": "2030-03-19",
+     "kind": "holiday",
+     "label": "Festa di San Giuseppe",
+     "names": {
+      "en": "Saint Joseph's Day",
+      "it": "Festa di San Giuseppe"
+     }
+    },
+    {
+     "start_date": "2030-04-19",
+     "end_date": "2030-04-28",
+     "kind": "break",
+     "label": "vacanze di Pasqua",
+     "names": {
+      "en": "Easter break",
+      "it": "vacanze di Pasqua"
+     }
+    },
+    {
+     "start_date": "2030-05-01",
+     "end_date": "2030-05-01",
+     "kind": "holiday",
+     "label": "Festa del Lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa del Lavoro"
+     }
+    },
+    {
+     "start_date": "2030-05-30",
+     "end_date": "2030-05-30",
+     "kind": "holiday",
+     "label": "Festa dell’Ascensione",
+     "names": {
+      "en": "Ascension Day",
+      "it": "Festa dell’Ascensione"
+     }
+    },
+    {
+     "start_date": "2030-05-31",
+     "end_date": "2030-05-31",
+     "kind": "holiday",
+     "label": "giorno di vacanza",
+     "names": {
+      "en": "Day off (vacation day)",
+      "it": "giorno di vacanza"
+     }
+    },
+    {
+     "start_date": "2030-06-10",
+     "end_date": "2030-06-10",
+     "kind": "holiday",
+     "label": "Lunedì di Pentecoste",
+     "names": {
+      "en": "Whit Monday",
+      "it": "Lunedì di Pentecoste"
+     }
+    }
+   ]
+  },
+  {
+   "id": "d3e6301d-a1de-57e9-92dd-31d5736a2092",
+   "country_code": "CH",
+   "subdivision_code": "CH-UR",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.ur.ch/_doc/443665",
+   "first_day": "2028-08-21",
+   "last_day": "2029-07-06",
+   "notes": "Automatically extracted from ur.ch (OpenAI gpt-5-mini); 24 of 24 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-07",
+     "end_date": "2028-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-11-01",
+     "end_date": "2028-11-01",
+     "kind": "holiday",
+     "label": "Allerheiligen",
+     "names": {
+      "en": "All Saints' Day",
+      "de": "Allerheiligen"
+     }
+    },
+    {
+     "start_date": "2028-12-08",
+     "end_date": "2028-12-08",
+     "kind": "holiday",
+     "label": "Maria Empfängnis",
+     "names": {
+      "en": "Immaculate Conception",
+      "de": "Maria Empfängnis"
+     }
+    },
+    {
+     "start_date": "2028-12-23",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-02-08",
+     "end_date": "2029-02-13",
+     "kind": "holiday",
+     "label": "Fasnachtstage",
+     "names": {
+      "en": "Carnival days",
+      "de": "Fasnachtstage"
+     }
+    },
+    {
+     "start_date": "2029-03-03",
+     "end_date": "2029-03-11",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Winter/Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2029-03-19",
+     "end_date": "2029-03-19",
+     "kind": "holiday",
+     "label": "Josefstag",
+     "names": {
+      "en": "St. Joseph's Day",
+      "de": "Josefstag"
+     }
+    },
+    {
+     "start_date": "2029-03-30",
+     "end_date": "2029-04-02",
+     "kind": "holiday",
+     "label": "Ostertage",
+     "names": {
+      "en": "Easter days",
+      "de": "Ostertage"
+     }
+    },
+    {
+     "start_date": "2029-04-28",
+     "end_date": "2029-05-13",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break / Easter break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-13",
+     "kind": "holiday",
+     "label": "Auffahrt (während Frühlingsferien)",
+     "names": {
+      "en": "Ascension (during spring break)",
+      "de": "Auffahrt (während Frühlingsferien)"
+     }
+    },
+    {
+     "start_date": "2029-05-21",
+     "end_date": "2029-05-21",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    },
+    {
+     "start_date": "2029-05-31",
+     "end_date": "2029-06-03",
+     "kind": "holiday",
+     "label": "Fronleichnam",
+     "names": {
+      "en": "Corpus Christi",
+      "de": "Fronleichnam"
+     }
+    },
+    {
+     "start_date": "2029-07-07",
+     "end_date": "2029-08-19",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c8155a44-cff9-5bb9-9e1c-1cccb25a5678",
+   "country_code": "CH",
+   "subdivision_code": "CH-GR",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.gr.ch/de/institutionen/verwaltung/ekud/ahb/bks/uberuns/ferienplan/Seiten/default.aspx",
+   "first_day": "2026-08-17",
+   "last_day": "2027-07-02",
+   "notes": "Automatically extracted from gr.ch (OpenAI gpt-5-mini); 19 of 20 dates found in the document; 1 of 20 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-12",
+     "end_date": "2026-10-23",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Allerheiligen",
+     "names": {
+      "en": "All Saints' Day",
+      "de": "Allerheiligen"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-03-01",
+     "end_date": "2027-03-05",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-03-16",
+     "end_date": "2027-03-17",
+     "kind": "teacher_day",
+     "label": "unterrichtsfreie Tage",
+     "names": {
+      "en": "teacher in-service days",
+      "de": "unterrichtsfreie Tage"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-29",
+     "kind": "break",
+     "label": "Über Ostern",
+     "names": {
+      "en": "Easter break",
+      "de": "Über Ostern"
+     }
+    },
+    {
+     "start_date": "2027-04-19",
+     "end_date": "2027-04-30",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-07",
+     "kind": "holiday",
+     "label": "Auffahrt und Brückentag",
+     "names": {
+      "en": "Ascension and bridge day",
+      "de": "Auffahrt und Brückentag"
+     }
+    },
+    {
+     "start_date": "2027-05-17",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    },
+    {
+     "start_date": "2027-06-09",
+     "end_date": "2027-06-11",
+     "kind": "teacher_day",
+     "label": "unterrichtsfreie Tage",
+     "names": {
+      "en": "teacher in-service days",
+      "de": "unterrichtsfreie Tage"
+     }
+    }
+   ]
+  }
+ ]
+}
