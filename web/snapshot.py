@@ -3,7 +3,8 @@ Read everything the generated pages need from the database into one JSON file.
 
     DATABASE_URL=postgresql://... python web/snapshot.py      # writes web/.cache/snapshot.json
 
-Read-only: the connection runs in a read-only transaction. Three queries, a few seconds.
+Read-only: the connection runs in a read-only transaction. The school calendars are read one country
+at a time, so no single statement runs into the database's statement timeout.
 The pages are built from this file by web/build.py, so the site stays fully static.
 """
 import datetime as dt
@@ -11,6 +12,7 @@ import json
 import os
 import pathlib
 import sys
+import time
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -104,8 +106,19 @@ def fetch(dsn: str, countries: list[str] | None = None) -> dict:
     with psycopg.connect(dsn) as conn:
         conn.read_only = True
         with conn.cursor() as cur:
-            cur.execute(SCOPES_SQL.format(filter=f_scopes, school_langs=lang_case('s.cc', SCHOOL_LANGS)), params)
-            scopes = cur.fetchone()[0]
+            # The role's default timeout (about 2 minutes) is meant for API requests, not for this batch read.
+            cur.execute("set local statement_timeout = '10min'")
+            cur.execute(f"select distinct c.country_code::text from public.school_calendars c where c.status = 'confirmed' {f_scopes} order by 1",
+                        params)
+            scopes = []
+            sql = SCOPES_SQL.format(filter="and c.country_code = %(one)s", school_langs=lang_case('s.cc', SCHOOL_LANGS))
+            for (cc,) in cur.fetchall():
+                t = time.monotonic()
+                cur.execute(sql, {**params, "one": cc})
+                rows = cur.fetchone()[0]
+                scopes += rows
+                print(f"  {cc}: {len(rows)} scopes, {time.monotonic() - t:.1f}s", flush=True)
+            scopes.sort(key=lambda x: (x["cc"], x["sub"] is None, x["sub"] or "", x["auth_name"] is None, x["auth_name"] or ""))  # as before: nulls last
             cur.execute(PUBLIC_SQL.format(filter=f_public, public_langs=lang_case('c.code::text', PUBLIC_LANGS)), params)
             public = cur.fetchone()[0]
             cur.execute("select public.get_coverage()")
