@@ -15,7 +15,10 @@ How it works
     until its communities are mapped to Holibase authorities.
   * One calendar per region and school year. Nationwide periods are added to every region of the country.
     Only school types for general/primary education are used (Swiss "Volksschulen", German "allgemeinbildende Schulen").
-  * A school year needs at least MIN_BREAKS breaks; partial years are left out rather than shown incomplete.
+  * A school year needs at least MIN_BREAKS breaks and must reach past February; partial years are left out
+    rather than shown incomplete.
+  * Local variants (a canton's regions or districts, rows that differ only by a comment such as "Tourismusgemeinden")
+    are not mixed: the region gets the calendar that applies to most of it (see main_variant()).
   * Regions that Holibase does not know yet (for example Czech districts) are added to subdivisions.
   * Calendars that disappeared from the source are marked 'outdated'. A country whose calendar count drops
     by more than half is skipped (the source format probably changed); the last good data stays.
@@ -110,6 +113,73 @@ def load_files(source: str | None) -> dict[str, str]:
     return files
 
 
+MAIN = re.compile(r"Volksschul|Alle Schulen|obligatoire|Obligatorische", re.I)
+EXCEPTION = re.compile(r"^(DE |FR |IT )?(Ausnahme|Exception|Eccezione|Tourismusgemeinden|Communes touristiques)|Mittelschul|Berufs|sec\. II", re.I)
+
+
+def complete(cc: str, year: str, periods: list[dict]) -> bool:
+    """A school year counts only when the source reaches into its second half: the OpenHolidays files of
+    several Swiss cantons end in December, which left autumn and Christmas looking like a whole year."""
+    if cc in CALENDAR_YEAR:
+        return True
+    second = int(year[:4]) + 1
+    return any(p["start_date"] >= dt.date(second, 3, 1) for p in periods)
+
+
+def main_variant(scope, rows: list[tuple], subs: dict, iso) -> list[dict]:
+    """The periods of the calendar that applies to most of a region.
+
+    OpenHolidays lists local variants in two ways: rows for smaller areas (Graubünden's regions, the districts
+    of Appenzell Innerrhoden) and rows that differ only by a comment (Obwalden with and without Engelberg,
+    German- and French-speaking Valais, the islands of Schleswig-Holstein). Mixing them gives overlapping
+    periods. Kept: rows for the whole region, plus the rows of the largest group of smaller areas if it covers
+    at least half of the region. Exceptions (islands, tourist communities, upper secondary schools) are left
+    out; where two remaining variants overlap, the more frequent one wins (the region's first language on a tie)."""
+    if not rows:
+        return []
+    short = next((k for k, v in subs.items() if v.get("IsoCode") == scope), None)
+    lang = ((subs.get(short) or {}).get("OfficialLanguages") or "").split(",")[0].strip().upper()
+    exception = lambda c: bool(EXCEPTION.search(c)) and not MAIN.search(c)  # noqa: E731
+    kept = [r for r in rows if r[1] == "*" and not exception(r[2])]
+    parts = [r for r in rows if r[1] != "*" and not exception(r[2])]
+    if parts:
+        groups = Counter(u for _, u, _ in parts)
+        best = max(groups, key=lambda u: (len(u), groups[u]))
+        total = sum(1 for v in subs.values() if v.get("Parent") == short) or len(best)
+        if len(best) * 2 >= total:
+            kept += [r for r in parts if r[1] == best]
+    variants: dict[tuple, list[dict]] = defaultdict(list)
+    for p, u, c in kept:
+        variants[(u, c)].append(p)
+    order = sorted(variants, key=lambda v: (len(variants[v]), v[1] == "" or v[1].upper().startswith(lang + " ")), reverse=True)
+    out: list[dict] = []
+    for v in order:  # a variant that clashes with a preferred one is an alternative to it, not a supplement
+        ps = variants[v]
+        if not any(q["start_date"] <= p["end_date"] and p["start_date"] <= q["end_date"]
+                   and (q["start_date"], q["end_date"]) != (p["start_date"], p["end_date"]) for p in ps for q in out):
+            out += ps
+    return out
+
+
+# Some cantons are listed with bare season words ("Herbst", and "Winter" for the Christmas break) and one with
+# a typo; they get the names the cantons themselves use. Keyed by the English name of a multi-day period.
+FULL_NAMES = {
+    "autumn": {"de": "Herbstferien", "fr": "Vacances d'automne", "it": "Vacanze d'autunno", "en": "Autumn holidays"},
+    "christmas": {"de": "Weihnachtsferien", "fr": "Vacances de Noël", "it": "Vacanze di Natale", "en": "Christmas holidays"},
+    "sport": {"de": "Sportferien", "fr": "Vacances sportives", "it": "Vacanze sportive", "en": "Sports holidays"},
+    "spring": {"de": "Frühlingsferien", "fr": "Vacances de printemps", "it": "Vacanze di primavera", "en": "Spring holidays"},
+    "easter": {"de": "Osterferien", "fr": "Vacances de Pâques", "it": "Vacanze di Pasqua", "en": "Easter holidays"},
+    "summer": {"de": "Sommerferien", "fr": "Vacances d'été", "it": "Vacanze estive", "en": "Summer holidays"},
+}
+
+
+def tidy_names(n: dict, multi_day: bool) -> dict:
+    full = FULL_NAMES.get(n.get("en", "").strip().lower()) if multi_day else None
+    if full:
+        return {k: full.get(k, v) for k, v in n.items()}
+    return {k: ("Osterferien" if v == "Osternferien" else v) for k, v in n.items()}
+
+
 def parse_country(cc: str, files: dict[str, str]) -> tuple[dict, dict]:
     """Returns (calendars, subdivisions). calendars: {(sub_code|None, school_year): [period, ...]}"""
     subs = {r["ShortName"]: r for r in read_csv(files.get(f"{cc}/subdivisions.csv", ""))}
@@ -132,7 +202,7 @@ def parse_country(cc: str, files: dict[str, str]) -> tuple[dict, dict]:
             start, end = parse_date(r.get("StartDate")), parse_date(r.get("EndDate"))
             if not start or not end or end < start or end.year < FIRST_YEAR:
                 continue
-            n = names(r.get("Name", ""))
+            n = tidy_names(names(r.get("Name", "")), (end - start).days >= 1)
             lang = (listing((subs.get(listing(r.get("Subdivisions"))[0]) or {}).get("OfficialLanguages")) if listing(r.get("Subdivisions")) else [])
             label = next((n[l.lower()] for l in lang if l.lower() in n), None) or next(iter(n.values()), "School holiday")
             period = dict(start_date=start, end_date=end, label=label, names=n,
@@ -145,21 +215,32 @@ def parse_country(cc: str, files: dict[str, str]) -> tuple[dict, dict]:
                 if r.get("RegionalScope") == "National":
                     national.append(period)
                 continue
+            comment = re.sub(r"\s*\(\d\d\.\d\d\.\d{4}-\d\d\.\d\d\.\d{4}\)", "", (r.get("Comment") or "").replace("%2C", ","))
+            comment = comment.split(",EN ")[0].strip()
+            units: dict[str, list[str]] = defaultdict(list)  # Holibase region -> the source's smaller areas (district, municipality)
             for s in ss:
                 code = iso(s)
                 if code:
-                    regional[code].append(period)
+                    units[code].append("*")  # the whole region
+                    continue
+                parent = (subs.get(s) or {}).get("Parent")
+                while parent and not iso(parent):
+                    parent = (subs.get(parent) or {}).get("Parent")
+                if parent:
+                    units[iso(parent)].append(s)
+            for code, us in units.items():
+                regional[code].append((period, "*" if "*" in us else frozenset(us), comment))
 
     calendars = defaultdict(list)
     scopes = list(regional) or [None]
     for scope in scopes:
-        for p in national + regional.get(scope, []):
+        for p in national + main_variant(scope, regional.get(scope, []), subs, iso):
             calendars[(scope, p["school_year"])].append(p)
     out = {}
     for key, ps in calendars.items():
         uniq = {(p["start_date"], p["end_date"], p["label"]): p for p in ps}
         ps = sorted(uniq.values(), key=lambda p: (p["start_date"], p["end_date"]))
-        if sum(p["kind"] == "break" for p in ps) >= MIN_BREAKS:
+        if sum(p["kind"] == "break" for p in ps) >= MIN_BREAKS and complete(cc, key[1], ps):
             out[key] = ps
 
     needed = {}

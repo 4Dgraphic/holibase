@@ -230,6 +230,86 @@ def _periods(entries: list[Entry]) -> list[dict]:
     return out
 
 
+# ------------------------------------------------------------------ Germany: official names and extra days
+# python-holidays takes the German dates from the KMK table (checked against it for 2026/27) but files every
+# period under six generic names ("Oster-/Frühjahrsferien", "Himmelfahrts-/Pfingstferien"), single school-free
+# days included. The states' own names are restored here, and the school-free days that the KMK table leaves
+# out are added: Buß- und Bettag in Bavaria (BayFTG Art. 4: no lessons at any school) and Brandenburg's
+# variable holidays (they apply unless the school conference decides otherwise).
+
+def _easter(year: int) -> dt.date:
+    a, b, c = year % 19, year // 100, year % 100
+    d, e = b // 4, b % 4
+    g = (8 * b + 13) // 25
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = c // 4, c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    return dt.date(year, month, (h + l - 7 * m + 114) % 31 + 1)
+
+
+_DE_NAMES = {  # German name -> English name
+    "Herbstferien": "Autumn Break", "Weihnachtsferien": "Christmas Break", "Winterferien": "Winter Break",
+    "Frühjahrsferien": "Spring Break", "Osterferien": "Easter Break", "Pfingstferien": "Whitsun Break",
+"Sommerferien": "Summer Break",
+    "Brückentag nach Christi Himmelfahrt": "Bridge Day after Ascension", "Halbjahrespause": "Half-Year Break",
+    "Unterrichtsfreier Tag": "School-free Day", "Buß- und Bettag": "Day of Repentance and Prayer",
+    "Variabler Ferientag": "Variable School Holiday",
+}
+DE_BB_VARIABLE_DAYS = [  # VV Schulbetrieb, Anlage 1 (bravors.brandenburg.de), school years 2025/26 to 2029/30
+    "2026-05-15", "2027-05-07", "2028-05-26", "2028-10-30", "2029-04-30", "2029-05-11", "2030-05-31"]
+
+
+def _de_name(sub: str | None, label: str, start: dt.date, end: dt.date) -> str:
+    single = start == end
+    if label == "Sommerferien" or label == "Weihnachtsferien":
+        return label
+    easter = _easter(start.year)
+    ascension, pentecost = easter + dt.timedelta(days=39), easter + dt.timedelta(days=49)
+    if single and start == ascension + dt.timedelta(days=1):
+        return "Brückentag nach Christi Himmelfahrt"
+    if label == "Himmelfahrts-/Pfingstferien":  # the states call a break in May or June "Pfingstferien"
+        if not single or pentecost - dt.timedelta(days=3) <= start <= pentecost + dt.timedelta(days=3):
+            return "Pfingstferien"
+        return "Unterrichtsfreier Tag"
+    if label == "Oster-/Frühjahrsferien":
+        if start <= easter + dt.timedelta(days=14) and end >= easter - dt.timedelta(days=14):
+            return "Osterferien"
+        return "Unterrichtsfreier Tag" if single else "Frühjahrsferien"
+    if label == "Winterferien" and single:
+        return "Halbjahrespause" if sub == "DE-HH" else "Unterrichtsfreier Tag"
+    if label == "Herbstferien" and single:
+        return "Unterrichtsfreier Tag"
+    return label
+
+
+def _de_period(start: dt.date, name: str) -> dict:
+    return {"start_date": start.isoformat(), "end_date": start.isoformat(), "kind": "holiday", "label": name,
+            "names": {"de": name, "en": _DE_NAMES[name], "en-US": _DE_NAMES[name]}}
+
+
+def _refine_de(sub: str | None, periods: list[dict], years: list[int]) -> list[dict]:
+    for p in periods:
+        name = _de_name(sub, p["label"], dt.date.fromisoformat(p["start_date"]), dt.date.fromisoformat(p["end_date"]))
+        if name != p["label"]:
+            p["label"] = name
+            p["names"] = {**p["names"], "de": name, "en": _DE_NAMES[name], "en-US": _DE_NAMES[name]}
+            p["names"] = {k: v for k, v in p["names"].items() if k in ("de", "en", "en-US")}  # other languages kept the generic name
+    extra = []
+    if sub in ("DE-BY", "DE-AUGSBURG"):  # the Wednesday before 23 November
+        for y in years:
+            d = dt.date(y, 11, 22)
+            extra.append(_de_period(d - dt.timedelta(days=(d.weekday() - 2) % 7), "Buß- und Bettag"))
+    if sub == "DE-BB":
+        extra += [_de_period(dt.date.fromisoformat(d), "Variabler Ferientag") for d in DE_BB_VARIABLE_DAYS
+                  if dt.date.fromisoformat(d).year in years]
+    for e in extra:
+        if not any(p["start_date"] <= e["start_date"] <= p["end_date"] for p in periods):
+            periods.append(e)
+    return sorted(periods, key=lambda p: p["start_date"])
+
+
 def calendar_id(cc: str, sub: str | None, year: str) -> str:
     return str(uuid.uuid5(CAL_NAMESPACE, f"{SOURCE_ID}|{cc}|{sub or ''}|{year}"))
 
@@ -251,7 +331,10 @@ def school_calendar_rows(cc: str, years: list[int], info: dict | None = None) ->
 
     for sub, ents in scopes:
         by_year: dict[str, list[dict]] = {}
-        for p in _periods(ents):
+        periods = _periods(ents)
+        if cc == "DE":
+            periods = _refine_de(sub, periods, years)
+        for p in periods:
             start = dt.date.fromisoformat(p["start_date"])
             summer = start.month in (8, 9) and _is_summer(p)
             by_year.setdefault(school_year(cc, start, summer), []).append(p)

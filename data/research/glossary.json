@@ -1,0 +1,27 @@
+{
+  "_doc": "German names for school calendar periods, keyed by the English name in lower case. scripts/import_editorial.py adds them to calendars of countries where German is an official language (CH, BE, LU) when a period has no German name yet, so French- and Italian-speaking regions can be shown in German.",
+  "de": {
+    "autumn break": "Herbstferien", "autumn holidays": "Herbstferien",
+    "christmas break": "Weihnachtsferien", "christmas holidays": "Weihnachtsferien",
+    "winter break": "Winterferien", "winter holidays": "Winterferien", "mid-winter break": "Winterferien",
+    "midwinter (carnival) break": "Fasnachtsferien", "carnival break": "Fasnachtsferien", "carnival / winter break": "Fasnachtsferien",
+    "february break": "Februarferien", "sport break": "Sportferien", "sports break": "Sportferien",
+    "march break": "Ferien zum 1. März", "1 march break": "Ferien zum 1. März",
+    "easter break": "Osterferien", "easter holidays": "Osterferien", "easter": "Ostern",
+    "spring break": "Frühlingsferien", "pentecost break": "Pfingstferien", "pentecost": "Pfingsten",
+    "summer break": "Sommerferien", "summer holidays": "Sommerferien", "summer holiday": "Sommerferien",
+    "ascension": "Auffahrt", "ascension day": "Auffahrt", "ascension (and bridge day)": "Auffahrt und Brückentag",
+    "ascension break": "Auffahrtsferien", "ascension bridge": "Auffahrtsbrücke", "ascension bridge day": "Auffahrtsbrücke",
+    "ascension bridge days": "Auffahrtsbrücke", "ascension bridge (thu/fri)": "Auffahrtsbrücke (Do/Fr)",
+    "bridge day after ascension": "Brückentag nach Auffahrt", "friday after ascension": "Freitag nach Auffahrt",
+    "corpus christi": "Fronleichnam", "day after corpus christi": "Freitag nach Fronleichnam",
+    "friday after corpus christi": "Freitag nach Fronleichnam",
+    "day after the solemnity": "Tag nach dem Hochfest", "day after the solennité": "Tag nach dem Hochfest",
+    "all saints' day": "Allerheiligen", "immaculate conception": "Mariä Empfängnis",
+    "saint joseph's day": "Josefstag", "good friday": "Karfreitag", "easter monday": "Ostermontag",
+    "whit monday": "Pfingstmontag", "labour day": "Tag der Arbeit", "armistice day": "Waffenstillstand",
+    "federal fast monday": "Bettagsmontag", "geneva fast": "Genfer Bettag", "geneva fast bridge": "Brückentag Genfer Bettag",
+    "independence day": "Tag der Unabhängigkeit", "additional school holiday": "Zusätzlicher Ferientag",
+    "school-free day": "Unterrichtsfreier Tag"
+  }
+}

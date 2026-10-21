@@ -57,7 +57,7 @@
         "(^|\\.)kbs-solothurn\\.ch$",
         "(^|\\.)schulen-[a-z-]+\\.ch$"
       ],
-      "hint": "Each canton publishes its Ferienplan / plan des vacances, usually as a PDF on the canton's website (e.g. so.ch, vs.ch, tg.ch). Some cantons differ by municipality; then the canton's recommended or majority plan is wanted.",
+      "hint": "Each canton publishes its Ferienplan / plan des vacances, usually as a PDF on the canton's website (e.g. so.ch, vs.ch, tg.ch). Some cantons differ by municipality or school area; then the canton-wide, standard or majority plan is wanted for the canton itself (Solothurn: the standard variant of the Volksschulamt plan; Valais: the plan for the French-speaking part, the majority). Graubünden, Schwyz and Uri leave most holidays to the municipalities: only a canton-wide plan counts, never one municipality's plan.",
       "sources": [
         {
           "url": "https://so.ch/verwaltung/departement-fuer-bildung-kultur-und-sport/amt-fuer-berufsbildung-mittel-und-hochschulen/aktuell/ferienplaene/",
@@ -124,6 +124,34 @@
             "CH-SG"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.vs.ch/de/web/se/plans-de-scolarite",
+          "scopes": [
+            "CH-VS"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://so.ch/fileadmin/internet/dbk/dbk-vsa/Schulsystem/Ferienplan/Schulferienplan_2027_2028.pdf",
+          "scopes": [
+            "CH-SO"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://schule.sh.ch/CMS/Webseite/Schulportal-Kanton-Schaffhausen/Schulorganisation/Schuljahresplanung-1280144-DE.html",
+          "scopes": [
+            "CH-SH"
+          ],
+          "learned": "2026-10-21"
+        },
+        {
+          "url": "https://www.ai.ch/themen/bildung/eltern-und-schule/ferienplan/ftw-simplelayout-filelistingblock/ferienplan-ai_2026-2029.pdf",
+          "scopes": [
+            "CH-AI"
+          ],
+          "learned": "2026-10-21"
         }
       ]
     },

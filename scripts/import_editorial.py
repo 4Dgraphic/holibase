@@ -22,6 +22,17 @@ from collections import Counter
 import psycopg
 
 SOURCE_ID = "editorial"
+GERMAN_SPEAKING = {"CH", "BE", "LU", "LI", "AT", "DE"}  # German is an official language
+GLOSSARY = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data", "research", "glossary.json"), encoding="utf-8"))["de"]
+
+
+def with_german(cc: str, names: dict) -> dict:
+    """Adds the German name from data/research/glossary.json when a period in a German-speaking country has
+    none (e.g. a Geneva or Ticino calendar read in French or Italian), so lang=de shows German names."""
+    if cc not in GERMAN_SPEAKING or names.get("de"):
+        return names
+    de = GLOSSARY.get((names.get("en") or "").strip().lower())
+    return {**names, "de": de} if de else names
 
 
 def main() -> int:
@@ -62,7 +73,8 @@ def main() -> int:
             seen_calendars.add(c["id"])
             for p in c["periods"]:
                 periods[(c["id"], p["start_date"], p["end_date"], p["label"])] = (
-                    c["id"], p["start_date"], p["end_date"], p["kind"], p["label"], json.dumps(p["names"]))
+                    c["id"], p["start_date"], p["end_date"], p["kind"], p["label"],
+                    json.dumps(with_german(c["country_code"], p.get("names") or {}), ensure_ascii=False))
 
     with psycopg.connect(dsn) as conn, conn.cursor() as cur:
         cur.execute("""

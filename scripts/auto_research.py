@@ -630,6 +630,14 @@ def load_scopes(cur, countries: set[str] | None, skip: set[str]):
         if status == "confirmed" and visible:
             s["years"].add(sy)
             covered_sub.add((cc, sub, sy))
+    # Countries kept filled years ahead: every first-level region is a scope, also one without any calendar
+    # yet (otherwise a canton like Appenzell Innerrhoden is never looked for).
+    cur.execute("""select s.country_code::text, s.code, s.name from public.subdivisions s
+                    where s.country_code = any(%s) and s.parent_code is null and s.code ~ '^[A-Z]{2}-[A-Z0-9]{1,3}$'""",
+                ([cc for cc in HORIZON if cc not in skip and (not countries or cc in countries)],))
+    for cc, sub, sname in cur.fetchall():
+        scopes.setdefault((cc, sub, None), dict(cc=cc, sub=sub, auth=None, auth_name=None, auth_kind=None,
+                                                name=sname, years=set(), others=defaultdict(list)))
     return scopes, covered_sub
 
 

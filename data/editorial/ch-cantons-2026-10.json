@@ -1,0 +1,868 @@
+{
+ "dataset": "ch-cantons-2026-10",
+ "retrieved": "2026-10-21",
+ "method": "Canton-wide calendars for cantons whose data was only filed by school area (FR, AI, OW), Schaffhausen checked against its ordinance on school holidays, and the standard variant of Solothurn's official Volksschule plan.",
+ "calendars": [
+  {
+   "id": "c427530b-232b-5cbb-8c6d-f9893d1f4c2c",
+   "country_code": "CH",
+   "subdivision_code": "CH-FR",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.fr.ch/dfac/vacances-scolaires",
+   "first_day": "2026-08-27",
+   "last_day": "2027-07-09",
+   "notes": "Canton-wide calendar: the official majority calendar (all communes except Morat/Murten and Kerzers, which have calendars of their own).",
+   "periods": [
+    {
+     "start_date": "2026-10-12",
+     "end_date": "2026-10-23",
+     "kind": "break",
+     "label": "Vacances d'automne",
+     "names": {
+      "en": "Autumn Break",
+      "fr": "Vacances d'automne"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Immaculée Conception",
+     "names": {
+      "en": "Immaculate Conception",
+      "fr": "Immaculée Conception"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2027-01-01",
+     "kind": "break",
+     "label": "Vacances de Noël",
+     "names": {
+      "en": "Christmas Break",
+      "fr": "Vacances de Noël"
+     }
+    },
+    {
+     "start_date": "2027-02-08",
+     "end_date": "2027-02-12",
+     "kind": "break",
+     "label": "Vacances de Carnaval",
+     "names": {
+      "en": "Carnival Break",
+      "fr": "Vacances de Carnaval"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-09",
+     "kind": "break",
+     "label": "Vacances de Pâques",
+     "names": {
+      "en": "Easter Break",
+      "fr": "Vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-06",
+     "kind": "holiday",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension Day",
+      "fr": "Ascension"
+     }
+    },
+    {
+     "start_date": "2027-05-07",
+     "end_date": "2027-05-07",
+     "kind": "holiday",
+     "label": "Pont de l'Ascension",
+     "names": {
+      "en": "Ascension Bridge Day",
+      "fr": "Pont de l'Ascension"
+     }
+    },
+    {
+     "start_date": "2027-05-17",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Lundi de Pentecôte",
+     "names": {
+      "en": "Whit Monday",
+      "fr": "Lundi de Pentecôte"
+     }
+    },
+    {
+     "start_date": "2027-05-27",
+     "end_date": "2027-05-27",
+     "kind": "holiday",
+     "label": "Fête-Dieu",
+     "names": {
+      "en": "Corpus Christi",
+      "fr": "Fête-Dieu"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a329c0b3-7d8d-5dfa-9a7f-76b8794d9e76",
+   "country_code": "CH",
+   "subdivision_code": "CH-FR",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.fr.ch/dfac/vacances-scolaires",
+   "first_day": "2027-08-26",
+   "last_day": "2028-07-07",
+   "notes": "Canton-wide calendar: the official majority calendar (all communes except Morat/Murten and Kerzers, which have calendars of their own).",
+   "periods": [
+    {
+     "start_date": "2027-10-18",
+     "end_date": "2027-10-29",
+     "kind": "break",
+     "label": "Vacances d'automne",
+     "names": {
+      "en": "Autumn Break",
+      "fr": "Vacances d'automne"
+     }
+    },
+    {
+     "start_date": "2027-11-01",
+     "end_date": "2027-11-01",
+     "kind": "holiday",
+     "label": "Toussaint",
+     "names": {
+      "en": "All Saints' Day",
+      "fr": "Toussaint"
+     }
+    },
+    {
+     "start_date": "2027-12-08",
+     "end_date": "2027-12-08",
+     "kind": "holiday",
+     "label": "Immaculée Conception",
+     "names": {
+      "en": "Immaculate Conception",
+      "fr": "Immaculée Conception"
+     }
+    },
+    {
+     "start_date": "2027-12-20",
+     "end_date": "2027-12-31",
+     "kind": "break",
+     "label": "Vacances de Noël",
+     "names": {
+      "en": "Christmas Break",
+      "fr": "Vacances de Noël"
+     }
+    },
+    {
+     "start_date": "2028-02-28",
+     "end_date": "2028-03-03",
+     "kind": "break",
+     "label": "Vacances de Carnaval",
+     "names": {
+      "en": "Carnival Break",
+      "fr": "Vacances de Carnaval"
+     }
+    },
+    {
+     "start_date": "2028-04-14",
+     "end_date": "2028-04-28",
+     "kind": "break",
+     "label": "Vacances de Pâques",
+     "names": {
+      "en": "Easter Break",
+      "fr": "Vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-05-25",
+     "kind": "holiday",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension Day",
+      "fr": "Ascension"
+     }
+    },
+    {
+     "start_date": "2028-05-26",
+     "end_date": "2028-05-26",
+     "kind": "holiday",
+     "label": "Pont de l'Ascension",
+     "names": {
+      "en": "Ascension Bridge Day",
+      "fr": "Pont de l'Ascension"
+     }
+    },
+    {
+     "start_date": "2028-06-05",
+     "end_date": "2028-06-05",
+     "kind": "holiday",
+     "label": "Lundi de Pentecôte",
+     "names": {
+      "en": "Whit Monday",
+      "fr": "Lundi de Pentecôte"
+     }
+    },
+    {
+     "start_date": "2028-06-15",
+     "end_date": "2028-06-15",
+     "kind": "holiday",
+     "label": "Fête-Dieu",
+     "names": {
+      "en": "Corpus Christi",
+      "fr": "Fête-Dieu"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a0266a51-9091-53b3-8dc5-9757658c825c",
+   "country_code": "CH",
+   "subdivision_code": "CH-FR",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.fr.ch/dfac/vacances-scolaires",
+   "first_day": "2028-08-24",
+   "last_day": "2029-07-06",
+   "notes": "Canton-wide calendar: the official majority calendar (all communes except Morat/Murten and Kerzers, which have calendars of their own).",
+   "periods": [
+    {
+     "start_date": "2028-10-16",
+     "end_date": "2028-10-27",
+     "kind": "break",
+     "label": "Vacances d'automne",
+     "names": {
+      "en": "Autumn Break",
+      "fr": "Vacances d'automne"
+     }
+    },
+    {
+     "start_date": "2028-11-01",
+     "end_date": "2028-11-01",
+     "kind": "holiday",
+     "label": "Toussaint",
+     "names": {
+      "en": "All Saints' Day",
+      "fr": "Toussaint"
+     }
+    },
+    {
+     "start_date": "2028-12-08",
+     "end_date": "2028-12-08",
+     "kind": "holiday",
+     "label": "Immaculée Conception",
+     "names": {
+      "en": "Immaculate Conception",
+      "fr": "Immaculée Conception"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-05",
+     "kind": "break",
+     "label": "Vacances de Noël",
+     "names": {
+      "en": "Christmas Break",
+      "fr": "Vacances de Noël"
+     }
+    },
+    {
+     "start_date": "2029-02-12",
+     "end_date": "2029-02-16",
+     "kind": "break",
+     "label": "Vacances de Carnaval",
+     "names": {
+      "en": "Carnival Break",
+      "fr": "Vacances de Carnaval"
+     }
+    },
+    {
+     "start_date": "2029-03-30",
+     "end_date": "2029-04-13",
+     "kind": "break",
+     "label": "Vacances de Pâques",
+     "names": {
+      "en": "Easter Break",
+      "fr": "Vacances de Pâques"
+     }
+    },
+    {
+     "start_date": "2029-05-10",
+     "end_date": "2029-05-10",
+     "kind": "holiday",
+     "label": "Ascension",
+     "names": {
+      "en": "Ascension Day",
+      "fr": "Ascension"
+     }
+    },
+    {
+     "start_date": "2029-05-11",
+     "end_date": "2029-05-11",
+     "kind": "holiday",
+     "label": "Pont de l'Ascension",
+     "names": {
+      "en": "Ascension Bridge Day",
+      "fr": "Pont de l'Ascension"
+     }
+    },
+    {
+     "start_date": "2029-05-21",
+     "end_date": "2029-05-21",
+     "kind": "holiday",
+     "label": "Lundi de Pentecôte",
+     "names": {
+      "en": "Whit Monday",
+      "fr": "Lundi de Pentecôte"
+     }
+    },
+    {
+     "start_date": "2029-05-31",
+     "end_date": "2029-05-31",
+     "kind": "holiday",
+     "label": "Fête-Dieu",
+     "names": {
+      "en": "Corpus Christi",
+      "fr": "Fête-Dieu"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ce109aaf-95ef-5e6e-99ea-ceb84adeb318",
+   "country_code": "CH",
+   "subdivision_code": "CH-AI",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.ai.ch/themen/bildung/eltern-und-schule/ferienplan/ftw-simplelayout-filelistingblock/ferienplan-ai_2026-2029.pdf",
+   "first_day": "2026-08-17",
+   "last_day": null,
+   "notes": "Canton-wide calendar: the official plan for the inner part of the canton (all districts except Oberegg, which has a calendar of its own).",
+   "periods": [
+    {
+     "start_date": "2026-10-03",
+     "end_date": "2026-10-18",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-02-05",
+     "end_date": "2027-02-14",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-04-10",
+     "end_date": "2027-04-25",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-07-03",
+     "end_date": "2027-08-15",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "366ea48b-680f-595c-a32f-afb07dcc7bc1",
+   "country_code": "CH",
+   "subdivision_code": "CH-AI",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.ai.ch/themen/bildung/eltern-und-schule/ferienplan/ftw-simplelayout-filelistingblock/ferienplan-ai_2026-2029.pdf",
+   "first_day": "2027-08-16",
+   "last_day": null,
+   "notes": "Canton-wide calendar: the official plan for the inner part of the canton (all districts except Oberegg, which has a calendar of its own).",
+   "periods": [
+    {
+     "start_date": "2027-10-02",
+     "end_date": "2027-10-17",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2028-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-02-25",
+     "end_date": "2028-03-05",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-23",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2028-07-01",
+     "end_date": "2028-08-13",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "6172cab9-9404-50c9-9b69-4b97f4add941",
+   "country_code": "CH",
+   "subdivision_code": "CH-AI",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.ai.ch/themen/bildung/eltern-und-schule/ferienplan/ftw-simplelayout-filelistingblock/ferienplan-ai_2026-2029.pdf",
+   "first_day": "2028-08-14",
+   "last_day": null,
+   "notes": "Canton-wide calendar: the official plan for the inner part of the canton (all districts except Oberegg, which has a calendar of its own).",
+   "periods": [
+    {
+     "start_date": "2028-10-07",
+     "end_date": "2028-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-12-23",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-02-09",
+     "end_date": "2029-02-18",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2029-04-07",
+     "end_date": "2029-04-22",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-06-30",
+     "end_date": "2029-08-12",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "7d6f8ae7-22d9-5aa7-8a80-96a4769fd96c",
+   "country_code": "CH",
+   "subdivision_code": "CH-OW",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.ow.ch/dienstleistungen/5276",
+   "first_day": "2026-08-17",
+   "last_day": null,
+   "notes": "Canton-wide calendar: the official plan for all schools except Engelberg, which has a calendar of its own.",
+   "periods": [
+    {
+     "start_date": "2026-09-25",
+     "end_date": "2026-10-11",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-24",
+     "end_date": "2027-01-06",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-01-30",
+     "end_date": "2027-02-14",
+     "kind": "break",
+     "label": "Fasnachtsferien",
+     "names": {
+      "en": "Carnival Break",
+      "de": "Fasnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Osterferien",
+     "names": {
+      "en": "Easter Break",
+      "de": "Osterferien"
+     }
+    },
+    {
+     "start_date": "2027-07-03",
+     "end_date": "2027-08-15",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "3ba84c0e-ccf2-5305-ab71-69c0eb9f9970",
+   "country_code": "CH",
+   "subdivision_code": "CH-SH",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": null,
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://schule.sh.ch/CMS/Webseite/Schulportal-Kanton-Schaffhausen/Schulorganisation/Schuljahresplanung-1280144-DE.html",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Official plan of the canton (schule.sh.ch); every break checked against the calendar weeks set by the ordinance on school holidays (SHR 410.114). The two extra school-free days the department sets each year are not included.",
+   "periods": [
+    {
+     "start_date": "2026-09-26",
+     "end_date": "2026-10-18",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-24",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-01-30",
+     "end_date": "2027-02-14",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-04-17",
+     "end_date": "2027-05-02",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-07-10",
+     "end_date": "2027-08-15",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e89cdbcc-fdad-571f-af1b-d913354b36a4",
+   "country_code": "CH",
+   "subdivision_code": "CH-SH",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": null,
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://schule.sh.ch/CMS/Webseite/Schulportal-Kanton-Schaffhausen/Schulorganisation/Schuljahresplanung-1280144-DE.html",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Official plan of the canton (schule.sh.ch); every break checked against the calendar weeks set by the ordinance on school holidays (SHR 410.114). The two extra school-free days the department sets each year are not included.",
+   "periods": [
+    {
+     "start_date": "2027-10-02",
+     "end_date": "2027-10-24",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-24",
+     "end_date": "2028-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-01-29",
+     "end_date": "2028-02-13",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2028-04-14",
+     "end_date": "2028-05-01",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2028-07-08",
+     "end_date": "2028-08-13",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "3841df15-d2a9-5ab9-b750-18f58f0e9de0",
+   "country_code": "CH",
+   "subdivision_code": "CH-SH",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": null,
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://schule.sh.ch/CMS/Webseite/Schulportal-Kanton-Schaffhausen/Schulorganisation/Schuljahresplanung-1280144-DE.html",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Official plan of the canton (schule.sh.ch); every break checked against the calendar weeks set by the ordinance on school holidays (SHR 410.114). The two extra school-free days the department sets each year are not included.",
+   "periods": [
+    {
+     "start_date": "2028-09-30",
+     "end_date": "2028-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn Break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2028-12-23",
+     "end_date": "2029-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas Break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2029-01-27",
+     "end_date": "2029-02-11",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sport Break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2029-04-14",
+     "end_date": "2029-05-01",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring Break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2029-07-07",
+     "end_date": "2029-08-12",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer Break",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e35da9ae-bd25-5e7a-93ef-207996bae7de",
+   "country_code": "CH",
+   "subdivision_code": "CH-SO",
+   "authority": null,
+   "authority_id": null,
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://so.ch/fileadmin/internet/dbk/dbk-vsa/Schulsystem/Ferienplan/Schulferienplan_2027_2028.pdf",
+   "first_day": "2027-08-16",
+   "last_day": null,
+   "notes": "Canton-wide calendar: the standard variant of the official Volksschule plan (city of Solothurn, Lebern, Bucheggberg, Thal, Gäu, Olten and most of Wasseramt and Gösgen). Dorneck, Thierstein, Leimental, Erlinsbach SO, Kienberg and parts of Wasseramt differ.",
+   "periods": [
+    {
+     "start_date": "2027-10-04",
+     "end_date": "2027-10-22",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "de": "Herbstferien",
+      "en": "Autumn Break"
+     }
+    },
+    {
+     "start_date": "2027-12-27",
+     "end_date": "2028-01-07",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "de": "Weihnachtsferien",
+      "en": "Christmas Break"
+     }
+    },
+    {
+     "start_date": "2028-02-07",
+     "end_date": "2028-02-18",
+     "kind": "break",
+     "label": "Winterferien",
+     "names": {
+      "de": "Winterferien",
+      "en": "Winter Break"
+     }
+    },
+    {
+     "start_date": "2028-04-10",
+     "end_date": "2028-04-21",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "de": "Frühlingsferien",
+      "en": "Spring Break"
+     }
+    },
+    {
+     "start_date": "2028-07-10",
+     "end_date": "2028-08-11",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "de": "Sommerferien",
+      "en": "Summer Break"
+     }
+    }
+   ]
+  }
+ ]
+}
