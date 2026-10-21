@@ -748,6 +748,7 @@ def generate(snapshot: dict) -> tuple[list[dict], dict]:
             p["body"] = re.sub(r'<p class="langs body-s">.*?</p>', lambda m: switch, p["body"], count=1, flags=re.S)
     page_map = {s.key: s.url("en") for s in scopes}
     page_map.update({f"public:{cc}": public_country_url("en", cc) for cc in public_ccs["en"]})
+    page_map.update({f"school:{cc}": school_country_url("en", cc) for cc in by_cc})
     extras = {"page_map": page_map, "school_ccs": sorted(by_cc), "public_ccs": public_ccs["en"],
               "scope_count": len(scopes), "coverage": snapshot.get("coverage"),
               "localized": {l: school_index_url(l) for l in LANGS if l != "en" and any(l in s.langs for s in scopes)},
@@ -755,7 +756,12 @@ def generate(snapshot: dict) -> tuple[list[dict], dict]:
     return pages, extras
 
 
-def coverage_rows(coverage: dict) -> str:
+def coverage_link(cc: str, page_map: dict) -> str:
+    """The country page when one is built (it needs holidays that are still to come), otherwise the calendar app."""
+    return page_map.get(f"school:{cc}") or f"/calendar/?country={cc}"
+
+
+def coverage_rows(coverage: dict, page_map: dict) -> str:
     """Server-rendered rows of the coverage table (coverage.js refreshes them live)."""
     L = Loc("en")
     out = []
@@ -766,7 +772,7 @@ def coverage_rows(coverage: dict) -> str:
                  else "Regions and zones" if x["authorities"] else "States and regions" if x["scopes"] > 1 else "Nationwide")
         years = x["last_school_year"] if x["first_school_year"] == x["last_school_year"] else f'{x["first_school_year"]} to {x["last_school_year"]}'
         unver = x["scopes"] - x["scopes_verified"]
-        out.append(f'<tr><td><a href="/school-holidays/{cc.lower()}/">{esc(name)}</a> <span class="pill pill-code">{cc}</span></td>'
+        out.append(f'<tr><td><a href="{esc(coverage_link(cc, page_map))}">{esc(name)}</a> <span class="pill pill-code">{cc}</span></td>'
                    f'<td>{level}</td><td class="num">{x["scopes_verified"]:,}</td><td class="num muted">{f"{unver:,}" if unver else "–"}</td>'
                    f'<td class="num">{esc(years)}</td><td>{esc(", ".join(dict.fromkeys(("OpenHolidays (ODbL)" if src == "openholidays" else "python-holidays" if src == "python-holidays" else None) or L.origin(o) for o, src in _origin_source_pairs(x))))}</td></tr>')
     return "".join(out)

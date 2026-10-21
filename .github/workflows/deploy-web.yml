@@ -4,6 +4,7 @@ name: Deploy website
 # morning, so the generated holiday pages (one per region, district and country) stay current.
 # Secrets: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (as for the API), DATABASE_URL (read-only
 # use, to generate the pages). Without the Cloudflare secrets the job is skipped.
+# After the deploy, new and changed pages are sent to Bing and other engines via IndexNow (scripts/indexnow.py).
 
 on:
   push:
@@ -45,6 +46,9 @@ jobs:
         if: env.CLOUDFLARE_API_TOKEN != ''
         with:
           node-version: 22
+      - name: Page list of the live site (for IndexNow)
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        run: curl -sf https://holibase.org/assets/page-hashes.json -o "$RUNNER_TEMP/previous-hashes.json" || echo "no previous list"
       - name: Deploy
         if: env.CLOUDFLARE_API_TOKEN != ''
         working-directory: web
@@ -61,3 +65,6 @@ jobs:
           echo "404 page: $code"; [ "$code" = 404 ]
           loc=$(curl -s -o /dev/null -w '%{redirect_url}' https://www.holibase.org/docs/)
           echo "www redirect: $loc"; [ "$loc" = "https://holibase.org/docs/" ]
+      - name: Tell search engines about new and changed pages (IndexNow)
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        run: python scripts/indexnow.py --previous "$RUNNER_TEMP/previous-hashes.json" --current web/public/assets/page-hashes.json

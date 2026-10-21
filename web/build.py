@@ -16,6 +16,7 @@ Hand-written pages live in web/src/pages/*.html and start with a front-matter bl
 Generated pages (one per school calendar region and per country) come from generate.py.
 """
 import datetime as dt
+import hashlib
 import json
 import os
 import pathlib
@@ -203,6 +204,11 @@ def build(fetch: bool = False) -> None:
 
     today = dt.date.today().isoformat()
     urls = []
+    hashes = {}  # path -> hash of title, description and content, for the IndexNow ping after deploy
+
+    def fingerprint(meta: dict, body: str) -> None:
+        h = hashlib.sha1("\n".join([meta.get("title", ""), meta.get("description", ""), body]).encode())
+        hashes[meta["path"]] = h.hexdigest()[:12]
     for page in sorted((SRC / "pages").glob("*.html")):
         text = page.read_text()
         m = re.match(r"<!--(.*?)-->\s*", text, re.S)
@@ -210,7 +216,7 @@ def build(fetch: bool = False) -> None:
         body = bake_stats(text[m.end():], stats)
         if snap and "<!--coverage-rows-->" in body:
             import generate
-            body = body.replace('<tr><td colspan="6" class="muted">Loading…</td></tr>', "").replace("<!--coverage-rows-->", generate.coverage_rows(snap["coverage"]))
+            body = body.replace('<tr><td colspan="6" class="muted">Loading…</td></tr>', "").replace("<!--coverage-rows-->", generate.coverage_rows(snap["coverage"], extras["page_map"] if extras else {}))
         if extras and "<!--country-chips-->" in body:
             import generate
             chips = "".join(f'<a class="chip" href="/public-holidays/{cc.lower()}/">{generate.esc(generate.country_name(cc))}</a>'
@@ -224,18 +230,21 @@ def build(fetch: bool = False) -> None:
         target.write_text(render(meta, body, ld))
         if meta["path"] != "/404":
             urls.append((SITE + meta["path"], today))
+            fingerprint(meta, body)
 
     for p in generated:
         target = target_for(p["path"])
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(render(p, p["body"], p["ld"]))
         urls.append((SITE + p["path"], p.get("lastmod") or today))
+        fingerprint(p, p["body"])
     print(f"wrote {len(urls)} pages ({len(generated)} generated)")
 
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc><lastmod>{lm}</lastmod></url>\n" for u, lm in urls) + "</urlset>\n")
     (OUT / "llms.txt").write_text(llms_txt(stats, extras))
+    (OUT / "assets" / "page-hashes.json").write_text(json.dumps(hashes, separators=(",", ":"), sort_keys=True))
     (OUT / "assets" / "pages.json").write_text(json.dumps(extras["page_map"] if extras else {}, separators=(",", ":")))
 
 

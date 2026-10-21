@@ -21,6 +21,7 @@ web/public/404.html
 web/public/sitemap.xml
 web/public/llms.txt
 web/public/assets/pages.json
+web/public/assets/page-hashes.json
 web/public/school-holidays/
 web/public/public-holidays/
 web/public/de/

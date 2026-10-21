@@ -10,8 +10,11 @@ function sourcesOf(x) {
 }
 const fmtN = (n) => n.toLocaleString("en-US");
 
+// A country page is only built while it has holidays still to come; otherwise link the calendar app.
+const pagesJson = fetch("/assets/pages.json").then((r) => r.json()).catch(() => ({}));
 async function stats() {
-  const c = await api("/v1/coverage");
+  const [c, pages] = await Promise.all([api("/v1/coverage"), pagesJson]);
+  const schoolUrl = (cc) => pages[`school:${cc}`] || `/calendar/?country=${cc}`;
   const ph = c.public_holidays, sh = c.school_holidays, us = c.us_districts;
   setText('[data-stat="ph-countries"]', fmtN(ph.countries));
   setText('[data-stat="ph-subdivisions"]', fmtN(ph.subdivisions));
@@ -31,7 +34,7 @@ async function stats() {
     const level = x.country_code === "US" ? "School districts" : x.authorities && x.authorities === x.scopes ? "Local authorities and zones" : x.authorities ? "Regions and zones" : x.scopes > 1 ? "States and regions" : "Nationwide";
     const years = x.first_school_year === x.last_school_year ? x.last_school_year : `${x.first_school_year} to ${x.last_school_year}`;
     return el("tr", {},
-      el("td", {}, el("a", { href: `/school-holidays/${x.country_code.toLowerCase()}/`, text: name }), " ", el("span", { class: "pill pill-code", text: x.country_code })),
+      el("td", {}, el("a", { href: schoolUrl(x.country_code), text: name }), " ", el("span", { class: "pill pill-code", text: x.country_code })),
       el("td", { text: level }),
       el("td", { class: "num", text: fmtN(x.scopes_verified) }),
       el("td", { class: "num muted", text: x.scopes > x.scopes_verified ? fmtN(x.scopes - x.scopes_verified) : "–" }),
@@ -50,7 +53,7 @@ function renderCountries(filter = "") {
     : [el("p", { class: "muted body-s", text: `No country matches “${filter}”.` })]));
 }
 async function countries() {
-  const [data, pages] = await Promise.all([api("/v1/countries"), fetch("/assets/pages.json").then((r) => r.json()).catch(() => ({}))]);
+  const [data, pages] = await Promise.all([api("/v1/countries"), pagesJson]);
   const hasPage = (cc) => !Object.keys(pages).length || pages[`public:${cc}`];
   all = data.countries.filter((c) => hasPage(c.code)).map((c) => ({ code: c.code, name: countryName(c.code) })).sort((a, b) => a.name.localeCompare(b.name));
   renderCountries();
