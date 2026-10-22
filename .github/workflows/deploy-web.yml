@@ -57,7 +57,7 @@ jobs:
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: |
           sleep 10
-          for p in / /calendar/ /coverage/ /docs/ /docs/reference/ /licence/ /legal/ /privacy/ /school-holidays/ /public-holidays/ /public-holidays/de/ /llms.txt /assets/site.css; do
+          for p in / /calendar/ /coverage/ /support/ /docs/ /docs/reference/ /licence/ /legal/ /privacy/ /school-holidays/ /public-holidays/ /public-holidays/de/ /llms.txt /assets/site.css; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://holibase.org$p")
             echo "$p $code"; [ "$code" = 200 ] || exit 1
           done
