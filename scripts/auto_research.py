@@ -552,6 +552,12 @@ def check(cal: dict, cc: str) -> tuple[list[dict], list[str]]:
             errors.append(f"{p.get('name_en') or p.get('name_local')} {s}..{e} lies outside school year {sy}")
             continue
         kind = p.get("kind") if p.get("kind") in KINDS else "other"
+        name = fold(f"{p.get('name_local') or ''} {p.get('name_en') or ''}")
+        if s == e and re.search(r"\b(debut des (grandes )?vacances|start of (the )?(summer )?(holidays|vacation|break))\b", name):
+            # "Start of the summer holidays" printed as a day: it marks the last day of school, not a day off
+            if not cal.get("last_day"):
+                cal["last_day"] = str(s - dt.timedelta(days=1))
+            continue
         if kind == "break" and (e - s).days > 110:
             errors.append(f"{p.get('name_en')} lasts {(e - s).days} days")
             continue

@@ -1,0 +1,121 @@
+{
+ "dataset": "fr-nc-2026-10",
+ "retrieved": "2026-10-22",
+ "method": "Correction of the automatically researched New Caledonia calendars (source: juridoc.gouv.nc).",
+ "calendars": [
+  {
+   "id": "a74d4db9-78a3-5fab-8e5b-5be1f059ca7b",
+   "country_code": "FR",
+   "subdivision_code": "FR-NC",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027",
+   "status": "confirmed",
+   "source_url": "https://juridoc.gouv.nc/juridoc/jdjopj.nsf/0/33FE2E7255FC2D7A4B258C9700109D3E/%24File/Annexe.pdf?OpenElement",
+   "first_day": "2027-02-15",
+   "last_day": "2027-12-17",
+   "notes": "Automatically extracted from juridoc.gouv.nc (OpenAI gpt-5-mini); 11 of 11 dates found in the document; all dates found in the official document; agrees with a second page (denc.gouv.nc). Corrected by hand: the teachers' first day and the start of the summer holidays are not periods; the latter sets the last day of school.",
+   "periods": [
+    {
+     "start_date": "2027-04-03",
+     "end_date": "2027-04-18",
+     "kind": "break",
+     "label": "Vacances 1ère période",
+     "names": {
+      "en": "Term 1 break",
+      "fr": "Vacances 1ère période"
+     }
+    },
+    {
+     "start_date": "2027-06-05",
+     "end_date": "2027-06-20",
+     "kind": "break",
+     "label": "Vacances 2e période",
+     "names": {
+      "en": "Term 2 break",
+      "fr": "Vacances 2e période"
+     }
+    },
+    {
+     "start_date": "2027-08-07",
+     "end_date": "2027-08-22",
+     "kind": "break",
+     "label": "Vacances 3e période",
+     "names": {
+      "en": "Term 3 break",
+      "fr": "Vacances 3e période"
+     }
+    },
+    {
+     "start_date": "2027-10-09",
+     "end_date": "2027-10-24",
+     "kind": "break",
+     "label": "Vacances 4e période",
+     "names": {
+      "en": "Term 4 break",
+      "fr": "Vacances 4e période"
+     }
+    }
+   ]
+  },
+  {
+   "id": "6f52d7ec-fadc-5890-b703-3ac3305406be",
+   "country_code": "FR",
+   "subdivision_code": "FR-NC",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028",
+   "status": "confirmed",
+   "source_url": "https://juridoc.gouv.nc/juridoc/jdjopj.nsf/0/33FE2E7255FC2D7A4B258C9700109D3E/%24File/Annexe.pdf?OpenElement",
+   "first_day": "2028-02-14",
+   "last_day": "2028-12-15",
+   "notes": "Automatically extracted from juridoc.gouv.nc (OpenAI gpt-5-mini); 11 of 11 dates found in the document; all dates found in the official document; agrees with a second page (denc.gouv.nc). Corrected by hand: the teachers' first day and the start of the summer holidays are not periods; the latter sets the last day of school.",
+   "periods": [
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-23",
+     "kind": "break",
+     "label": "Vacances 1ère période",
+     "names": {
+      "en": "Term 1 break",
+      "fr": "Vacances 1ère période"
+     }
+    },
+    {
+     "start_date": "2028-06-10",
+     "end_date": "2028-06-25",
+     "kind": "break",
+     "label": "Vacances 2e période",
+     "names": {
+      "en": "Term 2 break",
+      "fr": "Vacances 2e période"
+     }
+    },
+    {
+     "start_date": "2028-08-12",
+     "end_date": "2028-08-27",
+     "kind": "break",
+     "label": "Vacances 3e période",
+     "names": {
+      "en": "Term 3 break",
+      "fr": "Vacances 3e période"
+     }
+    },
+    {
+     "start_date": "2028-10-14",
+     "end_date": "2028-10-29",
+     "kind": "break",
+     "label": "Vacances 4e période",
+     "names": {
+      "en": "Term 4 break",
+      "fr": "Vacances 4e période"
+     }
+    }
+   ]
+  }
+ ]
+}

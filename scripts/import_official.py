@@ -169,6 +169,7 @@ FR_ZONES = {
     "saint pierre et miquelon": ("FR-PM", None, "America/Miquelon"),
     "wallis et futuna": ("FR-WF", None, "Pacific/Wallis"),
 }
+FR_ZONE_B_SUBDIVISIONS = ["FR-6AE", "FR-57"]  # Alsace, Moselle
 FR_LABELS = [  # (pattern on normalised description, label, kind)
     ("toussaint", "Toussaint", "break"),
     ("noel", "Noël", "break"),
@@ -220,8 +221,7 @@ def adapter_fr(raw: bytes) -> list[dict]:
         d = norm(desc)
         if "rentree" in d:
             if "enseignant" in d or "enseignant" in pop:
-                c["periods"].append(dict(start_date=start, end_date=start, kind="teacher_day",
-                                         label="Prérentrée des enseignants", names={"fr": "Prérentrée des enseignants"}))
+                pass  # teachers' first day falls in the summer break: not a day off for anyone
             else:
                 c["first_day"] = start
             continue
@@ -246,6 +246,13 @@ def adapter_fr(raw: bytes) -> list[dict]:
         c["periods"].append(dict(start_date=first, end_date=last, kind=kind, label=label, names={"fr": desc}))
     if unknown:
         print("FR skipped:", dict(unknown))
+    # Alsace and Moselle are regions of their own for public holidays, but their schools follow zone B
+    # (académies of Strasbourg and Nancy-Metz). Without this, choosing them shows no school holidays.
+    for (zone, year), c in list(cals.items()):
+        if zone == "zone b":
+            for sub in FR_ZONE_B_SUBDIVISIONS:
+                cals[(sub, year)] = {**c, "subdivision_code": sub, "authority": None,
+                                     "periods": [dict(p) for p in c["periods"]], "notes": list(c["notes"])}
     return list(cals.values())
 
 
