@@ -393,7 +393,10 @@ async function countries(env: Env): Promise<unknown> {
     supabase(env, "/rest/v1/countries?select=*").then((r) => r.json()),
     supabase(env, "/rest/v1/subdivisions?select=*").then((r) => r.json()),
   ]);
-  return { countries: c, subdivisions: s };
+  // Named areas from python-holidays (e.g. "ES-BARCELONA") are not ISO codes and every endpoint rejects them,
+  // so they are not offered here either.
+  const subs = Array.isArray(s) ? s.filter((x: { code?: string }) => RE_SUBDIVISION.test(x.code ?? "")) : s;
+  return { countries: c, subdivisions: subs };
 }
 
 async function supabase(env: Env, path: string, init: RequestInit = {}): Promise<Response> {
