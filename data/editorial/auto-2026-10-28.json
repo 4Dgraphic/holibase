@@ -1,0 +1,3896 @@
+{
+ "dataset": "auto-research-2026-10-28",
+ "retrieved": "2026-10-28",
+ "method": "Automatic research: official documents read by OpenAI gpt-5-mini, dates checked against the document text and other sources (scripts/auto_research.py).",
+ "calendars": [
+  {
+   "id": "0fa6b15c-ec86-5bf2-a638-db8ceffb817f",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/bildung/bildungssystem/schulferien/mittel--und-berufsfachschulen/mittelschulen/Ferien_Mittelschulen_SJ_2026_2027.pdf",
+   "first_day": "2026-08-17",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 18 of 18 dates found in the document; differs from editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-17",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-12-21",
+     "end_date": "2027-01-02",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-27",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-29",
+     "kind": "break",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2027-04-19",
+     "end_date": "2027-04-19",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (Zurich city)",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2027-04-26",
+     "end_date": "2027-05-08",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-08",
+     "kind": "other",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension bridge days",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2027-05-15",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2027-07-19",
+     "end_date": "2027-08-21",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "129075da-b47a-5bdf-aec9-f4d358d002b4",
+   "country_code": "CH",
+   "subdivision_code": "CH-ZH",
+   "authority": "Kantonsschulen Stadt Zürich",
+   "authority_id": "62b3dbd7-0795-5c89-84e8-e3a1f8cb9e6a",
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "pending",
+   "source_url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/bildung/bildungssystem/schulferien/mittel--und-berufsfachschulen/mittelschulen/Ferien_Mittelschulen_SJ_2027_2028.pdf",
+   "first_day": "2027-08-23",
+   "last_day": null,
+   "notes": "Automatically extracted from zh.ch (OpenAI gpt-5-mini); 16 of 16 dates found in the document; differs from editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-11",
+     "end_date": "2027-10-23",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2027-12-20",
+     "end_date": "2028-01-01",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas break",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2028-02-14",
+     "end_date": "2028-02-26",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2028-04-14",
+     "end_date": "2028-04-29",
+     "kind": "break",
+     "label": "Ostern",
+     "names": {
+      "en": "Easter",
+      "de": "Ostern"
+     }
+    },
+    {
+     "start_date": "2028-04-24",
+     "end_date": "2028-04-24",
+     "kind": "holiday",
+     "label": "Sechseläuten (Stadt Zürich)",
+     "names": {
+      "en": "Sechseläuten (Zurich city)",
+      "de": "Sechseläuten (Stadt Zürich)"
+     }
+    },
+    {
+     "start_date": "2028-05-25",
+     "end_date": "2028-05-27",
+     "kind": "other",
+     "label": "Auffahrtsbrücke",
+     "names": {
+      "en": "Ascension bridge days",
+      "de": "Auffahrtsbrücke"
+     }
+    },
+    {
+     "start_date": "2028-06-03",
+     "end_date": "2028-06-05",
+     "kind": "holiday",
+     "label": "Pfingsten",
+     "names": {
+      "en": "Pentecost",
+      "de": "Pfingsten"
+     }
+    },
+    {
+     "start_date": "2028-07-17",
+     "end_date": "2028-08-19",
+     "kind": "break",
+     "label": "Sommerferien",
+     "names": {
+      "en": "Summer holidays",
+      "de": "Sommerferien"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c8155a44-cff9-5bb9-9e1c-1cccb25a5678",
+   "country_code": "CH",
+   "subdivision_code": "CH-GR",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.gr.ch/de/institutionen/verwaltung/ekud/ahb/bks/uberuns/ferienplan/Seiten/default.aspx",
+   "first_day": "2026-08-17",
+   "last_day": "2027-07-02",
+   "notes": "Automatically extracted from gr.ch (OpenAI gpt-5-mini); 19 of 20 dates found in the document; 1 of 20 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-12",
+     "end_date": "2026-10-23",
+     "kind": "break",
+     "label": "Herbstferien",
+     "names": {
+      "en": "Autumn break",
+      "de": "Herbstferien"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Allerheiligen",
+     "names": {
+      "en": "All Saints' Day",
+      "de": "Allerheiligen"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "Weihnachtsferien",
+     "names": {
+      "en": "Christmas holidays",
+      "de": "Weihnachtsferien"
+     }
+    },
+    {
+     "start_date": "2027-03-01",
+     "end_date": "2027-03-05",
+     "kind": "break",
+     "label": "Sportferien",
+     "names": {
+      "en": "Sports break",
+      "de": "Sportferien"
+     }
+    },
+    {
+     "start_date": "2027-03-16",
+     "end_date": "2027-03-17",
+     "kind": "other",
+     "label": "2 unterrichtsfreie Tage",
+     "names": {
+      "en": "2 days off (no lessons)",
+      "de": "2 unterrichtsfreie Tage"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-29",
+     "kind": "break",
+     "label": "Über Ostern",
+     "names": {
+      "en": "Easter break",
+      "de": "Über Ostern"
+     }
+    },
+    {
+     "start_date": "2027-04-19",
+     "end_date": "2027-04-30",
+     "kind": "break",
+     "label": "Frühlingsferien",
+     "names": {
+      "en": "Spring break",
+      "de": "Frühlingsferien"
+     }
+    },
+    {
+     "start_date": "2027-05-06",
+     "end_date": "2027-05-06",
+     "kind": "holiday",
+     "label": "Auffahrt",
+     "names": {
+      "en": "Ascension Day",
+      "de": "Auffahrt"
+     }
+    },
+    {
+     "start_date": "2027-05-07",
+     "end_date": "2027-05-07",
+     "kind": "holiday",
+     "label": "Brückentag",
+     "names": {
+      "en": "Bridge day",
+      "de": "Brückentag"
+     }
+    },
+    {
+     "start_date": "2027-05-17",
+     "end_date": "2027-05-17",
+     "kind": "holiday",
+     "label": "Pfingstmontag",
+     "names": {
+      "en": "Whit Monday",
+      "de": "Pfingstmontag"
+     }
+    },
+    {
+     "start_date": "2027-06-09",
+     "end_date": "2027-06-11",
+     "kind": "other",
+     "label": "3 unterrichtsfreie Tage",
+     "names": {
+      "en": "3 days off (no lessons)",
+      "de": "3 unterrichtsfreie Tage"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e7d75e5b-c543-56ec-b39d-4b94952d6cdd",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Surrey County Council",
+   "authority_id": "dbc9b317-d4af-57cd-bc2f-2d491d803c02",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://surreyeducationservices.surreycc.gov.uk/Pages/Download/37683b8c-d36f-4671-b28a-6c6320a8cf80/PageSectionDocuments",
+   "first_day": "2026-09-01",
+   "last_day": "2027-07-28",
+   "notes": "Automatically extracted from surreyeducationservices.surreycc.gov.uk (OpenAI gpt-5-mini); 17 of 20 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-19",
+     "end_date": "2026-10-30",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Christmas Day",
+     "names": {
+      "en": "Christmas Day"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Boxing Day",
+     "names": {
+      "en": "Boxing Day"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "New Year's Day",
+     "names": {
+      "en": "New Year's Day"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-02-19",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-26",
+     "kind": "holiday",
+     "label": "Good Friday",
+     "names": {
+      "en": "Good Friday"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Easter Monday",
+     "names": {
+      "en": "Easter Monday"
+     }
+    },
+    {
+     "start_date": "2027-05-03",
+     "end_date": "2027-05-03",
+     "kind": "holiday",
+     "label": "May Day Holiday",
+     "names": {
+      "en": "May Day Holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-05-31",
+     "kind": "holiday",
+     "label": "Spring Bank Holiday",
+     "names": {
+      "en": "Spring Bank Holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-06-04",
+     "kind": "break",
+     "label": "Half term",
+     "names": {
+      "en": "Half term"
+     }
+    },
+    {
+     "start_date": "2027-08-30",
+     "end_date": "2027-08-30",
+     "kind": "holiday",
+     "label": "Summer Bank Holiday",
+     "names": {
+      "en": "Summer Bank Holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "93169e0a-e2ab-5412-a67c-063842a4986f",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Derbyshire County Council",
+   "authority_id": "f46cccd0-4b43-53b6-b601-70870947e0f7",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.derbyshire.gov.uk/site-elements/documents/pdf/education/schools/term-dates-school-holidays/school-term-dates-2026-to-2027.pdf",
+   "first_day": "2026-09-04",
+   "last_day": "2027-07-26",
+   "notes": "Automatically extracted from derbyshire.gov.uk (OpenAI gpt-5-mini); 7 of 14 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2027-02-13",
+     "end_date": "2027-02-21",
+     "kind": "break",
+     "label": "February half term",
+     "names": {
+      "en": "February half term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2027-05-29",
+     "end_date": "2027-06-06",
+     "kind": "break",
+     "label": "May half term",
+     "names": {
+      "en": "May half term"
+     }
+    },
+    {
+     "start_date": "2027-07-27",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "eb8c2a5b-179f-5dc7-98e9-f242e7ceec1c",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Derbyshire County Council",
+   "authority_id": "f46cccd0-4b43-53b6-b601-70870947e0f7",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.derbyshire.gov.uk/site-elements/documents/pdf/education/schools/term-dates-school-holidays/school-term-dates-2027-to-2028.pdf",
+   "first_day": "2027-09-06",
+   "last_day": "2028-07-24",
+   "notes": "Automatically extracted from derbyshire.gov.uk (OpenAI gpt-5-mini); 8 of 14 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-23",
+     "end_date": "2027-10-31",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2027-12-23",
+     "end_date": "2028-01-05",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2028-02-19",
+     "end_date": "2028-02-27",
+     "kind": "break",
+     "label": "February half term",
+     "names": {
+      "en": "February half term"
+     }
+    },
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-23",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2028-05-27",
+     "end_date": "2028-06-04",
+     "kind": "break",
+     "label": "May half term",
+     "names": {
+      "en": "May half term"
+     }
+    },
+    {
+     "start_date": "2028-07-25",
+     "end_date": "2028-09-04",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "3d6de19f-59e8-59df-9360-1acf8093bb63",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Derbyshire County Council",
+   "authority_id": "f46cccd0-4b43-53b6-b601-70870947e0f7",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.derbyshire.gov.uk/site-elements/documents/pdf/education/schools/term-dates-school-holidays/school-term-dates-2028-to-2029.pdf",
+   "first_day": "2028-09-05",
+   "last_day": "2029-07-25",
+   "notes": "Automatically extracted from derbyshire.gov.uk (OpenAI gpt-5-mini); 8 of 14 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2028-10-21",
+     "end_date": "2028-10-29",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2028-12-23",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2029-02-17",
+     "end_date": "2029-02-25",
+     "kind": "break",
+     "label": "February half term",
+     "names": {
+      "en": "February half term"
+     }
+    },
+    {
+     "start_date": "2029-03-30",
+     "end_date": "2029-04-15",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2029-05-26",
+     "end_date": "2029-06-03",
+     "kind": "break",
+     "label": "May half term",
+     "names": {
+      "en": "May half term"
+     }
+    },
+    {
+     "start_date": "2029-07-26",
+     "end_date": "2029-09-05",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b07a81d0-5bba-5cd6-aed8-fae08c897f25",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Derbyshire County Council",
+   "authority_id": "f46cccd0-4b43-53b6-b601-70870947e0f7",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "pending",
+   "source_url": "https://www.derbyshire.gov.uk/education/schools/term-dates-school-holidays/school-term-dates-and-holidays.aspx",
+   "first_day": "2029-09-06",
+   "last_day": "2030-07-26",
+   "notes": "Automatically extracted from derbyshire.gov.uk (OpenAI gpt-5-mini); 6 of 12 dates found in the document; 6 of 12 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2029-10-27",
+     "end_date": "2029-11-04",
+     "kind": "break",
+     "label": "Autumn half term",
+     "names": {
+      "en": "Autumn half term"
+     }
+    },
+    {
+     "start_date": "2029-12-22",
+     "end_date": "2030-01-06",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2030-02-16",
+     "end_date": "2030-02-24",
+     "kind": "break",
+     "label": "February half term",
+     "names": {
+      "en": "February half term"
+     }
+    },
+    {
+     "start_date": "2030-04-06",
+     "end_date": "2030-04-22",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2030-05-25",
+     "end_date": "2030-06-02",
+     "kind": "break",
+     "label": "May half term",
+     "names": {
+      "en": "May half term"
+     }
+    }
+   ]
+  },
+  {
+   "id": "216c7516-d670-53e6-b702-81bd866f1fe7",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Worcestershire County Council",
+   "authority_id": "ae81b0bb-9a3c-58b4-b539-8e72e6a84d20",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.worcestershire.gov.uk/council-services/schools-education-and-learning/apply-school-place/school-term-dates",
+   "first_day": "2026-09-01",
+   "last_day": "2027-07-21",
+   "notes": "Automatically extracted from worcestershire.gov.uk (OpenAI gpt-5-mini); 10 of 16 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Autumn mid-term",
+     "names": {
+      "en": "Autumn mid-term"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Christmas",
+     "names": {
+      "en": "Christmas"
+     }
+    },
+    {
+     "start_date": "2027-02-13",
+     "end_date": "2027-02-21",
+     "kind": "break",
+     "label": "Spring mid-term",
+     "names": {
+      "en": "Spring mid-term"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-03-26",
+     "kind": "holiday",
+     "label": "Good Friday",
+     "names": {
+      "en": "Good Friday"
+     }
+    },
+    {
+     "start_date": "2027-03-26",
+     "end_date": "2027-04-11",
+     "kind": "break",
+     "label": "Easter",
+     "names": {
+      "en": "Easter"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Easter Monday",
+     "names": {
+      "en": "Easter Monday"
+     }
+    },
+    {
+     "start_date": "2027-05-03",
+     "end_date": "2027-05-03",
+     "kind": "holiday",
+     "label": "May Day",
+     "names": {
+      "en": "May Day"
+     }
+    },
+    {
+     "start_date": "2027-05-29",
+     "end_date": "2027-06-06",
+     "kind": "break",
+     "label": "Summer mid-term",
+     "names": {
+      "en": "Summer mid-term"
+     }
+    },
+    {
+     "start_date": "2027-05-31",
+     "end_date": "2027-05-31",
+     "kind": "holiday",
+     "label": "Whitsun Bank Holiday",
+     "names": {
+      "en": "Whitsun Bank Holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "8a68f783-3b10-501a-b663-f11571348fa4",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Worcestershire County Council",
+   "authority_id": "ae81b0bb-9a3c-58b4-b539-8e72e6a84d20",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.worcestershire.gov.uk/council-services/schools-education-and-learning/apply-school-place/school-term-dates",
+   "first_day": "2027-09-02",
+   "last_day": "2028-07-21",
+   "notes": "Automatically extracted from worcestershire.gov.uk (OpenAI gpt-5-mini); 9 of 16 dates found in the document; agrees with editorial.",
+   "periods": [
+    {
+     "start_date": "2027-10-23",
+     "end_date": "2027-10-31",
+     "kind": "break",
+     "label": "Autumn mid-term",
+     "names": {
+      "en": "Autumn mid-term"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2028-01-03",
+     "kind": "break",
+     "label": "Christmas",
+     "names": {
+      "en": "Christmas"
+     }
+    },
+    {
+     "start_date": "2028-02-12",
+     "end_date": "2028-02-20",
+     "kind": "break",
+     "label": "Spring mid-term",
+     "names": {
+      "en": "Spring mid-term"
+     }
+    },
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-23",
+     "kind": "break",
+     "label": "Easter",
+     "names": {
+      "en": "Easter"
+     }
+    },
+    {
+     "start_date": "2028-04-14",
+     "end_date": "2028-04-14",
+     "kind": "holiday",
+     "label": "Good Friday",
+     "names": {
+      "en": "Good Friday"
+     }
+    },
+    {
+     "start_date": "2028-04-17",
+     "end_date": "2028-04-17",
+     "kind": "holiday",
+     "label": "Easter Monday",
+     "names": {
+      "en": "Easter Monday"
+     }
+    },
+    {
+     "start_date": "2028-05-01",
+     "end_date": "2028-05-01",
+     "kind": "holiday",
+     "label": "May Day",
+     "names": {
+      "en": "May Day"
+     }
+    },
+    {
+     "start_date": "2028-05-27",
+     "end_date": "2028-06-04",
+     "kind": "break",
+     "label": "Summer mid-term",
+     "names": {
+      "en": "Summer mid-term"
+     }
+    },
+    {
+     "start_date": "2028-05-29",
+     "end_date": "2028-05-29",
+     "kind": "holiday",
+     "label": "Whitsun Bank Holiday",
+     "names": {
+      "en": "Whitsun Bank Holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "f2fe9900-cfc1-5bbd-9ce6-c9a1b3eee02f",
+   "country_code": "GB",
+   "subdivision_code": "GB-ENG",
+   "authority": "Sheffield City Council",
+   "authority_id": "984cd139-fe62-52d1-b8fd-f79b65430853",
+   "authority_kind": "local_authority",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "pending",
+   "source_url": "https://www.sheffield.gov.uk/schools-childcare/school-information-term-dates",
+   "first_day": "2027-09-01",
+   "last_day": "2028-07-21",
+   "notes": "Automatically extracted from sheffield.gov.uk (OpenAI gpt-5-mini); 10 of 14 dates found in the document; 4 of 14 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2027-10-23",
+     "end_date": "2027-11-01",
+     "kind": "break",
+     "label": "October half term",
+     "names": {
+      "en": "October half term"
+     }
+    },
+    {
+     "start_date": "2027-12-18",
+     "end_date": "2028-01-03",
+     "kind": "break",
+     "label": "Christmas holiday",
+     "names": {
+      "en": "Christmas holiday"
+     }
+    },
+    {
+     "start_date": "2028-02-12",
+     "end_date": "2028-02-20",
+     "kind": "break",
+     "label": "February half term",
+     "names": {
+      "en": "February half term"
+     }
+    },
+    {
+     "start_date": "2028-04-01",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Easter holiday",
+     "names": {
+      "en": "Easter holiday"
+     }
+    },
+    {
+     "start_date": "2028-05-27",
+     "end_date": "2028-06-04",
+     "kind": "break",
+     "label": "Spring Bank half term",
+     "names": {
+      "en": "Spring Bank half term"
+     }
+    },
+    {
+     "start_date": "2028-07-22",
+     "end_date": "2028-08-31",
+     "kind": "break",
+     "label": "Summer holiday",
+     "names": {
+      "en": "Summer holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ab2ef964-0cfc-5240-90d8-897eb73c3b62",
+   "country_code": "ES",
+   "subdivision_code": "ES-CM",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://educacion.castillalamancha.es/sites/default/files/2026-06/Orden%2079-2026%20calendario%20escolar%20curso%2026-27.pdf",
+   "first_day": "2026-09-08",
+   "last_day": "2027-06-22",
+   "notes": "Automatically extracted from educacion.castillalamancha.es (OpenAI gpt-5-mini); 11 of 11 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-11-20",
+     "end_date": "2026-11-20",
+     "kind": "holiday",
+     "label": "Día de la Enseñanza",
+     "names": {
+      "en": "Teaching Day",
+      "es": "Día de la Enseñanza"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-07",
+     "kind": "holiday",
+     "label": "Día no lectivo (07/12/2026)",
+     "names": {
+      "en": "Non-school day (07 Dec 2026)",
+      "es": "Día no lectivo (07/12/2026)"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-08",
+     "kind": "break",
+     "label": "Descanso escolar entre el primer y el segundo trimestre",
+     "names": {
+      "en": "Christmas break",
+      "es": "Descanso escolar entre el primer y el segundo trimestre"
+     }
+    },
+    {
+     "start_date": "2027-02-08",
+     "end_date": "2027-02-08",
+     "kind": "teacher_day",
+     "label": "Día de descanso lectivo de libre disposición",
+     "names": {
+      "en": "Teacher non-teaching day (free disposition)",
+      "es": "Día de descanso lectivo de libre disposición"
+     }
+    },
+    {
+     "start_date": "2027-02-09",
+     "end_date": "2027-02-09",
+     "kind": "teacher_day",
+     "label": "Día de descanso lectivo de libre disposición",
+     "names": {
+      "en": "Teacher non-teaching day (free disposition)",
+      "es": "Día de descanso lectivo de libre disposición"
+     }
+    },
+    {
+     "start_date": "2027-03-22",
+     "end_date": "2027-03-29",
+     "kind": "break",
+     "label": "Descanso escolar entre el segundo y el tercer trimestre",
+     "names": {
+      "en": "Easter break",
+      "es": "Descanso escolar entre el segundo y el tercer trimestre"
+     }
+    },
+    {
+     "start_date": "2027-05-28",
+     "end_date": "2027-05-28",
+     "kind": "holiday",
+     "label": "Día no lectivo (28/05/2027)",
+     "names": {
+      "en": "Non-school day (28 May 2027)",
+      "es": "Día no lectivo (28/05/2027)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "6d4339cc-12e3-5baa-8def-ee05d9b7745a",
+   "country_code": "ES",
+   "subdivision_code": "ES-CT",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://web.gencat.cat/es/ciutadania/educacio-formacio/calendari-escolar-catalunya",
+   "first_day": "2026-09-08",
+   "last_day": "2027-06-21",
+   "notes": "Automatically extracted from web.gencat.cat (OpenAI gpt-5-mini); 6 of 6 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-12-22",
+     "end_date": "2027-01-07",
+     "kind": "break",
+     "label": "Vacaciones de Navidad",
+     "names": {
+      "en": "Christmas holidays",
+      "es": "Vacaciones de Navidad"
+     }
+    },
+    {
+     "start_date": "2027-03-20",
+     "end_date": "2027-03-29",
+     "kind": "break",
+     "label": "Vacaciones de Semana Santa",
+     "names": {
+      "en": "Easter holidays",
+      "es": "Vacaciones de Semana Santa"
+     }
+    }
+   ]
+  },
+  {
+   "id": "742c1062-2b3d-5ecd-92fe-184c129cbc5c",
+   "country_code": "ES",
+   "subdivision_code": "ES-CT",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://web.gencat.cat/es/ciutadania/educacio-formacio/calendari-escolar-catalunya",
+   "first_day": "2027-09-08",
+   "last_day": "2028-06-22",
+   "notes": "Automatically extracted from web.gencat.cat (OpenAI gpt-5-mini); 6 of 6 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2027-12-22",
+     "end_date": "2028-01-09",
+     "kind": "break",
+     "label": "Vacaciones de Navidad",
+     "names": {
+      "en": "Christmas holidays",
+      "es": "Vacaciones de Navidad"
+     }
+    },
+    {
+     "start_date": "2028-04-08",
+     "end_date": "2028-04-17",
+     "kind": "break",
+     "label": "Vacaciones de Semana Santa",
+     "names": {
+      "en": "Easter holidays",
+      "es": "Vacaciones de Semana Santa"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e364a1e5-17fa-5b3f-86a4-ca799af0aac8",
+   "country_code": "ES",
+   "subdivision_code": "ES-CT",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://web.gencat.cat/es/ciutadania/educacio-formacio/calendari-escolar-catalunya",
+   "first_day": "2028-09-08",
+   "last_day": "2029-06-22",
+   "notes": "Automatically extracted from web.gencat.cat (OpenAI gpt-5-mini); 6 of 6 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-12-22",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "Vacaciones de Navidad",
+     "names": {
+      "en": "Christmas holidays",
+      "es": "Vacaciones de Navidad"
+     }
+    },
+    {
+     "start_date": "2029-03-24",
+     "end_date": "2029-04-02",
+     "kind": "break",
+     "label": "Vacaciones de Semana Santa",
+     "names": {
+      "en": "Easter holidays",
+      "es": "Vacaciones de Semana Santa"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc694e3b-c95f-5f1a-b64d-3d55608e95e8",
+   "country_code": "ES",
+   "subdivision_code": "ES-NC",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.educacion.navarra.es/documents/27590/0/RES%2B143-2026%2BInstrucciones%2BCalendario%2B2026-27%2B(1).pdf/22d39a03-85f5-0cf6-d077-ddf6f2b51a86",
+   "first_day": "2026-09-01",
+   "last_day": "2027-06-30",
+   "notes": "Automatically extracted from educacion.navarra.es (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document; agrees with a second page (educacion.navarra.es).",
+   "periods": [
+    {
+     "start_date": "2026-10-12",
+     "end_date": "2026-10-12",
+     "kind": "holiday",
+     "label": "Día festivo (calendario laboral Navarra) 12 de octubre",
+     "names": {
+      "en": "Public holiday 12 October",
+      "es": "Día festivo (calendario laboral Navarra) 12 de octubre"
+     }
+    },
+    {
+     "start_date": "2026-11-02",
+     "end_date": "2026-11-02",
+     "kind": "holiday",
+     "label": "Día festivo (calendario laboral Navarra) 2 de noviembre",
+     "names": {
+      "en": "Public holiday 2 November",
+      "es": "Día festivo (calendario laboral Navarra) 2 de noviembre"
+     }
+    },
+    {
+     "start_date": "2026-12-03",
+     "end_date": "2026-12-03",
+     "kind": "holiday",
+     "label": "Día festivo (calendario laboral Navarra) 3 de diciembre",
+     "names": {
+      "en": "Public holiday 3 December",
+      "es": "Día festivo (calendario laboral Navarra) 3 de diciembre"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Día festivo (calendario laboral Navarra) 8 de diciembre",
+     "names": {
+      "en": "Public holiday 8 December",
+      "es": "Día festivo (calendario laboral Navarra) 8 de diciembre"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacaciones de Navidad",
+     "names": {
+      "en": "Christmas break",
+      "es": "Vacaciones de Navidad"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-04-04",
+     "kind": "break",
+     "label": "Vacaciones de Semana Santa",
+     "names": {
+      "en": "Easter (Semana Santa) break",
+      "es": "Vacaciones de Semana Santa"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ef721ab4-4c49-5123-b357-2197719b984d",
+   "country_code": "IT",
+   "subdivision_code": "IT-36",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/istruzione-ricerca/regione-per-scuole/FOGLIA22/allegati/Allegato_2_alla_Delibera_424-2026.pdf",
+   "first_day": "2026-09-14",
+   "last_day": "2027-06-09",
+   "notes": "Automatically extracted from regione.fvg.it (OpenAI gpt-5-mini); 15 of 21 dates found in the document; 6 of 21 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-04",
+     "end_date": "2026-10-04",
+     "kind": "holiday",
+     "label": "San Francesco d'Assisi",
+     "names": {
+      "en": "St. Francis of Assisi",
+      "it": "San Francesco d'Assisi"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Ognissanti",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "Ognissanti"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-07",
+     "kind": "holiday",
+     "label": "Sospensione regionale",
+     "names": {
+      "en": "Regional suspension (7 Dec 2026)",
+      "it": "Sospensione regionale"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Immacolata Concezione",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "Immacolata Concezione"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "Vacanze natalizie",
+     "names": {
+      "en": "Christmas holidays",
+      "it": "Vacanze natalizie"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Natale",
+     "names": {
+      "en": "Christmas Day",
+      "it": "Natale"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Santo Stefano",
+     "names": {
+      "en": "St. Stephen's Day",
+      "it": "Santo Stefano"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "Capodanno",
+     "names": {
+      "en": "New Year's Day",
+      "it": "Capodanno"
+     }
+    },
+    {
+     "start_date": "2027-01-06",
+     "end_date": "2027-01-06",
+     "kind": "holiday",
+     "label": "Epifania",
+     "names": {
+      "en": "Epiphany",
+      "it": "Epifania"
+     }
+    },
+    {
+     "start_date": "2027-02-08",
+     "end_date": "2027-02-10",
+     "kind": "break",
+     "label": "Carnevale e Mercoledì delle Ceneri",
+     "names": {
+      "en": "Carnival and Ash Wednesday",
+      "it": "Carnevale e Mercoledì delle Ceneri"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-27",
+     "kind": "break",
+     "label": "Vacanze pasquali",
+     "names": {
+      "en": "Easter holidays",
+      "it": "Vacanze pasquali"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Lunedì dell'Angelo",
+     "names": {
+      "en": "Easter Monday",
+      "it": "Lunedì dell'Angelo"
+     }
+    },
+    {
+     "start_date": "2027-03-30",
+     "end_date": "2027-03-30",
+     "kind": "holiday",
+     "label": "Sospensione pasquale regionale",
+     "names": {
+      "en": "Regional suspension (30 Mar 2027)",
+      "it": "Sospensione pasquale regionale"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "Anniversario della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "Anniversario della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Festa del lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa del lavoro"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "Festa della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "Festa della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "31cea228-525c-5202-bd71-bb1c397ca184",
+   "country_code": "IT",
+   "subdivision_code": "IT-62",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.regione.lazio.it/sites/default/files/documentazione/2026/SCU-CIR-143880-11-02-2026-Schema-calendario-scolastico-2026-2027.pdf",
+   "first_day": "2026-09-15",
+   "last_day": "2027-06-08",
+   "notes": "Automatically extracted from regione.lazio.it (OpenAI gpt-5-mini); 4 of 6 dates found in the document; 2 of 6 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-06",
+     "kind": "break",
+     "label": "Vacanze di Natale",
+     "names": {
+      "en": "Christmas break",
+      "it": "Vacanze di Natale"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "Vacanze di Pasqua",
+     "names": {
+      "en": "Easter break",
+      "it": "Vacanze di Pasqua"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b9f55b0f-d5d1-5faf-8ff3-7a6f96daf02b",
+   "country_code": "IT",
+   "subdivision_code": "IT-82",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.regione.sicilia.it/system/files/2026-04/1396%20DA%20del%2001_04_2026%20determinazione%20calendario%20scolastico%20nelle%20scuole%20di%20ogni%20ordine%20e%20grado%20operanti%20in%20Sicilia%20a.s.%202026_2027_2.pdf",
+   "first_day": "2026-09-15",
+   "last_day": "2027-06-10",
+   "notes": "Automatically extracted from regione.sicilia.it (OpenAI gpt-5-mini); 17 of 19 dates found in the document; 2 of 19 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "1 novembre 2026: Ognissanti",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "1 novembre 2026: Ognissanti"
+     }
+    },
+    {
+     "start_date": "2026-11-02",
+     "end_date": "2026-11-02",
+     "kind": "holiday",
+     "label": "vacanza del 2 novembre 2026",
+     "names": {
+      "en": "Holiday 2 November 2026",
+      "it": "vacanza del 2 novembre 2026"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-07",
+     "kind": "holiday",
+     "label": "vacanza del 7 dicembre 2026",
+     "names": {
+      "en": "Holiday 7 December 2026",
+      "it": "vacanza del 7 dicembre 2026"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "8 dicembre 2026: Immacolata Concezione",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "8 dicembre 2026: Immacolata Concezione"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-07",
+     "kind": "break",
+     "label": "vacanze di Natale: dal 23 dicembre 2026 al 07 gennaio 2027",
+     "names": {
+      "en": "Christmas holidays",
+      "it": "vacanze di Natale: dal 23 dicembre 2026 al 07 gennaio 2027"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "25 dicembre 2026: Natale",
+     "names": {
+      "en": "Christmas Day",
+      "it": "25 dicembre 2026: Natale"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "26 dicembre 2026: Santo Stefano",
+     "names": {
+      "en": "St Stephen's Day",
+      "it": "26 dicembre 2026: Santo Stefano"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "1 gennaio 2027: Primo dell'anno",
+     "names": {
+      "en": "New Year's Day",
+      "it": "1 gennaio 2027: Primo dell'anno"
+     }
+    },
+    {
+     "start_date": "2027-01-06",
+     "end_date": "2027-01-06",
+     "kind": "holiday",
+     "label": "6 gennaio 2027: Epifania",
+     "names": {
+      "en": "Epiphany",
+      "it": "6 gennaio 2027: Epifania"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "vacanze di Pasqua: dal 25 marzo 2027 al 30 marzo 2027",
+     "names": {
+      "en": "Easter holidays",
+      "it": "vacanze di Pasqua: dal 25 marzo 2027 al 30 marzo 2027"
+     }
+    },
+    {
+     "start_date": "2027-03-28",
+     "end_date": "2027-03-28",
+     "kind": "holiday",
+     "label": "28 marzo 2027: Pasqua",
+     "names": {
+      "en": "Easter Sunday",
+      "it": "28 marzo 2027: Pasqua"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "29 marzo 2027: Lunedì dell'Angelo",
+     "names": {
+      "en": "Easter Monday",
+      "it": "29 marzo 2027: Lunedì dell'Angelo"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "25 aprile 2027: Festa della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "25 aprile 2027: Festa della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "1 maggio 2027: Festa del Lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "1 maggio 2027: Festa del Lavoro"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "2 giugno 2027: Festa della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "2 giugno 2027: Festa della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "8bd711a3-ecf5-50f9-b4b2-8b3364f9fade",
+   "country_code": "IT",
+   "subdivision_code": "IT-25",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/03-istruzione-formazione-e-lavoro/03-formazione-professionale/red-calendario-scol-2026-27-ifl/allegati/Nota%20calendario%20scolastico%202026-27_signed.pdf",
+   "first_day": "2026-09-14",
+   "last_day": "2027-06-08",
+   "notes": "Automatically extracted from regione.lombardia.it (OpenAI gpt-5-mini); 13 of 16 dates found in the document; agrees with a second page (regione.lombardia.it).",
+   "periods": [
+    {
+     "start_date": "2026-10-04",
+     "end_date": "2026-10-04",
+     "kind": "holiday",
+     "label": "San Francesco d’Assisi",
+     "names": {
+      "en": "Saint Francis of Assisi",
+      "it": "San Francesco d’Assisi"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Tutti i Santi",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "Tutti i Santi"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Immacolata Concezione",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "Immacolata Concezione"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2026-12-31",
+     "kind": "break",
+     "label": "Vacanze natalizie",
+     "names": {
+      "en": "Christmas holidays",
+      "it": "Vacanze natalizie"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Natale",
+     "names": {
+      "en": "Christmas Day",
+      "it": "Natale"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Santo Stefano",
+     "names": {
+      "en": "St. Stephen's Day",
+      "it": "Santo Stefano"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "Capodanno",
+     "names": {
+      "en": "New Year's Day",
+      "it": "Capodanno"
+     }
+    },
+    {
+     "start_date": "2027-01-02",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "Vacanze natalizie",
+     "names": {
+      "en": "Christmas holidays",
+      "it": "Vacanze natalizie"
+     }
+    },
+    {
+     "start_date": "2027-01-06",
+     "end_date": "2027-01-06",
+     "kind": "holiday",
+     "label": "Epifania",
+     "names": {
+      "en": "Epiphany",
+      "it": "Epifania"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "Anniversario della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "Anniversario della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Festa del Lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa del Lavoro"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "Festa nazionale della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "Festa nazionale della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "3a12e594-bb03-507a-997e-2bd67405e8a5",
+   "country_code": "IT",
+   "subdivision_code": "IT-42",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.regione.liguria.it/homepage-giunta/item/46462-calendario-scolastico-2026-2027.html",
+   "first_day": "2026-09-14",
+   "last_day": "2027-06-08",
+   "notes": "Automatically extracted from regione.liguria.it (OpenAI gpt-5-mini); 14 of 15 dates found in the document; 1 of 15 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-04",
+     "end_date": "2026-10-04",
+     "kind": "holiday",
+     "label": "Festa di San Francesco",
+     "names": {
+      "en": "St. Francis Day",
+      "it": "Festa di San Francesco"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Ognissanti",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "Ognissanti"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Festa dell'Immacolata",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "Festa dell'Immacolata"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-06",
+     "kind": "break",
+     "label": "Vacanze natalizie ed Epifania",
+     "names": {
+      "en": "Christmas and Epiphany holidays",
+      "it": "Vacanze natalizie ed Epifania"
+     }
+    },
+    {
+     "start_date": "2027-02-08",
+     "end_date": "2027-02-09",
+     "kind": "break",
+     "label": "Carnevale",
+     "names": {
+      "en": "Carnival",
+      "it": "Carnevale"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "Vacanze pasquali",
+     "names": {
+      "en": "Easter holidays",
+      "it": "Vacanze pasquali"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "Festa della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "Festa della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Festa del lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa del lavoro"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "Festa della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "Festa della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a61c83a1-7232-57ea-b80c-beaaf7ca7b84",
+   "country_code": "IT",
+   "subdivision_code": "IT-55",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://www.regione.umbria.it/notizie/-/asset_publisher/54m7RxsCDsHr/content/calendario-scolastico-2026-2027-in-umbria-le-lezioni-inizieranno-il-14-settembre-2026?read_more=true",
+   "first_day": "2026-09-14",
+   "last_day": "2027-06-08",
+   "notes": "Automatically extracted from regione.umbria.it (OpenAI gpt-5-mini); 9 of 9 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-11-02",
+     "end_date": "2026-11-02",
+     "kind": "holiday",
+     "label": "2 novembre 2026",
+     "names": {
+      "en": "All Souls' Day (2 November)",
+      "it": "2 novembre 2026"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-07",
+     "kind": "holiday",
+     "label": "7 dicembre 2026",
+     "names": {
+      "en": "Bridge for Immaculate Conception (7 December)",
+      "it": "7 dicembre 2026"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "8 dicembre 2026",
+     "names": {
+      "en": "Immaculate Conception (8 December)",
+      "it": "8 dicembre 2026"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-06",
+     "kind": "break",
+     "label": "Periodo natalizio",
+     "names": {
+      "en": "Christmas break",
+      "it": "Periodo natalizio"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "Pausa pasquale",
+     "names": {
+      "en": "Easter break",
+      "it": "Pausa pasquale"
+     }
+    }
+   ]
+  },
+  {
+   "id": "52eddaff-7203-5c7e-a8cf-78fc4f527fcc",
+   "country_code": "IT",
+   "subdivision_code": "IT-57",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://www.regione.marche.it/Regione-Utile/Istruzione-Formazione-e-Diritto-allo-studio/Le-scuole-nelle-Marche",
+   "first_day": "2026-09-14",
+   "last_day": "2027-06-05",
+   "notes": "Automatically extracted from regione.marche.it (OpenAI gpt-5-mini); 14 of 17 dates found in the document; 3 of 17 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-04",
+     "end_date": "2026-10-04",
+     "kind": "holiday",
+     "label": "San Francesco d’Assisi",
+     "names": {
+      "en": "St. Francis of Assisi",
+      "it": "San Francesco d’Assisi"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "Solennità di tutti i Santi",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "Solennità di tutti i Santi"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Immacolata Concezione",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "Immacolata Concezione"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-06",
+     "kind": "break",
+     "label": "vacanze natalizie",
+     "names": {
+      "en": "Christmas holidays",
+      "it": "vacanze natalizie"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Natale",
+     "names": {
+      "en": "Christmas Day",
+      "it": "Natale"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Santo Stefano",
+     "names": {
+      "en": "St. Stephen's Day",
+      "it": "Santo Stefano"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "Capodanno",
+     "names": {
+      "en": "New Year's Day",
+      "it": "Capodanno"
+     }
+    },
+    {
+     "start_date": "2027-01-06",
+     "end_date": "2027-01-06",
+     "kind": "holiday",
+     "label": "Epifania",
+     "names": {
+      "en": "Epiphany",
+      "it": "Epifania"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "vacanze pasquali",
+     "names": {
+      "en": "Easter holidays",
+      "it": "vacanze pasquali"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Lunedì dell’Angelo",
+     "names": {
+      "en": "Easter Monday",
+      "it": "Lunedì dell’Angelo"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "Anniversario della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "Anniversario della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Festa del Lavoro",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa del Lavoro"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "Festa nazionale della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "Festa nazionale della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "1a76e072-d1a3-5bad-9c3b-ae923b2e94e0",
+   "country_code": "IT",
+   "subdivision_code": "IT-65",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://bura.regione.abruzzo.it/sites/bura.regione.abruzzo.it/files/bollettini/2026-06-16/bollettino-ordinario-numero-24-del-17-06-2026.pdf",
+   "first_day": "2026-09-16",
+   "last_day": "2027-06-09",
+   "notes": "Automatically extracted from bura.regione.abruzzo.it (OpenAI gpt-5-mini); 16 of 19 dates found in the document; 3 of 19 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-04",
+     "end_date": "2026-10-04",
+     "kind": "holiday",
+     "label": "San Francesco",
+     "names": {
+      "en": "Saint Francis (holiday)",
+      "it": "San Francesco"
+     }
+    },
+    {
+     "start_date": "2026-11-01",
+     "end_date": "2026-11-01",
+     "kind": "holiday",
+     "label": "festa di Tutti i Santi",
+     "names": {
+      "en": "All Saints' Day",
+      "it": "festa di Tutti i Santi"
+     }
+    },
+    {
+     "start_date": "2026-12-07",
+     "end_date": "2026-12-07",
+     "kind": "holiday",
+     "label": "sospensione attività didattica",
+     "names": {
+      "en": "Regional suspension (7 December 2026)",
+      "it": "sospensione attività didattica"
+     }
+    },
+    {
+     "start_date": "2026-12-08",
+     "end_date": "2026-12-08",
+     "kind": "holiday",
+     "label": "Immacolata Concezione",
+     "names": {
+      "en": "Immaculate Conception",
+      "it": "Immacolata Concezione"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "vacanze natalizie",
+     "names": {
+      "en": "Christmas break",
+      "it": "vacanze natalizie"
+     }
+    },
+    {
+     "start_date": "2026-12-25",
+     "end_date": "2026-12-25",
+     "kind": "holiday",
+     "label": "Natale",
+     "names": {
+      "en": "Christmas Day",
+      "it": "Natale"
+     }
+    },
+    {
+     "start_date": "2026-12-26",
+     "end_date": "2026-12-26",
+     "kind": "holiday",
+     "label": "Santo Stefano",
+     "names": {
+      "en": "St. Stephen's Day",
+      "it": "Santo Stefano"
+     }
+    },
+    {
+     "start_date": "2027-01-01",
+     "end_date": "2027-01-01",
+     "kind": "holiday",
+     "label": "Capodanno",
+     "names": {
+      "en": "New Year's Day",
+      "it": "Capodanno"
+     }
+    },
+    {
+     "start_date": "2027-01-06",
+     "end_date": "2027-01-06",
+     "kind": "holiday",
+     "label": "Epifania",
+     "names": {
+      "en": "Epiphany",
+      "it": "Epifania"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-03-30",
+     "kind": "break",
+     "label": "vacanze pasquali",
+     "names": {
+      "en": "Easter break",
+      "it": "vacanze pasquali"
+     }
+    },
+    {
+     "start_date": "2027-03-28",
+     "end_date": "2027-03-28",
+     "kind": "holiday",
+     "label": "Pasqua",
+     "names": {
+      "en": "Easter Sunday",
+      "it": "Pasqua"
+     }
+    },
+    {
+     "start_date": "2027-03-29",
+     "end_date": "2027-03-29",
+     "kind": "holiday",
+     "label": "Lunedì dell’Angelo",
+     "names": {
+      "en": "Easter Monday",
+      "it": "Lunedì dell’Angelo"
+     }
+    },
+    {
+     "start_date": "2027-04-25",
+     "end_date": "2027-04-25",
+     "kind": "holiday",
+     "label": "Festa della Liberazione",
+     "names": {
+      "en": "Liberation Day",
+      "it": "Festa della Liberazione"
+     }
+    },
+    {
+     "start_date": "2027-05-01",
+     "end_date": "2027-05-01",
+     "kind": "holiday",
+     "label": "Festa dei Lavoratori",
+     "names": {
+      "en": "Labour Day",
+      "it": "Festa dei Lavoratori"
+     }
+    },
+    {
+     "start_date": "2027-06-02",
+     "end_date": "2027-06-02",
+     "kind": "holiday",
+     "label": "Festa della Repubblica",
+     "names": {
+      "en": "Republic Day",
+      "it": "Festa della Repubblica"
+     }
+    }
+   ]
+  },
+  {
+   "id": "4217fdc3-be6d-5eb2-9123-430d0b10c252",
+   "country_code": "RO",
+   "subdivision_code": "RO-BT",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "d879547c-dfea-550c-b687-29efeee57436",
+   "country_code": "RO",
+   "subdivision_code": "RO-BV",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ddfcc9c8-d56c-5f07-9ed1-1f68a998f42c",
+   "country_code": "RO",
+   "subdivision_code": "RO-BZ",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fbab74c8-6346-5533-b177-064c82147c1f",
+   "country_code": "RO",
+   "subdivision_code": "RO-CJ",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a168099c-1ee2-5c2d-a5d9-a2724523fdc3",
+   "country_code": "RO",
+   "subdivision_code": "RO-CL",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ee048d39-b719-51fe-a977-2663d04ef688",
+   "country_code": "RO",
+   "subdivision_code": "RO-CS",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "363a21f1-b0f5-5409-baad-dcab10369dfa",
+   "country_code": "RO",
+   "subdivision_code": "RO-CT",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6aa3f86-b750-5fa1-a14c-7eda7da5fc66",
+   "country_code": "RO",
+   "subdivision_code": "RO-CV",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "5d872c1b-9e9d-5a0c-843a-7c2b89e6a54b",
+   "country_code": "RO",
+   "subdivision_code": "RO-SB",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "739da42d-044e-5b2b-b98b-e279076ecba3",
+   "country_code": "RO",
+   "subdivision_code": "RO-SJ",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document; agrees with a second page (isjsalaj.ro).",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "6e037636-571d-5e16-b752-877dca9f0912",
+   "country_code": "RO",
+   "subdivision_code": "RO-SM",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c535d223-5fe5-5dc7-a02b-6125d86d5943",
+   "country_code": "RO",
+   "subdivision_code": "RO-SV",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "1a4d1e08-b1d6-5ee9-9689-8e708e5fac8d",
+   "country_code": "RO",
+   "subdivision_code": "RO-TL",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "928077e6-35c7-549a-938e-af99d46a34c9",
+   "country_code": "RO",
+   "subdivision_code": "RO-TM",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cac226df-3be5-55c5-8ff5-dd2fb40197c8",
+   "country_code": "RO",
+   "subdivision_code": "RO-TR",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dba2e151-570c-567d-8ba8-c36f0c2af6bf",
+   "country_code": "RO",
+   "subdivision_code": "RO-VL",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": null,
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day (day off)",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanța de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanța de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "f7e1c4d4-561f-5223-885a-fdace37cb9a3",
+   "country_code": "RO",
+   "subdivision_code": "RO-VN",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document; agrees with a second page (edu.ro).",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "32f4deaf-f3e6-58b3-9992-5671ca6948a0",
+   "country_code": "RO",
+   "subdivision_code": "RO-VS",
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from edu.ro (OpenAI gpt-5-mini); 13 of 13 dates found in the document; all dates found in the official document; agrees with a second page (edu.ro).",
+   "periods": [
+    {
+     "start_date": "2026-10-05",
+     "end_date": "2026-10-05",
+     "kind": "holiday",
+     "label": "Ziua internațională a educației",
+     "names": {
+      "en": "International Education Day",
+      "ro": "Ziua internațională a educației"
+     }
+    },
+    {
+     "start_date": "2026-10-24",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Vacanță de toamnă",
+     "names": {
+      "en": "Autumn break",
+      "ro": "Vacanță de toamnă"
+     }
+    },
+    {
+     "start_date": "2026-12-23",
+     "end_date": "2027-01-10",
+     "kind": "break",
+     "label": "Vacanța de iarnă",
+     "names": {
+      "en": "Winter (Christmas) break",
+      "ro": "Vacanța de iarnă"
+     }
+    },
+    {
+     "start_date": "2027-02-15",
+     "end_date": "2027-03-07",
+     "kind": "break",
+     "label": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)",
+     "names": {
+      "en": "One-week flexible break (period in which it may be scheduled)",
+      "ro": "O săptămână vacanță la decizia inspectoratelor școlare (perioadă posibilă)"
+     }
+    },
+    {
+     "start_date": "2027-04-24",
+     "end_date": "2027-05-04",
+     "kind": "break",
+     "label": "Vacanța de primăvară/Paște",
+     "names": {
+      "en": "Spring/Easter break",
+      "ro": "Vacanța de primăvară/Paște"
+     }
+    },
+    {
+     "start_date": "2027-06-19",
+     "end_date": "2027-09-05",
+     "kind": "break",
+     "label": "Vacanța de vară",
+     "names": {
+      "en": "Summer break",
+      "ro": "Vacanța de vară"
+     }
+    }
+   ]
+  },
+  {
+   "id": "97ba6421-5cf8-5039-8202-e16e1bea6103",
+   "country_code": "EE",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2027-28",
+   "status": "confirmed",
+   "source_url": "https://www.hm.ee/uudised/haridus-ja-teadusministeerium-kinnitas-jargmise-kolme-oppeaasta-koolivaheajad-1",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Automatically extracted from hm.ee (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2027-10-25",
+     "end_date": "2027-10-31",
+     "kind": "break",
+     "label": "I vaheaeg",
+     "names": {
+      "en": "Autumn break",
+      "et": "I vaheaeg"
+     }
+    },
+    {
+     "start_date": "2027-12-23",
+     "end_date": "2028-01-09",
+     "kind": "break",
+     "label": "II vaheaeg",
+     "names": {
+      "en": "Christmas break",
+      "et": "II vaheaeg"
+     }
+    },
+    {
+     "start_date": "2028-02-28",
+     "end_date": "2028-03-05",
+     "kind": "break",
+     "label": "III vaheaeg",
+     "names": {
+      "en": "Winter break",
+      "et": "III vaheaeg"
+     }
+    },
+    {
+     "start_date": "2028-04-24",
+     "end_date": "2028-04-30",
+     "kind": "break",
+     "label": "IV vaheaeg (v.a 12. klass)",
+     "names": {
+      "en": "Spring break (except grade 12)",
+      "et": "IV vaheaeg (v.a 12. klass)"
+     }
+    },
+    {
+     "start_date": "2028-06-14",
+     "end_date": "2028-08-31",
+     "kind": "break",
+     "label": "V vaheaeg (v.a lõpuklassid)",
+     "names": {
+      "en": "Summer break (except graduating classes)",
+      "et": "V vaheaeg (v.a lõpuklassid)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c93c2a83-f147-5892-bab6-54c28df89b6a",
+   "country_code": "EE",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2028-29",
+   "status": "confirmed",
+   "source_url": "https://www.hm.ee/uudised/haridus-ja-teadusministeerium-kinnitas-jargmise-kolme-oppeaasta-koolivaheajad-1",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Automatically extracted from hm.ee (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2028-10-23",
+     "end_date": "2028-10-29",
+     "kind": "break",
+     "label": "I vaheaeg",
+     "names": {
+      "en": "Autumn break",
+      "et": "I vaheaeg"
+     }
+    },
+    {
+     "start_date": "2028-12-25",
+     "end_date": "2029-01-07",
+     "kind": "break",
+     "label": "II vaheaeg",
+     "names": {
+      "en": "Christmas break",
+      "et": "II vaheaeg"
+     }
+    },
+    {
+     "start_date": "2029-02-26",
+     "end_date": "2029-03-04",
+     "kind": "break",
+     "label": "III vaheaeg",
+     "names": {
+      "en": "Winter break",
+      "et": "III vaheaeg"
+     }
+    },
+    {
+     "start_date": "2029-04-23",
+     "end_date": "2029-04-29",
+     "kind": "break",
+     "label": "IV vaheaeg (v.a 12. klass)",
+     "names": {
+      "en": "Spring break (except grade 12)",
+      "et": "IV vaheaeg (v.a 12. klass)"
+     }
+    },
+    {
+     "start_date": "2029-06-12",
+     "end_date": "2029-08-31",
+     "kind": "break",
+     "label": "V vaheaeg (v.a lõpuklassid)",
+     "names": {
+      "en": "Summer break (except graduating classes)",
+      "et": "V vaheaeg (v.a lõpuklassid)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "e1e60d63-4883-52cd-bb54-635879053e4c",
+   "country_code": "EE",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2029-30",
+   "status": "confirmed",
+   "source_url": "https://www.hm.ee/uudised/haridus-ja-teadusministeerium-kinnitas-jargmise-kolme-oppeaasta-koolivaheajad-1",
+   "first_day": null,
+   "last_day": null,
+   "notes": "Automatically extracted from hm.ee (OpenAI gpt-5-mini); 10 of 10 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2029-10-22",
+     "end_date": "2029-10-28",
+     "kind": "break",
+     "label": "I vaheaeg",
+     "names": {
+      "en": "Autumn break",
+      "et": "I vaheaeg"
+     }
+    },
+    {
+     "start_date": "2029-12-24",
+     "end_date": "2030-01-06",
+     "kind": "break",
+     "label": "II vaheaeg",
+     "names": {
+      "en": "Christmas break",
+      "et": "II vaheaeg"
+     }
+    },
+    {
+     "start_date": "2030-02-25",
+     "end_date": "2030-03-03",
+     "kind": "break",
+     "label": "III vaheaeg",
+     "names": {
+      "en": "Winter break",
+      "et": "III vaheaeg"
+     }
+    },
+    {
+     "start_date": "2030-04-15",
+     "end_date": "2030-04-21",
+     "kind": "break",
+     "label": "IV vaheaeg (v.a 12. klass)",
+     "names": {
+      "en": "Spring break (except grade 12)",
+      "et": "IV vaheaeg (v.a 12. klass)"
+     }
+    },
+    {
+     "start_date": "2030-06-11",
+     "end_date": "2030-08-31",
+     "kind": "break",
+     "label": "V vaheaeg (v.a lõpuklassid)",
+     "names": {
+      "en": "Summer break (except graduating classes)",
+      "et": "V vaheaeg (v.a lõpuklassid)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "d9e44bf0-1674-5885-8b3e-daec1588f4cc",
+   "country_code": "HR",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "confirmed",
+   "source_url": "https://mzom.gov.hr/print.aspx?id=7854&url=print",
+   "first_day": "2026-09-07",
+   "last_day": "2027-06-15",
+   "notes": "Automatically extracted from mzom.gov.hr (OpenAI gpt-5-mini); 8 of 8 dates found in the document; all dates found in the official document.",
+   "periods": [
+    {
+     "start_date": "2026-12-24",
+     "end_date": "2027-01-05",
+     "kind": "break",
+     "label": "Prvi dio zimskoga odmora",
+     "names": {
+      "en": "Winter break (part 1)",
+      "hr": "Prvi dio zimskoga odmora"
+     }
+    },
+    {
+     "start_date": "2027-02-22",
+     "end_date": "2027-02-26",
+     "kind": "break",
+     "label": "Drugi dio zimskoga odmora",
+     "names": {
+      "en": "Winter break (part 2)",
+      "hr": "Drugi dio zimskoga odmora"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-04-02",
+     "kind": "break",
+     "label": "Proljetni odmor",
+     "names": {
+      "en": "Spring break",
+      "hr": "Proljetni odmor"
+     }
+    }
+   ]
+  },
+  {
+   "id": "1a1609a5-a29b-5d5d-92b2-d435197e37c0",
+   "country_code": "HU",
+   "subdivision_code": null,
+   "authority": null,
+   "authority_id": null,
+   "authority_kind": "other",
+   "authority_ext": {},
+   "school_year": "2026-27",
+   "status": "pending",
+   "source_url": "https://njt.jog.gov.hu/jogszabaly/2026-1-20-9M",
+   "first_day": "2026-09-01",
+   "last_day": "2027-06-18",
+   "notes": "Automatically extracted from njt.jog.gov.hu (OpenAI gpt-5-mini); 2 of 8 dates found in the document; 6 of 8 dates not found in the document.",
+   "periods": [
+    {
+     "start_date": "2026-10-23",
+     "end_date": "2026-11-01",
+     "kind": "break",
+     "label": "Őszi szünet",
+     "names": {
+      "en": "Autumn break",
+      "hu": "Őszi szünet"
+     }
+    },
+    {
+     "start_date": "2026-12-19",
+     "end_date": "2027-01-03",
+     "kind": "break",
+     "label": "Téli szünet",
+     "names": {
+      "en": "Winter break",
+      "hu": "Téli szünet"
+     }
+    },
+    {
+     "start_date": "2027-03-25",
+     "end_date": "2027-04-04",
+     "kind": "break",
+     "label": "Tavaszi szünet",
+     "names": {
+      "en": "Spring (Easter) break",
+      "hu": "Tavaszi szünet"
+     }
+    }
+   ]
+  }
+ ]
+}

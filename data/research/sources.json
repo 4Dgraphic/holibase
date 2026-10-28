@@ -216,6 +216,15 @@
         "(^|\\.)hm\\.ee$",
         "(^|\\.)riigiteataja\\.ee$",
         "(^|\\.)valitsus\\.ee$"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hm.ee/uudised/haridus-ja-teadusministeerium-kinnitas-jargmise-kolme-oppeaasta-koolivaheajad-1",
+          "scopes": [
+            "EE"
+          ],
+          "learned": "2026-10-28"
+        }
       ]
     },
     "ES": {
@@ -290,6 +299,34 @@
             "ES-VC"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://educacion.castillalamancha.es/sites/default/files/2026-06/Orden%2079-2026%20calendario%20escolar%20curso%2026-27.pdf",
+          "scopes": [
+            "ES-CM"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://web.gencat.cat/es/ciutadania/educacio-formacio/calendari-escolar-catalunya",
+          "scopes": [
+            "ES-CT"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.educacion.navarra.es/documents/27590/0/RES%2B143-2026%2BInstrucciones%2BCalendario%2B2026-27%2B(1).pdf/22d39a03-85f5-0cf6-d077-ddf6f2b51a86",
+          "scopes": [
+            "ES-NC"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.educacion.navarra.es/web/dpto/calendario-escolar/",
+          "scopes": [
+            "ES-NC"
+          ],
+          "learned": "2026-10-28"
         }
       ]
     },
@@ -409,7 +446,16 @@
         "(^|\\.)mzom\\.gov\\.hr$",
         "(^|\\.)mzo\\.gov\\.hr$"
       ],
-      "hint": "The Ministry of Science, Education and Youth publishes the 'Pravilnik o kalendaru rada osnovnih i srednjih škola' for each school year."
+      "hint": "The Ministry of Science, Education and Youth publishes the 'Pravilnik o kalendaru rada osnovnih i srednjih škola' for each school year.",
+      "sources": [
+        {
+          "url": "https://mzom.gov.hr/print.aspx?id=7854&url=print",
+          "scopes": [
+            "HR"
+          ],
+          "learned": "2026-10-28"
+        }
+      ]
     },
     "HU": {
       "name": "Hungary",
@@ -420,7 +466,16 @@
         "(^|\\.)oktatas\\.hu$",
         "(^|\\.)njt\\.hu$"
       ],
-      "hint": "The tanév rendje (school year order) is published as a ministerial decree each year."
+      "hint": "The tanév rendje (school year order) is published as a ministerial decree each year.",
+      "sources": [
+        {
+          "url": "https://njt.jog.gov.hu/jogszabaly/2026-1-20-9M",
+          "scopes": [
+            "HU"
+          ],
+          "learned": "2026-10-28"
+        }
+      ]
     },
     "IE": {
       "name": "Ireland",
@@ -533,6 +588,48 @@
             "IT-82"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.regione.lombardia.it/istruzione-formazione-e-lavoro/formazione-professionale/calendario-scolastico-2026-2027",
+          "scopes": [
+            "IT-25"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/03-istruzione-formazione-e-lavoro/03-formazione-professionale/red-calendario-scol-2026-27-ifl/allegati/Nota%20calendario%20scolastico%202026-27_signed.pdf",
+          "scopes": [
+            "IT-25"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.regione.liguria.it/homepage-giunta/item/46462-calendario-scolastico-2026-2027.html",
+          "scopes": [
+            "IT-42"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.regione.umbria.it/notizie/-/asset_publisher/54m7RxsCDsHr/content/calendario-scolastico-2026-2027-in-umbria-le-lezioni-inizieranno-il-14-settembre-2026?read_more=true",
+          "scopes": [
+            "IT-55"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.regione.marche.it/Regione-Utile/Istruzione-Formazione-e-Diritto-allo-studio/Le-scuole-nelle-Marche",
+          "scopes": [
+            "IT-57"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://bura.regione.abruzzo.it/sites/bura.regione.abruzzo.it/files/bollettini/2026-06-16/bollettino-ordinario-numero-24-del-17-06-2026.pdf",
+          "scopes": [
+            "IT-65"
+          ],
+          "learned": "2026-10-28"
         }
       ]
     },
@@ -664,6 +761,45 @@
             "RO-PH"
           ],
           "learned": "2026-10-18"
+        },
+        {
+          "url": "https://www.edu.ro/legislatie-ordine-ministru",
+          "scopes": [
+            "RO-BT",
+            "RO-BV",
+            "RO-BZ",
+            "RO-CJ",
+            "RO-CL",
+            "RO-CS",
+            "RO-CT",
+            "RO-CV",
+            "RO-VN",
+            "RO-VS"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://edu.ro/sites/default/files/2026-07/Ordin_3194_2026_structura_an_scolar_2026_2027.pdf",
+          "scopes": [
+            "RO-SB",
+            "RO-SJ",
+            "RO-SM",
+            "RO-SV",
+            "RO-TL",
+            "RO-TM",
+            "RO-TR",
+            "RO-VL",
+            "RO-VN",
+            "RO-VS"
+          ],
+          "learned": "2026-10-28"
+        },
+        {
+          "url": "https://www.isjsalaj.ro/index.php?opcio=curriculum_inspectie_2026_2027",
+          "scopes": [
+            "RO-SJ"
+          ],
+          "learned": "2026-10-28"
         }
       ]
     },
